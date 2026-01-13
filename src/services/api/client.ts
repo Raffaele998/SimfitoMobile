@@ -18,6 +18,11 @@ export const apiClient = axios.create({
 // Interceptor per aggiungere token
 apiClient.interceptors.request.use(async (config) => {
   try {
+    // Non aggiungere token alla richiesta di login
+    if (config.url?.includes('/login.php')) {
+      return config;
+    }
+
     const token = await AsyncStorage.getItem('authToken');
     if (token) {
       config.params = config.params || {};
