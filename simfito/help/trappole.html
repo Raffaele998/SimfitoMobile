@@ -1,0 +1,113 @@
+<!DOCKTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>SIMFito</title>
+  <link rel="stylesheet" media="all" href="style/custom.css"/>
+  <link rel="stylesheet" media="all" href="style/octicons.css"/>
+  <link rel="shortcut icon" href=""/>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="toc.setHF('tbArea'); toc.setHF('footerArea'); toc.setToc('tocArea',1,7);">
+  <div class="footer-push">
+    <div class="top-bar" id="tbArea"></div>
+    <div class="wrapper documents content-push wide">
+      <div class="toc", id="tocArea"></div>
+      <div class="markdown-body document-content">
+        <h3>
+          <a id="trappole" class="anchor" href="#trappole" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Le trappole
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;A partire dalla versione 4.0.0 di SIMFito, tutte le operazioni relative alla trappole sono state collegate alla creazione di una scheda. Quindi ogni operazione di:
+          posizionamento, controllo e rimozione sarà associato ad una scheda.
+          Per ogni scheda creata sarà possibile accedere alla gestione trappole attraverso l'apposita icona nella <a href="scheda.html#colonnaazioni">colonna delle azioni</a> della tabella delle schede.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Creata la scheda ed associata al sito in questo tab compaiono: 
+          <ul>
+            <li>nella prima tabella tutte le trappole collegate al sito per le quali, attraverso la colonna delle azioni, è possibile:
+              <ul>
+                <li>registrare catture/cambi feromone;</li>
+                <li>dismettere la trappola;</li>
+                <li>riutilizzare trappole dismesse;</li>
+                <li>cancellare la trappola;</li>
+                <li>visualizzare il codice a barre della trappola.</li>
+              </ul>
+            </li>
+            <li>la tabella delle registrazioni delle catture/cambio feromone per ogni trappola;</li>
+            <li>i dettagli di ongi registrazione.</li>
+          </ul>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nella toolbar della lista delle trappole sono, infine, presenti 4 pulsanti:
+          <ul>
+            <li>"Ricarica lista" che consente di ricaricare la lista nel caso, ad esempio si fosse aggiunta una trappole e non la si vedesse;</li>
+            <li>"Posiziona trappola" che apre il tab per il posizionamento di una nuova trappola;</li>
+            <li>"Visualizza/nascondi trappole" che consente di visualizzare, nella mappa a destra i puntini rossi che rappresentano le trappole attive sul sito;</li>
+            <li>"Valuta tempo" che consente di vedere quanto tempo è rimasto rispetto alle attività registrate per il giorno di riferiemnto della scheda (considerando 8 ore la giornata lavorativa).</li>
+          </ul>
+        </p>
+        <h3>
+          <a id="nuovatrappolatrappole" class="anchor" href="#nuovatrappolatrappole" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Posizionamento trappola
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Per posizionare una trappola bisogna:
+          <ul>
+            <li>premere il bottone <i>Posiziona nuova Trappola</i> nel tab della gestione trappole, quindi si aprirà un nuovo tab;</li>
+            <li>Cliccare sul pulsante "Posizona Trappola Manualmente";</li>
+            <li>cliccare, col puntatore del mouse, nell&apos;area della mappa sulla quale si vuol posizionare la trappola (comparir&agrave; un pallino giallo);</li>
+            <li>Completare il form al disotto dell'area "Aiuto al posizionamento" (<b>Attenzione questa sezione serve solo ad individuare eventuali punti utilizzando le oordinate</b>);</li>
+            <li> cliccare sul bottone <i>Salva</i> (in basso a destra).</li>
+          </ul>
+          Un messaggio avvertir&agrave; se il salvataggio &egrave; andato a buon fine.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nel caso in cui si avessero le oordinate della trappola può essere utilizzata la sezione "Aiuto al posizionamento" che consentir&agrave; di visualizzare in mappa
+          il punto relativo alle coordinate inserite. <b>Attenzione, in ogni caso, il punto dovr&agreve; essere confermato utilizzando la procedura sopra elencata!</b>.
+        </p>
+        <p>
+          <img src="images/trappole002.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="nuova trappole"/>
+        </p>
+        <h3>
+          <a id="controllotrappole" class="anchor" href="#controllotrappole" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Controllo/cambio feromone
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Cliccando sull&apos;apposita icona nella colonna delle azioni della tabella delle trappole, se la trappola &egrave; in uso e non &egrave; stata possizionata con la scheda
+          attuale, sar&agrave; aggiunta una riga nella colonna del controllo per la quale saranno precaricate le seguenti informazioni:
+          <ul>
+            <li>agente nocivo di riferiemnto per la trappola;</li>
+            <li>pianta ospite di riferiemnto se registrato;</li>
+            <li>superficie rappresentativa se registrata.</li>
+          </ul>
+          Cliccando quindi sulla riga realtiva si popolerà il form sottostante che dovrà essere completato per poter registrare il controllo della trappola.
+          <p>
+            <img src="images/trappole005.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="controllo trappole"/>
+          </p>
+        </p>
+        <h3>
+          <a id="rimozionetrappole" class="anchor" href="#rimozionetrappole" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Rimozione trappole
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Per rimuovere una trappola utilizzare l&agrave;apposita icona nella colonna delle azioni. Un form chieder&agrave; di indicare il tempo impiegato per l&apos;operazione.
+        </p>
+      </div>
+    </div>
+    <div class="footer-pad"></div>
+  </div>
+  <footer>
+    <div class="footer" id="footerArea"> </div>
+  </footer>
+</body>
+</html>

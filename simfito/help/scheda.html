@@ -1,0 +1,178 @@
+<!DOCKTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>SIMFito</title>
+  <link rel="stylesheet" media="all" href="style/custom.css"/>
+  <link rel="shortcut icon" href=""/>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="toc.setHF('tbArea'); toc.setHF('footerArea'); toc.setToc('tocArea',1,3);">
+  <div class="footer-push">
+    <div class="top-bar" id="tbArea"></div>
+    <div class="wrapper documents content-push wide">
+      <div class="toc", id="tocArea"></div>
+      <div class="markdown-body document-content">
+        <h3>
+          <a id="elencoschede" class="anchor" href="#elencoschede" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Le schede
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;La scheda è la raccolta di informazioni che afferiscono ad uno specifico monitoraggio.
+          Essa contiene tutte le osservazioni effettuate in un dato sito in una certa data.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;L&apos;elenco delle schede fatte (o di compentenza), dell&apos;ispettore sono riportate nel <i>tab</i> "Schede".
+          Quest&apos;elenco contiene le principali informazioni di ogni scheda ed una serie di pulsanti che consentono di eseguire, su di esse, una serie di operazioni
+          come: la visualizzazione; l&apos;eliminazione; la duplicazione; la chiusura; etc..
+        </p>
+        <p>
+          <img src="images/scheda001.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="tab schede"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le informazioni riportate, nella tabella delle schede sono:
+          <ul>
+            <li>l&apos;identificativo della scheda;</li>
+            <li>il nome, o i nomi, dei tecnici a cui fa riferimento;</li>
+            <li>la data del sopralluogo;</li>
+            <li>il motivo del sopralluogo;</li>
+            <li>L&apos;azienda proprietaria del sito del sopralluogo;</li>
+            <li>il sito del sopralluogo;</li>
+            <li>il comune nel quale si trova il sito;</li>
+            <li>il laboratorio al quale è stato conferito l&apos;eventuale campione;</li>
+            <li>lo stato di lavorazione del laboratorio, nel caso in cui siano stati prelevati dei campioni, o l&apos;indicazione di assenza di campioni;</li>
+            <li>la presenza o meno di parassiti da verificare da parte del laboratorio;</li>
+            <li>l&apos;eventuale motivo di rigetto da parte dell&apos;amministratore;</li>
+            <li>lo stato della scheda (se confermata o in attesa di completamento);</li>
+            <li>l'indicazione della presenza di allegati.</li>
+          </ul>
+        </p>
+        <h3>
+          <a id="colonnaazioni" class="anchor" href="#colonnaazioni" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Colonna delle azioni
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;L&apos;ultima colonna contiene le operazioni che possono essere fatte sulla singola riga della tabella. Queste operazioni vengono eseguite
+          cliccando sull'icona corrispondente. Al passaggio del mouse sull'icona un <i>tooltip</i> ne indica la funzione.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le icone sono abilitate o meno a secondo dello stato della scheda e dei permessi dell&apos; utente. Ad esempio: se la scheda
+          &egrave; stata confermata, l&apos;azione relativa all'eliminazione della scheda sar&agrave; disabilitata; se la scheda &egrave; stata associata al
+          tecnico che vede l&apos;elenco e non creata da esso, l&apos;azione di conferma sar&agrave; disabilitata. Le icone reltive ad azioni disabilitate hanno
+          una trasparenza maggiore quindi sono meno <i>marcate</i> di quelle relative ad azioni abilitate.
+        </p>
+        <p>
+          <img src="images/scheda002.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="azioni sull&apos;elenco delle schede"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le azioni possibili sono (da sinistra a destra):
+          <ul>
+            <li><a href="osservazioni.html">visualizzazione o completamento della scheda</a> (a seconda che sia stata confemata o meno);</li>
+            <li>gestione trappole (controllo/cambio feromone; posizionamento; rimozione);</li>
+            <li>collega ad un sito <b>(utilizzabile se la scheda &egrave; stata inizializzata senza collegarla ad un sito)</b>;</li>
+            <li>conferma completamento scheda <b>(solo per il tecnico che ha inizializzato la scheda)</b>;</li>
+            <li>associa ad un tecnico <b>(solo per il tecnico che ha inizializzato la scheda)</b>;</li>
+            <li>disassocia un tecnico <b>(solo per il tecnico che ha inizzializato la scheda)</b>;</li>
+            <li>elimina scheda <b>(solo se la scheda non &egrave; stata confermata)</b>;</li>
+            <li>duplica scheda <b>(solo se la scheda non &egrave; stata confermata)</b>;</li>
+            <li>scarica la scheda in formato pdf <b>(solo se la scheda &egrave; stata confermata)</b>;</li>
+            <li>scarica il referto delle analisi <b>(solo se disponibile)</b>.</li>
+          </ul>
+        </p>
+        <h3>
+          <a id="toolbarschede" class="anchor" href="#toolbarschede" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Toolbar
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nella parte superiore dell&apos;elenco delle schede &egrave; presente una barra con alcuni tasti.
+        </p>
+        <p>
+          <img src="images/scheda003.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="toolbar elenco delle schede"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;La toolbar contiene tre tasti: due contestuali alla tabelle ed uno ausiliario. I tasti consentono, rispettivamente, di:
+          <ul>
+            <li>inizializzare una nuova scheda;</li>
+            <li>aprire la lista dei referti relativi alle proprie schede dalla quale &egrave, possibile anche scaricarli;</li>
+            <li>aggiornare l&apos;elenco;</li>
+            <li>prossimo codice campione che consente di visualizzare quale sar&agrave; il prossimo codice codice che verr&agrave; generato;</li>
+            <li>aprire questo manuale a questa sezione.</li>
+          </ul>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;La struttura a <i>tab</i> di quest&apos;applicazione &egrave; stata pensata per consentire all&apos;utente di passare da una
+          sezione all&apos;altra senza modificarne lo stato. Il vantaggio di questa struttura st&agrave; nel fatto che &egrave; possibile passare rapidamente
+          dalla visualizzazione di una serie di informazioni all&apos;altra potendo mantenere tutte le sezioni in editazione contemporaneamente; lo svantaggio
+          st&agrave; nel fatto che in alcuni casi diventa necessario aggiornarne manualmente lo stato. Ad esempio se ho apportato delle modifiche ad una scheda
+          in compilazione e voglio rivederle anche, laddove possibile, nell'elenco delle scede, allora devo aggiornare l&apos;elenco stesso.
+          Ecco la necessit&agrave, del tasto <i>Aggiorna</i>.
+        </p>
+        <h3>
+          <a id="aggiungischeda" class="anchor" href="#aggiungischeda" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Aggiungi Scheda
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Il bottone <i>Aggiungi Scheda</i> fa comparire una form nel quale viene richiesto di indicare le informazioni che definiscono la scheda stessa.
+        </p>
+        <p>
+          <img src="images/scheda004.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="nuova scheda"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;I dati richiesti dal form sono:
+         <ul>
+           <li>azienda (da menu a tendina);</li>
+           <li>sito (da menu a tendina, il menu si attiva dopo aver scelto l&apos;azienda, mostrando i relativi siti);</li>
+           <li>modifica tipologia sito (tipologia sito che verr&agrave; associato al sito <b>solo relativamente alla scheda che si sta creando; campo obbligatorio</b>);</li>
+           <li>data del sopralluogo (da un <i>datepicker</i>), <b>campo obbligatorio</b>;</li>
+           <li>protocollo (<b>campo obbligatorio</b>)</li>
+           <li>note, eventuali.</li>
+         </ul>
+         Il bottone <i>Salva</i>, in basso a sinsitra del form, diventa attivo solo se tutti i campi obbligatori sono stati riempiti.
+       </p>
+       <p>
+         &nbsp;&nbsp;&nbsp;&nbsp;Nel caso in cui il sito non fosse presente nel menu a tendina si pu&ograve; decidere di passare direttamente alla sua creazione attraverso il pulsante <i>Aggiungi Sito</i> del form
+         oppure decidere di crearlo successivamente utilizzando l&apos;icona <i>Collega a Sito</i> nella <a href="#colonnaazioni">colonna delle azioni</a>.
+       </p>
+       <p>
+         &nbsp;&nbsp;&nbsp;&nbsp;Cliccando sul tasto <i>Salva</i>, quindi, il form si chiude ed una nuova riga compare nella liste delle schede. Sar&agrave; possibile inserire le
+         <a href="osservazioni.html">osservazioni</a> nella nuova scheda utilizzando l'apposita icona nella <a href="#colonnaazioni">colonna delle azioni</a>.
+       </p>
+       <h3>
+         <a id="associatecnico" class="anchor" href="#associatecnico" aria-hidden="true">
+           <span class="octicon octicon-link"></span>
+         </a>
+         Associa tecnico
+       </h3>
+       <p>
+         &nbsp;&nbsp;&nbsp;&nbsp;&Egrave; possibile associare uno o pi&ugrave; tecnici alle proprie schede. I tecnici associati potranno:
+         <ul>
+           <li><a href="osservazioni.html#nuovaosservazione">Aggiungere</a> o <a href="osservazioni.html#completamentoosservazione">modificare</a> osservazioni;</li>
+           <li>Registrare gli <a href="osservazioni.html#osservazioniabbattimenti">abbattimenti</a>.</li>
+         </ul>
+         <b>I tecnici associati non potranno <a href="#colonnaazioni">confermare la scheda</a></b>.
+       </p>
+       <p>
+         &nbsp;&nbsp;&nbsp;&nbsp;Cliccando sull'icona <i><a href="#colonnaazioni">associa tecnico</a></i>, apparira una finestra con la lista dei tecnici. Utilizando i checkbox
+         e premendo il tasto <i>Usa Selezionati</i> si potranno associare i tecnici alla scheda selezionata. La procedura di <i>disassociazione del tecnico</i> &egrave; identica
+         ma nell&apos;elenco compariranno solo i tecnici associati.
+       </p>
+       <p>
+         <img src="images/scheda005.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="associa tecnico alla scheda"/>
+       </p>
+      </div>
+    </div>
+    <div class="footer-pad"></div>
+  </div>
+  <footer>
+    <div class="footer" id="footerArea"> </div>
+  </footer>
+</body>
+</html>

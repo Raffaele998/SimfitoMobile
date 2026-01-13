@@ -1,0 +1,25 @@
+<?php
+
+	$hostapp = 'simfito.regione.campania.it';		// sostituiscono i vari 5.249.....
+	$hostgs  = 'localhost';
+	$hostpg  = 'localhost';
+
+	$connection="host=$hostpg port=5432 user=postgres password=ariespac3 dbname=simfito4";
+	$user_tb="tecnici";
+	$att_path="/var/www/html/simfito.org/simfito/uploads/";
+	$reports_path = "/var/www/html/simfito.org/simfito/reports/";
+
+	// supporto mail!!!
+	$smtpauth     = 0;
+	$smtpport     = 25; // 587;
+	$smtpserver   = '192.168.10.10'; // 'smtp.ariespace.com'; // '62.149.128.211'; // 'smtp.aruba.it';
+
+	$smtpfrom     = 'simfito@simfito.org';
+	$smtpusername = ''; // 'marco.colandrea@ariespace.com';
+	$smtppassword = ''; // '4set2000';
+
+	// supporto sms!!!
+	$mobytmittente = 'SIMFITO';
+	$mobytlogin = 'C09088_HQS';
+	$mobytpasswd= 't47mngvj';
+?>

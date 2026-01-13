@@ -1,0 +1,736 @@
+25,25,smtp.ariespace.com,simfito@simfito.org,0,marco.colandrea@ariespace.com,4set2000,luigi.marotta@gmail.com,Recupero credenziali
+25,25,smtp.ariespace.com,simfito@simfito.org,0,marco.colandrea@ariespace.com,4set2000,carmela.carbone@ipsp.cnr.it,Recupero credenziali
+25,25,smtp.ariespace.com,simfito@simfito.org,0,marco.colandrea@ariespace.com,4set2000,carmela.carbone@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.sica@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,eleonora.barra@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.salzano@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,garonna@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmela.carbone@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marano@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.iodice@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,minutolm@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,Simona.gar24@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,rocco.messere@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,martinasinno@hotmail.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,paola.spigno@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.cirino@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.testasecca@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque3@studenti.unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.salzano@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.stella@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigicarmine.circelli@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.orologiaio@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurosenatore1@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,f.iaccarino@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.fattore@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.melenchi@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasquale.macolino@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.ciociola@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,s.cassetta@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,e.minucc@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,fortimari@yahoo.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,domenico.esposito1@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,ornella.arcari@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmine.panarella@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesconugnes82@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,lellogriffo@libero.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,alessandra.gallevi@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,robertapace91@hotmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,micheliana.ruocco@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,lorenzo.mele@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,jesu@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurizio.solimene@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,liberata.gualtieri@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.tranfaglia@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniele.devito@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,simone.angelo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.ferrante@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.annunziata@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.meola@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,nicola.giglio@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.russolillo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,p.salzillo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.dagostino@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.politano@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.parrella@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesca.palomba@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.daiutolo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,milena.petriccione@crea.gov.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,mdisalva@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,ascoleseroberta@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,GIUSEPPE.PARLAPIANO@REGIONE.CAMPANIA.IT,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqaule.iannotta@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.pirozzi@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.paribello@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,eliarusso85@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,grazia.stanzione@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,felice.berardii@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,regina.annarumma@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,angelonapoliello@libero.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,c.sardo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,agrdomenicocrispo@libero.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanni.giuliano@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gaetano.destefano@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.cervo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,sil.somma@hotmail.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,bernardo@ipp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.marinelli@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,paolo.pedata@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luisa.cannavale@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,simonelli.nico@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,costantino.grasso@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.carella@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.fantin@imaildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,alioto@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,figlioli.laura@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.fiorillo@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,felicianapica@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.matrone@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,andrea.pas2016@libero.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,carlo.demichele@ariespace.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,vicinanza.francesco@libero.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.griffo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.orsi@maidip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.malangone@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.melone@regione.campania-.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,massimo.giorgini@ipsp.cnr.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marzano@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.sica@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.dilauro@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.cameli@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.cennamo@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.oliviero@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.paribello@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,franco.demilita@regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,mas.farina@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,fg.tropiano@maildip.regione.campania.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,tmigliozzi@virgilio.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,luciano.bosso@unina.it,Indagini per ON prioritari
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,antoniogaetano90.napolitano@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaeledibiasi1@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppedeluise@yahoo.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,eleonora.barra@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.salzano@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,garonna@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmela.carbone@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marano@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.iodice@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,minutolm@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,Simona.gar24@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,rocco.messere@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,martinasinno@hotmail.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,paola.spigno@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.cirino@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.testasecca@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque3@studenti.unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.salzano@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.stella@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigicarmine.circelli@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.orologiaio@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurosenatore1@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,f.iaccarino@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.fattore@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.melenchi@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasquale.macolino@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.ciociola@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,s.cassetta@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,e.minucc@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fortimari@yahoo.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,domenico.esposito1@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ornella.arcari@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmine.panarella@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesconugnes82@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,lellogriffo@libero.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,alessandra.gallevi@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,robertapace91@hotmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,micheliana.ruocco@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,lorenzo.mele@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,jesu@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurizio.solimene@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,liberata.gualtieri@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.tranfaglia@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianluca.melone1998@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniele.devito@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,simone.angelo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.annunziata@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.ferrante@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,nicola.giglio@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.russolillo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,p.salzillo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.dagostino@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.politano@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.parrella@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesca.palomba@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.daiutolo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,milena.petriccione@crea.gov.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,mdisalva@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ascoleseroberta@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,GIUSEPPE.PARLAPIANO@REGIONE.CAMPANIA.IT,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqaule.iannotta@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.paribello@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.pirozzi@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppedeluise@yahoo.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,eliarusso85@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,grazia.stanzione@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,felice.berardii@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,regina.annarumma@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,angelonapoliello@libero.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,c.sardo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,agrdomenicocrispo@libero.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanni.giuliano@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gaetano.destefano@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.cervo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,sil.somma@hotmail.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antoniogaetano90.napolitano@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,bernardo@ipp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.marinelli@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,paolo.pedata@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luisa.cannavale@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaeledibiasi1@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,simonelli.nico@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,costantino.grasso@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.carella@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.fantin@imaildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,alioto@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,figlioli.laura@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.fiorillo@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,felicianapica@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carlo.demichele@ariespace.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.matrone@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,andrea.pas2016@libero.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vicinanza.francesco@libero.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.griffo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.orsi@maidip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.malangone@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.melone@regione.campania-.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,massimo.giorgini@ipsp.cnr.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marzano@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.sica@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.dilauro@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.cameli@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.cennamo@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.oliviero@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.paribello@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,franco.demilita@regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,mas.farina@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fg.tropiano@maildip.regione.campania.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,tmigliozzi@virgilio.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luciano.bosso@unina.it,Manutenzione SIMFito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianluca.melone1998@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.avventura@ipsp.cnr.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.ceriello@ipsp.cnr.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.melone@regione.campania-.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigicarmine.circelli@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,michele.mele@crea.gov.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,anna.mignano@ipsp.cnr.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,felice.grieco@regione.campania.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque@unina.it,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Recupero credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmicarbone.cc@gmail.com,Credenziali per l'accesso a S.I.M.Fito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luciano.bosso@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,eleonora.barra@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppedeluise@yahoo.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,eliarusso85@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,garonna@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmela.carbone@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.iodice@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.ceriello@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,minutolm@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,Simona.gar24@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,martinasinno@hotmail.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,paola.spigno@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,angelonapoliello@libero.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,c.sardo@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,agrdomenicocrispo@libero.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque3@studenti.unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,sil.somma@hotmail.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.salzano@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.stella@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,antoniogaetano90.napolitano@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.orologiaio@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,bernardo@ipp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurosenatore1@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,f.iaccarino@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,paolo.pedata@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.melenchi@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaeledibiasi1@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,e.minucc@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.avventura@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,fortimari@yahoo.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,ornella.arcari@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesconugnes82@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,alioto@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.fantin@imaildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,figlioli.laura@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.fiorillo@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,robertapace91@hotmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,micheliana.ruocco@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,felicianapica@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,andrea.pas2016@libero.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,vicinanza.francesco@libero.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.griffo@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,liberata.gualtieri@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,anna.mignano@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianluca.melone1998@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.annunziata@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.malangone@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marzano@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.paribello@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.politano@regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,mas.farina@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,fg.tropiano@maildip.regione.campania.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.parrella@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesca.palomba@ipsp.cnr.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,milena.petriccione@crea.gov.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,mdisalva@unina.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,ascoleseroberta@gmail.com,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,tmigliozzi@virgilio.it,CHIUSURA SCHEDE IN SOSPESO - INTERMEDIATE
+25,25,192.168.10.10,simfito@simfito.org,0,,,eleonora.barra@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.salzano@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,garonna@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmela.carbone@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marano@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.iodice@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,minutolm@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,Simona.gar24@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,rocco.messere@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,martinasinno@hotmail.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,paola.spigno@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.cirino@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.testasecca@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque3@studenti.unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.salzano@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigicarmine.circelli@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.stella@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.orologiaio@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurosenatore1@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,f.iaccarino@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.fattore@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.melenchi@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasquale.macolino@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,v.ciociola@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,s.cassetta@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,e.minucc@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.avventura@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fortimari@yahoo.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,domenico.esposito1@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ornella.arcari@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,felice.grieco@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmine.panarella@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesconugnes82@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,lellogriffo@libero.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,alessandra.gallevi@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,robertapace91@hotmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,micheliana.ruocco@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,lorenzo.mele@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,jesu@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maurizio.solimene@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,liberata.gualtieri@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.tranfaglia@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianluca.melone1998@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniele.devito@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,simone.angelo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.annunziata@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.ferrante@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,nicola.giglio@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.russolillo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carmicarbone.cc@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,p.salzillo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.dagostino@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.politano@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.sica@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.parrella@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,francesca.palomba@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.daiutolo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,milena.petriccione@crea.gov.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,mdisalva@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ascoleseroberta@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,GIUSEPPE.PARLAPIANO@REGIONE.CAMPANIA.IT,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,pasqaule.iannotta@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.pirozzi@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,r.paribello@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppedeluise@yahoo.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,eliarusso85@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,grazia.stanzione@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,felice.berardii@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.ceriello@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,regina.annarumma@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,angelonapoliello@libero.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,c.sardo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,agrdomenicocrispo@libero.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giovanni.giuliano@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gaetano.destefano@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.cervo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,sil.somma@hotmail.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antoniogaetano90.napolitano@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,bernardo@ipp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.marinelli@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,paolo.pedata@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luisa.cannavale@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,michele.mele@crea.gov.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaeledibiasi1@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,simonelli.nico@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,costantino.grasso@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.carella@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,alioto@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.fantin@imaildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,figlioli.laura@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.fiorillo@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,felicianapica@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,m.matrone@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,andrea.pas2016@libero.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,carlo.demichele@ariespace.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,vicinanza.francesco@libero.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.griffo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,anna.mignano@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,l.orsi@maidip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,n.malangone@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.melone@regione.campania-.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,massimo.giorgini@ipsp.cnr.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,g.marzano@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,a.dilauro@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.cameli@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.cennamo@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.oliviero@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque@unina.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.paribello@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,franco.demilita@regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,mas.farina@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,fg.tropiano@maildip.regione.campania.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,tmigliozzi@virgilio.it,Aggiornamento Simfito
+25,25,192.168.10.10,simfito@simfito.org,0,,,luciano.bosso@unina.it,Aggiornamento Simfito
+-- 2024-01-09T10:50:22+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,eleonora.barra@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:22+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,elisa.troiano@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.salzano@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,garonna@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.desantis@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carmela.carbone@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.marano@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.iodice@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,minutolm@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,rocco.messere@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,Simona.gar24@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,martinasinno@hotmail.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,paola.spigno@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,adriana.sacco@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,n.cirino@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,a.testasecca@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,ant.salzano@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque3@studenti.unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigicarmine.circelli@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.stella@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,v.orologiaio@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,maurosenatore1@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,f.iaccarino@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,l.fattore@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.melenchi@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,pasquale.macolino@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,v.ciociola@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,s.cassetta@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,e.minucc@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.avventura@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,fortimari@yahoo.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,domenico.esposito1@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,ornella.arcari@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,felice.grieco@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carmine.panarella@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,francesconugnes82@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lellogriffo@libero.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,alessandra.gallevi@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,robertapace91@hotmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,micheliana.ruocco@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,r.ferrara@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lorenzo.mele@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,jesu@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,maurizio.solimene@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,liberata.gualtieri@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,pasqualepio.izzo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,a.tranfaglia@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.martino@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gianluca.melone1998@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,daniele.devito@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,simone.angelo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.annunziata@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.ferrante@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,nicola.giglio@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.russolillo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carmicarbone.cc@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,p.salzillo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.dagostino@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,marco.delpozzo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.politano@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,vincenzo.sica@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.parrella@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,francesca.palomba@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.daiutolo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,milena.petriccione@crea.gov.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,mdisalva@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,ascoleseroberta@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,GIUSEPPE.PARLAPIANO@REGIONE.CAMPANIA.IT,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,pasqaule.iannotta@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.pirozzi@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,r.paribello@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppedeluise@yahoo.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.marotta@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,eliarusso85@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,grazia.stanzione@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,felice.berardii@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giovanna.ceriello@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,regina.annarumma@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carlo.demichele@ariespace.coma,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,angelonapoliello@libero.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,c.sardo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,agrdomenicocrispo@libero.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giovanni.giuliano@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gaetano.destefano@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.cervo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,sil.somma@hotmail.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lucilla.lustrini@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antoniogaetano90.napolitano@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,bernardo@ipp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:28+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giuseppe.marinelli@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,antonio.vitolo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,paolo.pedata@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luisa.cannavale@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,michele.mele@crea.gov.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,raffaeledibiasi1@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,simonelli.nico@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,costantino.grasso@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.carella@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,ant.birra@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,m.fantin@imaildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,alioto@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,figlioli.laura@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,a.fiorillo@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gianpaolo.dizeo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,l.nacchia@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,felicianapica@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:29+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,m.matrone@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,andrea.pas2016@libero.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,vicinanza.francesco@libero.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.griffo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,anna.mignano@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,giorgio.formisano@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,l.orsi@maidip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,n.malangone@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.melone@regione.campania-.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,massimo.giorgini@ipsp.cnr.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,g.marzano@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,a.dilauro@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.cameli@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,laudonia@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.cennamo@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luigi.oliviero@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:30+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,raffaele.paribello@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,franco.demilita@regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,mas.farina@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,fg.tropiano@maildip.regione.campania.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,tmigliozzi@virgilio.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-09T10:50:31+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,luciano.bosso@unina.it,CHIUSURA SCHEDE SIMFito
+-- 2024-01-10T11:20:50+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,francesco.scocozza@regione.campania.it,Recupero credenziali
+-- 2024-01-15T10:50:10+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,r.griffo@maildip.regione.campania.it,Nuova richiesta di credenziali
+-- 2024-01-22T15:20:17+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carlo.demichele@ariespace.coma,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:18+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,palmieri.angelo92@gmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:18+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,arturo-orlando@libero.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:19+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,carmicarbone.cc@gmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:19+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,daniela.carella@regione.campania.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:20+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,DOTTFORGIORDANO@GMAIL.COM,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:20+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,emiliadn@yahoo.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:21+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,fl.debenedetta@gmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:21+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gennarodomenico.cennamo@regione.campania.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:22+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,gi.gargiulo@maildip.regione.campania.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:22+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lindacarrino@hotmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lucia.cozzolino@unina.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:23+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,notaroluigi92@gmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,maria.cinque@unina.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:24+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,patrizia.nappa@regione.campania.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:25+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,lellogriffo@libero.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,sascar89@gmail.it,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:26+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,va.murano@gmail.com,Scheda con parassita ad alta priorita'
+-- 2024-01-22T15:20:27+01:00 -- : 25,25,192.168.10.10,simfito@simfito.org,0,,,r.paribello@maildip.regione.campania.it,Scheda con parassita ad alta priorita'

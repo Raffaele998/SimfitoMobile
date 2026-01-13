@@ -1,0 +1,80 @@
+[{
+	"text":"Base Layers",
+	"cls": "folder",
+	"expanded":true,
+	"children":[{
+		"text":"BING Map",
+		"id":"bing",
+		"idx":"bing",
+		"leaf":true,
+		"checked":true,
+		"baseLayer":"bing"
+	},{
+		"text":"Open Street Map",
+		"id":"osm",
+		"idx":"osm",
+		"leaf":true,
+		"checked":false,
+		"baseLayer":"osm"
+	}]
+},{
+	"text": "Strati Informativi",
+	"cls": "folder",
+	"id": "informativi",
+	"expanded": true,
+	"children": [{
+			"text": "CUAS",
+			"id": "cuas",
+			"idx": 2,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:cuas","title": "CUAS"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Comuni",
+			"id":"comuni",
+			"idx": 0,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:ComuniCampani","title": "Comuni"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Catastali",
+			"id":"catastali",
+			"idx": 0,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:catasto","title": "Catastali"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Reticolo",
+			"id": "reticolo",
+			"idx": 1,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:reticolo","title":"Reticolo"},
+			  	"serverType": "geoserver"
+		  }
+		}]
+},{
+	"text": "Elaborazioni",
+	"cls": "folder",
+	"leaf":false,
+	"expanded": true,
+	"id": "elaborazioni",
+	"children":[]
+}]

@@ -1,33 +1,40 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        headerShown: true,
+        headerStyle: { backgroundColor: '#1976D2' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: '600' },
+        tabBarActiveTintColor: '#1976D2',
+        tabBarInactiveTintColor: '#999',
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="schede"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Le Mie Schede',
+          tabBarLabel: 'Schede',
+          tabBarIcon: ({ color }) => <MaterialIcons name="description" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="siti"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Siti',
+          tabBarLabel: 'Siti',
+          tabBarIcon: ({ color }) => <MaterialIcons name="location-on" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Impostazioni',
+          tabBarLabel: 'Impostazioni',
+          tabBarIcon: ({ color }) => <MaterialIcons name="settings" size={24} color={color} />,
         }}
       />
     </Tabs>

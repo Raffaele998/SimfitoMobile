@@ -1,0 +1,221 @@
+<?php
+$sep = "<br>";
+$starttbl = "<table border=1>";
+$comma = "</td><td>";
+$pre = "<tr><td>";
+$post = "</td></tr>";
+$stoptbl = "</table>";
+
+//
+// inizio dell'output
+//
+function datastart($name,$detail) {
+global $debug;
+global $mode;
+global $sep,$starttbl;
+global $xls,$ws,$wsj,$xlsfiles;
+global $jobid;
+	$cc = (isset($xlsfiles) ? count($xlsfiles) : -1);
+	$cc++;
+	if ($debug) {
+		echo "<b>### DATASTART $name @ $cc ###</b><br>";
+	}
+	if (exec_from_cli()) {
+		echo "### DATASTART $name @ $cc ###\n";
+	}
+	$fname = "$name.xlsx";
+	$xlsfiles[] = $fname;
+	switch($mode) {
+	case 'html':
+		echo "<b>PEST $name</b>:$sep($detail)$sep";
+		echo $starttbl;
+	break;
+	case 'xls':
+		@mkdir("/tmp/$jobid");
+		@unlink("/tmp/$jobid/$fname");
+		$xls = new PHPExcel;
+		$xls->setActiveSheetIndex(0);
+		$ws = $xls->getActiveSheet();
+		$wsj = 2;
+	break;
+	}
+}
+
+function dataheader($cols) {
+global $debug;
+global $mode;
+global $pre,$post,$comma;
+global $xls,$ws,$wsj;
+global $jobid;
+	if ($debug) {
+		echo "<b>### DATAHEADER ###</b><br>";
+	}
+	switch($mode) {
+	case 'html':
+		echo "$pre";
+		for($i=0;$i<count($cols);$i++) {
+			echo $cols[$i];
+			if ($i<(count($cols)-1))
+				echo $comma;
+		}
+		echo "$post";
+	break;
+	case 'xls':
+		for($i=0;$i<count($cols);$i++) {
+			$ws->setCellValueByColumnAndRow($i,$wsj,$cols[$i]);
+		}
+		$wsj++;
+	break;
+	}
+}
+
+function datarow($row,$fields='') {
+global $debug;
+global $mode;
+global $pre,$post,$comma;
+global $xls,$ws,$wsj;
+global $jobid;
+	if ($debug) {
+		$rsz = count($row);
+		echo "<b>### DATAROW $rsz @ $wsj ###</b><br>";
+	}
+	switch($mode) {
+	case 'html':
+		echo "$pre";
+		for($i=0;$i<count($row);$i++) {
+			echo $row[$i];
+			if ($i<(count($row)-1))
+				echo $comma;
+		}
+		echo "$post";
+	break;
+	case 'xls':
+		if (is_array($fields)) {
+			for($i=0;$i<count($fields);$i++) {
+				if ($fields[$i]=='')
+					$v = '';
+				else if ($fields[$i]=='--')
+					$v = '--';
+				else 
+					$v = $row[$fields[$i]];
+				if ($v!='')
+					$ws->setCellValueByColumnAndRow($i,$wsj,$v);
+				else
+					$ws->setCellValueByColumnAndRow($i,$wsj,'');
+			}
+			$wsj++;
+		}
+		else {
+			for($i=0;$i<count($row);$i++) {
+				if ($row[$i]!='')
+					$ws->setCellValueByColumnAndRow($i,$wsj,$row[$i]);
+				else
+					$ws->setCellValueByColumnAndRow($i,$wsj,'');
+			}
+			$wsj++;
+		}
+	break;
+	}
+}
+
+//
+// generazione fisica dei singioli fogli excel
+//
+function datadone() {
+global $debug;
+global $mode;
+global $stoptbl,$sep;
+global $xls,$ws,$wsj,$xlsfiles;
+global $jobid;
+	switch($mode) {
+	case 'html':
+		if ($debug) {
+			echo "<b>### DATADONE ###</b><br>";
+		}
+		echo $stoptbl;
+		echo $sep;
+	break;
+	case 'xls':
+		$fname = $xlsfiles[count($xlsfiles)-1];
+		$ffname = "/tmp/$jobid/$fname";
+		if ($debug) {
+			echo "<b>### DATADONE </b>$fname<br>";
+		}
+		$xlsWriter = new PHPExcel_Writer_Excel2007($xls);
+		$xlsWriter->save($ffname);
+	break;
+	}
+}
+
+//
+// creazione dello zip finale 
+//
+function postprocess($file = '') {
+global $debug;
+global $mode;
+global $xls,$ws,$wsj,$xlsfiles;
+global $jobid;
+//	echo "postprocess '$file'\n";exit(0);
+	switch($mode) {
+	case 'html':
+		;
+	break;
+	case 'xls':
+		$cc = count($xlsfiles);
+		$filename = "/tmp/$jobid/report.zip";
+		if ($debug) {
+			echo "<b>POSTPROCESS $cc FILES to '$filename'->'$file'</b><br>";
+		}
+		@unlink($filename);
+		$zip = new ZipArchive();
+		if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
+    		echo "cannot open <$filename>\n";
+			return -1;
+		}
+		$n = 0;
+		foreach($xlsfiles as $i=>$f) {
+			if ($debug) {
+				echo "PP $i -> $ff<br>";
+			}
+			$ff = "/tmp/$jobid/$f";
+			$zip->addFile($ff,$f);
+			$n++;
+		}
+		$zip->close();
+
+		if ($file=='') {
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: attachment; filename="report.zip"');
+			readfile($filename);
+		}
+		else {
+			copy($filename,$file);
+		}
+		return $n;
+	break;
+	}
+}
+
+function tabledump($title,$data) {
+	$n = count($data[0]);
+	$m = count($data);
+	echo "<table border=1>";
+	echo "<tr><th colspan=$n>$title, $m ROWS</th></tr>";
+	if ($n>0) {
+		foreach($data[0] as $idx=>$v) {
+			echo "<th>$idx</th>";
+		}
+		$i = 1;
+		foreach($data as $row) {
+			echo "<tr>";
+			echo "<th>$i</th>";
+			foreach($row as $v) {
+				echo "<td>$v</td>";
+			}
+			echo "</tr>";
+			$i++;
+		}
+	}
+	echo "</table>";
+}
+?>

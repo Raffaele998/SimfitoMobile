@@ -1,0 +1,700 @@
+body {
+    /*background-image: url('images/background.png') !important; 
+    background-repeat: no-repeat !important; 
+    background-size: cover !important; 
+    background-position: center center !important;
+    background-attachment: fixed !important;*/
+}
+
+.arequest-btn {
+    background-color: #7b92e0;
+}
+
+.aget-btn {
+    background-color: #e6718e;
+}
+
+.login-btn {
+    background-color: #008000;
+}
+
+.action, .action:hover {
+    color: #fff !important;
+    background-color: #77f94f;
+}
+
+.ssred {
+    color: #a80303 !important;
+    font-weight: bold;
+}
+
+
+.sred {
+    color: #a80303 !important;
+    font-weight: bold;
+    /*padding-left: 20px;
+    background-image: url(icons/16x16/send_mail.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left !important;*/
+}
+
+.syellow {
+    color: #ba8214 !important;
+    font-weight: bold;
+    /*padding-left: 20px;
+    background-image: url(icons/16x16/laboratory.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left !important;*/
+}
+
+.sgreen {
+    color: #15630f !important;
+    font-weight: bold;
+    /*padding-left: 20px;
+    background-image: url(icons/16x16/checked.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left !important;*/
+}
+
+.sgreenred {
+    color: #a80303 !important;
+    font-weight: bold;
+    /*padding-left: 20px;
+    background-image: url(icons/16x16/checked.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left !important;*/
+}
+
+
+.sblack {
+    color: #161616 !important;
+    font-weight: bold;
+    /*padding-left: 20px;
+    background-image: url(icons/16x16/warning.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: left !important;*/
+}
+
+.mouse_position{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background-color: #ffffff !important;
+}
+
+.add{
+    background-image: url(icons/16x16/add.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}
+
+.add_notes{
+    background-image: url(icons/16x16/add_notes.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}
+
+.add_page{
+    background-image: url(icons/16x16/add_page.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.add_user{
+    background-image: url(icons/16x16/add_user.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.add_user{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/user-plus.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/user-plus.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    /*width: 16px !important;*/
+    height: 14px !important;
+}
+
+.apple{
+    background-image: url(icons/16x16/apple.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.approve_notes{
+    background-image: url(icons/16x16/approve_notes.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.barcode{
+    background-image: url(icons/16x16/barcode.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.barcode{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/barcode.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/barcode.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.block{
+    background-image: url(icons/16x16/block.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.check{
+    background-image: url(icons/16x16/check_mark.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}*/
+
+.check{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/check.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/check.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    /*height: 16px !important;*/
+}
+
+.cloud_download{
+    background-image: url(icons/16x16/cloud_download.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}
+
+.debug{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/debug.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/debug.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/*.delete{
+    background-image: url(icons/16x16/waste.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(75%);
+    filter: brightness(75%);
+}*/
+
+.delete{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/trash.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/trash.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    height: 16px !important;
+}
+
+/*.delete1{
+    background-image: url(icons/16x16/delete.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.delete1{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/eraser.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/eraser.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/*.delete_user{
+    background-image: url(icons/16x16/delete_user.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.delete_user{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/user-times.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/user-minus.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    /*width: 16px !important;*/
+    height: 14px !important;
+}
+
+.directions{
+    background-image: url(icons/16x16/directions.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.dislike{
+    background-image: url(icons/16x16/dislike.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.dislike{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/thumbs-down.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/thumbs-down.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 18px !important;
+    /*height: 16px !important;*/
+}
+
+/*.edit_notes{
+    background-image: url(icons/16x16/edit_notes.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.edit_notes{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/clipboard-list-check.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/clipboard-list-check.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+}
+
+.controllo{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/clipboard-check.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/clipboard-check.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    /*height: 20px !important;*/
+}
+
+
+/*.exclamination_mark{
+    background-image: url(icons/16x16/exclamination_mark.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.exclamination_mark{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/axe.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/axe.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    /*width: 16px !important;*/
+    height: 14px !important;
+}
+
+.favourite_place{
+    background-image: url(icons/16x16/favourite_place.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.help{
+    background-image: url(icons/16x16/question_mark.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.like{
+    background-image: url(icons/16x16/like.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.like{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/thumbs-up.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/thumbs-up.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 18px !important;
+    /*height: 16px !important;*/
+}
+
+/*.map_pin{
+    background-image: url(icons/16x16/map_pin.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.map_pin{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/map-marker-alt.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/map-marker-alt.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    /*height: 16px !important;*/
+}
+
+.not_available{
+    background-image: url(icons/16x16/not_available.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.notes{
+    background-image: url(icons/16x16/notes.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.page_full{
+    background-image: url(icons/16x16/page_full.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.magic_wand{
+    background-image: url(icons/16x16/magic_wand.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.magic_wand{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/wand-magic.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/wand-magic.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+
+.mail{
+    background-image: url(icons/16x16/mail.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.news{
+    background-image: url(icons/16x16/megaphone.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.pdf{
+    background-image: url(icons/extra/pdf.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.refresh{
+    background-image: url(icons/16x16/refresh.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.refresh{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/redo.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/redo.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.route{
+    background-image: url(icons/16x16/route.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.search{
+    background-image: url(icons/16x16/search.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.search{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/search.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/search.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.settings{
+    background-image: url(icons/16x16/settings.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.spider{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/spider.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/spider.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    height: 16px !important;
+}
+
+.target{
+    background-image: url(icons/16x16/target.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.users{
+    background-image: url(icons/16x16/users.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.xls{
+    background-image: url(icons/extra/xlsx.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.warning{
+    background-image: url(icons/16x16/warning.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+.printer{
+    background-image: url(icons/16x16/printer.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}
+
+/*.lab {
+    background-image: url(icons/16x16/laboratory.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    -webkit-filter: brightness(85%);
+    filter: brightness(85%);
+}*/
+
+.lab{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/flask.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/flask.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    height: 16px !important;
+}
+
+.headerAdmin {
+    text-shadow: 10px 4px 13px #FFFFFF;
+    color: #330C08;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.ol-tooltip {
+    background-color:#ffffff !important;
+    color: #000000 !important;
+}
+
+.calendar_xmark{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/calendar-times.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/calendar-times.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    height: 16px !important;
+}
+
+.copy{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/copy.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/copy.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 14px !important;
+    height: 16px !important;
+}
+
+.download{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/download.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/download.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.link{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/link.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/link.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.file_signature{
+    -webkit-mask-image: url(lib/fontawesome/svgs/solid/file-signature.svg) !important;
+    mask-image: url(lib/fontawesome/svgs/solid/file-signature.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-color: #3892d4 !important;
+    background-size: contain !important;
+    margin: 0px 2px !important;
+    padding: 0px !important;
+    width: 18px !important;
+    /*height: 16px !important;*/
+}
+
+

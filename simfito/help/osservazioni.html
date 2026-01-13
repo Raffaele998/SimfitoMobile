@@ -1,0 +1,230 @@
+<!DOCKTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>SIMFito</title>
+  <link rel="stylesheet" media="all" href="style/custom.css"/>
+  <link rel="stylesheet" media="all" href="style/octicons.css"/>
+  <link rel="shortcut icon" href=""/>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="toc.setHF('tbArea'); toc.setHF('footerArea'); toc.setToc('tocArea',1,4);">
+  <div class="footer-push">
+    <div class="top-bar" id="tbArea"></div>
+    <div class="wrapper documents content-push wide">
+      <div class="toc", id="tocArea"></div>
+      <div class="markdown-body document-content">
+        <h3>
+          <a id="osservazioni" class="anchor" href="#osservazioni" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Osservazioni
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le osservazioni sono l&apos;elemento atomico della scheda. Esse sono costituite dalla coppia pianta-parassita e da una serie di informazioni
+          ausiliarie. <a href="scheda.html#aggiungischeda">Inizzializzata</a> una nuova scheda, &egrave; possibile accedere al <i>tab</i> della compilazione delle osservazioni
+          (<i>Dettaglio Scheda</i>), utilizzando la prima icona della <a href="scheda.html#colonnaazioni">colonna delle azioni</a>
+          nell&apos;<a href="scheda.html#elencoschede">elenco delle schede</a>.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Il <i>tab</i> di dettaglio della scheda si presenta diviso in due parti:
+          <ul>
+            <li>la parte di sinistra, costituita da una mappa navigabile centrata sul sito ispezionato;</li>
+            <li>la parte di destra, costituita da un elenco in cui vengono visualizzate le osservazioni e da un form per la visualizzazione e l&apos;editazione dei relativi dettagli.</li>
+          </ul>
+        </p>
+        <p>
+          <img src="images/osservazioni001.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="tab dettaglio scheda"/>
+        </p>
+        <h3>
+          <a id="toolbarosservazioni" class="anchor" href="#toolbarosservazioni" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Toolbar osservazioni
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;L&apos;area di destra, nel tab di dettaglio della scheda, si presenta, come gi&agrave; anticipato, divisa in due parti: la parte superiore costituita
+          dalla lista delle osservazioni ed un form inferiore per la visualizzazione e l&apos;editazione dei dettagli, dell&apos;osservazione. La parte superiore della lista presenta una
+          <i>toolbar</i> con 5 bottoni che consentono di:
+          <ul>
+            <li><a href="#nuovaosservazione">aggiungere una nuova osservazione</a>;</li>
+            <li>proporre una <a href="associazioni.html">nuova associazione Pianta-Parassita</a>;</li>
+            <li>caricare/Scaricare files a corredo della scheda (<a href="allegati.html">allegati</a>);</li>
+            <li>valuta tempo residuo (indica quanto tempo, rispetto ad una giornata lavorativa di 8 ore, rimane in funzione dei tempi registrati per il giorno della scheda);</li>
+            <li>visualizzare questo manuale.</li>
+          </ul>
+        </p>
+        <p>
+          <img src="images/osservazioni002.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="tab osservazioni"/>
+        </p>
+        <h3>
+          <a id="nuovaosservazione" class="anchor" href="#nuovaosservazione" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Nuova osservazione
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Grazie al bottone <i>Aggiungi Osservazione</i> della <a href="#toolbarosservazioni">toolbar delle osservazioni</a>, &egrave; possibile accedere
+          alla finstra <i>Aggiungi Osservazione</i> che presenta due tab con un menu a tendina, ciascuno, dal quale &egrave; possibile scegliere una pianta e, successivamente, uno o pi&ugrave;
+          parassiti ad essa collegati. La differenza tra i due tab st&agrave; nel fatto che le piante ed i relativi collegamenti ai parassiti vengono presi da tre base di dati differenti:
+          <ul>
+            <li>quelli del primo tab fanno riferimento alle specie vegetali oggetto di rendicontazione;</li>
+            <li>
+              quelli del secondo tab (<i>DataBase Eppo</i>), sono le associazioni presenti nel data base dello
+              <a href="https://www.eppo.int/" target="_blank">
+                <u>E</u>uropean and Mediterranean <u>P</u>lant <u>P</u>rotection <u>O</u>rganization
+              </a>;
+            </li>
+            <li>quelli del terzo tab (<i>DataBase Regionale</i>), sono presi dalla collezione delle nuove associazioni proposte dai tecnici regionali.</li>
+          </ul>
+        </p>
+        <p>
+          <img src="images/osservazioni003.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="nuova osservazione"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Il menu a tendina, presente nella finestra di cui sopra, consente la selezione della pianta o aprendo il menu e navigandolo come un normale menu a tendina
+          oppure cominciando a scrivere il nome della pianta nel box. In questo ultimo caso, dopo aver scritto almeno 4 caratteri, aspettando qualche secondo compariranno tutte le piante,
+          presenti nel database, nel cui nome, italiano o scientifico, è presente il frammento digitato.
+        </p>
+        <p>
+          <img src="images/osservazioni004.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="selezione pianta"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Alla selezione della pianta si apre una nuova finestra nella quale compare una lista di tutti i parassiti collegati. Da questa finestra è possibile selezionare
+          una o pi&ugrave; voci, utilizzando i <i>chekbox</i> e premendo sul pulsante <i>Usa selezionati</i>.
+        </p>
+        <p>
+          <img src="images/osservazioni005.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="selezione parassita"/>
+        </p>
+        <h3>
+          <a id="completamentoosservazione" class="anchor" href="#completamentoosservazione" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Completamento osservazioni
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Selezionati pianta e parassiti, la lista delle osservazioni si popola automaticamente. Le righe vengono visualizzate di colore rosso fin quando non sono state
+          inserite tutte le informazioni obbligatorie e, quindi, completate.
+        </p>
+        <p>
+          <img src="images/osservazioni006.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="osservazioni non completate"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Per completare un&apos;osservazione si deve utilizzare il form sottostante: selezionando una riga dall&apos;elenco;
+          alcuni campi, nel form sottostante, vengono popolati automaticamente. Completate tutte le informazioni necessarie, le modifiche possono essere salvate utilizzando il tasto <i>Salva</i>
+          in fondo a sinistra del form. Se i campi obbligatori non sono stati completati o se mancasse qualche informazione, alla pressione del stato <i>Salva</i> si evidenzieranno in rosso i campi
+          obbligatori o un messaggio informer&agrave; l&apos;utente del dato mancante.
+        </p>
+        <p>
+          <img src="images/osservazioni007.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="campi obbligatori non riempiti"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nel caso in cui venisse prelevato un campione, al salvataggio dei dati dell&apos;osservazione, il software chieder&agrave; a quale laboratorio verr&agrave; conferito
+          per le analisi necessarie.
+        </p>
+        <p>
+          <img src="images/osservazioni008.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="scelta laboratorio"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le righe delle osservazioni completate diventano nere e, una volta completate tutte le osservazioni di una scheda, sar&agrave; possibile
+          <a href="scheda.html#colonnaazioni">confermarla</a>.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le modifiche alle osservazioni saranno sempre possibili fin quando la scheda non sar&agrave; confermata. <b>Il form di editazione delle osservazioni, per
+          le schede confermate pu&ograve; essere usato solo per visualizzare i dettagli della singola osservazione ma non sar&agrave; pi&ugrave; possibile modificare i dati inseriti</b>.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;<b>Completata la prima osservazione, <u>tutte le osservazioni caricate contestualmente alla prima</u>, erediteranno i valori dei campi della prima colonna del form</b>.
+        </p>
+        <h3>
+          <a id="azioneosservazioni" class="anchor" href="#azioneosservazioni" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Colonna delle azioni sulle osservazioni
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;L&apos;ultima colonna nella lista delle osservazioni da accesso a varie azioni, cliccando sull&apos;azione corrispondente. Ogni azione &egrave;
+          rappresentata da un&apos;icona e, al passaggio del mouse, &egrave; possibile vedre un <i>tooltip</i> che ne descrive l&apos;azione.
+        </p>
+        <p>
+          <img src="images/osservazioni009.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="azioni su osservazioni"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le azioni possibili sono:
+          <ul>
+            <li>dettagli delle analisi del laboratorio (se presente il campione), con l'indicazione del risultato (positivo o negativo) per ogni sottocampione;</li>
+            <li><a href="#puntoosservazione">disegna un punto</a>, da associare all&apos;osservazione;</li>
+            <li>duplica osservazione;</li>
+            <li>elimina osservazione (<b>solo se la scheda non &egrave; stata <a href="scheda.html#colonnaazioni">confermata</a></b>);</li>
+            <li>codice campione in formato <i>barcode</i>;</li>
+            <li><a href="#osservazioniabbattimenti">gestione abbattimenti</a>, nel caso siano state segnalate piante infestate.</li>
+          </ul>
+          L&apos;icona &egrave; attiva o meno a seconda che per la specifica osservazione la funzionalit&agrave; sia disponibile. Es. se non &egrave; stato prelevato nessun campione
+          l&apos;icona della stampa del codice a barre sar&agrave; disabilitata.
+        </p>
+        <h3>
+          <a id="puntoosservazione" class="anchor" href="#puntoosservazione" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Associare una posizione geografica (punto) ad un&apos;osservazione.
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Selezionamdo un&apos;osservazione e cliccando sull'icona <i>disegna punto</i>, il puntatore del mouse viene abilitato a disegnare un punto sulla mappa.
+          Questa eventualit&agrave; &egrave; evidenziata dal fatto che quando il puntatore &egrave; sulla mappa presenta un <i>pallino blu</i> sulla punta. A questo punto basta cliccare
+          sulla posizione della mappa desiderata ed il pallino diventa giallo e resta fisso sulla mappa. Per salvare la posizione scelta basta cliccare sul tasto <i>Salva</i> nel
+          <a href="#completamentoosservazione">form di editazione dell&apos;osservazione</a>.
+        </p>
+        <p>
+          <img src="images/osservazioni010.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="disegna punto per osservazioni"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Selezionando le osservazioni per le quali &egrave; disegnato un punto, quest&apos;ultimo comparira sulla mappa come un punto rosso con l&apos;indicazione
+          della coppia pianta parassita.
+        </p>
+        <p>
+          <img src="images/osservazioni011.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="osservazioni con punto disegnato"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Il punto pu&ograve; essere modificato, semplicemnte, ridisegnandone un&apos;altro.
+        </p>
+        <!--
+        <h3>
+          <a id="osservazionitrappole" class="anchor" href="#osservazionitrappole" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Registrare un&apos;osservazione legata ad una trappola (catture).
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Se nel sito sono state posizionate delle trappole sar&agrave; possibile registrare le catture creando un&apos;osservazione specifica e utilizzando l&apos;icona,
+          nella <a href="#azioneosservazioni">colonna delle azioni</a>. Cliccando su questa azione verr&agrave; una schermata con la lista delle trappole presenti. Baster&agrave; selezionare la
+          trappola interessata (utilizzando il codice), e, nel form in basso inserire il numero di piante rappresentative, gli individui catturati ed eventuali note. la registrazione potr&agrave;
+          essere corretta o cancellata (mediante l&apos;icona cestino nella colonna delle azioni), finch&egrave; la sceda non viene confermata.
+        </p>
+        <p>
+          <img src="images/osservazioni012.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="registrazione catture"/>
+        </p>
+        -->
+        <h3>
+          <a id="osservazioniabbattimenti" class="anchor" href="#osservazioniabbattimenti" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Abbattimenti.
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Se l&apos;osservazione ha evidenziato piante infestate sar&agrave; possibile, <b>anche dopo che la scheda sar&agrave; confermata</b>, registrare eventuali abbattimenti.
+          Cliccando sul&apos;icona abbattimenti, (l&apos;ultima nella <a href="#azioneosservazioni">colonna delle azioni</a>), verr&agrave; una finestra nella quale, mediante apposito form, potranno
+          essere inserite numero di piante abbatute e la data dell&apos;abbattimento. Nella parte superiore della finestra verranno visualizzati, eventualmente, interventi precedenti con il
+          totale delle piante abbattute. Ovviamente non potr&agrave; essere registrato un numero di abbattimenti maggiori del numero di piante infestate registrate nella scheda.
+        </p>
+        <p>
+          <img src="images/osservazioni013.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="registrazione abbattimenti"/>
+        </p>
+      </div>
+    </div>
+    <div class="footer-pad"></div>
+  </div>
+  <footer>
+    <div class="footer" id="footerArea"> </div>
+  </footer>
+</body>
+</html>

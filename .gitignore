@@ -41,3 +41,10 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Log files
+backend/services/log/*.log
+backend/services/log/*.log.*
+backend/services/log/log_*
+simfito/services/log/*.log
+simfito/services/log/*.log.*

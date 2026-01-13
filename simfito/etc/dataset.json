@@ -1,0 +1,131 @@
+[{
+	"text":"Base Layers",
+	"cls": "folder",
+	"expanded":true,
+	"children":[{
+		"text":"Map Tiler",
+		"id":"mapTiler",
+		"idx":"mapTiler",
+		"leaf":true,
+		"checked":true,
+		"baseLayer":"mapTiler"
+	},{
+		"text":"Open Street Map",
+		"id":"osm",
+		"idx":"osm",
+		"leaf":true,
+		"checked":false,
+		"baseLayer":"osm"
+	}]
+},{
+	"text": "Strati Informativi",
+	"cls": "folder",
+	"id": "informativi",
+	"expanded": true,
+	"children": [{
+			"text": "CUAS",
+			"id": "cuas",
+			"idx": 2,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:cuas","title": "CUAS"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Comuni",
+			"id":"comuni",
+			"idx": 0,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:ComuniCampani","title": "Comuni"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Catastali",
+			"id":"catastali",
+			"idx": 0,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:catasto","title": "Catastali"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{
+			"text": "Reticolo",
+			"id": "reticolo",
+			"idx": 1,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:reticolo","title":"Reticolo"},
+			  	"serverType": "geoserver"
+		  }
+		},
+		{	"id": "catastoAE",
+			"text": "AE Particelle",
+			"leaf": true,
+			"checked": false,
+			"layerSource": {
+				"url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+				"params": {"LAYERS":"CP.CadastralParcel"},
+				"projection": "EPSG:25832",
+				"cors":null,
+				"serverType": "geoserver"
+			}
+		},		
+		{	"id": "catastoAEfab",
+			"text": "AE Fabbricati",
+			"leaf": true,
+			"checked": false,
+			"layerSource": {
+				"url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+				"params": {"LAYERS":"fabbricati"},
+				"projection": "EPSG:25832",
+				"cors":null,
+				"serverType": "geoserver"
+			}
+
+		},
+		{	"id": "catastoAEcod",
+			"text": "AE Label particelle",
+			"leaf": true,
+			"checked": false,
+			"layerSource": {
+				"url": "https://wms.cartografia.agenziaentrate.gov.it/inspire/wms/ows01.php",
+				"params": {"LAYERS":"codice_plla"},
+				"projection": "EPSG:25832",
+				"cors":null,
+				"serverType": "geoserver"
+			}
+
+		},
+		{
+			"text": "Siti",
+			"id": "siti",
+			"idx": 1,
+			"leaf": true,
+			"checked": false,
+			"layerSource":{
+				"url": "https://simfito.regione.campania.it/geoserver/wms",
+			  	"params": {"LAYERS": "simfito:layer_siti","title":"Reticolo"},
+			  	"serverType": "geoserver"
+		  }
+		}
+	]
+},{
+	"text": "Elaborazioni",
+	"cls": "folder",
+	"leaf":false,
+	"expanded": true,
+	"id": "elaborazioni",
+	"children":[]
+}]

@@ -1,50 +1,127 @@
-# Welcome to your Expo app 👋
+# 📱 SimFito Mobile - App React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Applicazione mobile per la ricerca e consultazione di dati EPPO (pest, piante, malattie) del database Simfito.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+✅ **Autenticazione** - Login con credenziali database Simfito  
+✅ **Ricerca** - Ricerca pest/piante/malattie da EPPO  
+✅ **Dettagli** - Visualizza info complete e tassonomia  
+✅ **Offline-ready** - Backend incluso nel progetto  
+✅ **Cross-platform** - iOS, Android, Web  
+✅ **Multi-lingua** - Supporto nomi in diverse lingue  
 
-   ```bash
-   npm install
-   ```
+## 🧪 Testing Guide
 
-2. Start the app
+### Credenziali di Test
+- **Username**: `fortunamiele`
+- **Password**: `fortuna`
+- **User ID**: 259
+- **Type**: Tecnico URCOFI
 
-   ```bash
-   npx expo start
-   ```
+### Test Flow
+1. **Login** → Inserisci credenziali e premi login
+2. **Search** → Vai al tab Explore, scrivi almeno 3 caratteri (prova "aut", "daf", "pir")
+3. **Details** → Clicca su un risultato per vederlo a schermo intero
+4. **Settings** → Visualizza profilo utente e logout
+5. **Logout** → Clicca "Logout" in Settings per tornare al login
 
-In the output, you'll find options to open the app in a
+### Backend Endpoints
+- `POST /services/login.php` - Autenticazione
+  - Parametri: `loginUsername`, `loginPassword`, `mode=simfito`
+  - Ritorna: `{success: true, id, nome, tipo, provincia, tipotecnico}`
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `GET /services/ajax.php?mode=parassitinew&query=...` - Ricerca Pest
+  - Parametri: `mode=parassitinew`, `query=<search_string>`
+  - Ritorna: `{data: [...], results: N, success: true}`
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🔧 Tecnologie
 
-## Get a fresh project
+| Tool | Versione | Uso |
+|------|----------|-----|
+| React Native | 0.81.5 | Framework mobile |
+| Expo Router | ^2.0 | Routing |
+| Redux Toolkit | ^2.11.2 | State management |
+| Axios | Latest | HTTP client |
+| TypeScript | ^5 | Type safety |
+| PHP | 7.4+ | Backend |
+| PostgreSQL | 13+ | Database |
 
-When you're ready, run:
+## 📁 Struttura
 
-```bash
-npm run reset-project
+```
+├── app/                  # Routes e layout (Expo Router)
+├── src/
+│   ├── components/       # Componenti UI
+│   ├── screens/          # Schermate
+│   ├── services/api/     # Client API
+│   ├── store/            # Redux (auth, search, detail)
+│   ├── hooks/            # Custom hooks
+│   ├── types/            # TypeScript interfaces
+│   └── utils/            # Helper functions
+├── backend/              # Backend PHP (INCLUSO)
+│   ├── services/         # API endpoints
+│   └── etc/              # Configurazione DB
+└── package.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🔌 Tech Stack
 
-## Learn more
+- **Framework**: React Native + Expo Router
+- **State**: Redux Toolkit
+- **HTTP**: Axios
+- **Storage**: AsyncStorage
+- **Backend**: PHP + PostgreSQL
+- **Database**: Simfito4 (schema eppo)
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📚 Documentazione
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [SETUP.md](./SETUP.md) - Setup completo e troubleshooting
+- [backend/README.md](./backend/README.md) - Docs backend
+- [API_ENDPOINTS.md](./API_ENDPOINTS.md) - Specifiche API
 
-## Join the community
+## 🔑 Credenziali Test
 
-Join our community of developers creating universal apps.
+```
+Username: fortunamiele
+Password: fortuna
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Username: francesco.nugnes
+Password: anagrus82
+
+Username: laurafiglioli
+Password: laura
+```
+
+## 🔄 Flusso App
+
+1. **Login** → Autenticazione con DB Simfito
+2. **Home/Search** → Ricerca pest/piante/malattie
+3. **Detail** → Info complete e tassonomia
+4. **Settings** → Profilo utente e logout
+
+## 🛠️ Sviluppo
+
+### Development
+```bash
+npm start          # Expo dev server
+npm run start:backend  # PHP server
+```
+
+### Lint
+```bash
+npm run lint
+```
+
+## 🌍 Deployment
+
+Backend incluso nel progetto → Indipendenza totale da server esterno!
+
+Quando rilasci ai consorzi:
+1. Backend in `backend/` è completamente funzionante
+2. Punta a `simfito4@192.168.1.19` come fonte dati
+3. Build APK/IPA con `eas build`
+
+---
+
+**Made with ❤️ for Simfito**

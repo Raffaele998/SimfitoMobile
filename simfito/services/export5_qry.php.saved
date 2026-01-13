@@ -1,0 +1,519 @@
+<?php
+
+/*
+
+// conta le trappole fisiche interessate in un periodo e per un gruppo di pest
+
+%start% -> data iniziale
+%end%   -> data finale
+%pest%  -> lista dei pest ( 'XXXXX','YYYYY' .... )
+
+with xxxx as ( 
+with zzzz as (
+WITH scheda_dati AS (
+	WITH host AS ( 
+		SELECT b_code,full_name FROM eppo.t_baycode 
+		INNER JOIN eppo.t_bayname ON t_baycode.codeid=t_bayname.codeid
+		WHERE isolang='la' AND preferred=1
+	),
+	analisys_campioni AS (
+		SELECT 
+			campioni_id,
+			method_id,
+			string_agg(analisys.id::TEXT,',') AS analisys_id,
+			string_agg(analisys.pest,',') AS analisys_pest,
+			case when string_agg(analisys.id::TEXT,',') is  null then 0 else array_length(array_agg(analisys.id),1) end AS analisys_no,
+			string_agg(analisysresult.positive::TEXT,',') AS ar,
+			case when string_agg(analisysresult.positive::TEXT,',') is null then 'isnull' else '' end AS ar2,
+			case when sum(case analisysresult.positive when 1 then 1 else 0 end)>0 then  1 else 0 end AS ar1
+		FROM simfitolab.analisys
+		LEFT JOIN simfitolab.analisysresult ON analisysresult.id=analisys.analisysresult_id
+		LEFT JOIN simfitolab.agent ON agent.id=analisys.agent_id
+		LEFT JOIN simfitolab.method ON method.id=agent.method_id
+		WHERE analisys.pest is null or analisys.pest in (%pest%)
+		GROUP by campioni_id,method_id
+	),
+	trappole_osservazioni AS ( SELECT 
+		osservazioni.idosservazioni,
+		string_agg(trappole.id::TEXT,',') AS trap,
+		array_agg(trappole.id) AS xtrap,
+		case when string_agg(trappole.id::TEXT,',') is  null then 0 else array_length(array_agg(trappole.id),1) end AS trap_no,
+		trappole_geometry.tipo_trappole_id,
+		string_agg(trappole_geometry.codice,',') AS trap_codice,
+		string_agg(distinct tipo_trappole.descrizione,',') AS tipo_trappole_descr,
+		string_agg(distinct tipo_trappole.description,',') AS tipo_trappole_descr_en,
+		array_agg(distinct trappole_geometry.id) as tg_id
+		FROM simfito.osservazioni
+		LEFT JOIN simfito.trappole ON trappole.id_osservazione=osservazioni.idosservazioni
+		LEFT JOIN simfito.trappole_geometry ON trappole_geometry.id=trappole.trappole_geometry_id
+		LEFT JOIN simfito.tipo_trappole ON tipo_trappole.id=trappole_geometry.tipo_trappole_id
+		GROUP BY osservazioni.idosservazioni,trappole_geometry.tipo_trappole_id
+	)	
+	SELECT 
+		scheda.idscheda, scheda.data_sopralluogo,scheda.protocollo,scheda.stato AS scheda_stato,scheda.gid_sito,scheda.idtipo_visita, 
+		string_agg(osservazioni.idosservazioni::TEXT,',') AS oss,
+		string_agg(distinct host.full_name,',') AS hosts,
+		sum(osservazioni.piante_camp_vis) AS n_osservate_tot,
+		sum(osservazioni.n_osservate) AS n_osservate_tot1,
+		1 AS n_monitoraggio,
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2) AS tempo_tot, 
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2)*10.0 AS costo_tot,	
+		string_agg(distinct tipocampione.description,',') AS tipocampione,	
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.tipo_trappole_descr_en,
+		trappole_osservazioni.trap_no,
+		trappole_osservazioni.tg_id,
+		--string_agg(trappole_osservazioni.tg_id::TEXT,',') as tg_id_all,
+		count(*) AS cc,
+		sum(campioni.elementicampione) AS campioni_no,
+		case when sum(campioni.elementicampione) is null then 0 else 0.15 end AS sample_duration,
+		0.15 AS sample_duration1,
+		string_agg(distinct campioni.codice,',') AS campionicodice,
+		analisys_campioni.method_id,
+		--analisys_campioni.analisys_id,
+		analisys_campioni.analisys_pest,
+		sum(analisys_campioni.analisys_no) as analisys_no,
+		--analisys_campioni.ar,
+		--analisys_campioni.ar2,
+		--analisys_campioni.ar1,	
+		case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end AS ar3,
+		case 
+			when sum(analisys_no) is null or sum(analisys_no)=0 then 
+				case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end
+			else 
+				case when max(ar1)>0 then 'Positivo' else 'Negativo' end
+		end AS ar5,
+		coalesce(nullif(string_agg(case 
+			when report.id is null then ''
+			else 'http://5.249.135.186/simfito.org/simfitolab/services/report.php?mode=pdf&table=report&idv=' || report.id::TEXT end
+		,','),''),'NON DISPONIBILE') AS report_link
+	FROM simfito.scheda
+	INNER JOIN simfito.osservazioni ON osservazioni.idscheda=scheda.idscheda  
+	INNER JOIN host ON host.b_code=osservazioni.hostcode                     
+	LEFT JOIN simfito.campioni ON campioni.id=osservazioni.campioni_id
+	LEFT JOIN simfito.tipocampione ON tipocampione.id=campioni.tipocampione_id 
+	LEFT JOIN trappole_osservazioni ON trappole_osservazioni.idosservazioni=osservazioni.idosservazioni 
+	LEFT JOIN analisys_campioni on analisys_campioni.campioni_id=campioni.id
+	LEFT JOIN simfitolab.report ON report.campioni_id=campioni.id
+	WHERE 
+		scheda.stato=2 AND 
+		(osservazioni.campioni_id is null OR campioni.laboratoriostato_id<>2 ) AND
+		data_sopralluogo>='%start%' AND data_sopralluogo<='%end%' AND
+		pestcode in (%pest%)
+	GROUP BY 
+		scheda.idscheda, 
+		scheda.data_sopralluogo,
+		scheda.protocollo,
+		scheda.gid_sito,
+		scheda.idtipo_visita,
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.tipo_trappole_descr_en,
+		trappole_osservazioni.trap_no,
+		trappole_osservazioni.tg_id,
+		--analisys_campioni.campioni_id,
+		--analisys_campioni.analisys_id,
+		analisys_campioni.analisys_pest,
+		--analisys_campioni.analisys_no,
+		--analisys_campioni.ar,
+		--analisys_campioni.ar2,
+		--analisys_campioni.ar1,
+		analisys_campioni.method_id
+	),
+	tecnici_scheda AS (
+		WITH y0 AS (
+			SELECT idscheda,id_tecnico FROM simfito.scheda
+			UNION
+			SELECT idscheda,id_tecnico FROM simfito.schede_tecnici
+		)
+		SELECT 
+			idscheda,string_agg(distinct cognome || ' ' || nome,',') AS tecnici_nome,
+			avg(costo_orario) AS costo_orario_avg,sum(costo_orario) AS costo_orario_tot,
+			count(*) AS tecnici_no 
+		FROM y0 
+		INNER JOIN simfito.tecnici ON tecnici.id_tecnico=y0.id_tecnico  
+		GROUP BY idscheda
+	)
+SELECT 
+	method.name as method_name,
+	method.id, 
+	tecnici_scheda.tecnici_nome,
+	tecnici_scheda.tecnici_no,
+	tecnici_scheda.costo_orario_avg,
+	scheda_dati.*,
+	scheda_dati.tempo_tot*tecnici_scheda.tecnici_no AS full_tempo_tot,
+	scheda_dati.tempo_tot*costo_orario_tot AS costo_tot,
+	siti.tipologiasito_id,tipologiasito.description AS tipologiasito_description,siti.superficie_ha/10000 AS s_ha,
+	--$coord
+	tipo_visita.motivo AS scheda_motivo 
+FROM scheda_dati
+INNER JOIN tecnici_scheda ON tecnici_scheda.idscheda=scheda_dati.idscheda 
+INNER JOIN simfito.siti ON siti.gid=scheda_dati.gid_sito                  
+LEFT JOIN simfito.tipologiasito ON tipologiasito.id=siti.tipologiasito_id 
+LEFT JOIN simfito.tipo_visita ON tipo_visita.idtipo_visita=scheda_dati.idtipo_visita 
+LEFT JOIN simfitolab.method ON method.id=scheda_dati.method_id	
+ORDER by data_sopralluogo,scheda_dati.idscheda,oss
+)
+select unnest(tg_id) from zzzz where tg_id!='{NULL}'
+)
+select count(distinct unnest) from xxxx 
+
+
+
+*/
+
+//---- mastersql ----
+$mastersql = "WITH scheda_dati AS (
+	WITH host AS ( 
+		SELECT b_code,full_name FROM eppo.t_baycode 
+		INNER JOIN eppo.t_bayname ON t_baycode.codeid=t_bayname.codeid
+		WHERE isolang='la' AND preferred=1
+	),
+	analisys_campioni AS (
+		SELECT 
+			campioni_id,
+			method_id,
+			string_agg(analisys.id::TEXT,',') AS analisys_id,
+			string_agg(analisys.pest,',') AS analisys_pest,
+			case when string_agg(analisys.id::TEXT,',') is  null then 0 else array_length(array_agg(analisys.id),1) end AS analisys_no,
+			string_agg(analisysresult.positive::TEXT,',') AS ar,
+			case when sum(case analisysresult.positive when 1 then 1 else 0 end)>0 then  1 else 0 end AS ar1
+		FROM simfitolab.analisys
+		LEFT JOIN simfitolab.analisysresult ON analisysresult.id=analisys.analisysresult_id
+		LEFT JOIN simfitolab.agent ON agent.id=analisys.agent_id
+		LEFT JOIN simfitolab.method ON method.id=agent.method_id
+		WHERE analisys.pest is null or analisys.pest in (%pest%) AND analisys.analisysstate_id<>3
+		GROUP by campioni_id,method_id
+	),
+	trappole_osservazioni AS ( 
+		SELECT 
+			osservazioni.idosservazioni,
+			string_agg(trappole.id::TEXT,',') AS trap,
+			array_agg(trappole.id) AS xtrap,
+			case when string_agg(trappole.id::TEXT,',') is  null then 0 else array_length(array_agg(trappole.id),1) end AS trap_no,
+			trappole_geometry.tipo_trappole_id,
+			string_agg(trappole_geometry.codice,',') AS trap_codice,
+			string_agg(distinct tipo_trappole.descrizione,',') AS tipo_trappole_descr,
+			string_agg(distinct tipo_trappole.description,',') AS tipo_trappole_descr_en
+		FROM simfito.osservazioni
+		LEFT JOIN simfito.trappole ON trappole.id_osservazione=osservazioni.idosservazioni
+		LEFT JOIN simfito.trappole_geometry ON trappole_geometry.id=trappole.trappole_geometry_id
+		LEFT JOIN simfito.tipo_trappole ON tipo_trappole.id=trappole_geometry.tipo_trappole_id
+		GROUP BY osservazioni.idosservazioni,trappole_geometry.tipo_trappole_id
+	)	
+	SELECT 
+		scheda.idscheda, scheda.data_sopralluogo,scheda.protocollo,scheda.stato AS scheda_stato,scheda.gid_sito,scheda.idtipo_visita, 
+		string_agg(osservazioni.idosservazioni::TEXT,',') AS oss,
+		string_agg(distinct host.full_name,',') AS hosts,
+		sum(osservazioni.piante_camp_vis) AS n_osservate_tot,
+		sum(osservazioni.n_osservate) AS n_osservate_tot1,
+		sum(osservazioni.sup_vis)/10000 AS oss_sup_vis_ha,
+		string_agg(osservazioni.sospetti,' - ') as oss_note,
+		1 AS n_monitoraggio,
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2) AS tempo_tot, 
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2)*10.0 AS costo_tot,	
+		string_agg(distinct tipocampione.description,',') AS tipocampione,	
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.tipo_trappole_descr_en,
+		trappole_osservazioni.trap_no,
+		count(*) AS cc,
+		sum(campioni.elementicampione) AS campioni_no,
+		case when sum(campioni.elementicampione) is null then 0 else 0.15 end AS sample_duration,
+		0.15 AS sample_duration1,
+		string_agg(distinct campioni.codice,',') AS campionicodice,
+		analisys_campioni.method_id,
+		--analisys_campioni.analisys_id,
+		analisys_campioni.analisys_pest,
+		sum(analisys_campioni.analisys_no) as analisys_no,
+		--analisys_campioni.ar,
+		--analisys_campioni.ar1,	
+		case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end AS ar3,
+		case 
+			when sum(analisys_no) is null or sum(analisys_no)=0 then 
+				case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end
+			else 
+				case when max(ar1)>0 then 'Positivo' else 'Negativo' end
+		end AS ar5,
+		coalesce(nullif(regexp_replace(
+			string_agg(case 
+				when report.id is null then ''
+				else 'http://5.249.135.186/simfito.org/simfitolab/services/report.php?mode=pdf&table=report&idv=' || report.id::TEXT end
+				,',')
+		,'^,+$',''),''),'NON DISPONBILE') AS report_link
+	FROM simfito.scheda
+	INNER JOIN simfito.osservazioni ON osservazioni.idscheda=scheda.idscheda  
+	INNER JOIN host ON host.b_code=osservazioni.hostcode                     
+	LEFT JOIN simfito.campioni ON campioni.id=osservazioni.campioni_id
+	LEFT JOIN simfito.tipocampione ON tipocampione.id=campioni.tipocampione_id 
+	LEFT JOIN trappole_osservazioni ON trappole_osservazioni.idosservazioni=osservazioni.idosservazioni 
+	LEFT JOIN analisys_campioni on analisys_campioni.campioni_id=campioni.id
+	LEFT JOIN simfitolab.report ON report.campioni_id=campioni.id
+	WHERE 
+		scheda.stato=2 AND 
+		(osservazioni.campioni_id is null OR campioni.laboratoriostato_id>3 ) AND
+		data_sopralluogo>='%start%' AND data_sopralluogo<='%end%' AND
+		pestcode in (%pest%)
+	GROUP BY 
+		scheda.idscheda, 
+		scheda.data_sopralluogo,
+		scheda.protocollo,
+		scheda.gid_sito,
+		scheda.idtipo_visita,
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.tipo_trappole_descr_en,
+		trappole_osservazioni.trap_no,
+		--analisys_campioni.campioni_id,
+		--analisys_campioni.analisys_id,
+		analisys_campioni.analisys_pest,
+		--analisys_campioni.analisys_no,
+		--analisys_campioni.ar,
+		--analisys_campioni.ar1,
+		analisys_campioni.method_id
+	),
+	tecnici_scheda AS (
+		WITH y0 AS (
+			SELECT idscheda,id_tecnico FROM simfito.scheda
+			UNION
+			SELECT idscheda,id_tecnico FROM simfito.schede_tecnici
+		)
+		SELECT 
+			idscheda,string_agg(distinct cognome || ' ' || nome,',') AS tecnici_nome,
+			avg(costo_orario) AS costo_orario_avg,sum(costo_orario) AS costo_orario_tot,
+			count(*) AS tecnici_no 
+		FROM y0 
+		INNER JOIN simfito.tecnici ON tecnici.id_tecnico=y0.id_tecnico  
+		GROUP BY idscheda
+	)
+SELECT 
+	method.name as method_name,
+	method.id, 
+	tecnici_scheda.tecnici_nome,
+	tecnici_scheda.tecnici_no,
+	tecnici_scheda.costo_orario_avg,
+	scheda_dati.*,
+	scheda_dati.tempo_tot*tecnici_scheda.tecnici_no AS full_tempo_tot,
+	scheda_dati.tempo_tot*costo_orario_tot AS costo_tot,
+
+	siti.tipologiasito_id,tipologiasito.description AS tipologiasito_description,siti.superficie_ha/10000 AS s_ha,
+	$coord
+	tipo_visita.motivo AS scheda_motivo 
+FROM scheda_dati
+INNER JOIN tecnici_scheda ON tecnici_scheda.idscheda=scheda_dati.idscheda 
+INNER JOIN simfito.siti ON siti.gid=scheda_dati.gid_sito                  
+LEFT JOIN simfito.tipologiasito ON tipologiasito.id=siti.tipologiasito_id 
+LEFT JOIN simfito.tipo_visita ON tipo_visita.idtipo_visita=scheda_dati.idtipo_visita 
+LEFT JOIN simfitolab.method ON method.id=scheda_dati.method_id	
+ORDER by data_sopralluogo,scheda_dati.idscheda,oss";
+
+//---- trappolesql ----
+$trappolesql = "select 
+	'' as method_name,
+	-1 as id, 
+	tecnici.cognome || ' ' || tecnici.nome as tecnici_nome,
+	1 as tecnici_no,
+	'' as costo_orario_avg,
+	'' as idscheda,
+	to_char(datacreazione,'YYYY-MM-DD') as data_sopralluogo,
+	'' as protocollo,
+	-1 as scheda_stato,
+	trappole_geometry.gid as gid_sito,
+	-1 as idtipo_visita,
+	'' as oss,
+	'' as hosts,
+	'' as n_osservate_tot,
+	'' as n_osservate_tot1,
+	'' as n_monitoraggio,
+	round(tempo/60.0,2) as trap_tempo_tot,
+	tecnici.costo_orario as trap_costo,
+	tempo*tecnici.costo_orario as trap_costo_tot,
+	'' as tipocampione,
+	trappole_geometry.codice as trap,
+	trappole_geometry.id as xtrap,
+	tipo_trappole_id,
+	trappole_geometry.codice as trap_codice,
+	tipo_trappole.descrizione as tipo_trappole_descr,
+	tipo_trappole.description as tipo_trappole_descr_en,
+	1 as trap_no,
+	0 as cc,
+	'' as campioni_no,
+	0 as sample_duration,
+	0 as sample_duration1,
+	'' as campionicodice,
+	'' as method_id,
+	'' as analisys_pest,
+	'' as analisys_no,
+	'' as ar3,
+	'' as ar5,
+	'' as report_link,
+	'' as full_tempo_tot,
+	'' as costo_tot,
+	siti.tipologiasito_id,
+	tipologiasito.description AS tipologiasito_description,
+	siti.superficie_ha/10000 AS s_ha,
+	--$coord
+	'' AS scheda_motivo 
+from simfito.trappole_geometry
+inner join simfito.tecnici on simfito.tecnici.id_tecnico=simfito.trappole_geometry.tecnico_id
+inner join simfito.siti on simfito.siti.gid=simfito.trappole_geometry.gid
+inner join simfito.tipologiasito on simfito.tipologiasito.id=siti.tipologiasito_id 
+inner join simfito.tipo_trappole on simfito.tipo_trappole.id=simfito.trappole_geometry.tipo_trappole_id 
+where organismo in (%pest%) and datacreazione>='%start%' and datacreazione<='%end%'
+order by datacreazione";
+
+/*
+$mastersql = "WITH scheda_dati AS (
+	WITH host AS ( 
+		SELECT b_code,full_name FROM eppo.t_baycode 
+		INNER JOIN eppo.t_bayname ON t_baycode.codeid=t_bayname.codeid
+		WHERE isolang='la' AND preferred=1
+	),
+	analisys_campioni AS (
+		SELECT 
+			campioni_id,
+			method_id,
+			string_agg(analisys.id::TEXT,',') AS analisys_id,
+			string_agg(analisys.pest,',') AS analisys_pest,
+			case when string_agg(analisys.id::TEXT,',') is  null then 0 else array_length(array_agg(analisys.id),1) end AS analisys_no,
+			string_agg(analisysresult.positive::TEXT,',') AS ar,
+			case when string_agg(analisysresult.positive::TEXT,',') is null then 'isnull' else '' end AS ar2,
+			case when sum(case analisysresult.positive when 1 then 1 else 0 end)>0 then  'Positivo' else 'Negativo' end AS ar1
+		FROM simfitolab.analisys
+		LEFT JOIN simfitolab.analisysresult ON analisysresult.id=analisys.analisysresult_id
+		LEFT JOIN simfitolab.agent ON agent.id=analisys.agent_id
+		LEFT JOIN simfitolab.method ON method.id=agent.method_id
+		WHERE analisys.pest is null or analisys.pest in (%pest%)
+		GROUP by campioni_id,method_id
+	),
+	trappole_osservazioni AS ( SELECT 
+		osservazioni.idosservazioni,
+		string_agg(trappole.id::TEXT,',') AS trap,
+		array_agg(trappole.id) AS xtrap,
+		case when string_agg(trappole.id::TEXT,',') is  null then 0 else array_length(array_agg(trappole.id),1) end AS trap_no,
+		trappole_geometry.tipo_trappole_id,
+		string_agg(trappole_geometry.codice,',') AS trap_codice,
+		string_agg(distinct tipo_trappole.descrizione,',') AS tipo_trappole_descr
+		FROM simfito.osservazioni
+		LEFT JOIN simfito.trappole ON trappole.id_osservazione=osservazioni.idosservazioni
+		LEFT JOIN simfito.trappole_geometry ON trappole_geometry.id=trappole.trappole_geometry_id
+		LEFT JOIN simfito.tipo_trappole ON tipo_trappole.id=trappole_geometry.tipo_trappole_id
+		GROUP BY osservazioni.idosservazioni,trappole_geometry.tipo_trappole_id
+	)	
+	SELECT 
+		scheda.idscheda, scheda.data_sopralluogo,scheda.protocollo,scheda.stato AS scheda_stato,scheda.gid_sito,scheda.idtipo_visita, 
+		string_agg(osservazioni.idosservazioni::TEXT,',') AS oss,
+		string_agg(distinct host.full_name,',') AS hosts,
+		sum(osservazioni.piante_camp_vis) AS n_osservate_tot,
+		sum(osservazioni.n_osservate) AS n_osservate_tot1,
+		1 AS n_monitoraggio,
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2) AS tempo_tot, 
+		round(coalesce(sum(osservazioni.tempo),30)/60.0,2)*10.0 AS costo_tot,	
+		string_agg(distinct tipocampione.description,',') AS tipocampione,	
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.trap_no,
+		count(*) AS cc,
+		sum(campioni.elementicampione) AS campioni_no,
+		case when sum(campioni.elementicampione) is null then 0 else 0.15 end AS sample_duration,
+		0.15 AS sample_duration1,
+		string_agg(distinct campioni.codice,',') AS campionicodice,
+		analisys_campioni.*,	
+		case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end AS ar3,
+		case 
+			when analisys_no is null or analisys_no=0 then 
+				case when sum(case osservazioni.rilevato when 1 then 1 else 0 end)>0 then 'Positivo' else 'Negativo' end
+			else 
+				ar1
+		end AS ar5,
+		colaesce(nullif(
+		string_agg(case 
+			when report.id is null then ''
+			else 'http://5.249.135.186/simfito.org/simfitolab/services/report.php?mode=pdf&table=report&idv=' || report.id::TEXT end
+		,','),''),'NON DISPONIBILE') AS report_link
+	FROM simfito.scheda
+	INNER JOIN simfito.osservazioni ON osservazioni.idscheda=scheda.idscheda 
+	INNER JOIN host ON host.b_code=osservazioni.hostcode                      
+	LEFT JOIN simfito.campioni ON campioni.id=osservazioni.campioni_id
+	LEFT JOIN simfito.tipocampione ON tipocampione.id=campioni.tipocampione_id 
+	LEFT JOIN trappole_osservazioni ON trappole_osservazioni.idosservazioni=osservazioni.idosservazioni 
+	LEFT JOIN analisys_campioni on analisys_campioni.campioni_id=campioni.id
+	LEFT JOIN simfitolab.report ON report.campioni_id=campioni.id
+	WHERE 
+		scheda.stato=2 AND 
+		data_sopralluogo>='%start%' AND data_sopralluogo<='%end%' AND
+		pestcode in (%pest%)
+	GROUP BY 
+		scheda.idscheda, 
+		scheda.data_sopralluogo,
+		scheda.protocollo,
+		scheda.gid_sito,
+		scheda.idtipo_visita,
+		trappole_osservazioni.trap,
+		trappole_osservazioni.xtrap,
+		trappole_osservazioni.tipo_trappole_id,
+		trappole_osservazioni.trap_codice,
+		trappole_osservazioni.tipo_trappole_descr,
+		trappole_osservazioni.trap_no,
+		analisys_campioni.campioni_id,
+		analisys_campioni.analisys_id,
+		analisys_campioni.analisys_pest,
+		analisys_campioni.analisys_no,
+		analisys_campioni.ar,
+		analisys_campioni.ar2,
+		analisys_campioni.ar1,
+		analisys_campioni.method_id
+	),
+	tecnici_scheda AS (
+		WITH y0 AS (
+			SELECT idscheda,id_tecnico FROM simfito.scheda
+			UNION
+			SELECT idscheda,id_tecnico FROM simfito.schede_tecnici
+		)
+		SELECT 
+			idscheda,string_agg(distinct cognome || ' ' || nome,',') AS tecnici_nome,
+			avg(costo_orario) AS costo_orario_avg,sum(costo_orario) AS costo_orario_tot,
+			count(*) AS tecnici_no 
+		FROM y0 
+		INNER JOIN simfito.tecnici ON tecnici.id_tecnico=y0.id_tecnico 
+		GROUP BY idscheda
+	)
+SELECT 
+	method.name,
+	method.id, 
+	tecnici_scheda.tecnici_nome,
+	tecnici_scheda.tecnici_no,
+	tecnici_scheda.costo_orario_avg,
+	scheda_dati.*,
+	scheda_dati.tempo_tot*tecnici_scheda.tecnici_no AS full_tempo_tot,
+	scheda_dati.tempo_tot*costo_orario_tot AS costo_tot,
+	siti.tipologiasito_id,tipologiasito.description AS tipologiasito_description,siti.superficie_ha/10000 AS s_ha,
+	$coord
+	tipo_visita.motivo AS scheda_motivo 
+FROM scheda_dati
+INNER JOIN tecnici_scheda ON tecnici_scheda.idscheda=scheda_dati.idscheda
+INNER JOIN simfito.siti ON siti.gid=scheda_dati.gid_sito
+LEFT JOIN simfito.tipologiasito ON tipologiasito.id=siti.tipologiasito_id 
+LEFT JOIN simfito.tipo_visita ON tipo_visita.idtipo_visita=scheda_dati.idtipo_visita 
+LEFT JOIN simfitolab.method ON method.id=scheda_dati.method_id	
+ORDER by data_sopralluogo,scheda_dati.idscheda,oss";
+
+*/
+
+?>

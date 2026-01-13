@@ -1,0 +1,142 @@
+<!DOCKTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>SIMFito</title>
+  <link rel="stylesheet" media="all" href="style/custom.css"/>
+  <link rel="stylesheet" media="all" href="style/octicons.css"/>
+  <link rel="shortcut icon" href=""/>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="toc.setHF('tbArea'); toc.setHF('footerArea'); toc.setToc('tocArea',1,2);">
+  <div class="footer-push">
+    <div class="top-bar" id="tbArea"></div>
+    <div class="wrapper documents content-push wide">
+      <div class="toc", id="tocArea"></div>
+      <div class="markdown-body document-content">
+        <h3>
+          <a id="siti" class="anchor" href="#siti" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          I siti
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;I sito sono i luoghi geografici in cui viene effettuata un&apos;ispezione fitosanitaria. Essi sono associati ad un&apos;<a href="aziende.html">azienda</a>
+          sia essa reale o <i>sconosciuta</i>.
+        </p>
+        <h3>
+          <a id="cercasito" class="anchor" href="#cercasito" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Ricerca di un sito
+        </h3>
+        <p>
+          Attraverso il pulsante <i>Cerca Sito</i>, nella toolbar principarle dell'applicazione, &egrave; possibile accedere al tab <i>Siti</i> che si presenta diviso in due aree:
+          <ul>
+            <li>a sinistra la mappa in cui possono essere visualizzati i siti;</li>
+            <li>a destra la lista dei siti con, in alto, un form di ricerca mediante coordinate.</li>
+          </ul>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Le colonne della lista possono essere filtrate e ordinate. Cliccando due volte su una riga, la riga si selezione (diventa di sfondo giallo), e la mappa
+          zoomma sul sito corrispondente. Cliccando una volta su un sito, invece, si evidenzierà, sempre in giallo, la riga della tabella corrispondente.
+        </p>
+        <p>
+          <img src="images/siti001.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="i siti"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nella lista sono riportate le seguenti informazioni:
+          <ul>
+            <li>Identificativo numerico del sito;</li>
+            <li>Denominazione;</li>
+            <li>Tipologia;</li>
+            <li>Via/Localit&agrave;;</li>
+            <li>Comune;</li>
+            <li>Provincia;</li>
+            <li>Azienda alla quale &egrave; collegato.</li>
+          </ul>
+          Una colonna delle azioni con un&apos;unica icona consente di gestire le <a href="trappole.html">trappole</a> relative a quel sito.
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;La ricerca del sito pu&ograve; essere effettuata anche utlizzando le coordinate. I sistemi di coordinate, al momento, disponibili sono:
+          <ul>
+            <li>WGS84/UTM fuso 33;</li>
+            <li>Geografiche WGS84 (in questo caso bosogner&agrave; indicare la longitudine e la latitudine);</li>
+          </ul>
+          Inserite le coordinate ed il sistema di riferimento, premendo sul pulsante <i>Centra</i>, la mappa sulla sinistra verr&agrave; centrata nel punto richiesto, punto che verr&agrave;
+          evidenziato con un marcatore blu. Il marcatore pu&ograve; essere eliminato col tasto <i>Elimina Marker</i>.
+        </p>
+        <p>
+          <img src="images/siti002.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="ricercasiti"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;La stessa situazione si presenta se si parte dall&apos;icona <i>mostra siti azienda</i> della <a href="aziende.html#colonnaazioniaziende">colonna delle
+          azioni</a> della lista delle aziende. In questo caso, per&ograve;, sarranno mostrati solo i siti dell&apos;azienda scelta.
+        </p>
+        <h3>
+          <a id="disegnasito" class="anchor" href="#disegnasito" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Disegna un nuovo sito
+        </h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Partendo dall&apos;icona <i>nuovo sito</i>, della <a href="aziende.html#colonnaazioniaziende">colonna delle azioni</a> della lista delle aziende
+          oppure del tasto <i>Aggiungi sito</i> del form di creazione di una <a href="scheda.html#aggiungischeda">nuova scheda</a>, si accede al tab di disegno del sito per l&apos;azienda
+          selezionata. Questo tab &egrave; diviso in due aree come nel tab della <a href="#cercasito">ricerca del sito</a>. La parte di sinistra in questo caso avr&agrave;,
+          sotto, lo strumento di ricerca tramite coordinate, un form di inserimento della geometria e dei dati del sito.
+        </p>
+        <p>
+          <img src="images/siti003.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="disegna nuovo sito"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Lo strumento di ricerca tramite coordinate ha, in questo caso, la funzione di ricercare un&apos;area geografica di cui si conoscono le coordiante, appunto,
+          magari perch&egrave; sono state rilevate tramite GPS. Un&apos;altro strumento di ricerca &egrave; costituito dal campo <i>Comune</i> del from di inserimento dei dati del sito.
+          Scegliendo provincia e comune, infatti, la mappa si centrer&agrave; nell&apos;area del comune selezionato.
+        </p>
+        <p>
+          <img src="images/siti004.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="cerca per comune"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Quando si accede al tab il puntatore del mouse presenta una pallina blu. Individuata l&apos;area del sito, &egrave; possibile disegnarlo cliccando una
+          volta per ogni vertice da disegnare. Il poligono, che individuer&agrave; il sito pu&ograve; essere chiuso cliccando, di nuovo, sul primo vertice disegnato, oppure faccendo doppio
+          click sull&apos;ultimo. Una volta chiuso, il poligono diventa giallo ed &egrave; sempre possibile modificarlo (finch&egrave; non si compilano i campi del form e si salva), agendo
+          sui lati o sui vertici
+        </p>
+        <p>
+          <img src="images/siti006.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="disegna e modifica geometria sito"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Disegnato il poligono vanno riempiti i campi del form degli attributi del sito. I campi richiesti sono:
+          <ul>
+            <li>Provincia (obbligatorio);</li>
+            <li>Comune (obbligatorio);</li>
+            <li>Via/Localit&agrave;;</li>
+            <li>Denominazione (obbligatorio);</li>
+            <li>Superficie (obbligatorio);</li>
+            <li>Quota (obbligatorio).</li>
+            <li>Tipologia sito (obbligatorio).</li>
+          </ul>
+          <b>Disegnato il poligono i campi: Provincia, Comune, Superficie e Quota si riempiono automaticamente</b>. Il tasto <i>Salva</i> in basso a destra consente di salvare, definitivamente,
+          il sito.
+        </p>
+        <p>
+          <img src="images/siti006.png" onclick="window.open(this.src,'_blank','width=800,height=600');" alt="disegna e modifica geometria sito"/>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;Nella parte superiore del form &egrave; presente una tool bar che consente:
+          <ul>
+            <li>Di riportare lo zoom della mappa su tutti i siti;</li>
+            <li>Zommare sul sito disegnato (ma ancora non salvato);</li>
+            <li>Cancellare completamente la geometria disegnata e ridisegnarla (<b>Solo se non &egrave; stato ancora slavato);</li>
+            <li>Sceglere se disegnare il sito come un poligono o come un punto (<b>&egrave; fortemente consigliato utilizzare il poligono</b>).</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="footer-pad"></div>
+  </div>
+  <footer>
+    <div class="footer" id="footerArea"> </div>
+  </footer>
+</body>
+</html>

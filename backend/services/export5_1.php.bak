@@ -1,0 +1,1165 @@
+<?php
+
+//
+// export per rendicontazione versione !!SENZA!! celle soppresse versione 2019
+// nuovo raggruppamento dei dati
+// nuova versione extra xls per singolo pest con aree buffer
+//
+// http://10.200.16.127/simfito.org/simfito/services/export5_1.php?mode=xls&start=2022-01-01&end=2022-01-31
+// http://10.200.16.127/simfito.org/simfitotest/services/export5_1.php?mode=xls&start=2022-01-01&end=2022-01-31
+//
+
+require_once("../etc/db_config.php");
+require_once("crud.php");
+require_once('phpexcel/PHPExcel.php');
+
+require_once('export_pest.php');
+require_once('export_lib.php');
+
+// cerca nella tabella delle durate la coppia tecnico/datasopralluogo
+function find_duration($ress,$idtecnico,$datasopralluogo) {
+	//echo "match $idtecnico,$datasopralluogo<br>";
+	for($i=0;$i<count($ress);$i++) {
+		if ($ress[$i]['id_tecnico']==$idtecnico && $ress[$i]['data_sopralluogo']==$datasopralluogo)
+			return $ress[$i];
+	}
+	return null;
+}
+
+function exec_from_cli() {
+	return php_sapi_name()=='cli';
+}
+
+function xls_launch($jobid) {
+	exec("php export5_1.php $jobid >/dev/null 2>/dev/null &");
+}
+
+$connection="host=localhost port=5432 user=postgres password=ariespac3 dbname=simfito4";
+
+if (false) {
+	// ad anno esatto
+	// areas_query basata su l'anno E il pest nei viewparams
+	$areas_qry = "select params->>'viewparams' as vp from simfito.areas where enabled and anno={YEAR} and params->>'viewparams' ilike '%pestcode:{PEST}%'order by id desc limit 1";
+	// areas_query basata sulle date E il pest in colonna
+	$areas_qryx = "select * from simfito.areas where enabled and pest='{PEST}' and anno={YEAR} ORDER by datefrom";
+}
+else {
+	// ad anno>=
+	// areas_query basata su l'anno E il pest in colonna O nei viewparams
+	$areas_qry = "select params->>'viewparams' as vp from simfito.areas where enabled and anno<={YEAR} and ( not anno>{YEAR}) and (pest='{PEST}' or params->>'viewparams' ilike '%pestcode:{PEST}%')order by id desc limit 1";
+	// areas_query basata sulle date E il pest in colonna
+	$areas_qryx = "select * from simfito.areas where enabled and pest='{PEST}' and anno={YEAR} ORDER by datefrom";
+}
+
+$kill = '-k-';
+$null = '-n-';
+$zero = '-0-';
+
+$db=new CRUD($connection);
+$db->connect();
+$db->SQL("set search_path to simfitolab,simfito,eppo,public");
+
+$xls = null;			// oggetto xls
+$ws = null;				// oggetto worksheet
+$wsj = 2;				// riga corrente nel worksheet
+$xlsfiles = array();	// nomi dei files xls parziali
+
+//$coord = "
+//round(st_x(st_centroid(siti.the_geom))::numeric,5) as x,
+//round(st_y(st_centroid(siti.the_geom))::numeric,5) as y, 
+//--round(st_x(st_transform(st_translate(st_transform(st_centroid(siti.the_geom),32633),90,20),4326))::numeric,5) as x2,
+//--round(st_y(st_transform(st_translate(st_transform(st_centroid(siti.the_geom),32633),90,20),4326))::numeric,5) as y2, 
+//--round(st_x(st_transform(st_translate(st_transform(st_centroid(siti.the_geom),32633),-85,30),4326))::numeric,5) as x3,
+//--round(st_y(st_transform(st_translate(st_transform(st_centroid(siti.the_geom),32633),-85,30),4326))::numeric,5) as y3, 
+//";
+
+$coord = "
+round(st_x(st_centroid(siti.the_geom))::numeric,5) as x,
+round(st_y(st_centroid(siti.the_geom))::numeric,5) as y, 
+";
+
+/*
+$mastersql = "with tecnici_full as (
+  select idscheda,tecnici.id_tecnico,1 as pri,cognome,nome from scheda inner join tecnici on scheda.id_tecnico=tecnici.id_tecnico 
+  union
+  select idscheda,tecnici.id_tecnico,2 as pri,cognome,nome from schede_tecnici inner join tecnici on schede_tecnici.id_tecnico=tecnici.id_tecnico
+),
+tecnici_no as (
+	select idscheda,count(*)+1 as tno from schede_tecnici group by idscheda
+), 
+host as (
+  select b_code,full_name from t_baycode 
+  inner join t_bayname on t_baycode.codeid=t_bayname.codeid
+  where isolang='la' and preferred=1
+)
+SELECT 
+tecnici_full.id_tecnico as idtecnico,cognome || ' ' || nome as tecnico,pri,
+coalesce(tecnici_no.tno,1) as tecnici_num,
+scheda.idscheda as scheda_idscheda,data_sopralluogo,full_name,pestcode,
+
+siti.superficie_ha as siti_sup,
+osservazioni.sup_vis as sup_vis,
+n_osservate,
+1 as nsiti,
+999 as nhours, 
+elementicampione,
+campioni.codice as campioni_codice,
+0 as sampleduration,
+--0 as trap_id,0 as trap_code,0 as trap_typology,
+analisyssection.name as test_typology,
+method.name as method_name,
+0 as testno,
+analisysresult.name as results_name,
+case analisysresult.positive 
+  when 0 then 'Negativo' 
+  when 1 then 'Positivo' 
+  when 2 then 'Non applicabile' 
+  else '' 
+end as results,
+0 as cert_n,
+0 as site_sup
+FROM scheda
+inner join osservazioni on scheda.idscheda=osservazioni.idscheda
+inner join host on osservazioni.hostcode=host.b_code
+inner join siti on scheda.gid_sito=siti.gid
+inner join tecnici_full on scheda.idscheda=tecnici_full.idscheda
+left join tecnici_no on scheda.idscheda=tecnici_no.idscheda 
+left join campioni on osservazioni.campioni_id=campioni.id 
+left join analisys on campioni.id=analisys.campioni_id and osservazioni.hostcode=analisys.host and osservazioni.pestcode=analisys.pest
+left join agent on analisys.agent_id=agent.id
+left join method on agent.method_id=method.id 
+left join analisyssection on analisys.analisyssection_id=analisyssection.id 
+left join analisysresult on analisys.analisysresult_id=analisysresult.id
+where 
+scheda.stato=2
+and data_sopralluogo>='%start%' and data_sopralluogo<='%end%'
+and pestcode in (%pest%)
+order by scheda.idscheda,full_name,pestcode,pri,cognome,nome";
+
+$report_setup = array(
+	array("tecnico","name of technician"),
+	array("tecnici_num","no. of technician"),
+	array("scheda_idscheda","n.report"),
+	array("data_sopralluogo","date"),
+	array("full_name","host"),
+	array("","tipology of area or location"),
+	array("","farm type"),
+	array("x","geog. coord. x"),
+	array("y","geog. coord. y"),
+	array("",".."),
+	array("",".."),
+	array("",".."),
+	array("",".."),
+	array("siti_sup","sup. [ha]"),
+	array("sup_vis","sup. camp. [ha]"),
+	array("n_osservate","n. tree"),
+	array("nsiti","n. sites"),
+	array("nhours","n. hours"),
+	array("sampleduration","sample n. hours"),
+	array("elementicampione","n. samples"),
+	array("campioni_codice","sample's code"),
+	array("","trap id"),
+	array("","trap. code"),
+	array("","trap typology"),
+	array("","trap coll. hours"),
+	array("test_typology","tipology of test"),
+	array("agent_name","method of test"),			// ERA: method_name
+	array("testno","n. test"),
+	array("results","results"),
+	array("","n. cert."),
+);
+
+*/
+
+
+include_once('export5_qry.php');
+
+//!! NOTA BENE : i campi __xxxx sono ottenuti in fase di postprocessing e non con la query
+// versione riordinata post 20220210
+$report_setup = [
+	['tecnici_nome','Name of inspector'],							// A
+	['protocollo','ID trip authorization'],							// B
+	['idscheda','ID monitoring report'], 							// C
+	['data_sopralluogo','Date'], 									// D
+    ['scheda_motivo','motivo ispezione'],							// E
+	['tipovisita_motivo','tipology of area or location'],			// F era tipologiasito_description
+	['x','Geographical coordinates x'],								// G
+	['y','Geographical coordinates y'],								// H
+	['__buffer0','Area libera'],									// I
+	['__buffer1','Zona infestata'],									// J	nuovo 2022
+	['__buffer2','Zona tampone'],									// K	"
+	['__buffer3','Zona di contenimento'],							// L	"
+	['oss_sup_vis_ha_x','sup vis (ha)'],							// M
+	['n_monitoraggio','N. survey'],									// N
+	['full_tempo_tot','Visual inspections - N. hours'],				// O
+	['campioni_no','N. samples'],									// P
+	['campionicodice','Samples code'],								// Q
+	['tipocampione','Typology of samples'],							// R
+	['sample_duration','Sample tacking - N. hours'],				// S
+	['trap_codice','Trapping - Trap code'],							// T
+	['tipo_trappole_descr_en','Trapping - Tipology'],				// U
+	['trap_no','Trapping - N. traps placed'],						// V
+	['trap_tempo_tot','Placing trap - N. hours'],					// AJ
+	['__trap_control_tempo','Control of traps - N. hours'],			// AM
+	['','Collecting traps - N. hours'],								// AP
+	['campionicodice','Testing - Sample code'],						// AR
+	['tipocampione','Typology of samples'],							// Y
+	['agent_name','Testing - Tipology of test'],					// AS ERA: method_name
+	['analisys_no_len','Testing - N. test'],							// AT
+	['','Testing - Unit cost'],										// AU
+	['analisys_pos_no','Sum positive'],								// AX
+	['ar5','Result of survey'],										// AV
+	['report_link','Report link'],									// BA
+
+    ['comuni_comune','comune'],										// G 
+    ['comuni_provincia','provincia'],								// H
+	['',''],														// K
+	['',''],														// L
+	['',''],														// M
+	['',''],														// N
+	['s_ha','sup (ha)'],											// O
+	['hosts','Host'],												// Q
+	['n_osservate_tot','N. trees'],									// R
+//	['tempo_tot','A N. hours'],										// 
+//	['tecnici_no','B N. hours'],								
+	['costo_orario_avg','Visual inspections - Unit cost'],			// U
+	['costo_tot','Visual inspections - Total cost'],				// V !!! =full_tempo_tot*costo_orario_avg
+	['','Consumable cost'],											// Z
+	['__sample_costo_orario_avg','Sample tacking - Unit cost'],		// AB
+	['__sample_tot_pers_cost','Sample tacking - Total personal cost'],	// AC
+//	['','Sample tacking - Total cost'],								// 
+	['','Trapping - Unit cost'],									// AG
+//	['','Trapping - Total cost'],									// 
+	['','Trapping - N. attractant'],								// AH
+	['','Trapping - Unit cost'],									// AI	
+//	['','Trapping - Total cost'],									// 
+//	['','Trapping - Total cost consumable'],				
+	['trap_costo','Placing trap - Unit cost'],						// AK
+	['trap_costo_tot','Placing trap - Total cost'],					// AL
+	['__trap_control_costo_orario_avg','Control of traps - Unit cost'],	// AN
+	['__trap_control_costo_tot','Control of traps - Total cost'],	// AO
+	['','Collecting traps - Unit cost'],							// AQ
+//	['','Collecting traps - Total cost'],						
+//	['','Traps - Total cost'],
+	['campionicodice','Testing - Sample code'],						// AR
+//	['','Testing - Total cost'],
+	['analisys_no_len','Total'],										// AY
+	['','Note'],													// AW
+	['oss_note','Oss. note'],										// AZ
+];
+
+// ----- versione pre-riordinamento del 20220210 -------
+$report_setup_old = [
+	['tecnici_nome','Name of inspector'],							// A
+	['protocollo','ID trip authorization'],						// B
+	['idscheda','ID monitoring report'], 							// C
+	['data_sopralluogo','Date'], 									// D
+	['tipovisita_motivo','tipology of area or location'],	// E era tipologiasito_description
+	['__buffer1','Zona infestata'],								// Ea	nuovo 2022
+	['__buffer2','Zona tampone'],									// Eb	"
+	['__buffer3','Zona di contenimento'],							// Ec	"
+    ['scheda_motivo','motivo ispezione'],							// F
+    ['comuni_comune','comune'],									// G 
+    ['comuni_provincia','provincia'],								// H
+	['x','Geographical coordinates x'],							// I
+	['y','Geographical coordinates y'],							// J
+	['',''],														// K
+	['',''],														// L
+	['',''],														// M
+	['',''],														// N
+	['s_ha','sup (ha)'],											// O
+	['oss_sup_vis_ha_x','sup vis (ha)'],							// P
+	['hosts','Host'],												// Q
+	['n_osservate_tot','N. trees'],								// R
+	['n_monitoraggio','N. survey'],								// S
+//	['tempo_tot','A N. hours'],									// 
+//	['tecnici_no','B N. hours'],								
+	['full_tempo_tot','Visual inspections - N. hours'],			// T
+	['costo_orario_avg','Visual inspections - Unit cost'],			// U
+	['costo_tot','Visual inspections - Total cost'],				// V !!! =full_tempo_tot*costo_orario_avg
+	['campioni_no','N. samples'],									// W
+	['campionicodice','Samples code'],								// X
+	['tipocampione','Typology of samples'],							// Y
+	['','Consumable cost'],											// Z
+	['sample_duration','Sample tacking - N. hours'],				// AA
+	['__sample_costo_orario_avg','Sample tacking - Unit cost'],	// AB
+	['__sample_tot_pers_cost','Sample tacking - Total personal cost'],	// AC
+//	['','Sample tacking - Total cost'],								// 
+	['trap_codice','Trapping - Trap code'],							// AD
+	['tipo_trappole_descr_en','Trapping - Tipology'],				// AE
+	['trap_no','Trapping - N. traps placed'],						// AF
+	['','Trapping - Unit cost'],									// AG
+//	['','Trapping - Total cost'],									// 
+	['','Trapping - N. attractant'],								// AH
+	['','Trapping - Unit cost'],									// AI	
+//	['','Trapping - Total cost'],									// 
+//	['','Trapping - Total cost consumable'],				
+	['trap_tempo_tot','Placing trap - N. hours'],					// AJ
+	['trap_costo','Placing trap - Unit cost'],						// AK
+	['trap_costo_tot','Placing trap - Total cost'],					// AL
+	['__trap_control_tempo','Control of traps - N. hours'],			// AM
+	['__trap_control_costo_orario_avg','Control of traps - Unit cost'],	// AN
+	['__trap_control_costo_tot','Control of traps - Total cost'],	// AO
+	['','Collecting traps - N. hours'],								// AP
+	['','Collecting traps - Unit cost'],							// AQ
+//	['','Collecting traps - Total cost'],						
+//	['','Traps - Total cost'],
+	['campionicodice','Testing - Sample code'],					// AR
+	['agent_name','Testing - Tipology of test'],					// AS ERA: method_name
+	['analisys_no','Testing - N. test'],							// AT
+	['','Testing - Unit cost'],									// AU
+//	['','Testing - Total cost'],
+	['ar5','Result of survey'],									// AV
+	['analisys_pos_no','Sum positive'],							// AX
+	['analisys_no','Total'],										// AY
+	['','Note'],													// AW
+	['oss_note','Oss. note'],										// AZ
+	['report_link','Report link'],									// BA
+];
+
+// le colonne emesse dal report
+// e i campi nella query corrispondenti ( DEVONO andare di pari passo )
+$cols = array();
+$fields = array();
+for($i=0;$i<count($report_setup);$i++) {
+	$fields[] = $report_setup[$i][0];
+	$cols[] = $report_setup[$i][1];
+}
+
+//
+// parametri di configurazione utente
+//
+$dailyhours = '480.0';	// numero di ore lavorative giornaliero ( mettere il .0 !! )
+$maxduration = '120.0';	// durata massima in minuti
+$deltax = 100;
+$deltay = 0;
+$empty_coord = '--';
+
+$static_data = true;	// le informazioni sui report/pest sono statiche 
+
+if($_SERVER['REQUEST_METHOD'] == "OPTIONS"){
+    header('Access-Control-Allow-Origin: *');
+	header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With');
+	header('Access-Control-Max-Age: 1728000');
+	header("Content-Length: 0");
+	header("Content-Type: text/plain");
+}
+else{
+	header("Access-Control-Allow-Origin: *");
+
+if (exec_from_cli()) {
+	echo "EXEC FROM CLI\n";
+	$jobid = $argv[1];
+	$sql = "SELECT * from simfito.reports WHERE id=$jobid";
+	echo "$sql\n";
+	$r = $db->FetchRow($sql);
+	echo json_encode($r) . "\n";
+	echo $r['query'] . "\n";
+	$_REQUEST = json_decode($r['query'],true);
+	if ($_REQUEST['mode']== 'xlsasync') { 	 
+		$_REQUEST['mode'] = 'xls';  
+		$xlsout = $_SERVER['PWD'] . "/../data/$jobid.xls";
+		$zipout = $_SERVER['PWD'] . "/../data/$jobid.zip";
+	}
+}
+else {
+	$zipout = '';
+	$xlsout = 'php://output';
+}
+
+//
+// parametri di input
+//
+$mode = ( isset($_REQUEST['mode']) ? $_REQUEST['mode'] : 'xls' );			// allowed : 'html', 'xls' , 'xlsasync' 
+$start = (isset($_REQUEST['start']) ? $_REQUEST['start'] : '2019-01-01' );	// data iniziale
+$end = (isset($_REQUEST['end']) ? $_REQUEST['end'] : '2019-06-30' );		// data finale
+$debug = ( isset($_REQUEST['debug']) ? true : false );						// debug mode
+$debugnoxls = ( isset($_REQUEST['noxls']) ? true : false );					// in debug mode don't emit xls
+
+$year = substr($start,0,4);
+
+$do_first = true;		// first block of report macro pest ( e.g. Aromia bungii )
+$do_second = true;		// second block of report simple pest ( eg . ARUOMBU + buffers )
+
+@$f = fopen('log/exp.log','a');
+@fwrite($f,"____ START ____\n");
+@fwrite($f,"YEAR $year\n");
+@fwrite($f,"COLLECT_FROM_DB " . ($collect_from_db ? 'true':'false') . "\n");
+@fwrite($f,"DO_FIRST " . ($do_first ? 'true':'false') . "\n");
+@fwrite($f,"DO_SECOND " . ($do_second ? 'true':'false') . "\n");
+@fwrite($f,"---\n");
+
+if ($debug) {
+	echo "<b>COLLECT_FROM_DB</b> " . ($collect_from_db ? 'true':'false') . "<br>";
+	echo "<b>DO_FIRST</b> ". ($do_first ? 'true':'false') . "<br>";
+	echo "<b>DO_SECOND</b> ". ($do_second ? 'true':'false') . "<br>";
+}
+
+if ($mode=='xlsasync') {
+	if ($collect_from_db) {
+		$sql = "select coalesce(max(anno),-1) as myear from simfito.reportue where anno<=$year";
+//		echo "$sql<br>";
+		$res = pg_query($sql);
+//		echo pg_num_rows($res) . "<br>";
+		if (pg_num_rows($res)==0) {
+			echo "<b>Non sono disponibili dati per l'anno '$year'</b>";
+			exit(0);
+		}
+		else {
+			$r = pg_fetch_assoc($res);
+			if ($r['myear']==-1) {
+				echo "<b>Non sono disponibili dati per l'anno '$year'</b>";
+				exit(0);
+			}	
+			else {
+				$yearx = $r['myear']; 
+				$cc = collect_pests($yearx);
+				$pests = $cc[0];
+				$macropests = $cc[1];
+			}
+		}
+	}
+
+	$reply = ['success'=>true];
+//	echo json_encode($_REQUEST) . "<br>";
+//	echo json_encode($_SESSION) . "<br>";
+	$query = pg_escape_string(json_encode($_REQUEST));
+	$uid = $_REQUEST['uid'];
+	$sql0 = "SELECT * FROM simfito.tecnici WHERE id_tecnico=$uid";
+	$r = $db->FetchRow($sql0);
+	$ttid = $r['idtipo_tecnico'];
+	$name = 'report UE';
+	$archiveposition = '';
+	$fullfilename = 'report.zip';
+	$values = "$uid,'$name','$query',now(),'$archiveposition',1,'$fullfilename',$ttid,now()";
+	$sql = "INSERT INTO simfito.reports(owner,name,query,date,archiveposition,statoreport_id,fullfilename,tipotecnico_id,runstart) VALUES($values) RETURNING id";
+	$r = $db->FetchRow($sql);
+	$reply['reportid'] = $r['id'];
+	xls_launch($r['id']);
+	echo json_encode($reply);
+}
+else {
+	if ($collect_from_db) {
+		$sql = "select coalesce(max(anno),-1) as myear from simfito.reportue where anno<=$year";
+//		echo "$sql<br>";
+		$res = pg_query($sql);
+//		echo pg_num_rows($res) . "<br>";
+		if (pg_num_rows($res)==0) {
+			echo "<b>Non sono disponibili dati per l'anno '$year'</b>";
+			exit(0);
+		}
+		else {
+			$r = pg_fetch_assoc($res);
+			if ($r['myear']==-1) {
+				echo "<b>Non sono disponibili dati per l'anno '$year'</b>";
+				exit(0);
+			}	
+			else {
+				$yearx = $r['myear']; 
+				$cc = collect_pests($yearx);
+				$pests = $cc[0];
+				$macropests = $cc[1];
+			}
+		}
+	}
+
+	if ($debug) {
+		echo "<b>PESTS</b> " . json_encode($pests) . "<br>";
+		echo "<b>MACROPESTS</b> " . json_encode($macropests) . "<br>";
+	}
+
+//
+// -- codice -- 
+//
+	if ($mode!='xls') {
+		echo "<b>MODE '$mode' DALLA DATA $start ALLA DATA $end</b><br>";
+	}
+
+	if (!$static_data) {
+	}
+
+	// prepara la lista dei pest da gestire
+	$allpests = '';
+	foreach($pests as $pest)
+		$allpests .= "'$pest',";
+	$allpests = substr($allpests,0,-1);
+
+	if ($debug) {
+		echo "<b>ALLPESTS</b> '$allpests'<br>";
+	}
+
+	if (exec_from_cli()) {
+		echo "PESTS " , count($pests) . "\n";
+		echo "ALLPESTS '$allpests'\n";
+	}
+
+// prepasso, 
+		$sql = "WITH x as (
+SELECT scheda.idscheda,id_tecnico,data_sopralluogo
+from osservazioni
+inner join scheda on osservazioni.idscheda=scheda.idscheda
+where pestcode in ($allpests) 
+	and data_sopralluogo>='$start' and data_sopralluogo<='$end' and scheda.stato=2
+union all
+select scheda.idscheda,schede_tecnici.id_tecnico,data_sopralluogo
+from osservazioni
+inner join scheda on osservazioni.idscheda=scheda.idscheda
+inner join schede_tecnici on scheda.idscheda=schede_tecnici.idscheda
+where pestcode in ($allpests) 
+	and data_sopralluogo>='$start' and data_sopralluogo<='$end' and scheda.stato=2
+)
+select tecnici.id_tecnico,cognome,nome,data_sopralluogo,count(*) as num_osservazioni,floor(case when $dailyhours/count(*)>$maxduration then $maxduration else $dailyhours/count(*) end) as duration
+from x
+inner join tecnici on x.id_tecnico=tecnici.id_tecnico
+group by tecnici.id_tecnico,cognome,nome,data_sopralluogo
+order by cognome,nome,data_sopralluogo";
+
+
+		if ($mode!='xls')
+			echo "<b>SQL 1:</b> $sql<br>";
+
+		$n = 0;
+		$restd = array();
+		$db->Read($sql);
+		while($r = $db->fetch_assoc()) {
+			//echo "READING $n >> $r[id_tecnico] , $r[cognome] , $r[nome], $r[data_sopralluogo] , $r[num_osservazioni] , $r[duration]$sep";
+			$restd[] = $r;
+			$n++;
+		}
+
+		if (true && $mode!='xls') {
+			echo "FETCHED $n<br>";
+//			tabledump("Info tecnici",$restd);
+			echo "$sep$sep";
+		}
+
+	if ($do_first) {	// elaborazione macropest
+		if ($debug) {
+			echo "<b>--- FIRST STEP (COMBINATO TUTTI I PEST)---</b><br>";
+		}
+		if (exec_from_cli()) {
+			echo "--- FIRST ---\n";  
+		}
+
+		@fwrite($f,"--- FIRST STEP (COMBINATO TUTTI I PEST)---\n");
+		$pestnum = -1;
+		foreach($macropests as $ipest=>$mpest) {
+			$pestnum++;
+			$ppests = '';
+			foreach($mpest as $pest)
+				$ppests .= "'$pest',";
+			$ppests = substr($ppests,0,-1);
+
+			// dati principali
+			$sql = str_replace(['%start%','%end%','%pest%'],[$start,$end,$ppests],$mastersql);
+			// dati per le trappole
+			$sqltr = str_replace(['%start%','%end%','%pest%','%year%'],[$start,$end,$ppests,$year],$trappolesql);
+
+			if ($mode!='xls')
+				echo "<b>PEST $ipest <br>SQL MASTER:</b><br><pre>$sql</pre><br><b>SQL TRAPPOLE:</b><br><pre>$sqltr</pre><br>";
+
+			$n = 0;
+			$ress = array();
+			// la parte principale
+			if ($debug) {
+				echo "<b>SQL_A_{$pestnum}_{$ipest}_($ppests)</b><br>";
+				echo "SQL $sql<br>";
+				echo "SQLTR $sqltr<br>";
+			}
+			@fwrite($f,"------SQL-------\n");
+			@fwrite($f,$sql . "\n");
+			@fwrite($f,"------SQL_TR-------\n");
+			@fwrite($f,$sqltr . "\n");
+			$db->Read($sql);
+			if ($debug) {
+				echo "<b>RECNO</b> " . $db->RecNo() . "<br>";  
+			}
+			if (exec_from_cli()) {
+				echo "FIRST SQL RECNO ($ppests) " . $db->RecNo() . "\n";  
+			}
+			$r_prev = array();
+			while($r = $db->fetch_assoc()) {
+				//var_dump($r);echo "<br>";
+				$extr = find_duration($restd,$r['idtecnico'],$r['data_sopralluogo']);
+				if (false && $mode!='xls') {
+					var_dump($extr);echo "<br>";
+				}
+				$r['nhours'] = round($extr['duration']/60.0,2);
+//				if ($r['campionicodice']!='') {
+//					$r['sampleduration'] = 0.1;
+//					$r['testno'] = 1;
+//					$r['nhours'] -= 0.1; 
+//				}
+//				if ($r['pri']>1) {
+//					$r['sup_vis'] = '';
+//					$r['n_osservate'] = '';
+//					$r['elementicampione'] = '';
+//					$r['campionicodice'] = '';
+//					$r['testno'] = 0;
+//					$r['tecnici_num'] = ''; 
+//				}
+				if ($r['idscheda']==$r_prev['idscheda']) {
+					$r['nsiti'] = $null;
+					$r['n_monitoraggio'] = $null;
+					$r['s_ha'] = $null;
+//					$r['full_tempo_tot'] = '';
+					$r['s_ha'] = '';
+//					echo "<b>$n match</b> '$r[idscheda]' '$r_prev[idscheda]'<br>";
+					if ($r['campionicodice']==$r_prev['campionicodice']) {
+						$r['campioni_no']=$null;
+					}
+				}
+				if ($r['oss']==$r_prev['oss']) {
+					$r['n_osservate_tot'] = $null;
+					$r['tempo_tot'] = $null;
+					$r['costo_tot'] = $null;
+				}
+				if ($r['sample_duration']!='') {
+					$r['__sample_costo_orario_avg'] = $r['costo_orario_avg'];
+					$r['__sample_tot_pers_cost'] = $r['costo_orario_avg']*$r['sample_duration'];
+				}
+				else {
+					$r['__sample_costo_orario_avg'] = $null;
+					$r['__sample_tot_pers_cost'] = $null;
+				}
+				if ($r['trap_no']!=0) {
+					$r['__trap_control_tempo'] = $r['full_tempo_tot'];
+					$r['__trap_control_costo_orario_avg'] = $r['costo_orario_avg'];
+					$r['__trap_control_costo_tot'] = $r['costo_tot'];
+
+					$r['full_tempo_tot'] = 0;
+					$r['costo_orario_avg'] = 0;
+					$r['costo_tot'] = 0;
+				}
+				else {
+					if ($r['ossvis']=='t') {
+						$r['__trap_control_tempo'] = '';
+						$r['__trap_control_costo_orario_avg'] = $zero;
+						$r['__trap_control_costo_tot'] = $zero;
+					}
+					else {
+						$r['__trap_control_tempo'] = $r['full_tempo_tot'];
+						$r['__trap_control_costo_orario_avg'] = $zero;
+						$r['__trap_control_costo_tot'] = $zero;
+						$r['full_tempo_tot'] = '';
+					}
+				}
+				$ress[] = $r;
+				$r_prev = $r;
+				$n++;
+			}
+			if ($mode!='xls') {
+				echo "N MASTER $n<br>";
+				tabledump('master',$ress);
+			}
+			// la parte sulle trappole
+			$nt = 0;
+			$rest = array();
+			$db->Read($sqltr);
+			if (exec_from_cli()) {
+				//echo "$sqltr\n";
+				echo "FIRST TRAPPOLESQL RECNO ($ppests) " . $db->RecNo() . "\n";  
+			}
+			$r_prev = array();
+			while($r = $db->fetch_assoc()) {
+				$rest[] = $r;
+				$n++;
+				$nt++;
+			}
+			if ($mode!='xls') {
+				echo "N TOTALE $n N TRAPPOLE $nt<br>";
+			}
+			if (exec_from_cli()) {
+				echo "N TOTALE $n N TRAPPOLE $nt\n";
+			}
+			if ($mode!='xls') {
+				echo "FETCHED $n<br>";
+				if ($mode=='dump') {
+					tabledump("Schede",$ress);
+					echo "$sep$sep";
+				}
+			}
+			else {
+
+				// accumula i risultati
+				$resxx = array();
+				for($i=0;$i<count($rest);$i++) {
+					$resxx[] = $rest[$i];
+				}
+				for($i=0;$i<count($ress);$i++) {
+					$resxx[] = $ress[$i];
+				}
+				if ($debug) {
+					echo "<b>DATASTART I STEP </b><br>"; 
+				}
+				if (exec_from_cli()) {
+					echo "--- DATASTART I STEP " . count($rest) . ' ' . count($ress) . ' ' . count($resxx) . " ---\n";  
+				}
+				datastart($ipest,'');
+				dataheader($cols);
+				foreach($resxx as $row) {
+					datarow($row,$fields);
+				}
+				datadone();
+			}
+		}
+		if ($debug) {
+			echo "<b>ROW COUNT</b> " . count($r) . "/" . count($resxx) .  "<br>";
+		}
+	}
+
+	if ($do_second) {		// elaborazione singoli pest
+		if ($debug) {
+			echo "<b>--- SECOND STEP ( SINGOLI PEST )--- </b><br>";
+		}
+		@fwrite($f,"--- SECOND STEP ( SINGOLI PEST )---\n");
+		if (exec_from_cli()) {
+			echo "--- SECOND ---\n";  
+		}
+
+		$pestnum = -1;
+		foreach($pests as $idpest=>$mpest) {
+			$pestnum++;
+			if (exec_from_cli()) {
+				echo "--- $pestnum $mpest ---\n";  
+			}
+			$ipest = $mpest;
+			$ppests = "'$mpest'";
+			$sqla = str_replace(['{YEAR}','{PEST}'],[$year,$mpest],$areas_qry);
+			$sqla2 = str_replace(['{YEAR}','{PEST}','{DATE}'],[$year,$mpest,''],$areas_qryx);
+			if ($debug) {
+				echo "<b>SQL_A_$sqla</b><br>";
+				echo "<b>SQL_A2_$sqla2</b><br>";
+			}
+			@fwrite($f,"---SQLA---\n");
+			@fwrite($f,"$sqla\n");
+			@fwrite($f,"---SQLA---\n");
+			@fwrite($f,"$sqla2\n");
+			$db->Read($sqla);
+			$r = $db->fetch_assoc();
+			if ($r===false) {
+				if ($debug) {
+					echo "<b>SQL_B_{$pestnum}_'$mpest' NOT FOUND</b><br>";
+				}
+				$pestfound = false;
+			}
+			else {
+				$vp = $r['vp'];
+				$vpx = explode(';',$vp);
+				for($i=0;$i<count($vpx);$i++) {
+					$vv = explode(':',$vpx[$i]);
+					$vps[$vv[0]] = $vv[1];
+				}
+				if ($debug) {
+					echo "<b>SQL_B_{$pestnum}_'$mpest'_'$vp' " . count($vpx) . " " . count($vps) . " FOUND</b><br>";
+				}
+				$pestfound = true;
+			}
+			@fwrite($f,"PESTFOUND " . ($pestfound ? 'true':'false') . "	\n");
+			if (exec_from_cli()) {
+				echo "PESTFOUND " . ($pestfound ? 'true':'false') . "\n";  
+			}
+
+			$db->Read($sqla2);
+			$r2 = [];
+			while($r=$db->fetch_assoc()) {
+				$r2[] = $r;
+			}
+			if ($debug) {
+				echo "<b>SQL_B2_{$pestnum}_'$mpest' " . count($r2) . "</b><br>";
+			}
+			@fwrite($f,"SQL_B2_{$pestnum}_'$mpest' " . count($r2) . "\n");
+
+			if($pestfound) {
+				if ($debug) {
+					echo "<b>SQL_B_</b> $sqla<br>";
+				}
+				$sql = str_replace(['%start%','%end%','%pest%'],[$start,$end,$ppests],$mastersql);
+				// dati per le trappole
+				$sqltr = str_replace(['%start%','%end%','%pest%','%year%'],[$start,$end,$ppests,$year],$trappolesql);
+
+				$n = 0;
+				$ress = array();
+				// la parte principale
+				if ($debug) {
+					echo "<b>SQL_B_{$pestnum}_{$ipest}_($ppests)</b> $sql<br>";
+				}
+				if (exec_from_cli()) {
+					echo "SQL_B_{$pestnum}_{$ipest}_($ppests)\n";
+				}
+				@fwrite($f,"------SQLBUFF_B_-------\n");
+				@fwrite($f,"SQL_B_{$pestnum}_{$ipest}_($ppests)\n");
+				@fwrite($f,"$sql\n");
+				$db->Read($sql);
+				if ($debug) {
+					echo "<b>ROW CC</b> " . $db->RecNo() . "<br>";
+				}
+				if (exec_from_cli()) {
+					echo "SECOND SQL RECNO ($ppests) " . $db->RecNo() . "\n";  
+				}
+				$r_prev = array();
+				while($r = $db->fetch_assoc()) {
+					$sqlz = "SELECT * FROM simfito.areas WHERE enabled AND pest='$ipest' AND datefrom<='$r[data_sopralluogo]' ORDER BY datefrom DESC LIMIT 1";
+					if ($debug) {
+						echo "<b>----- SCHEDA DATA PEST GID_SITO $r[idscheda]/$r[data_sopralluogo]/$vps[pestcode]/$r[gid_sito] -----</b><br>";
+						echo "<b>----- SQLZ</b> $sqlz<br>";
+					}
+					@fwrite($f,"------SQLBUFFDATA-------\n");
+					@fwrite($f,"$sqlz\n");
+					$buffdata = $db->ReadAll($sqlz);
+					//echo json_encode($buffdata) . "<br>";
+					@fwrite($f,"buffdata_sz " . count($buffdata) .  "\n");
+					if (count($buffdata)>0) {
+						$buffdataz = $buffdata[0];
+						$areaid = $buffdataz['id'];
+						if ($buffdataz['the_geom']!='') {
+							$geom = true;
+							$sgeom = 'true';
+						}
+						else {
+							$geom = false;
+							$sgeom = 'false';
+						}
+						if ($buffdataz['dateto']!='') {
+							if ($r['data_sopralluogo']<=$buffdataz['dateto']) {
+								$match = true;
+								$smatch = 'true';
+							}
+							else {
+								$match = false;
+								$smatch = 'false';
+							}
+						}
+						else {
+							$match = true;
+							$smatch = 'true';
+						}
+					}
+					else {
+						$buffdataz = [];
+						$geom = false;
+						$sgeom = 'false';
+						$match = false;
+						$smatch = 'false';
+					}
+					if ($debug) {
+						echo "<b>BUFFZ NO </b>" . count($buffdata) . "<br>";
+						echo "<b>FROM/TO/MATCH/GEOM/AREAID</b> $buffdataz[datefrom]/$buffdataz[dateto]/$smatch/$sgeom/$areaid<br>";
+					}
+					if ($match) {
+						if ($geom) {
+							$sqlbuff = str_replace(
+								['%id%','%gid%','%buffer1%','%buffer2%','%buffer3%'],
+								[$areaid,$r['gid_sito'],0,$buffdataz['tampone'],$buffdataz['contenimento']],
+								$simbuffer2sql);
+						}
+						else {
+							$sqlbuff = str_replace(
+								['%buffer1%','%buffer2%','%buffer3%','%tiposito%','%pestcode%','%start%','%end%','%gid%'],
+								[$vps['buffer1'],$vps['buffer2'],$vps['buffer3'],$vps['tiposito'],$vps['pestcode'],$vps['start'],$vps['end'],$r['gid_sito']],
+								$simbuffersql);
+						}
+						if ($debug) {
+							// echo "<b>MATCH SQL_BUFF</b> '$sqlbuff'<br>";
+						}
+						$buffdata = $db->ReadAll($sqlbuff);
+						if ($debug) {
+							echo "<b>BUFFDATA NO. </b>" . count($buffdata) . "<br>";
+						}
+						if(!isset($buffdata[2])) {				// se manca l'ultima zona
+							$buffdata[2] = ['intersect'=>'f'];
+						}
+					}
+					else {
+						if ($debug) {
+							echo "<b>NO_MATCH</b><br>";
+						}
+						$buffdata[0] = ['intersect'=>'f'];
+						$buffdata[1] = ['intersect'=>'f'];
+						$buffdata[2] = ['intersect'=>'f'];
+						if ($debug) {
+							echo "<b>BUFFDATA NO. </b>" . count($buffdata) . "<br>";
+						}
+					}
+					//var_dump($r);echo "<br>";
+					$extr = find_duration($restd,$r['idtecnico'],$r['data_sopralluogo']);
+					if (false && $mode!='xls') {
+						var_dump($extr);echo "<br>";
+					}
+					$r['nhours'] = round($extr['duration']/60.0,2);
+//					if ($r['campionicodice']!='') {
+//						$r['sampleduration'] = 0.1;
+//						$r['testno'] = 1;
+//						$r['nhours'] -= 0.1; 
+//					}
+//					if ($r['pri']>1) {
+//						$r['sup_vis'] = '';
+//						$r['n_osservate'] = '';
+//						$r['elementicampione'] = '';
+//						$r['campionicodice'] = '';
+//						$r['testno'] = 0;
+//						$r['tecnici_num'] = ''; 
+//					}
+					if ($r['idscheda']==$r_prev['idscheda']) {
+						$r['nsiti'] = $null;
+						$r['n_monitoraggio'] = $null;
+						$r['s_ha'] = $null;
+//						$r['full_tempo_tot'] = '';
+						$r['s_ha'] = '';
+//						echo "<b>$n match</b> '$r[idscheda]' '$r_prev[idscheda]'<br>";
+						if ($r['campionicodice']==$r_prev['campionicodice']) {
+							$r['campioni_no']=$null;
+						}
+					}
+					if ($r['oss']==$r_prev['oss']) {
+						$r['n_osservate_tot'] = $null;
+						$r['tempo_tot'] = $null;
+						$r['costo_tot'] = $null;
+					}
+					if ($r['sample_duration']!='') {
+						$r['__sample_costo_orario_avg'] = $r['costo_orario_avg'];
+						$r['__sample_tot_pers_cost'] = $r['costo_orario_avg']*$r['sample_duration'];
+					}
+					else {
+						$r['__sample_costo_orario_avg'] = $null;
+						$r['__sample_tot_pers_cost'] = $null;
+					}
+					if ($r['trap_no']!=0) {
+						$r['__trap_control_tempo'] = $r['full_tempo_tot'];
+						$r['__trap_control_costo_orario_avg'] = $r['costo_orario_avg'];
+						$r['__trap_control_costo_tot'] = $r['costo_tot'];
+	
+						$r['full_tempo_tot'] = 0;
+						$r['costo_orario_avg'] = 0;
+						$r['costo_tot'] = 0;
+					}
+					else {
+						if ($r['ossvis']=='t') {
+							$r['__trap_control_tempo'] = '';
+							$r['__trap_control_costo_orario_avg'] = $zero;
+							$r['__trap_control_costo_tot'] = $zero;
+						}
+						else {
+							$r['__trap_control_tempo'] = $r['full_tempo_tot'];
+							$r['__trap_control_costo_orario_avg'] = $zero;
+							$r['__trap_control_costo_tot'] = $zero;
+							$r['full_tempo_tot'] = '';
+						}
+// ERA:
+//						$r['__trap_control_tempo'] = $zero;
+//						$r['__trap_control_costo_orario_avg'] = $zero;
+//						$r['__trap_control_costo_tot'] = $zero;
+					}
+					$bbx = ($buffdata[0]['intersect']=='t') || ($buffdata[1]['intersect']=='t') || ($buffdata[2]['intersect']=='t');
+					$r['__buffer0'] = ($bbx ? 'No' : 'Si');
+					$r['__buffer1'] = ($buffdata[0]['intersect']=='t' ? "Si":"No");
+					$r['__buffer2'] = ($buffdata[1]['intersect']=='t' ? "Si":"No");
+					$r['__buffer3'] = ($buffdata[2]['intersect']=='t' ? "Si":"No");
+					$ress[] = $r;
+					$r_prev = $r;
+					$n++;
+				}
+				if ($mode!='xls') {
+					echo "N MASTER $n<br>";
+					tabledump('master',$ress);
+				}
+				// la parte sulle trappole
+				$nt = 0;
+				$rest = array();
+				if ($debug) {
+					echo "<b>SQL_B_TR_{$pestnum}_{$ipest}_($ppests)</b> $sqltr<br>";
+				}
+				if (exec_from_cli()) {
+					echo "SQL_B_TR_{$pestnum}_{$ipest}_($ppests)\n";
+				}
+				$db->Read($sqltr);
+				if (exec_from_cli()) {
+					echo "SECOND TRSQL RECNO ($ppests) " . $db->RecNo() . "\n";  
+				}
+				$r_prev = array();
+				while($r = $db->fetch_assoc()) {
+
+					$sqlz = "SELECT * FROM simfito.areas WHERE enabled AND pest='$ipest' AND datefrom<='$r[data_sopralluogo]' ORDER BY datefrom DESC LIMIT 1";
+					if ($debug) {
+						echo "<b>----- SCHEDA DATA PEST GID_SITO $r[idscheda]/$r[data_sopralluogo]/$vps[pestcode]/$r[gid_sito] -----</b><br>";
+						echo "<b>----- SQLZ</b> $sqlz<br>";
+					}
+					@fwrite($f,"------SQLBUFFDATA-------\n");
+					@fwrite($f,"$sqlz\n");
+					$buffdata = $db->ReadAll($sqlz);
+					//echo json_encode($buffdata) . "<br>";
+					@fwrite($f,"buffdata_sz " . count($buffdata) .  "\n");
+					if (count($buffdata)>0) {
+						$buffdataz = $buffdata[0];
+						$areaid = $buffdataz['id'];
+						if ($buffdataz['the_geom']!='') {
+							$geom = true;
+							$sgeom = 'true';
+						}
+						else {
+							$geom = false;
+							$sgeom = 'false';
+						}
+						if ($buffdataz['dateto']!='') {
+							if ($r['data_sopralluogo']<=$buffdataz['dateto']) {
+								$match = true;
+								$smatch = 'true';
+							}
+							else {
+								$match = false;
+								$smatch = 'false';
+							}
+						}
+						else {
+							$match = true;
+							$smatch = 'true';
+						}
+					}
+					else {
+						$buffdataz = [];
+						$geom = false;
+						$sgeom = 'false';
+						$match = false;
+						$smatch = 'false';
+					}
+					if ($debug) {
+						echo "<b>BUFFZ NO </b>" . count($buffdata) . "<br>";
+						echo "<b>FROM/TO/MATCH/GEOM/AREAID</b> $buffdataz[datefrom]/$buffdataz[dateto]/$smatch/$sgeom/$areaid<br>";
+					}
+					if ($match) {
+						if ($geom) {
+							$sqlbuff = str_replace(
+								['%id%','%gid%','%buffer1%','%buffer2%','%buffer3%'],
+								[$areaid,$r['gid_sito'],0,$buffdataz['tampone'],$buffdataz['contenimento']],
+								$simbuffer2sql);
+						}
+						else {
+							$sqlbuff = str_replace(
+								['%buffer1%','%buffer2%','%buffer3%','%tiposito%','%pestcode%','%start%','%end%','%gid%'],
+								[$vps['buffer1'],$vps['buffer2'],$vps['buffer3'],$vps['tiposito'],$vps['pestcode'],$vps['start'],$vps['end'],$r['gid_sito']],
+								$simbuffersql);
+						}
+						if ($debug) {
+							// echo "<b>MATCH SQL_BUFF</b> '$sqlbuff'<br>";
+						}
+						$buffdata = $db->ReadAll($sqlbuff);
+						if ($debug) {
+							echo "<b>BUFFDATA NO. </b>" . count($buffdata) . "<br>";
+						}
+						if(!isset($buffdata[2])) {				// se manca l'ultima zona
+							$buffdata[2] = ['intersect'=>'f'];
+						}
+					}
+					else {
+						if ($debug) {
+							echo "<b>NO_MATCH</b><br>";
+						}
+						$buffdata[0] = ['intersect'=>'f'];
+						$buffdata[1] = ['intersect'=>'f'];
+						$buffdata[2] = ['intersect'=>'f'];
+						if ($debug) {
+							echo "<b>BUFFDATA NO. </b>" . count($buffdata) . "<br>";
+						}
+					}
+
+
+					$bbx = ($buffdata[0]['intersect']=='t') || ($buffdata[1]['intersect']=='t') || ($buffdata[2]['intersect']=='t');
+					$r['__buffer0'] = ($bbx ? 'No' : 'Si');
+					$r['__buffer1'] = ($buffdata[0]['intersect']=='t' ? "Si":"No");
+					$r['__buffer2'] = ($buffdata[1]['intersect']=='t' ? "Si":"No");
+					$r['__buffer3'] = ($buffdata[2]['intersect']=='t' ? "Si":"No");
+
+					$rest[] = $r;
+					$n++;
+					$nt++;
+				}
+				if ($mode!='xls') {
+					echo "N TOTALE $n N TRAPPOLE $nt<br>";
+				}
+				if ($mode!='xls') {
+					echo "FETCHED $n<br>";
+					if ($mode=='dump') {
+						tabledump("Schede",$ress);
+						echo "$sep$sep";
+					}
+				}
+				else {
+					// accumula i risultati
+					$resxx = array();
+					for($i=0;$i<count($rest);$i++) {
+						$resxx[] = $rest[$i];
+					}
+					for($i=0;$i<count($ress);$i++) {
+						$resxx[] = $ress[$i];
+					}
+					if ($debug) {
+						echo "<b>DATASTART II STEP</b><br>"; 
+					}
+					datastart($ipest,'');
+					dataheader($cols);
+					foreach($resxx as $row) {
+						datarow($row,$fields);
+					}
+					datadone();
+				}
+			}
+		}
+	}
+
+	if(!$debug) {
+		$cc = count($xlsfiles);
+		if (exec_from_cli()) {
+			echo "POSTPROCESS $cc FILES\n";
+			foreach($xlsfiles as $i=>$f) {
+				echo "PP $i -> $f\n";
+			}
+		}
+		postprocess($zipout);
+		$sql = "UPDATE simfito.reports SET statoreport_id=2,runend=now() WHERE id=$jobid";
+		$db->SQL($sql);
+
+	}
+	else {
+		$cc = count($xlsfiles);
+		echo "<b>POSTPROCESS $cc FILES</b><br>";
+		foreach($xlsfiles as $i=>$f) {
+			echo "PP $i -> $ff<br>";
+		}
+	}
+}
+
+@fwrite($f,"____ END ____\n");
+@fclose($f);
+@chmod('log/exp.log',0777);
+
+
+/*
+
+WITH tecnici_full as (
+  select idscheda,tecnici.id_tecnico,1 as pri,cognome,nome from scheda inner join tecnici on scheda.id_tecnico=tecnici.id_tecnico 
+  union
+  select idscheda,tecnici.id_tecnico,2 as pri,cognome,nome from schede_tecnici inner join tecnici on schede_tecnici.id_tecnico=tecnici.id_tecnico
+),
+host as (
+  select b_code,full_name from t_baycode 
+  inner join t_bayname on t_baycode.codeid=t_bayname.codeid
+  where isolang='la' and preferred=1
+)
+select 
+*  
+from scheda
+inner join tecnici_full on scheda.idscheda=tecnici_full.idscheda
+inner join osservazioni on scheda.idscheda=osservazioni.idscheda
+left join campioni on osservazioni.campioni_id=campioni.id 
+inner join host on osservazioni.hostcode=host.b_code
+where 
+scheda.stato=2
+and data_sopralluogo>='%start%' and data_sopralluogo<='%end%'
+and pestcode in (%host%)
+order by scheda.idscheda,cognome,nome,full_name
+
+*/
+
+}
+?>

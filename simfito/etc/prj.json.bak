@@ -1,0 +1,14 @@
+[
+    {
+        "srs": "EPSG:4326",
+        "def": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+    },
+    {
+        "srs": "EPSG:32632",
+        "def": "+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs"
+    },
+    {
+        "srs": "EPSG:32633",
+        "def": "+proj=utm +zone=33 +datum=WGS84 +units=m +no_defs"
+    }
+]

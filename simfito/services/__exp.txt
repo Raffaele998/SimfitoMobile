@@ -1,0 +1,1377 @@
+
+
+PEST 1ALECG:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST 1DACUG:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECBA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECCN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECCO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECCT:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECGA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECHU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECIN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECMA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECNG:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECNI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECNU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECOB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECPI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECRU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECSI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECSN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Jesu Riccardo ; 22419 ; 2017-06-30 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.78310 ; 40.66992 ; -- ; -- ; -- ; -- ; 223 ;  5 ; -- ; 60
+Jesu Riccardo ; 22419 ; 2017-06-30 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.78310 ; 40.66992 ; -- ; -- ; -- ; -- ; 223 ;  5 ; -- ; 60
+Jesu Riccardo ; 22418 ; 2017-06-30 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.78294 ; 40.66952 ; -- ; -- ; -- ; -- ; 39 ;  1 ; -- ; 60
+Jesu Riccardo ; 22363 ; 2017-06-29 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.78294 ; 40.66952 ; -- ; -- ; -- ; -- ; 39 ;  4 ; -- ; 60
+Jesu Riccardo ; 22363 ; 2017-06-29 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.78294 ; 40.66952 ; -- ; -- ; -- ; -- ; 39 ;  1 ; -- ; 60
+Jesu Riccardo ; 22432 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64866 ; 40.74283 ; -- ; -- ; -- ; -- ; 26 ;  2 ; -- ; 60
+Jesu Riccardo ; 22430 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64228 ; 40.73155 ; -- ; -- ; -- ; -- ; 675 ;  25 ; -- ; 60
+Jesu Riccardo ; 22429 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64470 ; 40.73139 ; -- ; -- ; -- ; -- ; 247 ;  25 ; -- ; 60
+Jesu Riccardo ; 22429 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64470 ; 40.73139 ; -- ; -- ; -- ; -- ; 247 ;  20 ; -- ; 60
+Jesu Riccardo ; 22428 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.63897 ; 40.75354 ; -- ; -- ; -- ; -- ; 43 ;  1 ; -- ; 60
+Jesu Riccardo ; 22435 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64517 ; 40.74730 ; -- ; -- ; -- ; -- ; 219 ;  4 ; -- ; 60
+Jesu Riccardo ; 22435 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64517 ; 40.74730 ; -- ; -- ; -- ; -- ; 219 ;  5 ; -- ; 60
+Jesu Riccardo ; 22434 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 272 ;  3 ; -- ; 60
+Jesu Riccardo ; 22434 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 272 ;  3 ; -- ; 60
+Jesu Riccardo ; 22434 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 272 ;  4 ; -- ; 60
+Jesu Riccardo ; 22433 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 284 ;  2 ; -- ; 60
+Jesu Riccardo ; 22433 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 284 ;  2 ; -- ; 60
+Jesu Riccardo ; 22433 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62969 ; 40.75644 ; -- ; -- ; -- ; -- ; 284 ;  2 ; -- ; 60
+Jesu Riccardo ; 22436 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22436 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22436 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22431 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22431 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22431 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64078 ; 40.74562 ; -- ; -- ; -- ; -- ; 105 ;  1 ; -- ; 43
+Jesu Riccardo ; 22423 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64101 ; 40.74502 ; -- ; -- ; -- ; -- ; 20 ;  4 ; -- ; 43
+Jesu Riccardo ; 22421 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64025 ; 40.74539 ; -- ; -- ; -- ; -- ; 51 ;  1 ; -- ; 43
+Jesu Riccardo ; 22420 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64309 ; 40.74544 ; -- ; -- ; -- ; -- ; 686 ;  3 ; -- ; 43
+Jesu Riccardo ; 22420 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64309 ; 40.74544 ; -- ; -- ; -- ; -- ; 686 ;  7 ; -- ; 43
+Jesu Riccardo ; 22420 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.64309 ; 40.74544 ; -- ; -- ; -- ; -- ; 686 ;  1 ; -- ; 43
+Jesu Riccardo ; 22308 ; 2017-06-21 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62566 ; 40.77593 ; -- ; -- ; -- ; -- ; 283 ;  3 ; -- ; 60
+Jesu Riccardo ; 22316 ; 2017-06-11 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.78294 ; 40.66952 ; -- ; -- ; -- ; -- ; 39 ;  1 ; -- ; 60
+Jesu Riccardo ; 22316 ; 2017-06-11 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.78294 ; 40.66952 ; -- ; -- ; -- ; -- ; 39 ;  1 ; -- ; 60
+Jesu Riccardo ; 22313 ; 2017-06-11 ; Consulenza su richiesta/Area verde urbana pubblica/privata ; 14.75700 ; 40.67979 ; -- ; -- ; -- ; -- ; 98 ;  1 ; -- ; 60
+Laudonia Stefania ; 24987 ; 2017-06-26 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.78330 ; 40.66949 ; -- ; -- ; -- ; -- ; 62 ;  1 ; -- ; 60
+Laudonia Stefania ; 24987 ; 2017-06-26 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.78330 ; 40.66949 ; -- ; -- ; -- ; -- ; 62 ;  5 ; -- ; 60
+Laudonia Stefania ; 24987 ; 2017-06-26 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.78330 ; 40.66949 ; -- ; -- ; -- ; -- ; 62 ;  1 ; -- ; 60
+
+PEST ALECSO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECSP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECWO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ALECZI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST ANOLCN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CASCIELLO NICOLA ; 21549 ; 2017-06-06 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.61586 ; 40.94806 ; -- ; -- ; -- ; -- ; 7000 ;  101 ; -- ; 60
+De Santis Antonio ; 22438 ; 2017-06-30 ; monitoraggio ordinario ; 15.01752 ; 41.41606 ; -- ; -- ; -- ; -- ; 1000 ;  56 ; -- ; 60
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  20 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  2 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  2 ; -- ; 34
+De Santis Antonio ; 22115 ; 2017-06-23 ; monitoraggio ordinario ; 14.63486 ; 41.12490 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 60
+De Santis Antonio ; 21824 ; 2017-06-14 ; monitoraggio ordinario ; 14.82333 ; 41.29270 ; -- ; -- ; -- ; -- ; 20 ;  2 ; -- ; 60
+De Santis Antonio ; 21784 ; 2017-06-12 ; monitoraggio ordinario ; 14.65511 ; 41.17175 ; -- ; -- ; -- ; -- ; 500 ;  35 ; -- ; 60
+De Santis Antonio ; 21642 ; 2017-06-07 ; monitoraggio ordinario ; 15.08325 ; 41.29790 ; -- ; -- ; -- ; -- ; 200 ;  12 ; -- ; 60
+DE VITO DANIELE ; 22462 ; 2017-06-29 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 22452 ; 2017-06-29 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 22103 ; 2017-06-22 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 22100 ; 2017-06-22 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21907 ; 2017-06-15 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 21903 ; 2017-06-15 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21902 ; 2017-06-15 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21762 ; 2017-06-08 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 21744 ; 2017-06-08 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21743 ; 2017-06-08 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DI LAURO ANTONIO ; 22388 ; 2017-06-27 ; monitoraggio ordinario ; 14.61339 ; 40.87277 ; -- ; -- ; -- ; -- ; 8000 ;  350 ; -- ; 60
+DI LAURO ANTONIO ; 22387 ; 2017-06-27 ; monitoraggio ordinario ; 14.58698 ; 40.98486 ; -- ; -- ; -- ; -- ; 75000 ;  5000 ; -- ; 60
+DI LAURO ANTONIO ; 22139 ; 2017-06-22 ; monitoraggio ordinario ; 14.58698 ; 40.98486 ; -- ; -- ; -- ; -- ; 75000 ;  5000 ; -- ; 60
+DI LAURO ANTONIO ; 22138 ; 2017-06-22 ; monitoraggio ordinario ; 14.61339 ; 40.87277 ; -- ; -- ; -- ; -- ; 8000 ;  350 ; -- ; 60
+DI LAURO ANTONIO ; 21874 ; 2017-06-13 ; monitoraggio ordinario ; 14.61339 ; 40.87277 ; -- ; -- ; -- ; -- ; 8000 ;  350 ; -- ; 60
+DI LAURO ANTONIO ; 21873 ; 2017-06-13 ; monitoraggio ordinario ; 14.58698 ; 40.98486 ; -- ; -- ; -- ; -- ; 75000 ;  5000 ; -- ; 60
+DI LAURO ANTONIO ; 21669 ; 2017-06-07 ; monitoraggio ordinario ; 14.61339 ; 40.87277 ; -- ; -- ; -- ; -- ; 8000 ;  350 ; -- ; 60
+DI LAURO ANTONIO ; 21668 ; 2017-06-07 ; monitoraggio ordinario ; 14.58698 ; 40.98486 ; -- ; -- ; -- ; -- ; 75000 ;  5000 ; -- ; 60
+Di Zeo Gianpaolo ; 22063 ; 2017-06-22 ; monitoraggio ordinario ; 14.93651 ; 40.87987 ; -- ; -- ; -- ; -- ; 500 ;  3 ; -- ; 60
+Di Zeo Gianpaolo ; 22062 ; 2017-06-22 ; monitoraggio ordinario ; 14.95743 ; 40.87826 ; -- ; -- ; -- ; -- ; 150 ;  2 ; -- ; 60
+Di Zeo Gianpaolo ; 22062 ; 2017-06-22 ; monitoraggio ordinario ; 14.95743 ; 40.87826 ; -- ; -- ; -- ; -- ; 150 ;  4 ; -- ; 60
+Di Zeo Gianpaolo ; 22061 ; 2017-06-22 ; monitoraggio ordinario ; 14.92268 ; 40.88951 ; -- ; -- ; -- ; -- ; 1000 ;  40 ; -- ; 60
+Di Zeo Gianpaolo ; 21785 ; 2017-06-14 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.77044 ; 40.91902 ; -- ; -- ; -- ; -- ; 10000 ;  84 ; -- ; 60
+FEOLI RENATO ; 22399 ; 2017-06-21 ; monitoraggio ordinario ; 14.85262 ; 40.87996 ; -- ; -- ; -- ; -- ; 100 ;  3 ; -- ; 48
+FEOLI RENATO ; 22396 ; 2017-06-21 ; monitoraggio ordinario ; 14.77676 ; 40.83687 ; -- ; -- ; -- ; -- ; 200 ;  3 ; -- ; 48
+FEOLI RENATO ; 22395 ; 2017-06-21 ; monitoraggio ordinario ; 14.80072 ; 40.90335 ; -- ; -- ; -- ; -- ; 100 ;  1 ; -- ; 48
+FEOLI RENATO ; 22322 ; 2017-06-21 ; monitoraggio ordinario ; 14.77186 ; 40.83306 ; -- ; -- ; -- ; -- ; 2000 ;  42 ; -- ; 48
+FEOLI RENATO ; 22317 ; 2017-06-21 ; monitoraggio ordinario ; 14.84178 ; 40.82805 ; -- ; -- ; -- ; -- ; 150 ;  3 ; -- ; 48
+FEOLI RENATO ; 22403 ; 2017-06-16 ; monitoraggio ordinario ; 15.03541 ; 40.90810 ; -- ; -- ; -- ; -- ; 2000 ;  180 ; -- ; 48
+FEOLI RENATO ; 22392 ; 2017-06-16 ; monitoraggio ordinario ; 14.97902 ; 40.94841 ; -- ; -- ; -- ; -- ; 200 ;  4 ; -- ; 48
+FEOLI RENATO ; 22382 ; 2017-06-16 ; Adozione misure ufficiali in az. agricole ; 15.07562 ; 40.91762 ; -- ; -- ; -- ; -- ; 1000 ;  30 ; -- ; 48
+FEOLI RENATO ; 22380 ; 2017-06-16 ; Adozione misure ufficiali in az. agricole ; 14.92580 ; 40.94142 ; -- ; -- ; -- ; -- ; 150 ;  10 ; -- ; 48
+FEOLI RENATO ; 22320 ; 2017-06-16 ; monitoraggio ordinario ; 15.01263 ; 40.93280 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 48
+FEOLI RENATO ; 22401 ; 2017-06-08 ; monitoraggio ordinario ; 14.96119 ; 41.05574 ; -- ; -- ; -- ; -- ; 5000 ;  1800 ; -- ; 34
+FEOLI RENATO ; 22397 ; 2017-06-08 ; monitoraggio ordinario ; 15.02925 ; 40.97581 ; -- ; -- ; -- ; -- ; 500 ;  9 ; -- ; 34
+FEOLI RENATO ; 22384 ; 2017-06-08 ; monitoraggio ordinario ; 15.01985 ; 41.00670 ; -- ; -- ; -- ; -- ; 1000 ;  10 ; -- ; 34
+FEOLI RENATO ; 22343 ; 2017-06-08 ; monitoraggio ordinario ; 14.90182 ; 41.01342 ; -- ; -- ; -- ; -- ; 200 ;  11 ; -- ; 34
+FEOLI RENATO ; 22327 ; 2017-06-08 ; monitoraggio ordinario ; 14.88558 ; 40.96530 ; -- ; -- ; -- ; -- ; 50 ;  4 ; -- ; 34
+FEOLI RENATO ; 22324 ; 2017-06-08 ; monitoraggio ordinario ; 14.88017 ; 40.93751 ; -- ; -- ; -- ; -- ; 100 ;  3 ; -- ; 34
+FEOLI RENATO ; 22314 ; 2017-06-08 ; monitoraggio ordinario ; 15.02925 ; 40.97581 ; -- ; -- ; -- ; -- ; 1000 ;  20 ; -- ; 34
+fiore giuseppe ; 21854 ; 2017-06-14 ; monitoraggio ordinario ; 14.82105 ; 40.98484 ; -- ; -- ; -- ; -- ; 1000 ;  25 ; -- ; 34
+fiore giuseppe ; 21850 ; 2017-06-14 ; monitoraggio ordinario ; 14.77009 ; 41.00953 ; -- ; -- ; -- ; -- ; 1000 ;  44 ; -- ; 34
+fiore giuseppe ; 21849 ; 2017-06-14 ; monitoraggio ordinario ; 14.79523 ; 40.97837 ; -- ; -- ; -- ; -- ; 2000 ;  100 ; -- ; 34
+fiore giuseppe ; 21847 ; 2017-06-14 ; monitoraggio ordinario ; 14.85046 ; 40.98298 ; -- ; -- ; -- ; -- ; 200 ;  2 ; -- ; 34
+fiore giuseppe ; 21846 ; 2017-06-14 ; monitoraggio ordinario ; 14.78912 ; 41.00632 ; -- ; -- ; -- ; -- ; 50 ;  1 ; -- ; 34
+fiore giuseppe ; 21845 ; 2017-06-14 ; monitoraggio ordinario ; 14.78932 ; 40.94720 ; -- ; -- ; -- ; -- ; 500 ;  15 ; -- ; 34
+fiore giuseppe ; 21843 ; 2017-06-14 ; monitoraggio ordinario ; 14.80003 ; 40.98841 ; -- ; -- ; -- ; -- ; 200 ;  50 ; -- ; 34
+IORIO LUIGI MARIA  ; 22146 ; 2017-06-22 ; monitoraggio ordinario ; 14.22181 ; 41.12975 ; -- ; -- ; -- ; -- ; 4000 ;   ; -- ; 60
+IORIO LUIGI MARIA  ; 21658 ; 2017-06-07 ; monitoraggio ordinario ; 14.22181 ; 41.12975 ; -- ; -- ; -- ; -- ; 4000 ;   ; -- ; 60
+lordi giuseppe ; 22443 ; 2017-06-30 ; Controllo periodico vivai ; 15.20123 ; 40.59408 ; -- ; -- ; -- ; -- ; 3000 ;   ; -- ; 60
+lordi giuseppe ; 22441 ; 2017-06-30 ; Controllo periodico vivai ; 15.66833 ; 40.27202 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+lordi giuseppe ; 22025 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.59358 ; 40.07679 ; -- ; -- ; -- ; -- ; 3000 ;  30 ; -- ; 60
+lordi giuseppe ; 22022 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.19108 ; 40.15188 ; -- ; -- ; -- ; -- ; 3000 ;  50 ; -- ; 60
+lordi giuseppe ; 21864 ; 2017-06-14 ; Sopralluogo az. Agricole ; 14.97557 ; 40.60972 ; -- ; -- ; -- ; -- ; 4000 ;  40 ; -- ; 60
+lordi giuseppe ; 21753 ; 2017-06-07 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.80769 ; 40.66158 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+marinelli giuseppe ; 22253 ; 2017-06-27 ; monitoraggio ordinario ; 14.77625 ; 40.93264 ; -- ; -- ; -- ; -- ; 1900 ;  250 ; -- ; 60
+marinelli giuseppe ; 22132 ; 2017-06-21 ; monitoraggio ordinario ; 14.77625 ; 40.93264 ; -- ; -- ; -- ; -- ; 1900 ;  250 ; -- ; 60
+marinelli giuseppe ; 21853 ; 2017-06-13 ; monitoraggio ordinario ; 14.77625 ; 40.93264 ; -- ; -- ; -- ; -- ; 1900 ;  250 ; -- ; 60
+marinelli giuseppe ; 21674 ; 2017-06-07 ; monitoraggio ordinario ; 14.77625 ; 40.93264 ; -- ; -- ; -- ; -- ; 1900 ;  250 ; -- ; 60
+MARTINO VINCENZO ; 22400 ; 2017-06-29 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62762 ; 40.64883 ; -- ; -- ; -- ; -- ; 2930 ;  30 ; -- ; 60
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  10 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  30 ; -- ; 40
+MARTINO VINCENZO ; 21974 ; 2017-06-20 ; Sopralluogo in vivai ; 14.88859 ; 40.62806 ; -- ; -- ; -- ; -- ; 1050 ;  4 ; -- ; 60
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21882 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 15.12826 ; 40.24716 ; -- ; -- ; -- ; -- ; 83 ;  8 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  40 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  8 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  40 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  1 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  80 ; -- ; 19
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  90 ; -- ; 53
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  160 ; -- ; 53
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  60 ; -- ; 53
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  160 ; -- ; 53
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  10 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  250 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  300 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  12 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  20 ; -- ; 32
+MARTINO VINCENZO ; 21516 ; 2017-06-01 ; Sopralluogo in vivai ; 15.01448 ; 40.53333 ; -- ; -- ; -- ; -- ; 19200 ;  25 ; -- ; 32
+MELENCHI GENNARO ; 22373 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 60
+MELENCHI GENNARO ; 22371 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.86854 ; 41.40646 ; -- ; -- ; -- ; -- ; 6500 ;  180 ; -- ; 60
+MELENCHI GENNARO ; 22325 ; 2017-06-26 ; monitoraggio ordinario ; 14.02058 ; 41.36365 ; -- ; -- ; -- ; -- ; 10000 ;  500 ; -- ; 60
+MELENCHI GENNARO ; 22323 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.07452 ; 41.35191 ; -- ; -- ; -- ; -- ; 45000 ;  5800 ; -- ; 60
+MELENCHI GENNARO ; 22019 ; 2017-06-19 ; monitoraggio ordinario ; 14.02058 ; 41.36365 ; -- ; -- ; -- ; -- ; 10000 ;  500 ; -- ; 60
+MELENCHI GENNARO ; 21888 ; 2017-06-12 ; monitoraggio ordinario ; 14.02058 ; 41.36365 ; -- ; -- ; -- ; -- ; 10000 ;  500 ; -- ; 60
+Politano Antonio ; 22195 ; 2017-06-27 ; Nuove autorizzazioni/variazioni ; 14.85148 ; 41.29558 ; -- ; -- ; -- ; -- ; 16150 ;  100 ; -- ; 60
+Politano Antonio ; 22068 ; 2017-06-22 ; monitoraggio ordinario ; 14.92252 ; 41.27120 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 60
+Politano Antonio ; 21786 ; 2017-06-12 ; monitoraggio ordinario ; 14.45033 ; 41.22262 ; -- ; -- ; -- ; -- ; 500 ;  14 ; -- ; 60
+Politano Antonio ; 21718 ; 2017-06-12 ; Adozioni misure ufficiali a Piccoli produttori/Garden/commerciante ; 14.46180 ; 41.24412 ; -- ; -- ; -- ; -- ; 500 ;  16 ; -- ; 60
+Salzillo Giuseppe ; 22339 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.86854 ; 41.40646 ; -- ; -- ; -- ; -- ; 6500 ;  180 ; -- ; 53
+Salzillo Giuseppe ; 22333 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 53
+Salzillo Giuseppe ; 22332 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.98019 ; 41.41560 ; -- ; -- ; -- ; -- ; 5000 ;  500 ; -- ; 53
+Salzillo Giuseppe ; 22300 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.09928 ; 41.33551 ; -- ; -- ; -- ; -- ; 10000 ;  350 ; -- ; 53
+Salzillo Giuseppe ; 22021 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 60
+Stella Giuseppe ; 22208 ; 2017-06-16 ; Consulenza su richiesta/Produzione agricola ; 15.01822 ; 40.55381 ; -- ; -- ; -- ; -- ; 70000 ;  7700 ; -- ; 60
+Stella Giuseppe ; 22206 ; 2017-06-08 ; monitoraggio ordinario ; 15.02730 ; 40.53762 ; -- ; -- ; -- ; -- ; 20000 ;  10 ; -- ; 36
+Stella Giuseppe ; 22206 ; 2017-06-08 ; monitoraggio ordinario ; 15.02730 ; 40.53762 ; -- ; -- ; -- ; -- ; 20000 ;  20 ; -- ; 36
+Stella Giuseppe ; 22205 ; 2017-06-08 ; Sopralluogo in vivai ; 15.23092 ; 40.39650 ; -- ; -- ; -- ; -- ; 5000 ;  16000 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  100 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  30 ; -- ; 36
+VIOLA Pasquale ; 22249 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35124 ; 41.06248 ; -- ; -- ; -- ; -- ; 10800 ;  700 ; -- ; 48
+VIOLA Pasquale ; 22247 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35028 ; 41.05974 ; -- ; -- ; -- ; -- ; 20000 ;  990 ; -- ; 48
+VIOLA Pasquale ; 22244 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35307 ; 41.06115 ; -- ; -- ; -- ; -- ; 18800 ;  1140 ; -- ; 48
+VIOLA Pasquale ; 21755 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01910 ; 41.07350 ; -- ; -- ; -- ; -- ; 10000 ;  780 ; -- ; 48
+VIOLA Pasquale ; 21754 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01985 ; 41.07385 ; -- ; -- ; -- ; -- ; 3500 ;  350 ; -- ; 48
+VIOLA Pasquale ; 21748 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01951 ; 41.07464 ; -- ; -- ; -- ; -- ; 4800 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 22234 ; 2017-06-27 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 22233 ; 2017-06-27 ; UTM ; 14.88211 ; 40.68260 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 22232 ; 2017-06-27 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 22230 ; 2017-06-27 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 22230 ; 2017-06-27 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21991 ; 2017-06-20 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21990 ; 2017-06-20 ; UTM ; 14.88211 ; 40.68260 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21989 ; 2017-06-20 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 21987 ; 2017-06-20 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21987 ; 2017-06-20 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21838 ; 2017-06-13 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21837 ; 2017-06-13 ; UTM ; 14.88211 ; 40.68260 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21836 ; 2017-06-13 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 21834 ; 2017-06-13 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21834 ; 2017-06-13 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+
+PEST ANOLGL:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+De Santis Antonio ; 22438 ; 2017-06-30 ; monitoraggio ordinario ; 15.01752 ; 41.41606 ; -- ; -- ; -- ; -- ; 1000 ;  56 ; -- ; 60
+De Santis Antonio ; 22115 ; 2017-06-23 ; monitoraggio ordinario ; 14.63486 ; 41.12490 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 60
+De Santis Antonio ; 21824 ; 2017-06-14 ; monitoraggio ordinario ; 14.82333 ; 41.29270 ; -- ; -- ; -- ; -- ; 20 ;  2 ; -- ; 60
+De Santis Antonio ; 21784 ; 2017-06-12 ; monitoraggio ordinario ; 14.65511 ; 41.17175 ; -- ; -- ; -- ; -- ; 500 ;  35 ; -- ; 60
+De Santis Antonio ; 21642 ; 2017-06-07 ; monitoraggio ordinario ; 15.08325 ; 41.29790 ; -- ; -- ; -- ; -- ; 200 ;  12 ; -- ; 60
+DE VITO DANIELE ; 22463 ; 2017-06-29 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 22453 ; 2017-06-29 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 22104 ; 2017-06-22 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 22098 ; 2017-06-22 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21908 ; 2017-06-15 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 21904 ; 2017-06-15 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+DE VITO DANIELE ; 21764 ; 2017-06-08 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 158620 ;  2912 ; -- ; 60
+DE VITO DANIELE ; 21745 ; 2017-06-08 ; UTM ; 14.81674 ; 40.92623 ; -- ; -- ; -- ; -- ; 25000 ;  1000 ; -- ; 60
+Di Zeo Gianpaolo ; 22063 ; 2017-06-22 ; monitoraggio ordinario ; 14.93651 ; 40.87987 ; -- ; -- ; -- ; -- ; 500 ;  3 ; -- ; 60
+Di Zeo Gianpaolo ; 22061 ; 2017-06-22 ; monitoraggio ordinario ; 14.92268 ; 40.88951 ; -- ; -- ; -- ; -- ; 1000 ;  40 ; -- ; 60
+Di Zeo Gianpaolo ; 21785 ; 2017-06-14 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.77044 ; 40.91902 ; -- ; -- ; -- ; -- ; 10000 ;  84 ; -- ; 60
+FEOLI RENATO ; 22399 ; 2017-06-21 ; monitoraggio ordinario ; 14.85262 ; 40.87996 ; -- ; -- ; -- ; -- ; 100 ;  3 ; -- ; 48
+FEOLI RENATO ; 22396 ; 2017-06-21 ; monitoraggio ordinario ; 14.77676 ; 40.83687 ; -- ; -- ; -- ; -- ; 200 ;  3 ; -- ; 48
+FEOLI RENATO ; 22395 ; 2017-06-21 ; monitoraggio ordinario ; 14.80072 ; 40.90335 ; -- ; -- ; -- ; -- ; 100 ;  1 ; -- ; 48
+FEOLI RENATO ; 22322 ; 2017-06-21 ; monitoraggio ordinario ; 14.77186 ; 40.83306 ; -- ; -- ; -- ; -- ; 2000 ;  42 ; -- ; 48
+FEOLI RENATO ; 22317 ; 2017-06-21 ; monitoraggio ordinario ; 14.84178 ; 40.82805 ; -- ; -- ; -- ; -- ; 150 ;  3 ; -- ; 48
+FEOLI RENATO ; 22403 ; 2017-06-16 ; monitoraggio ordinario ; 15.03541 ; 40.90810 ; -- ; -- ; -- ; -- ; 2000 ;  180 ; -- ; 48
+FEOLI RENATO ; 22392 ; 2017-06-16 ; monitoraggio ordinario ; 14.97902 ; 40.94841 ; -- ; -- ; -- ; -- ; 200 ;  4 ; -- ; 48
+FEOLI RENATO ; 22382 ; 2017-06-16 ; Adozione misure ufficiali in az. agricole ; 15.07562 ; 40.91762 ; -- ; -- ; -- ; -- ; 1000 ;  30 ; -- ; 48
+FEOLI RENATO ; 22380 ; 2017-06-16 ; Adozione misure ufficiali in az. agricole ; 14.92580 ; 40.94142 ; -- ; -- ; -- ; -- ; 150 ;  10 ; -- ; 48
+FEOLI RENATO ; 22320 ; 2017-06-16 ; monitoraggio ordinario ; 15.01263 ; 40.93280 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 48
+FEOLI RENATO ; 22401 ; 2017-06-08 ; monitoraggio ordinario ; 14.96119 ; 41.05574 ; -- ; -- ; -- ; -- ; 5000 ;  1800 ; -- ; 34
+FEOLI RENATO ; 22397 ; 2017-06-08 ; monitoraggio ordinario ; 15.02925 ; 40.97581 ; -- ; -- ; -- ; -- ; 500 ;  9 ; -- ; 34
+FEOLI RENATO ; 22384 ; 2017-06-08 ; monitoraggio ordinario ; 15.01985 ; 41.00670 ; -- ; -- ; -- ; -- ; 1000 ;  10 ; -- ; 34
+FEOLI RENATO ; 22343 ; 2017-06-08 ; monitoraggio ordinario ; 14.90182 ; 41.01342 ; -- ; -- ; -- ; -- ; 200 ;  11 ; -- ; 34
+FEOLI RENATO ; 22327 ; 2017-06-08 ; monitoraggio ordinario ; 14.88558 ; 40.96530 ; -- ; -- ; -- ; -- ; 50 ;  4 ; -- ; 34
+FEOLI RENATO ; 22324 ; 2017-06-08 ; monitoraggio ordinario ; 14.88017 ; 40.93751 ; -- ; -- ; -- ; -- ; 100 ;  3 ; -- ; 34
+FEOLI RENATO ; 22314 ; 2017-06-08 ; monitoraggio ordinario ; 15.02925 ; 40.97581 ; -- ; -- ; -- ; -- ; 1000 ;  20 ; -- ; 34
+fiore giuseppe ; 21854 ; 2017-06-14 ; monitoraggio ordinario ; 14.82105 ; 40.98484 ; -- ; -- ; -- ; -- ; 1000 ;  25 ; -- ; 34
+fiore giuseppe ; 21850 ; 2017-06-14 ; monitoraggio ordinario ; 14.77009 ; 41.00953 ; -- ; -- ; -- ; -- ; 1000 ;  44 ; -- ; 34
+fiore giuseppe ; 21849 ; 2017-06-14 ; monitoraggio ordinario ; 14.79523 ; 40.97837 ; -- ; -- ; -- ; -- ; 2000 ;  100 ; -- ; 34
+fiore giuseppe ; 21847 ; 2017-06-14 ; monitoraggio ordinario ; 14.85046 ; 40.98298 ; -- ; -- ; -- ; -- ; 200 ;  2 ; -- ; 34
+fiore giuseppe ; 21846 ; 2017-06-14 ; monitoraggio ordinario ; 14.78912 ; 41.00632 ; -- ; -- ; -- ; -- ; 50 ;  1 ; -- ; 34
+fiore giuseppe ; 21845 ; 2017-06-14 ; monitoraggio ordinario ; 14.78932 ; 40.94720 ; -- ; -- ; -- ; -- ; 500 ;  15 ; -- ; 34
+fiore giuseppe ; 21843 ; 2017-06-14 ; monitoraggio ordinario ; 14.80003 ; 40.98841 ; -- ; -- ; -- ; -- ; 200 ;  50 ; -- ; 34
+MARTINO VINCENZO ; 22400 ; 2017-06-29 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.62762 ; 40.64883 ; -- ; -- ; -- ; -- ; 2930 ;  30 ; -- ; 60
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 40
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  40 ; -- ; 19
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  160 ; -- ; 53
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  20 ; -- ; 32
+MARTINO VINCENZO ; 21516 ; 2017-06-01 ; Sopralluogo in vivai ; 15.01448 ; 40.53333 ; -- ; -- ; -- ; -- ; 19200 ;  25 ; -- ; 32
+MELENCHI GENNARO ; 22373 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 60
+MELENCHI GENNARO ; 22371 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.86854 ; 41.40646 ; -- ; -- ; -- ; -- ; 6500 ;  180 ; -- ; 60
+Politano Antonio ; 22195 ; 2017-06-27 ; Nuove autorizzazioni/variazioni ; 14.85148 ; 41.29558 ; -- ; -- ; -- ; -- ; 16150 ;  100 ; -- ; 60
+Politano Antonio ; 22068 ; 2017-06-22 ; monitoraggio ordinario ; 14.92252 ; 41.27120 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 60
+Politano Antonio ; 22068 ; 2017-06-22 ; monitoraggio ordinario ; 14.92252 ; 41.27120 ; -- ; -- ; -- ; -- ; 10 ;  1 ; -- ; 60
+Salzillo Giuseppe ; 22339 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.86854 ; 41.40646 ; -- ; -- ; -- ; -- ; 6500 ;  180 ; -- ; 53
+Salzillo Giuseppe ; 22333 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 53
+Salzillo Giuseppe ; 22021 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.11720 ; 41.36099 ; -- ; -- ; -- ; -- ; 12000 ;  600 ; -- ; 60
+VITOLO ANTONIO ; 22234 ; 2017-06-27 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 22232 ; 2017-06-27 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 22230 ; 2017-06-27 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21991 ; 2017-06-20 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21989 ; 2017-06-20 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 21987 ; 2017-06-20 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21838 ; 2017-06-13 ; UTM ; 14.89393 ; 40.71772 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+VITOLO ANTONIO ; 21836 ; 2017-06-13 ; UTM ; 14.87065 ; 40.67222 ; -- ; -- ; -- ; -- ; 8000 ;  762 ; -- ; 48
+VITOLO ANTONIO ; 21834 ; 2017-06-13 ; UTM ; 14.77170 ; 40.77074 ; -- ; -- ; -- ; -- ; 10000 ;  625 ; -- ; 48
+
+PEST ANTHEU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 21912 ; 2017-06-15 ; Sopralluogo az. Agricole ; 14.05577 ; 41.16076 ; -- ; -- ; -- ; -- ; 30000 ;  7000 ; -- ; 60
+BROSCO Tommaso ; 21899 ; 2017-06-13 ; Sopralluogo az. Agricole ; 13.95282 ; 41.11632 ; -- ; -- ; -- ; -- ; 12000 ;  20000 ; -- ; 60
+CECERE CRESCENZO ; 21548 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.13386 ; 40.96344 ; -- ; -- ; -- ; -- ; 5800 ;  15000 ; -- ; 60
+
+PEST AROMBU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 22287 ; 2017-06-20 ; Sopralluogo az. Agricole ; 13.85524 ; 41.24026 ; -- ; -- ; -- ; -- ; 50000 ;  1450 ; -- ; 60
+BROSCO Tommaso ; 21963 ; 2017-06-20 ; Sopralluogo az. Agricole ; 13.82805 ; 41.21027 ; -- ; -- ; -- ; -- ; 30000 ;   ; -- ; 60
+BROSCO Tommaso ; 21647 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.11084 ; 41.18933 ; -- ; -- ; -- ; -- ; 34000 ;   ; -- ; 60
+BROSCO Tommaso ; 21645 ; 2017-06-07 ; monitoraggio ordinario ; 14.02701 ; 41.15190 ; -- ; -- ; -- ; -- ; 65000 ;   ; -- ; 60
+BROSCO Tommaso ; 21643 ; 2017-06-06 ; monitoraggio ordinario ; 13.79362 ; 41.23216 ; -- ; -- ; -- ; -- ; 5000 ;  320 ; -- ; 60
+CECERE CRESCENZO ; 22306 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.14507 ; 40.90504 ; -- ; -- ; -- ; -- ; 1500 ;  8 ; -- ; 60
+CECERE CRESCENZO ; 22306 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.14507 ; 40.90504 ; -- ; -- ; -- ; -- ; 1500 ;  10 ; -- ; 60
+CECERE CRESCENZO ; 22305 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.14631 ; 40.90971 ; -- ; -- ; -- ; -- ; 8000 ;  600 ; -- ; 60
+CECERE CRESCENZO ; 22304 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.14841 ; 40.91101 ; -- ; -- ; -- ; -- ; 3000 ;  80 ; -- ; 34
+CECERE CRESCENZO ; 22304 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.14841 ; 40.91101 ; -- ; -- ; -- ; -- ; 3000 ;  6 ; -- ; 34
+CECERE CRESCENZO ; 22303 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.28951 ; 40.87548 ; -- ; -- ; -- ; -- ; 3000 ;  5 ; -- ; 34
+CECERE CRESCENZO ; 22303 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.28951 ; 40.87548 ; -- ; -- ; -- ; -- ; 3000 ;  10 ; -- ; 34
+CECERE CRESCENZO ; 22303 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.28951 ; 40.87548 ; -- ; -- ; -- ; -- ; 3000 ;  8 ; -- ; 34
+CECERE CRESCENZO ; 22202 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.71121 ; 40.77244 ; -- ; -- ; -- ; -- ; 2000 ;  20 ; -- ; 34
+CECERE CRESCENZO ; 22189 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.38310 ; 40.83998 ; -- ; -- ; -- ; -- ; 3113 ;  55 ; -- ; 34
+CECERE CRESCENZO ; 22301 ; 2017-06-23 ; Sopralluogo in vivai ; 14.15651 ; 40.86561 ; -- ; -- ; -- ; -- ; 6000 ;  2 ; -- ; 60
+CECERE CRESCENZO ; 22301 ; 2017-06-23 ; Sopralluogo in vivai ; 14.15651 ; 40.86561 ; -- ; -- ; -- ; -- ; 6000 ;  7 ; -- ; 60
+CECERE CRESCENZO ; 22299 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.18068 ; 40.91587 ; -- ; -- ; -- ; -- ; 2000 ;  55 ; -- ; 60
+CECERE CRESCENZO ; 22299 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.18068 ; 40.91587 ; -- ; -- ; -- ; -- ; 2000 ;  40 ; -- ; 60
+CECERE CRESCENZO ; 22297 ; 2017-06-21 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.21488 ; 40.86431 ; -- ; -- ; -- ; -- ; 150 ;  1 ; -- ; 60
+CECERE CRESCENZO ; 22293 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21332 ; 40.86403 ; -- ; -- ; -- ; -- ; 6000 ;  15 ; -- ; 60
+CECERE CRESCENZO ; 22293 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21332 ; 40.86403 ; -- ; -- ; -- ; -- ; 6000 ;  16 ; -- ; 60
+CECERE CRESCENZO ; 22293 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21332 ; 40.86403 ; -- ; -- ; -- ; -- ; 6000 ;  55 ; -- ; 60
+CECERE CRESCENZO ; 22293 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21332 ; 40.86403 ; -- ; -- ; -- ; -- ; 6000 ;  8 ; -- ; 60
+CECERE CRESCENZO ; 22027 ; 2017-06-19 ; Sopralluogo az. Agricole ; 14.15740 ; 40.86926 ; -- ; -- ; -- ; -- ; 2000 ;  8 ; -- ; 60
+CECERE CRESCENZO ; 21960 ; 2017-06-19 ; monitoraggio ordinario ; 14.15834 ; 40.86857 ; -- ; -- ; -- ; -- ; 10000 ;  184 ; -- ; 60
+CECERE CRESCENZO ; 21957 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.20610 ; 40.88954 ; -- ; -- ; -- ; -- ; 16000 ;  320 ; -- ; 60
+CECERE CRESCENZO ; 21956 ; 2017-06-16 ; monitoraggio ordinario ; 14.20872 ; 40.89268 ; -- ; -- ; -- ; -- ; 18000 ;  28 ; -- ; 60
+CECERE CRESCENZO ; 21956 ; 2017-06-16 ; monitoraggio ordinario ; 14.20872 ; 40.89268 ; -- ; -- ; -- ; -- ; 18000 ;  188 ; -- ; 60
+CECERE CRESCENZO ; 21832 ; 2017-06-14 ; Sopralluogo piccoli produttori/Garden/commerciante ; 14.24356 ; 40.85590 ; -- ; -- ; -- ; -- ; 100 ;  1 ; -- ; 60
+CECERE CRESCENZO ; 21832 ; 2017-06-14 ; Sopralluogo piccoli produttori/Garden/commerciante ; 14.24356 ; 40.85590 ; -- ; -- ; -- ; -- ; 100 ;  1 ; -- ; 60
+CECERE CRESCENZO ; 21829 ; 2017-06-14 ; monitoraggio ordinario ; 14.21675 ; 40.87674 ; -- ; -- ; -- ; -- ; 5000 ;  43 ; -- ; 60
+CECERE CRESCENZO ; 21829 ; 2017-06-14 ; monitoraggio ordinario ; 14.21675 ; 40.87674 ; -- ; -- ; -- ; -- ; 5000 ;  250 ; -- ; 60
+CECERE CRESCENZO ; 21826 ; 2017-06-14 ; monitoraggio ordinario ; 14.20717 ; 40.89190 ; -- ; -- ; -- ; -- ; 2500 ;  8 ; -- ; 60
+CECERE CRESCENZO ; 21826 ; 2017-06-14 ; monitoraggio ordinario ; 14.20717 ; 40.89190 ; -- ; -- ; -- ; -- ; 2500 ;  2 ; -- ; 60
+CECERE CRESCENZO ; 21802 ; 2017-06-08 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.90527 ; 40.74831 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 60
+CECERE CRESCENZO ; 21723 ; 2017-06-08 ; Sopralluogo az. Agricole ; 14.23086 ; 40.86353 ; -- ; -- ; -- ; -- ; 5000 ;  6 ; -- ; 60
+CECERE CRESCENZO ; 21723 ; 2017-06-08 ; Sopralluogo az. Agricole ; 14.23086 ; 40.86353 ; -- ; -- ; -- ; -- ; 5000 ;  5 ; -- ; 60
+CECERE CRESCENZO ; 21723 ; 2017-06-08 ; Sopralluogo az. Agricole ; 14.23086 ; 40.86353 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 60
+CECERE CRESCENZO ; 21596 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.20950 ; 40.91551 ; -- ; -- ; -- ; -- ; 3000 ;  180 ; -- ; 60
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  20 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  2 ; -- ; 34
+FEOLI RENATO ; 21542 ; 2017-06-01 ; monitoraggio ordinario ; 14.78015 ; 40.82993 ; -- ; -- ; -- ; -- ; 2000 ;  18 ; -- ; 60
+FEOLI RENATO ; 21541 ; 2017-06-01 ; monitoraggio ordinario ; 14.85532 ; 40.88603 ; -- ; -- ; -- ; -- ; 300 ;  6 ; -- ; 60
+FEOLI RENATO ; 21540 ; 2017-06-01 ; monitoraggio ordinario ; 14.77800 ; 40.82421 ; -- ; -- ; -- ; -- ; 1000 ;  11 ; -- ; 60
+Ferrara Raffaele ; 22398 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.15222 ; 40.90783 ; -- ; -- ; -- ; -- ; 10000 ;  10 ; -- ; 60
+Ferrara Raffaele ; 22398 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.15222 ; 40.90783 ; -- ; -- ; -- ; -- ; 10000 ;  500 ; -- ; 60
+Ferrara Raffaele ; 22394 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.15129 ; 40.90800 ; -- ; -- ; -- ; -- ; 3500 ;  20 ; -- ; 60
+Ferrara Raffaele ; 22394 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.15129 ; 40.90800 ; -- ; -- ; -- ; -- ; 3500 ;  40 ; -- ; 60
+Ferrara Raffaele ; 22394 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.15129 ; 40.90800 ; -- ; -- ; -- ; -- ; 3500 ;  2 ; -- ; 60
+Ferrara Raffaele ; 22379 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16151 ; 40.85761 ; -- ; -- ; -- ; -- ; 1000 ;  3 ; -- ; 60
+Ferrara Raffaele ; 22379 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16151 ; 40.85761 ; -- ; -- ; -- ; -- ; 1000 ;  8 ; -- ; 60
+Ferrara Raffaele ; 22379 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16151 ; 40.85761 ; -- ; -- ; -- ; -- ; 1000 ;  13 ; -- ; 60
+Ferrara Raffaele ; 22375 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16091 ; 40.85768 ; -- ; -- ; -- ; -- ; 2000 ;  2 ; -- ; 60
+Ferrara Raffaele ; 22375 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16091 ; 40.85768 ; -- ; -- ; -- ; -- ; 2000 ;  7 ; -- ; 60
+Ferrara Raffaele ; 22375 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.16091 ; 40.85768 ; -- ; -- ; -- ; -- ; 2000 ;  10 ; -- ; 60
+Ferrara Raffaele ; 22372 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21329 ; 40.86333 ; -- ; -- ; -- ; -- ; 8000 ;  42 ; -- ; 60
+Ferrara Raffaele ; 22372 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21329 ; 40.86333 ; -- ; -- ; -- ; -- ; 8000 ;  42 ; -- ; 60
+Ferrara Raffaele ; 22372 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.21329 ; 40.86333 ; -- ; -- ; -- ; -- ; 8000 ;  42 ; -- ; 60
+Ferrara Raffaele ; 21959 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.21999 ; 40.91541 ; -- ; -- ; -- ; -- ; 12000 ;  3 ; -- ; 60
+Ferrara Raffaele ; 21959 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.21999 ; 40.91541 ; -- ; -- ; -- ; -- ; 12000 ;  20 ; -- ; 60
+Ferrara Raffaele ; 21959 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.21999 ; 40.91541 ; -- ; -- ; -- ; -- ; 12000 ;  160 ; -- ; 60
+Ferrara Raffaele ; 21595 ; 2017-06-06 ; Adozioni misure ufficiali in ambito urbano/verde pubblico e privato ; 14.18405 ; 40.87860 ; -- ; -- ; -- ; -- ; 5000 ;  2 ; -- ; 60
+Ferrara Raffaele ; 21595 ; 2017-06-06 ; Adozioni misure ufficiali in ambito urbano/verde pubblico e privato ; 14.18405 ; 40.87860 ; -- ; -- ; -- ; -- ; 5000 ;  470 ; -- ; 60
+Ferrara Raffaele ; 21592 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.19307 ; 40.86461 ; -- ; -- ; -- ; -- ; 15000 ;  37 ; -- ; 60
+IACCARINO FRANCESCO MARIA ; 21920 ; 2017-06-15 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.06946 ; 40.79620 ; -- ; -- ; -- ; -- ; 350 ;  3 ; -- ; 60
+Iannotta Pasquale ; 22298 ; 2017-06-27 ; UTM ; 14.10009 ; 40.92610 ; -- ; -- ; -- ; -- ; 10000 ;  500 ; -- ; 60
+Iannotta Pasquale ; 21867 ; 2017-06-12 ; UTM ; 14.20998 ; 40.89719 ; -- ; -- ; -- ; -- ; 3000 ;  40 ; -- ; 60
+Iannotta Pasquale ; 21866 ; 2017-06-12 ; UTM ; 14.17668 ; 40.90710 ; -- ; -- ; -- ; -- ; 3700 ;  40 ; -- ; 60
+Iannotta Pasquale ; 21711 ; 2017-06-06 ; UTM ; 14.17668 ; 40.90710 ; -- ; -- ; -- ; -- ; 3700 ;  40 ; -- ; 60
+Iannotta Pasquale ; 21544 ; 2017-06-01 ; UTM ; 14.20998 ; 40.89719 ; -- ; -- ; -- ; -- ; 3000 ;  40 ; -- ; 60
+IORIO LUIGI MARIA  ; 22147 ; 2017-06-22 ; monitoraggio ordinario ; 14.21624 ; 41.17622 ; -- ; -- ; -- ; -- ; 9000 ;   ; -- ; 60
+IORIO LUIGI MARIA  ; 21657 ; 2017-06-07 ; monitoraggio ordinario ; 14.21624 ; 41.17622 ; -- ; -- ; -- ; -- ; 9000 ;   ; -- ; 60
+LENZI ALBERTO ; 21939 ; 2017-06-15 ; monitoraggio ordinario ; 14.52537 ; 40.91219 ; -- ; -- ; -- ; -- ; 18000 ;  40 ; -- ; 60
+LENZI ALBERTO ; 21939 ; 2017-06-15 ; monitoraggio ordinario ; 14.52537 ; 40.91219 ; -- ; -- ; -- ; -- ; 18000 ;  10 ; -- ; 60
+lordi giuseppe ; 22443 ; 2017-06-30 ; Controllo periodico vivai ; 15.20123 ; 40.59408 ; -- ; -- ; -- ; -- ; 3000 ;   ; -- ; 60
+lordi giuseppe ; 22025 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.59358 ; 40.07679 ; -- ; -- ; -- ; -- ; 3000 ;  60 ; -- ; 60
+lordi giuseppe ; 22025 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.59358 ; 40.07679 ; -- ; -- ; -- ; -- ; 3000 ;  30 ; -- ; 60
+lordi giuseppe ; 22025 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.59358 ; 40.07679 ; -- ; -- ; -- ; -- ; 3000 ;  30 ; -- ; 60
+lordi giuseppe ; 22022 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.19108 ; 40.15188 ; -- ; -- ; -- ; -- ; 3000 ;  80 ; -- ; 60
+lordi giuseppe ; 21926 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.80560 ; 40.66284 ; -- ; -- ; -- ; -- ; 3000 ;   ; -- ; 60
+lordi giuseppe ; 21753 ; 2017-06-07 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.80769 ; 40.66158 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+lordi giuseppe ; 21749 ; 2017-06-07 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.80596 ; 40.65926 ; -- ; -- ; -- ; -- ; 3000 ;  80 ; -- ; 60
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  10 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  30 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  1500 ; -- ; 40
+MARTINO VINCENZO ; 21974 ; 2017-06-20 ; Sopralluogo in vivai ; 14.88859 ; 40.62806 ; -- ; -- ; -- ; -- ; 1050 ;  4 ; -- ; 60
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  120 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21882 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 15.12826 ; 40.24716 ; -- ; -- ; -- ; -- ; 83 ;  8 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  40 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  8 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  50 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  1 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  5 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  200 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  70 ; -- ; 19
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  15 ; -- ; 53
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  90 ; -- ; 53
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  160 ; -- ; 53
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  250 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  12 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  300 ; -- ; 32
+orologiaio vincenzo ; 22073 ; 2017-06-20 ; Sopralluogo az. Agricole ; 13.94625 ; 41.14161 ; -- ; -- ; -- ; -- ; 10000 ;  350 ; -- ; 60
+SARDO CARLO ; 22222 ; 2017-06-27 ; Sopralluogo az. Agricole ; 14.08006 ; 40.80364 ; -- ; -- ; -- ; -- ; 1658 ;  8 ; -- ; 60
+SARDO CARLO ; 22181 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.07473 ; 40.80396 ; -- ; -- ; -- ; -- ; 650 ;  4 ; -- ; 60
+SARDO CARLO ; 22181 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.07473 ; 40.80396 ; -- ; -- ; -- ; -- ; 650 ;  3 ; -- ; 60
+SARDO CARLO ; 22181 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.07473 ; 40.80396 ; -- ; -- ; -- ; -- ; 650 ;  6 ; -- ; 60
+SARDO CARLO ; 22178 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.07962 ; 40.80474 ; -- ; -- ; -- ; -- ; 900 ;  3 ; -- ; 60
+SARDO CARLO ; 22178 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.07962 ; 40.80474 ; -- ; -- ; -- ; -- ; 900 ;  1 ; -- ; 60
+SARDO CARLO ; 22140 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.08006 ; 40.80364 ; -- ; -- ; -- ; -- ; 1658 ;  8 ; -- ; 60
+Stella Giuseppe ; 22208 ; 2017-06-16 ; Consulenza su richiesta/Produzione agricola ; 15.01822 ; 40.55381 ; -- ; -- ; -- ; -- ; 70000 ;  7700 ; -- ; 60
+Stella Giuseppe ; 22206 ; 2017-06-08 ; monitoraggio ordinario ; 15.02730 ; 40.53762 ; -- ; -- ; -- ; -- ; 20000 ;  10 ; -- ; 36
+Stella Giuseppe ; 22206 ; 2017-06-08 ; monitoraggio ordinario ; 15.02730 ; 40.53762 ; -- ; -- ; -- ; -- ; 20000 ;  20 ; -- ; 36
+Stella Giuseppe ; 22205 ; 2017-06-08 ; Sopralluogo in vivai ; 15.23092 ; 40.39650 ; -- ; -- ; -- ; -- ; 5000 ;  16000 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  100 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 36
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  30 ; -- ; 36
+tuccillo carmine ; 22810 ; 2017-06-21 ; monitoraggio ordinario ; 14.44056 ; 40.92056 ; -- ; -- ; -- ; -- ; 8000 ;  100 ; -- ; 60
+tuccillo carmine ; 22809 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.46193 ; 40.93406 ; -- ; -- ; -- ; -- ; 10000 ;  150 ; -- ; 60
+tuccillo carmine ; 22808 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.22442 ; 40.87155 ; -- ; -- ; -- ; -- ; 30000 ;  100 ; -- ; 60
+tuccillo carmine ; 22805 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.22442 ; 40.87155 ; -- ; -- ; -- ; -- ; 30000 ;  100 ; -- ; 60
+tuccillo carmine ; 22804 ; 2017-06-13 ; monitoraggio ordinario ; 14.44056 ; 40.92056 ; -- ; -- ; -- ; -- ; 8000 ;  100 ; -- ; 60
+tuccillo carmine ; 22803 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.46193 ; 40.93406 ; -- ; -- ; -- ; -- ; 10000 ;  150 ; -- ; 60
+tuccillo carmine ; 22802 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.22442 ; 40.87155 ; -- ; -- ; -- ; -- ; 30000 ;  100 ; -- ; 60
+tuccillo carmine ; 22801 ; 2017-06-06 ; monitoraggio ordinario ; 14.44056 ; 40.92056 ; -- ; -- ; -- ; -- ; 8000 ;  100 ; -- ; 60
+tuccillo carmine ; 22800 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.46193 ; 40.93406 ; -- ; -- ; -- ; -- ; 10000 ;  150 ; -- ; 60
+tuccillo carmine ; 22799 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.22442 ; 40.87155 ; -- ; -- ; -- ; -- ; 30000 ;  100 ; -- ; 60
+tuccillo carmine ; 21526 ; 2017-06-01 ; Sopralluogo az. Agricole ; 14.22442 ; 40.87155 ; -- ; -- ; -- ; -- ; 30000 ;  100 ; -- ; 60
+VIOLA Pasquale ; 22249 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35124 ; 41.06248 ; -- ; -- ; -- ; -- ; 10800 ;  700 ; -- ; 48
+VIOLA Pasquale ; 22247 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35028 ; 41.05974 ; -- ; -- ; -- ; -- ; 20000 ;  990 ; -- ; 48
+VIOLA Pasquale ; 22244 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35307 ; 41.06115 ; -- ; -- ; -- ; -- ; 18800 ;  1140 ; -- ; 48
+VIOLA Pasquale ; 22633 ; 2017-06-22 ; Controllo Export ; 14.32406 ; 41.03893 ; -- ; -- ; -- ; -- ; 23000 ;  100 ; -- ; 60
+VIOLA Pasquale ; 21756 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01900 ; 41.07459 ; -- ; -- ; -- ; -- ; 5 ;  1 ; -- ; 48
+VIOLA Pasquale ; 21755 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01910 ; 41.07350 ; -- ; -- ; -- ; -- ; 10000 ;  780 ; -- ; 48
+VIOLA Pasquale ; 21754 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01985 ; 41.07385 ; -- ; -- ; -- ; -- ; 3500 ;  350 ; -- ; 48
+VIOLA Pasquale ; 21748 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01951 ; 41.07464 ; -- ; -- ; -- ; -- ; 4800 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 22231 ; 2017-06-27 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 21988 ; 2017-06-20 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 21835 ; 2017-06-13 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+
+PEST BURSXY:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  13 ; -- ; 34
+IACCARINO FRANCESCO MARIA ; 22223 ; 2017-06-27 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.07343 ; 40.80416 ; -- ; -- ; -- ; -- ; 30 ;  1 ; -- ; 60
+Izzo Pasquale Pio ; 22416 ; 2017-06-30 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.60738 ; 41.05191 ; -- ; -- ; -- ; -- ; 1248 ;  2 ; -- ; 60
+Politano Antonio ; 22195 ; 2017-06-27 ; Nuove autorizzazioni/variazioni ; 14.85148 ; 41.29558 ; -- ; -- ; -- ; -- ; 16150 ;  2000 ; -- ; 60
+Politano Antonio ; 21955 ; 2017-06-15 ; monitoraggio ordinario ; 14.87716 ; 41.31121 ; -- ; -- ; -- ; -- ; 500 ;  45 ; -- ; 60
+
+PEST CORBSE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 22285 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.85266 ; 41.19789 ; -- ; -- ; -- ; -- ; 6000 ;   ; -- ; 28
+BROSCO Tommaso ; 22228 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22227 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 21567 ; 2017-06-06 ; Sopralluogo az. Agricole ; 13.81990 ; 41.21477 ; -- ; -- ; -- ; -- ; 20000 ;   ; -- ; 60
+CECERE CRESCENZO ; 21548 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.13386 ; 40.96344 ; -- ; -- ; -- ; -- ; 5800 ;  15000 ; -- ; 60
+ESPOSITO GIOVANNI ; 22078 ; 2017-06-22 ; Controllo periodico vivai ; 14.29327 ; 40.92379 ; -- ; -- ; -- ; -- ; 300 ;  50 ; -- ; 60
+ESPOSITO GIOVANNI ; 21641 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.44521 ; 40.94033 ; -- ; -- ; -- ; -- ; 150 ;  100 ; -- ; 60
+ESPOSITO GIOVANNI ; 21640 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.45199 ; 40.93316 ; -- ; -- ; -- ; -- ; 300 ;   ; -- ; 60
+ESPOSITO GIOVANNI ; 21636 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.45049 ; 40.94285 ; -- ; -- ; -- ; -- ; 1500 ;  80 ; -- ; 60
+ESPOSITO GIOVANNI ; 21635 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.45049 ; 40.94285 ; -- ; -- ; -- ; -- ; 120 ;  40 ; -- ; 60
+ESPOSITO GIOVANNI ; 21629 ; 2017-06-07 ; Sopralluogo az. Agricole ; 14.50750 ; 40.94672 ; -- ; -- ; -- ; -- ; 800 ;  90 ; -- ; 60
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22358 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 17
+falco felice ; 22357 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 4000 ;  8000 ; -- ; 17
+falco felice ; 22353 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 8000 ;  16000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Fiorillo Antonio ; 21905 ; 2017-06-07 ; monitoraggio comparto pataticolo ; 14.99769 ; 40.48116 ; -- ; -- ; -- ; -- ; 8000 ;   ; -- ; 60
+Fiorillo Antonio ; 21896 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.01929 ; 40.47119 ; -- ; -- ; -- ; -- ; 56000 ;   ; -- ; 34
+Fiorillo Antonio ; 21894 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.02829 ; 40.46494 ; -- ; -- ; -- ; -- ; 10691 ;   ; -- ; 34
+LENZI ALBERTO ; 22070 ; 2017-06-22 ; Controllo periodico vivai ; 14.50750 ; 40.94672 ; -- ; -- ; -- ; -- ; 800 ;   ; -- ; 60
+LENZI ALBERTO ; 21694 ; 2017-06-08 ; Comparto pataticolo/Sito di lavorazione ; 14.51026 ; 40.95267 ; -- ; -- ; -- ; -- ; 5700 ;  0 ; -- ; 60
+marra mario ; 21965 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21964 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21575 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 14.24434 ; 41.04167 ; -- ; -- ; -- ; -- ; 160656 ;   ; -- ; 60
+PARIBELLO Raffaele ; 21943 ; 2017-06-19 ; Comparto pataticolo/Produzione agricola ; 14.18472 ; 41.03528 ; -- ; -- ; -- ; -- ; 35000 ;   ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  1 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST CTV000:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+FEOLI RENATO ; 22196 ; 2017-06-27 ; Sopralluogo in vivai ; 15.03036 ; 41.20879 ; -- ; -- ; -- ; -- ; 19900 ;  3 ; -- ; 60
+IACCARINO FRANCESCO MARIA ; 22440 ; 2017-06-29 ; Controllo periodico vivai ; 14.09244 ; 40.83909 ; -- ; -- ; -- ; -- ; 16500 ;  80 ; -- ; 60
+IACCARINO FRANCESCO MARIA ; 22440 ; 2017-06-29 ; Controllo periodico vivai ; 14.09244 ; 40.83909 ; -- ; -- ; -- ; -- ; 16500 ;  80 ; -- ; 60
+IACCARINO FRANCESCO MARIA ; 22440 ; 2017-06-29 ; Controllo periodico vivai ; 14.09244 ; 40.83909 ; -- ; -- ; -- ; -- ; 16500 ;  80 ; -- ; 60
+IACCARINO FRANCESCO MARIA ; 21920 ; 2017-06-15 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.06946 ; 40.79620 ; -- ; -- ; -- ; -- ; 350 ;  20 ; -- ; 60
+IORIO LUIGI MARIA  ; 22146 ; 2017-06-22 ; monitoraggio ordinario ; 14.22181 ; 41.12975 ; -- ; -- ; -- ; -- ; 4000 ;   ; -- ; 60
+IORIO LUIGI MARIA  ; 21658 ; 2017-06-07 ; monitoraggio ordinario ; 14.22181 ; 41.12975 ; -- ; -- ; -- ; -- ; 4000 ;   ; -- ; 60
+LENZI ALBERTO ; 21939 ; 2017-06-15 ; monitoraggio ordinario ; 14.52537 ; 40.91219 ; -- ; -- ; -- ; -- ; 18000 ;  81 ; -- ; 60
+marra mario ; 22017 ; 2017-06-21 ; Controllo periodico vivai ; 14.24769 ; 41.05516 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+marra mario ; 22026 ; 2017-06-15 ; Controllo periodico vivai ; 13.98004 ; 40.98707 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+marra mario ; 22026 ; 2017-06-15 ; Controllo periodico vivai ; 13.98004 ; 40.98707 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+orologiaio vincenzo ; 22079 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.43214 ; 40.98466 ; -- ; -- ; -- ; -- ; 3000 ;  120 ; -- ; 60
+Politano Antonio ; 21718 ; 2017-06-12 ; Adozioni misure ufficiali a Piccoli produttori/Garden/commerciante ; 14.46180 ; 41.24412 ; -- ; -- ; -- ; -- ; 500 ;  16 ; -- ; 60
+SARDO CARLO ; 22140 ; 2017-06-22 ; Sopralluogo az. Agricole ; 14.08006 ; 40.80364 ; -- ; -- ; -- ; -- ; 1658 ;  35 ; -- ; 60
+
+PEST DACUBI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUCI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUFE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUFR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUHA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUHU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACULO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUNE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUPE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST DACUSP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXAB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXAL:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXAR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXAT:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXCA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXCU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CECERE CRESCENZO ; 21548 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.13386 ; 40.96344 ; -- ; -- ; -- ; -- ; 5800 ;  15000 ; -- ; 60
+
+PEST EPIXDI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXFA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXFS:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXFU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXIN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXNC:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXNG:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXPA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXPI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXPR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXPU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXSI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CECERE CRESCENZO ; 21548 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.13386 ; 40.96344 ; -- ; -- ; -- ; -- ; 5800 ;  15000 ; -- ; 60
+marra mario ; 21965 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21964 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+PARIBELLO Raffaele ; 21973 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  8000 ; -- ; 60
+PARIBELLO Raffaele ; 21972 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  8000 ; -- ; 60
+PARIBELLO Raffaele ; 21968 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  7000 ; -- ; 60
+PARIBELLO Raffaele ; 21967 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  7000 ; -- ; 60
+PARIBELLO Raffaele ; 21943 ; 2017-06-19 ; Comparto pataticolo/Produzione agricola ; 14.18472 ; 41.03528 ; -- ; -- ; -- ; -- ; 35000 ;   ; -- ; 60
+PARIBELLO Raffaele ; 21770 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  20000 ; -- ; 48
+PARIBELLO Raffaele ; 21768 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  150000 ; -- ; 48
+PARIBELLO Raffaele ; 21767 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  20000 ; -- ; 48
+PARIBELLO Raffaele ; 21765 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  3000 ; -- ; 48
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3000 ; -- ; 60
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  1800 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  5400 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  900 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  1800 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  12000 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  10000 ; -- ; 60
+
+PEST EPIXSP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXSU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST EPIXTU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 22285 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.85266 ; 41.19789 ; -- ; -- ; -- ; -- ; 6000 ;   ; -- ; 28
+BROSCO Tommaso ; 22228 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22227 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 22121 ; 2017-06-26 ; Comparto pataticolo/Produzione agricola ; 13.95640 ; 41.14313 ; -- ; -- ; -- ; -- ; 20000 ;  10000 ; -- ; 60
+BROSCO Tommaso ; 21962 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 13.83462 ; 41.23099 ; -- ; -- ; -- ; -- ; 40000 ;  30000 ; -- ; 60
+CECERE CRESCENZO ; 21548 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.13386 ; 40.96344 ; -- ; -- ; -- ; -- ; 5800 ;  15000 ; -- ; 60
+Di Zeo Gianpaolo ; 22060 ; 2017-06-22 ; Consulenza su richiesta/Produzione agricola ; 14.95091 ; 40.89335 ; -- ; -- ; -- ; -- ; 5000 ;  4000 ; -- ; 60
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22358 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 17
+falco felice ; 22357 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 4000 ;  8000 ; -- ; 17
+falco felice ; 22353 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 8000 ;  16000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  8000 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  8000 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Iannotta Pasquale ; 22329 ; 2017-06-26 ; UTM ; 14.40625 ; 40.99248 ; -- ; -- ; -- ; -- ; 10000 ;   ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  12000 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST GEOHMO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CASCIELLO NICOLA ; 22257 ; 2017-06-27 ; monitoraggio ordinario ; 14.61725 ; 40.94258 ; -- ; -- ; -- ; -- ; 10000 ;  100 ; -- ; 60
+CASCIELLO NICOLA ; 22256 ; 2017-06-27 ; monitoraggio ordinario ; 14.58832 ; 40.89062 ; -- ; -- ; -- ; -- ; 12000 ;  54 ; -- ; 60
+CASCIELLO NICOLA ; 22255 ; 2017-06-27 ; monitoraggio ordinario ; 14.59241 ; 40.94250 ; -- ; -- ; -- ; -- ; 30000 ;  120 ; -- ; 60
+CASCIELLO NICOLA ; 22072 ; 2017-06-22 ; monitoraggio ordinario ; 14.59241 ; 40.94250 ; -- ; -- ; -- ; -- ; 30000 ;  120 ; -- ; 60
+CASCIELLO NICOLA ; 22071 ; 2017-06-22 ; monitoraggio ordinario ; 14.58832 ; 40.89062 ; -- ; -- ; -- ; -- ; 12000 ;  54 ; -- ; 60
+CASCIELLO NICOLA ; 21997 ; 2017-06-20 ; monitoraggio ordinario ; 14.61725 ; 40.94258 ; -- ; -- ; -- ; -- ; 10000 ;  100 ; -- ; 60
+Izzo Pasquale Pio ; 22415 ; 2017-06-30 ; Adozione misure ufficiali in az. agricole ; 14.78492 ; 41.11857 ; -- ; -- ; -- ; -- ; 120 ;  1 ; -- ; 60
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  16000 ; -- ; 19
+MARTINO VINCENZO ; 21692 ; 2017-06-06 ; Sopralluogo in vivai ; 14.91686 ; 40.58035 ; -- ; -- ; -- ; -- ; 90950 ;  4000 ; -- ; 60
+Politano Antonio ; 21717 ; 2017-06-09 ; monitoraggio ordinario ; 14.87517 ; 41.10290 ; -- ; -- ; -- ; -- ; 80 ;  6 ; -- ; 60
+
+PEST GUIGCI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CECERE CRESCENZO ; 22191 ; 2017-06-26 ; Sopralluogo in Area a rischio ; 14.34185 ; 40.88961 ; -- ; -- ; -- ; -- ; 1000 ;  1 ; -- ; 34
+CECERE CRESCENZO ; 22191 ; 2017-06-26 ; Sopralluogo in Area a rischio ; 14.34185 ; 40.88961 ; -- ; -- ; -- ; -- ; 1000 ;   ; -- ; 34
+CECERE CRESCENZO ; 22190 ; 2017-06-26 ; Sopralluogo in Area a rischio ; 14.34185 ; 40.88961 ; -- ; -- ; -- ; -- ; 1000 ;   ; -- ; 34
+
+PEST HETDPA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 22228 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22227 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 22121 ; 2017-06-26 ; Comparto pataticolo/Produzione agricola ; 13.95640 ; 41.14313 ; -- ; -- ; -- ; -- ; 20000 ;  10000 ; -- ; 60
+BROSCO Tommaso ; 21567 ; 2017-06-06 ; Sopralluogo az. Agricole ; 13.81990 ; 41.21477 ; -- ; -- ; -- ; -- ; 20000 ;   ; -- ; 60
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22358 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 17
+falco felice ; 22357 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 4000 ;  8000 ; -- ; 17
+falco felice ; 22353 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 8000 ;  16000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Fiorillo Antonio ; 21905 ; 2017-06-07 ; monitoraggio comparto pataticolo ; 14.99769 ; 40.48116 ; -- ; -- ; -- ; -- ; 8000 ;   ; -- ; 60
+Fiorillo Antonio ; 21901 ; 2017-06-06 ; Comparto pataticolo/Produzione agricola ; 15.03595 ; 40.45392 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 34
+Fiorillo Antonio ; 21896 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.01929 ; 40.47119 ; -- ; -- ; -- ; -- ; 56000 ;  0 ; -- ; 34
+Fiorillo Antonio ; 21894 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.02829 ; 40.46494 ; -- ; -- ; -- ; -- ; 10691 ;   ; -- ; 34
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+VIOLA Pasquale ; 22194 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 22193 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39465 ; 41.00105 ; -- ; -- ; -- ; -- ; 1500 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  12000 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  1 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST HETDRO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 21962 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 13.83462 ; 41.23099 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 60
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Fiorillo Antonio ; 21905 ; 2017-06-07 ; monitoraggio comparto pataticolo ; 14.99769 ; 40.48116 ; -- ; -- ; -- ; -- ; 8000 ;   ; -- ; 60
+Fiorillo Antonio ; 21901 ; 2017-06-06 ; Comparto pataticolo/Produzione agricola ; 15.03595 ; 40.45392 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 34
+Fiorillo Antonio ; 21896 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.01929 ; 40.47119 ; -- ; -- ; -- ; -- ; 56000 ;  0 ; -- ; 34
+Fiorillo Antonio ; 21894 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.02829 ; 40.46494 ; -- ; -- ; -- ; -- ; 10691 ;   ; -- ; 34
+VIOLA Pasquale ; 22194 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 22193 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39465 ; 41.00105 ; -- ; -- ; -- ; -- ; 1500 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  12000 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST MONCAL:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCCA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCCL:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCGA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Garonna Antonio Pietro ; 22670 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.42184 ; 40.80543 ; -- ; -- ; -- ; -- ; 7357 ;  250 ; -- ; 60
+Garonna Antonio Pietro ; 22669 ; 2017-06-28 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.43726 ; 40.80439 ; -- ; -- ; -- ; -- ; 12822 ;  350 ; -- ; 60
+Garonna Antonio Pietro ; 22666 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.42184 ; 40.80543 ; -- ; -- ; -- ; -- ; 7357 ;  250 ; -- ; 48
+Garonna Antonio Pietro ; 22665 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.43726 ; 40.80439 ; -- ; -- ; -- ; -- ; 12822 ;  350 ; -- ; 48
+
+PEST MONCGP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCGR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCIM:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCMC:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCMR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCNI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCNM:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCNO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCOB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCOR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCRB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCRU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSC:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSL:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Garonna Antonio Pietro ; 22668 ; 2017-06-28 ; sopralluogo in ambito forestale ; 14.41237 ; 40.81359 ; -- ; -- ; -- ; -- ; 55689 ;  1100 ; -- ; 60
+Garonna Antonio Pietro ; 22667 ; 2017-06-28 ; sopralluogo in ambito forestale ; 14.43931 ; 40.80211 ; -- ; -- ; -- ; -- ; 111178 ;  1700 ; -- ; 60
+Garonna Antonio Pietro ; 22655 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area forestale ; 13.99987 ; 40.96124 ; -- ; -- ; -- ; -- ; 19485 ;  500 ; -- ; 60
+Garonna Antonio Pietro ; 22654 ; 2017-06-26 ; sopralluogo in ambito forestale ; 14.00191 ; 40.95754 ; -- ; -- ; -- ; -- ; 50000 ;  800 ; -- ; 60
+Garonna Antonio Pietro ; 22657 ; 2017-06-21 ; sopralluogo in ambito forestale ; 13.93230 ; 41.16323 ; -- ; -- ; -- ; -- ; 9004 ;  300 ; -- ; 60
+Garonna Antonio Pietro ; 22664 ; 2017-06-13 ; sopralluogo in ambito forestale ; 14.41237 ; 40.81359 ; -- ; -- ; -- ; -- ; 55689 ;  1100 ; -- ; 48
+Garonna Antonio Pietro ; 22663 ; 2017-06-13 ; sopralluogo in ambito forestale ; 14.43931 ; 40.80211 ; -- ; -- ; -- ; -- ; 111178 ;  1700 ; -- ; 48
+Garonna Antonio Pietro ; 22652 ; 2017-06-10 ; Emergenze fitosanitarie e L.O./Area forestale ; 13.99987 ; 40.96124 ; -- ; -- ; -- ; -- ; 19485 ;  500 ; -- ; 60
+Garonna Antonio Pietro ; 22651 ; 2017-06-10 ; sopralluogo in ambito forestale ; 14.00191 ; 40.95754 ; -- ; -- ; -- ; -- ; 50000 ;  800 ; -- ; 60
+Garonna Antonio Pietro ; 22656 ; 2017-06-06 ; sopralluogo in ambito forestale ; 13.93230 ; 41.16323 ; -- ; -- ; -- ; -- ; 9004 ;  300 ; -- ; 60
+Politano Antonio ; 22195 ; 2017-06-27 ; Nuove autorizzazioni/variazioni ; 14.85148 ; 41.29558 ; -- ; -- ; -- ; -- ; 16150 ;  2000 ; -- ; 60
+
+PEST MONCSR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCST:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCSU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCTI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCUR:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST MONCVE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PHYP64:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Salzillo Giuseppe ; 22580 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.93733 ; 41.35119 ; -- ; -- ; -- ; -- ; 2000 ;  1000 ; -- ; 53
+Salzillo Giuseppe ; 22342 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.02190 ; 41.31683 ; -- ; -- ; -- ; -- ; 800 ;  350 ; -- ; 53
+Salzillo Giuseppe ; 22335 ; 2017-06-28 ; Sopralluogo az. Agricole ; 13.93733 ; 41.35119 ; -- ; -- ; -- ; -- ; 2000 ;  1000 ; -- ; 53
+
+PEST PISOAP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOCE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISODU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOEN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOFA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOHA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOMU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISONE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Garonna Antonio Pietro ; 22668 ; 2017-06-28 ; sopralluogo in ambito forestale ; 14.41237 ; 40.81359 ; -- ; -- ; -- ; -- ; 55689 ;  1100 ; -- ; 60
+Garonna Antonio Pietro ; 22657 ; 2017-06-21 ; sopralluogo in ambito forestale ; 13.93230 ; 41.16323 ; -- ; -- ; -- ; -- ; 9004 ;  300 ; -- ; 60
+Garonna Antonio Pietro ; 22666 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.42184 ; 40.80543 ; -- ; -- ; -- ; -- ; 7357 ;  250 ; -- ; 48
+Garonna Antonio Pietro ; 22665 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.43726 ; 40.80439 ; -- ; -- ; -- ; -- ; 12822 ;  350 ; -- ; 48
+Garonna Antonio Pietro ; 22663 ; 2017-06-13 ; sopralluogo in ambito forestale ; 14.43931 ; 40.80211 ; -- ; -- ; -- ; -- ; 111178 ;  1700 ; -- ; 48
+
+PEST PISONI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISONO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOOB:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOPC:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOPN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOPP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISORA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISORO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOSC:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOSI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOSP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOST:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Garonna Antonio Pietro ; 22668 ; 2017-06-28 ; sopralluogo in ambito forestale ; 14.41237 ; 40.81359 ; -- ; -- ; -- ; -- ; 55689 ;  1100 ; -- ; 60
+Garonna Antonio Pietro ; 22657 ; 2017-06-21 ; sopralluogo in ambito forestale ; 13.93230 ; 41.16323 ; -- ; -- ; -- ; -- ; 9004 ;  300 ; -- ; 60
+Garonna Antonio Pietro ; 22666 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.42184 ; 40.80543 ; -- ; -- ; -- ; -- ; 7357 ;  250 ; -- ; 48
+Garonna Antonio Pietro ; 22665 ; 2017-06-13 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.43726 ; 40.80439 ; -- ; -- ; -- ; -- ; 12822 ;  350 ; -- ; 48
+Garonna Antonio Pietro ; 22663 ; 2017-06-13 ; sopralluogo in ambito forestale ; 14.43931 ; 40.80211 ; -- ; -- ; -- ; -- ; 111178 ;  1700 ; -- ; 48
+
+PEST PISOSW:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOTE:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PISOVA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PITOJU:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Izzo Pasquale Pio ; 22415 ; 2017-06-30 ; Adozione misure ufficiali in az. agricole ; 14.78492 ; 41.11857 ; -- ; -- ; -- ; -- ; 120 ;  1 ; -- ; 60
+Politano Antonio ; 21717 ; 2017-06-09 ; monitoraggio ordinario ; 14.87517 ; 41.10290 ; -- ; -- ; -- ; -- ; 80 ;  6 ; -- ; 60
+
+PEST PSDMAK:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 21918 ; 2017-06-14 ; Sopralluogo az. Agricole ; 14.07938 ; 41.17173 ; -- ; -- ; -- ; -- ; 15216 ;  350 ; -- ; 60
+Esposito Vincenzo ; 22677 ; 2017-06-30 ; Adozione misure ufficiali in az. agricole ; 15.01925 ; 40.40005 ; -- ; -- ; -- ; -- ; 80000 ;  6400 ; -- ; 60
+Esposito Vincenzo ; 22674 ; 2017-06-30 ; Adozione misure ufficiali in az. agricole ; 15.01578 ; 40.51547 ; -- ; -- ; -- ; -- ; 460000 ;  32200 ; -- ; 60
+Esposito Vincenzo ; 22673 ; 2017-06-30 ; misure di emergenza ; 14.98933 ; 40.53036 ; -- ; -- ; -- ; -- ; 60000 ;  42000 ; -- ; 60
+Esposito Vincenzo ; 22152 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.04011 ; 40.58889 ; -- ; -- ; -- ; -- ; 50000 ;  4000 ; -- ; 60
+Esposito Vincenzo ; 22150 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.01854 ; 40.58003 ; -- ; -- ; -- ; -- ; 15000 ;  1200 ; -- ; 60
+Esposito Vincenzo ; 22145 ; 2017-06-21 ; misure di emergenza ; 15.01118 ; 40.58142 ; -- ; -- ; -- ; -- ; 35000 ;  2800 ; -- ; 60
+Esposito Vincenzo ; 22145 ; 2017-06-21 ; misure di emergenza ; 15.01118 ; 40.58142 ; -- ; -- ; -- ; -- ; 25000 ;  1750 ; -- ; 60
+Esposito Vincenzo ; 22141 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.91944 ; 40.57957 ; -- ; -- ; -- ; -- ; 18000 ;  20000 ; -- ; 60
+MARTINO VINCENZO ; 21692 ; 2017-06-06 ; Sopralluogo in vivai ; 14.91686 ; 40.58035 ; -- ; -- ; -- ; -- ; 90950 ;  4000 ; -- ; 60
+Salzillo Giuseppe ; 21571 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.11089 ; 41.27022 ; -- ; -- ; -- ; -- ; 45000 ;  3000 ; -- ; 60
+Salzillo Giuseppe ; 21570 ; 2017-06-06 ; Sopralluogo az. Agricole ; 14.14672 ; 41.29893 ; -- ; -- ; -- ; -- ; 20000 ;  1300 ; -- ; 60
+Stella Giuseppe ; 22334 ; 2017-06-28 ; Sopralluogo az. Agricole ; 15.13490 ; 40.24255 ; -- ; -- ; -- ; -- ; 300000 ;  24000 ; -- ; 60
+Stella Giuseppe ; 22331 ; 2017-06-28 ; Sopralluogo az. Agricole ; 15.15395 ; 40.20032 ; -- ; -- ; -- ; -- ; 80000 ;  6400 ; -- ; 60
+Stella Giuseppe ; 22328 ; 2017-06-28 ; Sopralluogo az. Agricole ; 15.16648 ; 40.18334 ; -- ; -- ; -- ; -- ; 130000 ;  10400 ; -- ; 60
+Stella Giuseppe ; 22131 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.92102 ; 40.60156 ; -- ; -- ; -- ; -- ; 25000 ;  1400 ; -- ; 60
+Stella Giuseppe ; 22130 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.91424 ; 40.58702 ; -- ; -- ; -- ; -- ; 90000 ;  7200 ; -- ; 60
+Stella Giuseppe ; 22129 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.94844 ; 40.60964 ; -- ; -- ; -- ; -- ; 50000 ;  4000 ; -- ; 60
+Stella Giuseppe ; 22126 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.97591 ; 40.63768 ; -- ; -- ; -- ; -- ; 20000 ;  1600 ; -- ; 60
+Stella Giuseppe ; 22125 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.99280 ; 40.66319 ; -- ; -- ; -- ; -- ; 290000 ;  25000 ; -- ; 60
+Stella Giuseppe ; 22128 ; 2017-06-20 ; Sopralluogo in vivai ; 15.00203 ; 40.64380 ; -- ; -- ; -- ; -- ; 10000 ;  80000 ; -- ; 60
+Stella Giuseppe ; 22127 ; 2017-06-16 ; Sopralluogo az. Agricole ; 14.96930 ; 40.60638 ; -- ; -- ; -- ; -- ; 20000 ;  1600 ; -- ; 60
+VIOLA Pasquale ; 22242 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35170 ; 41.06191 ; -- ; -- ; -- ; -- ; 500 ;  60 ; -- ; 48
+
+PEST PSDMS1:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BROSCO Tommaso ; 22285 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.85266 ; 41.19789 ; -- ; -- ; -- ; -- ; 6000 ;   ; -- ; 28
+BROSCO Tommaso ; 22228 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22227 ; 2017-06-27 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 22225 ; 2017-06-27 ; Comparto pataticolo/Produzione agricola ; 13.81771 ; 41.21527 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 28
+BROSCO Tommaso ; 22121 ; 2017-06-26 ; Comparto pataticolo/Produzione agricola ; 13.95640 ; 41.14313 ; -- ; -- ; -- ; -- ; 20000 ;  10000 ; -- ; 60
+BROSCO Tommaso ; 22110 ; 2017-06-21 ; Sopralluogo az. Agricole ; 14.04124 ; 41.13319 ; -- ; -- ; -- ; -- ; 500 ;   ; -- ; 60
+BROSCO Tommaso ; 21962 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 13.83462 ; 41.23099 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 60
+BROSCO Tommaso ; 21567 ; 2017-06-06 ; Sopralluogo az. Agricole ; 13.81990 ; 41.21477 ; -- ; -- ; -- ; -- ; 20000 ;   ; -- ; 60
+BROSCO Tommaso ; 21566 ; 2017-06-06 ; Sopralluogo az. Agricole ; 13.83459 ; 41.20259 ; -- ; -- ; -- ; -- ; 40000 ;   ; -- ; 60
+CECERE CRESCENZO ; 22189 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.38310 ; 40.83998 ; -- ; -- ; -- ; -- ; 3113 ;   ; -- ; 34
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22358 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 17
+falco felice ; 22357 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 4000 ;  8000 ; -- ; 17
+falco felice ; 22353 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 8000 ;  16000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+Fiorillo Antonio ; 21905 ; 2017-06-07 ; monitoraggio comparto pataticolo ; 14.99769 ; 40.48116 ; -- ; -- ; -- ; -- ; 8000 ;   ; -- ; 60
+Fiorillo Antonio ; 21896 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.01929 ; 40.47119 ; -- ; -- ; -- ; -- ; 56000 ;   ; -- ; 34
+Fiorillo Antonio ; 21894 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.02829 ; 40.46494 ; -- ; -- ; -- ; -- ; 10691 ;   ; -- ; 34
+lordi giuseppe ; 22148 ; 2017-06-23 ; Sopralluogo az. Agricole ; 14.56252 ; 40.77798 ; -- ; -- ; -- ; -- ; 2600 ;   ; -- ; 60
+PARIBELLO Raffaele ; 21973 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  8000 ; -- ; 60
+PARIBELLO Raffaele ; 21972 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  8000 ; -- ; 60
+PARIBELLO Raffaele ; 21968 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  7000 ; -- ; 60
+PARIBELLO Raffaele ; 21967 ; 2017-06-20 ; Sopralluogo az. Agricole ; 14.25065 ; 41.02308 ; -- ; -- ; -- ; -- ; 19400 ;  7000 ; -- ; 60
+PARIBELLO Raffaele ; 21776 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  40000 ; -- ; 48
+PARIBELLO Raffaele ; 21770 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  20000 ; -- ; 48
+PARIBELLO Raffaele ; 21768 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  150000 ; -- ; 48
+PARIBELLO Raffaele ; 21767 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  20000 ; -- ; 48
+PARIBELLO Raffaele ; 21765 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  3000 ; -- ; 48
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3000 ; -- ; 60
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  900 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  1800 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  5400 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  1800 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  12000 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  10000 ; -- ; 60
+
+PEST PSDMS2:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST PSDMS3:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+Politano Antonio ; 22275 ; 2017-06-28 ; Nuove autorizzazioni/variazioni ; 14.60037 ; 41.06275 ; -- ; -- ; -- ; -- ; 6355 ;  3600 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  900 ; -- ; 60
+Politano Antonio ; 21672 ; 2017-06-06 ; Controllo periodico vivai ; 14.50674 ; 41.22609 ; -- ; -- ; -- ; -- ; 360 ;  5400 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  1800 ; -- ; 60
+Politano Antonio ; 21528 ; 2017-06-01 ; Controllo periodico vivai ; 14.93667 ; 41.28643 ; -- ; -- ; -- ; -- ; 700 ;  10000 ; -- ; 60
+
+PEST RALSSO:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Fiorillo Antonio ; 21901 ; 2017-06-06 ; Comparto pataticolo/Produzione agricola ; 15.03595 ; 40.45392 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 34
+LENZI ALBERTO ; 22070 ; 2017-06-22 ; Controllo periodico vivai ; 14.50750 ; 40.94672 ; -- ; -- ; -- ; -- ; 800 ;   ; -- ; 60
+LENZI ALBERTO ; 21694 ; 2017-06-08 ; Comparto pataticolo/Sito di lavorazione ; 14.51026 ; 40.95267 ; -- ; -- ; -- ; -- ; 5700 ;  0 ; -- ; 60
+marra mario ; 21965 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21964 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21575 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 14.24434 ; 41.04167 ; -- ; -- ; -- ; -- ; 160000 ;   ; -- ; 60
+VIOLA Pasquale ; 22194 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 22193 ; 2017-06-23 ; Comparto pataticolo/Sito di lavorazione ; 14.39465 ; 41.00105 ; -- ; -- ; -- ; -- ; 1500 ;  10000 ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  12000 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST SCAPLI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BERARDI FELICE ; 22262 ; 2017-06-27 ; UTM ; 15.43207 ; 40.09629 ; -- ; -- ; -- ; -- ; 9812 ;  2800 ; -- ; 60
+BERARDI FELICE ; 22003 ; 2017-06-20 ; UTM ; 15.43207 ; 40.09629 ; -- ; -- ; -- ; -- ; 9812 ;  2800 ; -- ; 60
+BERARDI FELICE ; 21807 ; 2017-06-13 ; UTM ; 15.43207 ; 40.09629 ; -- ; -- ; -- ; -- ; 9812 ;  2800 ; -- ; 60
+BERARDI FELICE ; 21614 ; 2017-06-06 ; UTM ; 15.43207 ; 40.09629 ; -- ; -- ; -- ; -- ; 9812 ;  2800 ; -- ; 60
+DE VITO DANIELE ; 22449 ; 2017-06-29 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 14171 ;  2383 ; -- ; 60
+DE VITO DANIELE ; 22412 ; 2017-06-29 ; UTM ; 14.87805 ; 40.95462 ; -- ; -- ; -- ; -- ; 28336 ;  7114 ; -- ; 60
+DE VITO DANIELE ; 22113 ; 2017-06-22 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 14171 ;  2383 ; -- ; 60
+DE VITO DANIELE ; 22083 ; 2017-06-22 ; UTM ; 14.87805 ; 40.95462 ; -- ; -- ; -- ; -- ; 28336 ;  7114 ; -- ; 60
+DE VITO DANIELE ; 21914 ; 2017-06-15 ; UTM ; 14.79945 ; 40.98925 ; -- ; -- ; -- ; -- ; 14171 ;  2383 ; -- ; 60
+DE VITO DANIELE ; 21890 ; 2017-06-15 ; UTM ; 14.87805 ; 40.95462 ; -- ; -- ; -- ; -- ; 28336 ;  7114 ; -- ; 60
+DE VITO DANIELE ; 21746 ; 2017-06-08 ; UTM ; 14.87805 ; 40.95462 ; -- ; -- ; -- ; -- ; 28336 ;  7114 ; -- ; 60
+Iannotta Pasquale ; 22295 ; 2017-06-27 ; UTM ; 14.06935 ; 40.81339 ; -- ; -- ; -- ; -- ; 5000 ;  2500 ; -- ; 60
+Iannotta Pasquale ; 22291 ; 2017-06-27 ; UTM ; 14.06879 ; 40.81624 ; -- ; -- ; -- ; -- ; 5000 ;  1000 ; -- ; 60
+Iannotta Pasquale ; 21865 ; 2017-06-12 ; UTM ; 14.06879 ; 40.81624 ; -- ; -- ; -- ; -- ; 5000 ;  1000 ; -- ; 60
+Iannotta Pasquale ; 21863 ; 2017-06-12 ; UTM ; 14.06935 ; 40.81339 ; -- ; -- ; -- ; -- ; 5000 ;  2500 ; -- ; 60
+Iannotta Pasquale ; 21712 ; 2017-06-06 ; UTM ; 14.06935 ; 40.81339 ; -- ; -- ; -- ; -- ; 5000 ;  2500 ; -- ; 60
+
+PEST SYNCEN:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+CECERE CRESCENZO ; 22189 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.38310 ; 40.83998 ; -- ; -- ; -- ; -- ; 3113 ;   ; -- ; 34
+falco felice ; 22361 ; 2017-06-29 ; Comparto pataticolo/Produzione agricola ; 14.81721 ; 40.89620 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22359 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.81699 ; 40.89508 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 17
+falco felice ; 22358 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 17
+falco felice ; 22357 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 4000 ;  8000 ; -- ; 17
+falco felice ; 22353 ; 2017-06-29 ; monitoraggio comparto pataticolo ; 14.84477 ; 40.89837 ; -- ; -- ; -- ; -- ; 8000 ;  16000 ; -- ; 17
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22274 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22273 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22272 ; 2017-06-28 ; Comparto sementiero/Produzione agricola ; 15.03428 ; 41.02791 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 7
+falco felice ; 22271 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 350 ;  700 ; -- ; 7
+falco felice ; 22270 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97543 ; 41.04813 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22269 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 800 ;  1600 ; -- ; 7
+falco felice ; 22268 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 300 ;  600 ; -- ; 7
+falco felice ; 22267 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 400 ;  800 ; -- ; 7
+falco felice ; 22266 ; 2017-06-28 ; Comparto pataticolo/Produzione agricola ; 14.97575 ; 41.04819 ; -- ; -- ; -- ; -- ; 450 ;  900 ; -- ; 7
+falco felice ; 21975 ; 2017-06-21 ; Comparto pataticolo/Produzione agricola ; 14.75140 ; 40.86509 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 60
+falco felice ; 21971 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21970 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.61393 ; 41.03457 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21969 ; 2017-06-20 ; Comparto pataticolo/Produzione agricola ; 14.68806 ; 41.02604 ; -- ; -- ; -- ; -- ; 500 ;  1000 ; -- ; 26
+falco felice ; 21546 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+falco felice ; 21545 ; 2017-06-05 ; monitoraggio comparto pataticolo ; 14.64828 ; 41.04361 ; -- ; -- ; -- ; -- ; 3000 ;  6000 ; -- ; 40
+Fiorillo Antonio ; 21905 ; 2017-06-07 ; monitoraggio comparto pataticolo ; 14.99769 ; 40.48116 ; -- ; -- ; -- ; -- ; 8000 ;   ; -- ; 60
+Fiorillo Antonio ; 21901 ; 2017-06-06 ; Comparto pataticolo/Produzione agricola ; 15.03595 ; 40.45392 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 34
+Fiorillo Antonio ; 21896 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.01929 ; 40.47119 ; -- ; -- ; -- ; -- ; 56000 ;   ; -- ; 34
+Fiorillo Antonio ; 21894 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 15.02829 ; 40.46494 ; -- ; -- ; -- ; -- ; 10691 ;   ; -- ; 34
+LENZI ALBERTO ; 21694 ; 2017-06-08 ; Comparto pataticolo/Sito di lavorazione ; 14.51026 ; 40.95267 ; -- ; -- ; -- ; -- ; 5700 ;  0 ; -- ; 60
+marra mario ; 21965 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21964 ; 2017-06-20 ; monitoraggio comparto pataticolo ; 14.22874 ; 41.14600 ; -- ; -- ; -- ; -- ; 2000 ;   ; -- ; 60
+marra mario ; 21575 ; 2017-06-06 ; monitoraggio comparto pataticolo ; 14.24434 ; 41.04167 ; -- ; -- ; -- ; -- ; 160000 ;   ; -- ; 60
+VIOLA Pasquale ; 21585 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  12000 ; -- ; 11
+VIOLA Pasquale ; 21583 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.41597 ; 40.99548 ; -- ; -- ; -- ; -- ; 6300 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21581 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  13000 ; -- ; 11
+VIOLA Pasquale ; 21580 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21578 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.39097 ; 41.02181 ; -- ; -- ; -- ; -- ; 11800 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21576 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  10000 ; -- ; 11
+VIOLA Pasquale ; 21563 ; 2017-06-05 ; Adozione misure ufficiali in az. agricole ; 14.37036 ; 41.02324 ; -- ; -- ; -- ; -- ; 1000 ;  20000 ; -- ; 11
+
+PEST TOLCND:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+PARIBELLO Raffaele ; 21772 ; 2017-06-08 ; Controllo periodico vivai ; 14.25101 ; 41.03098 ; -- ; -- ; -- ; -- ; 5000 ;  10000 ; -- ; 48
+
+PEST TOXOCI:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST XYLEFA:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+BERARDI FELICE ; 22259 ; 2017-06-27 ; UTM ; 15.62521 ; 40.08828 ; -- ; -- ; -- ; -- ; 10000 ;  150 ; -- ; 60
+BERARDI FELICE ; 21996 ; 2017-06-20 ; UTM ; 15.32657 ; 40.10700 ; -- ; -- ; -- ; -- ; 10000 ;  160 ; -- ; 60
+CECERE CRESCENZO ; 22202 ; 2017-06-26 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.71121 ; 40.77244 ; -- ; -- ; -- ; -- ; 2000 ;  20 ; -- ; 34
+CECERE CRESCENZO ; 22189 ; 2017-06-26 ; Sopralluogo az. Agricole ; 14.38310 ; 40.83998 ; -- ; -- ; -- ; -- ; 3113 ;  55 ; -- ; 34
+CECERE CRESCENZO ; 21802 ; 2017-06-08 ; Emergenze fitosanitarie e L.O./Area forestale ; 14.90527 ; 40.74831 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 60
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  2 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  2 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+De Santis Antonio ; 22211 ; 2017-06-27 ; monitoraggio ordinario ; 14.64743 ; 41.14718 ; -- ; -- ; -- ; -- ; 2952 ;  1 ; -- ; 34
+De Santis Antonio ; 21824 ; 2017-06-14 ; monitoraggio ordinario ; 14.82333 ; 41.29270 ; -- ; -- ; -- ; -- ; 20 ;  2 ; -- ; 60
+De Santis Antonio ; 21784 ; 2017-06-12 ; monitoraggio ordinario ; 14.65511 ; 41.17175 ; -- ; -- ; -- ; -- ; 500 ;  35 ; -- ; 60
+di cerbo anna ; 22201 ; 2017-06-27 ; UTM ; 14.89788 ; 41.30724 ; -- ; -- ; -- ; -- ; 21765 ;   ; -- ; 60
+Di Zeo Gianpaolo ; 21785 ; 2017-06-14 ; sopralluogo in ambito urbano/verde pubblico e privato ; 14.77044 ; 40.91902 ; -- ; -- ; -- ; -- ; 10000 ;  84 ; -- ; 60
+IORIO LUIGI MARIA  ; 22119 ; 2017-06-22 ; monitoraggio ordinario ; 14.15330 ; 41.19562 ; -- ; -- ; -- ; -- ; 10000 ;   ; -- ; 60
+Izzo Pasquale Pio ; 22417 ; 2017-06-30 ; Emergenze fitosanitarie e L.O./Area verde urbana pubblica/privata ; 14.60738 ; 41.05191 ; -- ; -- ; -- ; -- ; 140 ;  10 ; -- ; 60
+LENZI ALBERTO ; 21939 ; 2017-06-15 ; monitoraggio ordinario ; 14.52537 ; 40.91219 ; -- ; -- ; -- ; -- ; 18000 ;  20 ; -- ; 60
+LENZI ALBERTO ; 21939 ; 2017-06-15 ; monitoraggio ordinario ; 14.52537 ; 40.91219 ; -- ; -- ; -- ; -- ; 18000 ;  230 ; -- ; 60
+lordi giuseppe ; 22441 ; 2017-06-30 ; Controllo periodico vivai ; 15.66833 ; 40.27202 ; -- ; -- ; -- ; -- ; 5000 ;   ; -- ; 60
+lordi giuseppe ; 22022 ; 2017-06-21 ; Sopralluogo az. Agricole ; 15.19108 ; 40.15188 ; -- ; -- ; -- ; -- ; 3000 ;  80 ; -- ; 60
+MALANGONE NUNZIO ; 22236 ; 2017-06-27 ; UTM ; 15.11386 ; 40.48469 ; -- ; -- ; -- ; -- ; 6700 ;  100 ; -- ; 60
+MALANGONE NUNZIO ; 22235 ; 2017-06-27 ; UTM ; 15.16087 ; 40.44680 ; -- ; -- ; -- ; -- ; 1900 ;  71 ; -- ; 60
+MALANGONE NUNZIO ; 22034 ; 2017-06-20 ; UTM ; 15.11386 ; 40.48469 ; -- ; -- ; -- ; -- ; 6700 ;  100 ; -- ; 60
+MALANGONE NUNZIO ; 22033 ; 2017-06-20 ; UTM ; 15.16087 ; 40.44680 ; -- ; -- ; -- ; -- ; 1900 ;  71 ; -- ; 60
+MALANGONE NUNZIO ; 21814 ; 2017-06-13 ; UTM ; 15.11386 ; 40.48469 ; -- ; -- ; -- ; -- ; 6700 ;  100 ; -- ; 60
+MALANGONE NUNZIO ; 21805 ; 2017-06-13 ; UTM ; 15.16087 ; 40.44680 ; -- ; -- ; -- ; -- ; 1900 ;  71 ; -- ; 60
+MALANGONE NUNZIO ; 21623 ; 2017-06-06 ; UTM ; 15.11386 ; 40.48469 ; -- ; -- ; -- ; -- ; 6700 ;  100 ; -- ; 60
+MALANGONE NUNZIO ; 21622 ; 2017-06-06 ; UTM ; 15.16087 ; 40.44680 ; -- ; -- ; -- ; -- ; 1900 ;  71 ; -- ; 60
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  70 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  200 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  100 ; -- ; 40
+MARTINO VINCENZO ; 22265 ; 2017-06-27 ; misure di emergenza ; 15.01003 ; 40.44343 ; -- ; -- ; -- ; -- ; 5000 ;  1500 ; -- ; 40
+MARTINO VINCENZO ; 21974 ; 2017-06-20 ; Sopralluogo in vivai ; 14.88859 ; 40.62806 ; -- ; -- ; -- ; -- ; 1050 ;  10 ; -- ; 60
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  10 ; -- ; 20
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  100 ; -- ; 20
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  350 ; -- ; 20
+MARTINO VINCENZO ; 21881 ; 2017-06-15 ; monitoraggio ordinario ; 14.90381 ; 40.64483 ; -- ; -- ; -- ; -- ; 25000 ;  50 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  60 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  120 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  20 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  30 ; -- ; 20
+MARTINO VINCENZO ; 21868 ; 2017-06-15 ; accertamento in vivaio ; 14.86536 ; 40.64881 ; -- ; -- ; -- ; -- ; 5800 ;  10 ; -- ; 20
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  5 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  7 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  6 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  3 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  50 ; -- ; 19
+MARTINO VINCENZO ; 21823 ; 2017-06-13 ; Sopralluogo in vivai ; 15.12780 ; 40.18558 ; -- ; -- ; -- ; -- ; 5000 ;  20 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  152000 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  200 ; -- ; 19
+MARTINO VINCENZO ; 21822 ; 2017-06-13 ; Sopralluogo in vivai ; 15.49220 ; 40.13158 ; -- ; -- ; -- ; -- ; 10000 ;  70 ; -- ; 19
+MARTINO VINCENZO ; 21693 ; 2017-06-08 ; Sopralluogo in vivai ; 15.05582 ; 40.61123 ; -- ; -- ; -- ; -- ; 20000 ;  160 ; -- ; 53
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  30 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  40 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  300 ; -- ; 32
+MARTINO VINCENZO ; 21517 ; 2017-06-01 ; Sopralluogo in vivai ; 15.02121 ; 40.58485 ; -- ; -- ; -- ; -- ; 20000 ;  80 ; -- ; 32
+Nappa Patrizia ; 22595 ; 2017-06-29 ; Sopralluogo az. Agricole ; 14.26341 ; 41.05270 ; -- ; -- ; -- ; -- ; 2000 ;  100 ; -- ; 60
+PARIBELLO Raffaele ; 21579 ; 2017-06-06 ; Sopralluogo piccoli produttori/Garden/commerciante ; 14.23667 ; 40.98622 ; -- ; -- ; -- ; -- ; 1200 ;  20 ; -- ; 60
+Politano Antonio ; 22195 ; 2017-06-27 ; Nuove autorizzazioni/variazioni ; 14.85148 ; 41.29558 ; -- ; -- ; -- ; -- ; 16150 ;  2800 ; -- ; 60
+Politano Antonio ; 21718 ; 2017-06-12 ; Adozioni misure ufficiali a Piccoli produttori/Garden/commerciante ; 14.46180 ; 41.24412 ; -- ; -- ; -- ; -- ; 500 ;  16 ; -- ; 60
+salzano antonio ; 22108 ; 2017-06-20 ; UTM ; 13.91900 ; 41.24892 ; -- ; -- ; -- ; -- ; 5000 ;  150 ; -- ; 60
+salzano antonio ; 21860 ; 2017-06-13 ; UTM ; 13.91900 ; 41.24892 ; -- ; -- ; -- ; -- ; 5000 ;  150 ; -- ; 60
+salzano antonio ; 21688 ; 2017-06-06 ; UTM ; 13.91900 ; 41.24892 ; -- ; -- ; -- ; -- ; 5000 ;  150 ; -- ; 60
+Stella Giuseppe ; 22204 ; 2017-06-08 ; monitoraggio ordinario ; 14.88808 ; 40.65767 ; -- ; -- ; -- ; -- ; 5000 ;  95 ; -- ; 36
+VIOLA Pasquale ; 22249 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35124 ; 41.06248 ; -- ; -- ; -- ; -- ; 10800 ;  700 ; -- ; 48
+VIOLA Pasquale ; 22247 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35028 ; 41.05974 ; -- ; -- ; -- ; -- ; 20000 ;  990 ; -- ; 48
+VIOLA Pasquale ; 22244 ; 2017-06-28 ; Sopralluogo az. Agricole ; 14.35307 ; 41.06115 ; -- ; -- ; -- ; -- ; 18800 ;  1140 ; -- ; 48
+VIOLA Pasquale ; 21755 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01910 ; 41.07350 ; -- ; -- ; -- ; -- ; 10000 ;  780 ; -- ; 48
+VIOLA Pasquale ; 21754 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01985 ; 41.07385 ; -- ; -- ; -- ; -- ; 3500 ;  350 ; -- ; 48
+VIOLA Pasquale ; 21748 ; 2017-06-13 ; Sopralluogo az. Agricole ; 14.01951 ; 41.07464 ; -- ; -- ; -- ; -- ; 4800 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 22231 ; 2017-06-27 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 21988 ; 2017-06-20 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 21835 ; 2017-06-13 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 48
+VITOLO ANTONIO ; 21598 ; 2017-06-06 ; UTM ; 14.94960 ; 40.66083 ; -- ; -- ; -- ; -- ; 10000 ;  400 ; -- ; 60
+
+PEST XYLEFM:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST XYLEFP:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
+PEST XYLEFS:
+
+tecnico ; n.report ; data ; motivo ; coord. x ; coord. y ; -- ; -- ; -- ; -- ; area ;  n.alberi ; n.siti ; n.minuti
+
