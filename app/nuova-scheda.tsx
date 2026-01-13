@@ -18,7 +18,9 @@ import {
 import { useThemeColor } from '../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../src/store/hooks';
 import { selectAuth } from '../src/store/slices/authSlice';
+import { verifyOrCreateAzienda, selectAziende } from '../src/store/slices/aziendeSlice';
 import { createScheda, fetchSchede } from '../src/store/slices/schedeSlice';
+import { createSito, fetchSitiByAzienda, selectSiti } from '../src/store/slices/sitiSlice';
 import { fetchThemes, selectThemes } from '../src/store/slices/themesSlice';
 import { fetchTipologiaSito, selectTipologiaSito } from '../src/store/slices/tipologiaSitoSlice';
 
@@ -28,22 +30,29 @@ const NuovaSchedaScreen: React.FC = () => {
   const { user } = useAppSelector(selectAuth);
   const { items: themes, loading: loadingThemes } = useAppSelector(selectThemes);
   const { items: tipologie, loading: loadingTipologie } = useAppSelector(selectTipologiaSito);
+  const { currentAzienda, loading: loadingAzienda } = useAppSelector(selectAziende);
+  const { items: siti, loading: loadingSiti } = useAppSelector(selectSiti);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
 
   const [step, setStep] = useState(1); // 1=azienda, 2=sito, 3=scheda
-  
+
   // Step 1: Azienda
   const [partitaIva, setPartitaIva] = useState('');
+  const [ragioneSociale, setRagioneSociale] = useState('');
   
   // Step 2: Sito
+  const [sitoMode, setSitoMode] = useState<'select' | 'create'>('select'); // Seleziona esistente o crea nuovo
+  const [selectedSito, setSelectedSito] = useState<number | null>(null);
+  const [nomeSito, setNomeSito] = useState('');
   const [selectedTheme, setSelectedTheme] = useState('');
   const [selectedThemeLabel, setSelectedThemeLabel] = useState('');
   const [selectedTipologia, setSelectedTipologia] = useState('');
   const [selectedTipologiaLabel, setSelectedTipologiaLabel] = useState('');
   const [showThemesModal, setShowThemesModal] = useState(false);
   const [showTipologieModal, setShowTipologieModal] = useState(false);
+  const [showSitiModal, setShowSitiModal] = useState(false);
   
   // Step 3: Scheda
   const [dataInput, setDataInput] = useState('');
@@ -97,20 +106,70 @@ const NuovaSchedaScreen: React.FC = () => {
     return true;
   };
 
-  const handleNextStep = () => {
+  const handleNextStep = async () => {
     if (step === 1) {
-      if (!partitaIva) {
-        Alert.alert('Errore', 'Inserisci la Partita IVA dell\'azienda');
+      if (!partitaIva || !ragioneSociale) {
+        Alert.alert('Errore', 'Inserisci Partita IVA e Ragione Sociale');
         return;
       }
-      // TODO: Verificare se l'azienda esiste o crearla
-      setStep(2);
+
+      if (!user?.id) {
+        Alert.alert('Errore', 'Utente non autenticato');
+        return;
+      }
+
+      try {
+        // Verifica se l'azienda esiste, altrimenti la crea
+        await dispatch(
+          verifyOrCreateAzienda({
+            piva: partitaIva,
+            ragionesociale: ragioneSociale,
+            idTecnico: user.id,
+          })
+        ).unwrap();
+
+        // Carica i siti dell'azienda
+        await dispatch(fetchSitiByAzienda({ piva: partitaIva })).unwrap();
+
+        setStep(2);
+      } catch (error: any) {
+        Alert.alert('Errore', error || 'Errore nella gestione dell\'azienda');
+      }
     } else if (step === 2) {
-      if (!selectedTheme || !selectedTipologia) {
-        Alert.alert('Errore', 'Seleziona tema e tipologia di sito');
+      if (sitoMode === 'select' && !selectedSito) {
+        Alert.alert('Errore', 'Seleziona un sito esistente o crea un nuovo sito');
         return;
       }
-      // TODO: Verificare se il sito esiste o crearlo
+
+      if (sitoMode === 'create') {
+        if (!nomeSito || !selectedTheme || !selectedTipologia) {
+          Alert.alert('Errore', 'Compila tutti i campi per creare il sito');
+          return;
+        }
+
+        if (!user?.id || !currentAzienda) {
+          Alert.alert('Errore', 'Dati azienda mancanti');
+          return;
+        }
+
+        try {
+          // Crea il sito
+          const gid = await dispatch(
+            createSito({
+              piva: currentAzienda.partita_iva,
+              denominazione: nomeSito,
+              tipologiasito_id: parseInt(selectedTipologia),
+              userId: user.id,
+            })
+          ).unwrap();
+
+          setSelectedSito(gid as number);
+        } catch (error: any) {
+          Alert.alert('Errore', error || 'Errore nella creazione del sito');
+          return;
+        }
+      }
+
       setStep(3);
     }
   };
@@ -126,16 +185,20 @@ const NuovaSchedaScreen: React.FC = () => {
       return;
     }
 
+    if (!selectedSito) {
+      Alert.alert('Errore', 'Sito non selezionato');
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      // TODO: Usare gid_sito ottenuto dallo step 2
       await dispatch(
         createScheda({
-          idTecnico: user.id,
-          motivo: '1', // TODO: Usare idtipo_visita corretto
+          idTecnico: user.id.toString(),
+          motivo: '1', // Tipo visita: 1 = Controllo ordinario
           data: dataInput,
-          id_sito: '', // TODO: usare gid del sito creato/selezionato
+          id_sito: selectedSito.toString(),
           protocollo,
           note,
         })
@@ -145,7 +208,7 @@ const NuovaSchedaScreen: React.FC = () => {
         {
           text: 'OK',
           onPress: () => {
-            dispatch(fetchSchede({ userId: user.id, page: 1, pageSize: 50 }));
+            dispatch(fetchSchede({ userId: user.id.toString(), page: 1, pageSize: 50 }));
             router.back();
           },
         },
@@ -227,14 +290,39 @@ const NuovaSchedaScreen: React.FC = () => {
                   placeholder="Inserisci Partita IVA"
                   placeholderTextColor={isDark ? '#666' : '#999'}
                   keyboardType="numeric"
+                  maxLength={11}
+                />
+              </View>
+              <View style={styles.field}>
+                <Text style={[styles.label, { color: textColor }]}>Ragione Sociale *</Text>
+                <TextInput
+                  style={[
+                    styles.input,
+                    {
+                      backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                      borderColor: isDark ? '#444' : '#ddd',
+                      color: textColor,
+                    },
+                  ]}
+                  value={ragioneSociale}
+                  onChangeText={setRagioneSociale}
+                  placeholder="Inserisci Ragione Sociale"
+                  placeholderTextColor={isDark ? '#666' : '#999'}
                 />
               </View>
               <TouchableOpacity
                 style={[styles.nextButton, { backgroundColor: tintColor }]}
                 onPress={handleNextStep}
+                disabled={loadingAzienda}
               >
-                <Text style={styles.nextButtonText}>Avanti</Text>
-                <MaterialIcons name="arrow-forward" size={20} color="#fff" />
+                {loadingAzienda ? (
+                  <ActivityIndicator color="#fff" />
+                ) : (
+                  <>
+                    <Text style={styles.nextButtonText}>Avanti</Text>
+                    <MaterialIcons name="arrow-forward" size={20} color="#fff" />
+                  </>
+                )}
               </TouchableOpacity>
             </View>
           )}
@@ -751,6 +839,24 @@ const styles = StyleSheet.create({
   modalItemText: {
     fontSize: 16,
     flex: 1,
+  },
+  toggleContainer: {
+    flexDirection: 'row',
+    gap: 12,
+    marginBottom: 20,
+  },
+  toggleButton: {
+    flex: 1,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  toggleButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
 

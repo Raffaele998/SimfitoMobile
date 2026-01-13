@@ -1,6 +1,7 @@
 import apiClient from '@/services/api/client';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import { Sito as SitoAPI, CreateSitoParams, getSiti as getSitiAPI, createSito as createSitoAPI } from '../../services/api/siti';
 
 interface Sito {
   idsito: string;
@@ -86,6 +87,43 @@ export const fetchSiti = createAsyncThunk(
   },
 );
 
+export const fetchSitiByAzienda = createAsyncThunk(
+  'siti/fetchByAzienda',
+  async ({ piva, query }: { piva: string; query?: string }, { rejectWithValue }) => {
+    try {
+      const siti = await getSitiAPI(piva, query);
+      return siti;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message ||
+        error.message ||
+        'Errore nel caricamento dei siti'
+      );
+    }
+  }
+);
+
+export const createSito = createAsyncThunk(
+  'siti/create',
+  async (params: CreateSitoParams, { rejectWithValue }) => {
+    try {
+      const result = await createSitoAPI(params);
+
+      if (!result.success) {
+        return rejectWithValue('Errore nella creazione del sito');
+      }
+
+      return result.gid;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message ||
+        error.message ||
+        'Errore nella creazione del sito'
+      );
+    }
+  }
+);
+
 const sitiSlice = createSlice({
   name: 'siti',
   initialState,
@@ -130,6 +168,29 @@ const sitiSlice = createSlice({
         state.pagination.total = action.payload.total;
       })
       .addCase(fetchSiti.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(fetchSitiByAzienda.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchSitiByAzienda.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload as any[];
+      })
+      .addCase(fetchSitiByAzienda.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(createSito.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createSito.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(createSito.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });

@@ -1,55 +1,72 @@
-import apiClient from '@/services/api/client';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
-export interface Azienda {
-  id_azienda: number;
-  rag_soc: string;
-  partita_iva: string;
-  indirizzo?: string;
-  cap?: string;
-  comune?: string;
-  provincia?: string;
-  telefono?: string;
-  email?: string;
-  referente?: string;
-}
+import { Azienda, checkAzienda, CreateAziendaParams, createAzienda as createAziendaAPI } from '../../services/api/aziende';
 
 interface AziendeState {
-  items: Azienda[];
+  currentAzienda: Azienda | null;
   loading: boolean;
   error: string | null;
+  creating: boolean;
 }
 
 const initialState: AziendeState = {
-  items: [],
+  currentAzienda: null,
   loading: false,
   error: null,
+  creating: false,
 };
 
-export const fetchAzienda = createAsyncThunk(
-  'aziende/fetchAzienda',
-  async (
-    { piva }: { piva: string },
-    { rejectWithValue }
-  ) => {
+export const verifyOrCreateAzienda = createAsyncThunk(
+  'aziende/verifyOrCreate',
+  async (params: CreateAziendaParams, { rejectWithValue }) => {
     try {
-      const response = await apiClient.get('/services/ajax.php', {
-        params: {
-          mode: 'azienda',
-          piva,
-        },
-      });
+      // Prima verifica se esiste
+      const existing = await checkAzienda(params.piva);
 
-      if (!response.data.data || !Array.isArray(response.data.data) || response.data.data.length === 0) {
-        return rejectWithValue('Azienda non trovata');
+      if (existing) {
+        return { azienda: existing, created: false };
       }
 
-      return response.data.data[0];
+      // Se non esiste, la crea
+      const result = await createAziendaAPI(params);
+
+      if (!result.success) {
+        return rejectWithValue('Errore nella creazione dell\'azienda');
+      }
+
+      // Ricarica l'azienda appena creata
+      const newAzienda = await checkAzienda(params.piva);
+
+      if (!newAzienda) {
+        return rejectWithValue('Azienda creata ma non trovata');
+      }
+
+      return { azienda: newAzienda, created: true };
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message ||
         error.message ||
-        'Errore nel caricamento dei dati azienda'
+        'Errore nella gestione dell\'azienda'
+      );
+    }
+  }
+);
+
+export const fetchAzienda = createAsyncThunk(
+  'aziende/fetch',
+  async (piva: string, { rejectWithValue }) => {
+    try {
+      const azienda = await checkAzienda(piva);
+
+      if (!azienda) {
+        return rejectWithValue('Azienda non trovata');
+      }
+
+      return azienda;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message ||
+        error.message ||
+        'Errore nel caricamento dell\'azienda'
       );
     }
   }
@@ -60,19 +77,34 @@ const aziendeSlice = createSlice({
   initialState,
   reducers: {
     clearAzienda: (state) => {
-      state.items = [];
+      state.currentAzienda = null;
       state.error = null;
     },
   },
   extraReducers: (builder) => {
     builder
+      .addCase(verifyOrCreateAzienda.pending, (state) => {
+        state.loading = true;
+        state.creating = true;
+        state.error = null;
+      })
+      .addCase(verifyOrCreateAzienda.fulfilled, (state, action) => {
+        state.loading = false;
+        state.creating = false;
+        state.currentAzienda = action.payload.azienda;
+      })
+      .addCase(verifyOrCreateAzienda.rejected, (state, action) => {
+        state.loading = false;
+        state.creating = false;
+        state.error = action.payload as string;
+      })
       .addCase(fetchAzienda.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(fetchAzienda.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = [action.payload];
+        state.currentAzienda = action.payload;
       })
       .addCase(fetchAzienda.rejected, (state, action) => {
         state.loading = false;
