@@ -2,23 +2,23 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-    ActivityIndicator,
-    Alert,
-    FlatList,
-    KeyboardAvoidingView,
-    Modal,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  Alert,
+  FlatList,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { useThemeColor } from '../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../src/store/hooks';
 import { selectAuth } from '../src/store/slices/authSlice';
-import { verifyOrCreateAzienda, selectAziende } from '../src/store/slices/aziendeSlice';
+import { selectAziende, verifyOrCreateAzienda } from '../src/store/slices/aziendeSlice';
 import { createScheda, fetchSchede } from '../src/store/slices/schedeSlice';
 import { createSito, fetchSitiByAzienda, selectSiti } from '../src/store/slices/sitiSlice';
 import { fetchThemes, selectThemes } from '../src/store/slices/themesSlice';
@@ -328,93 +328,204 @@ const NuovaSchedaScreen: React.FC = () => {
           )}
 
           {/* Step 2: Sito */}
-          {step === 2 && (
-            <View>
-              <View style={styles.field}>
-                <Text style={[styles.label, { color: textColor }]}>Tema *</Text>
-                <TouchableOpacity
-                  style={[
-                    styles.selectButton,
-                    {
-                      backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                      borderColor: isDark ? '#444' : '#ddd',
-                    },
-                  ]}
-                  onPress={() => setShowThemesModal(true)}
-                  disabled={loadingThemes}
-                >
-                  {loadingThemes ? (
-                    <ActivityIndicator color={tintColor} />
-                  ) : (
-                    <>
-                      <Text
-                        style={[
-                          styles.selectText,
-                          { color: selectedThemeLabel ? textColor : (isDark ? '#666' : '#999') },
-                        ]}
-                      >
-                        {selectedThemeLabel || 'Seleziona tema...'}
-                      </Text>
-                      <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
-                    </>
-                  )}
-                </TouchableOpacity>
-              </View>
+{step === 2 && (
+  <View>
+    {/* Toggle tra seleziona/crea */}
+    <View style={styles.toggleContainer}>
+      <TouchableOpacity
+        style={[
+          styles.toggleButton,
+          {
+            backgroundColor: sitoMode === 'select' ? tintColor : (isDark ? '#2a2a2a' : '#f5f5f5'),
+            borderColor: isDark ? '#444' : '#ddd',
+          },
+        ]}
+        onPress={() => setSitoMode('select')}
+      >
+        <Text
+          style={[
+            styles.toggleButtonText,
+            { color: sitoMode === 'select' ? '#fff' : textColor },
+          ]}
+        >
+          Seleziona Sito
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[
+          styles.toggleButton,
+          {
+            backgroundColor: sitoMode === 'create' ? tintColor : (isDark ? '#2a2a2a' : '#f5f5f5'),
+            borderColor: isDark ? '#444' : '#ddd',
+          },
+        ]}
+        onPress={() => setSitoMode('create')}
+      >
+        <Text
+          style={[
+            styles.toggleButtonText,
+            { color: sitoMode === 'create' ? '#fff' : textColor },
+          ]}
+        >
+          Nuovo Sito
+        </Text>
+      </TouchableOpacity>
+    </View>
 
-              <View style={styles.field}>
-                <Text style={[styles.label, { color: textColor }]}>Tipologia Sito *</Text>
-                <TouchableOpacity
-                  style={[
-                    styles.selectButton,
-                    {
-                      backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                      borderColor: isDark ? '#444' : '#ddd',
-                    },
-                  ]}
-                  onPress={() => setShowTipologieModal(true)}
-                  disabled={!selectedTheme || loadingTipologie}
-                >
-                  {loadingTipologie ? (
-                    <ActivityIndicator color={tintColor} />
-                  ) : (
-                    <>
-                      <Text
-                        style={[
-                          styles.selectText,
-                          { color: selectedTipologiaLabel ? textColor : (isDark ? '#666' : '#999') },
-                        ]}
-                      >
-                        {selectedTipologiaLabel || 'Seleziona tipologia...'}
-                      </Text>
-                      <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
-                    </>
-                  )}
-                </TouchableOpacity>
-                {!selectedTheme && (
-                  <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
-                    Seleziona prima un tema
-                  </Text>
-                )}
-              </View>
-
-              <View style={styles.buttonRow}>
-                <TouchableOpacity
-                  style={[styles.backButton, { borderColor: isDark ? '#444' : '#ddd' }]}
-                  onPress={() => setStep(1)}
-                >
-                  <MaterialIcons name="arrow-back" size={20} color={textColor} />
-                  <Text style={[styles.backButtonText, { color: textColor }]}>Indietro</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.nextButton, { backgroundColor: tintColor, flex: 1 }]}
-                  onPress={handleNextStep}
-                >
-                  <Text style={styles.nextButtonText}>Avanti</Text>
-                  <MaterialIcons name="arrow-forward" size={20} color="#fff" />
-                </TouchableOpacity>
-              </View>
-            </View>
+    {sitoMode === 'select' ? (
+      <View style={styles.field}>
+        <Text style={[styles.label, { color: textColor }]}>Sito *</Text>
+        <TouchableOpacity
+          style={[
+            styles.selectButton,
+            {
+              backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+              borderColor: isDark ? '#444' : '#ddd',
+            },
+          ]}
+          onPress={() => setShowSitiModal(true)}
+          disabled={loadingSiti || siti.length === 0}
+        >
+          {loadingSiti ? (
+            <ActivityIndicator color={tintColor} />
+          ) : (
+            <>
+              <Text
+                style={[
+                  styles.selectText,
+                  { color: selectedSito ? textColor : (isDark ? '#666' : '#999') },
+                ]}
+              >
+                {selectedSito
+                  ? siti.find((s: any) => s.id === selectedSito || s.gid === selectedSito)?.denominazione || 'Sito selezionato'
+                  : siti.length > 0
+                  ? 'Seleziona sito...'
+                  : 'Nessun sito disponibile'}
+              </Text>
+              <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+            </>
           )}
+        </TouchableOpacity>
+        {siti.length === 0 && !loadingSiti && (
+          <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
+            Nessun sito trovato per questa azienda. Crea un nuovo sito.
+          </Text>
+        )}
+      </View>
+    ) : (
+      <>
+        <View style={styles.field}>
+          <Text style={[styles.label, { color: textColor }]}>Nome Sito *</Text>
+          <TextInput
+            style={[
+              styles.input,
+              {
+                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                borderColor: isDark ? '#444' : '#ddd',
+                color: textColor,
+              },
+            ]}
+            value={nomeSito}
+            onChangeText={setNomeSito}
+            placeholder="Inserisci nome sito"
+            placeholderTextColor={isDark ? '#666' : '#999'}
+          />
+        </View>
+
+        <View style={styles.field}>
+          <Text style={[styles.label, { color: textColor }]}>Tema *</Text>
+          <TouchableOpacity
+            style={[
+              styles.selectButton,
+              {
+                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                borderColor: isDark ? '#444' : '#ddd',
+              },
+            ]}
+            onPress={() => setShowThemesModal(true)}
+            disabled={loadingThemes}
+          >
+            {loadingThemes ? (
+              <ActivityIndicator color={tintColor} />
+            ) : (
+              <>
+                <Text
+                  style={[
+                    styles.selectText,
+                    { color: selectedThemeLabel ? textColor : (isDark ? '#666' : '#999') },
+                  ]}
+                >
+                  {selectedThemeLabel || 'Seleziona tema...'}
+                </Text>
+                <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+              </>
+            )}
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.field}>
+          <Text style={[styles.label, { color: textColor }]}>Tipologia Sito *</Text>
+          <TouchableOpacity
+            style={[
+              styles.selectButton,
+              {
+                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                borderColor: isDark ? '#444' : '#ddd',
+              },
+            ]}
+            onPress={() => setShowTipologieModal(true)}
+            disabled={!selectedTheme || loadingTipologie}
+          >
+            {loadingTipologie ? (
+              <ActivityIndicator color={tintColor} />
+            ) : (
+              <>
+                <Text
+                  style={[
+                    styles.selectText,
+                    { color: selectedTipologiaLabel ? textColor : (isDark ? '#666' : '#999') },
+                  ]}
+                >
+                  {selectedTipologiaLabel || 'Seleziona tipologia...'}
+                </Text>
+                <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+              </>
+            )}
+          </TouchableOpacity>
+          {!selectedTheme && (
+            <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
+              Seleziona prima un tema
+            </Text>
+          )}
+        </View>
+      </>
+    )}
+
+    <View style={styles.buttonRow}>
+      <TouchableOpacity
+        style={[styles.backButton, { borderColor: isDark ? '#444' : '#ddd' }]}
+        onPress={() => setStep(1)}
+      >
+        <MaterialIcons name="arrow-back" size={20} color={textColor} />
+        <Text style={[styles.backButtonText, { color: textColor }]}>Indietro</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.nextButton, { backgroundColor: tintColor, flex: 1 }]}
+        onPress={handleNextStep}
+        disabled={loadingSiti}
+      >
+        {loadingSiti ? (
+          <ActivityIndicator color="#fff" />
+        ) : (
+          <>
+            <Text style={styles.nextButtonText}>Avanti</Text>
+            <MaterialIcons name="arrow-forward" size={20} color="#fff" />
+          </>
+        )}
+      </TouchableOpacity>
+    </View>
+  </View>
+)}
 
           {/* Step 3: Scheda */}
           {step === 3 && (
@@ -632,6 +743,73 @@ const NuovaSchedaScreen: React.FC = () => {
                 </TouchableOpacity>
               )}
             />
+
+            {/* Modal per selezione siti */}
+<Modal
+  visible={showSitiModal}
+  transparent
+  animationType="slide"
+  onRequestClose={() => setShowSitiModal(false)}
+>
+  <View style={styles.modalOverlay}>
+    <View
+      style={[
+        styles.modalContent,
+        { backgroundColor: isDark ? '#1a1a1a' : '#fff' },
+      ]}
+    >
+      <View
+        style={[
+          styles.modalHeader,
+          { borderBottomColor: isDark ? '#333' : '#eee' },
+        ]}
+      >
+        <Text style={[styles.modalTitle, { color: textColor }]}>
+          Seleziona Sito
+        </Text>
+        <TouchableOpacity onPress={() => setShowSitiModal(false)}>
+          <MaterialIcons name="close" size={24} color={textColor} />
+        </TouchableOpacity>
+      </View>
+      <FlatList
+        data={siti}
+        keyExtractor={(item: any) => (item.id || item.gid).toString()}
+        renderItem={({ item }: any) => (
+          <TouchableOpacity
+            style={[
+              styles.modalItem,
+              {
+                backgroundColor:
+                  selectedSito === item.id || selectedSito === item.gid
+                    ? (isDark ? '#2a2a2a' : '#f0f0f0')
+                    : 'transparent',
+                borderBottomColor: isDark ? '#333' : '#eee',
+              },
+            ]}
+            onPress={() => {
+              setSelectedSito(item.id || item.gid);
+              setShowSitiModal(false);
+            }}
+          >
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.modalItemText, { color: textColor }]}>
+                {item.denominazione || item.denominaz}
+              </Text>
+              {item.comune && (
+                <Text style={{ fontSize: 12, color: isDark ? '#999' : '#666', marginTop: 4 }}>
+                  {item.comune}
+                </Text>
+              )}
+            </View>
+            {(selectedSito === item.id || selectedSito === item.gid) && (
+              <MaterialIcons name="check" size={20} color={tintColor} />
+            )}
+          </TouchableOpacity>
+        )}
+      />
+    </View>
+  </View>
+</Modal>
           </View>
         </View>
       </Modal>
