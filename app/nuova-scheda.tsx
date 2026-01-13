@@ -992,6 +992,25 @@ const NuovaSchedaScreen: React.FC = () => {
                 }
               />
             )}
+
+            {/* Pulsante Nuova Azienda - solo per admin tipo 0 */}
+            {user?.type && Number(user.type) === 0 && (
+              <View style={{ padding: 16, borderTopWidth: 1, borderTopColor: isDark ? '#333' : '#eee' }}>
+                <TouchableOpacity
+                  style={[
+                    styles.addButton,
+                    { backgroundColor: tintColor },
+                  ]}
+                  onPress={() => {
+                    setShowAziendeModal(false);
+                    router.push('/nuova-azienda');
+                  }}
+                >
+                  <MaterialIcons name="add" size={20} color="#fff" />
+                  <Text style={styles.addButtonText}>Crea Nuova Azienda</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
         </View>
       </Modal>
@@ -1199,6 +1218,19 @@ const styles = StyleSheet.create({
   modalItemText: {
     fontSize: 16,
     flex: 1,
+  },
+  addButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 14,
+    borderRadius: 8,
+    gap: 8,
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: '600',
   },
   toggleContainer: {
     flexDirection: 'row',

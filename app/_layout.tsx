@@ -62,6 +62,13 @@ function RootLayoutNav() {
           }} 
         />
         <Stack.Screen 
+          name="nuova-azienda" 
+          options={{ 
+            headerShown: false,
+            animationEnabled: true 
+          }} 
+        />
+        <Stack.Screen 
           name="schede/[id]" 
           options={{ 
             headerShown: false,

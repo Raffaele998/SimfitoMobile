@@ -165,23 +165,23 @@ const SitiScreen: React.FC = () => {
             contentContainerStyle={styles.listContent}
           />
 
-          <View style={styles.paginationContainer}>
+          <View style={[styles.paginationContainer, { backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff', borderTopColor: theme === 'dark' ? '#333' : '#eee' }]}>
             <TouchableOpacity
               style={[styles.paginationButton, !canGoPrev && styles.paginationButtonDisabled]}
               onPress={() => dispatch(previousPage())}
               disabled={!canGoPrev}
             >
-              <MaterialIcons name="chevron-left" size={24} color={canGoPrev ? '#1976D2' : '#ccc'} />
-              <Text style={[styles.paginationButtonText, !canGoPrev && styles.paginationButtonTextDisabled]}>
+              <MaterialIcons name="chevron-left" size={24} color={canGoPrev ? tintColor : '#ccc'} />
+              <Text style={[styles.paginationButtonText, !canGoPrev && styles.paginationButtonTextDisabled, { color: canGoPrev ? tintColor : '#ccc' }]}>
                 Precedente
               </Text>
             </TouchableOpacity>
 
             <View style={styles.pageIndicator}>
-              <Text style={styles.pageText}>
+              <Text style={[styles.pageText, { color: textColor }]}>
                 Pagina {pagination.currentPage} di {maxPage}
               </Text>
-              <Text style={styles.pageSubtext}>
+              <Text style={[styles.pageSubtext, { color: theme === 'dark' ? '#666' : '#999' }]}>
                 {(pagination.currentPage - 1) * pagination.pageSize + 1}-{Math.min(pagination.currentPage * pagination.pageSize, pagination.total)} di {pagination.total}
               </Text>
             </View>
@@ -191,10 +191,10 @@ const SitiScreen: React.FC = () => {
               onPress={() => dispatch(nextPage())}
               disabled={!canGoNext}
             >
-              <Text style={[styles.paginationButtonText, !canGoNext && styles.paginationButtonTextDisabled]}>
+              <Text style={[styles.paginationButtonText, !canGoNext && styles.paginationButtonTextDisabled, { color: canGoNext ? tintColor : '#ccc' }]}>
                 Successiva
               </Text>
-              <MaterialIcons name="chevron-right" size={24} color={canGoNext ? '#1976D2' : '#ccc'} />
+              <MaterialIcons name="chevron-right" size={24} color={canGoNext ? tintColor : '#ccc'} />
             </TouchableOpacity>
           </View>
         </>
@@ -345,44 +345,43 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 16,
     borderTopWidth: 1,
-    borderTopColor: '#eee',
+    gap: 12,
   },
   paginationButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 6,
-    backgroundColor: '#f0f0f0',
     gap: 4,
+    flex: 1,
   },
   paginationButtonDisabled: {
-    opacity: 0.5,
+    backgroundColor: '#f5f5f5',
   },
   paginationButtonText: {
     fontSize: 12,
     fontWeight: '600',
-    color: '#1976D2',
   },
   paginationButtonTextDisabled: {
     color: '#ccc',
   },
   pageIndicator: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 2,
   },
   pageText: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '600',
-    color: '#666',
   },
   pageSubtext: {
     fontSize: 11,
-    color: '#999',
-    marginTop: 2,
   },
 });
 

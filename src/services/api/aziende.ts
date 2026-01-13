@@ -92,7 +92,7 @@ export const getAziende = async (idTecnico: number): Promise<Azienda[]> => {
 /**
  * Ottiene TUTTE le aziende del sistema (per il form nuova scheda)
  */
-export const getAllAziende = async (query?: string, limit: number = 50, start: number = 0): Promise<Azienda[]> => {
+export const getAllAziende = async (query?: string, limit: number = 50, start: number = 0): Promise<{ aziende: Azienda[]; total: number }> => {
   const params: any = {
     mode: 'aziendeall2',
     limit,
@@ -103,9 +103,12 @@ export const getAllAziende = async (query?: string, limit: number = 50, start: n
     params.query = query.trim();
   }
 
-  const response = await api.get<{ data: Azienda[] }>('/services/ajax.php', {
+  const response = await api.get<{ data: Azienda[]; totaldata?: number }>('/services/ajax.php', {
     params,
   });
 
-  return response.data.data || [];
+  return {
+    aziende: response.data.data || [],
+    total: response.data.totaldata || 0,
+  };
 };

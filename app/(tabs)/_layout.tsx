@@ -30,6 +30,14 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="aziende"
+        options={{
+          title: 'Aziende',
+          tabBarLabel: 'Aziende',
+          tabBarIcon: ({ color }) => <MaterialIcons name="business" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: 'Impostazioni',

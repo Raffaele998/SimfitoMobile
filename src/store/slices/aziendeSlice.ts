@@ -9,6 +9,14 @@ interface AziendeState {
   loadingAll: boolean;
   error: string | null;
   creating: boolean;
+  pagination: {
+    currentPage: number;
+    pageSize: number;
+    total: number;
+  };
+  filters: {
+    searchText: string;
+  };
 }
 
 const initialState: AziendeState = {
@@ -19,6 +27,14 @@ const initialState: AziendeState = {
   loadingAll: false,
   error: null,
   creating: false,
+  pagination: {
+    currentPage: 1,
+    pageSize: 50,
+    total: 0,
+  },
+  filters: {
+    searchText: '',
+  },
 };
 
 export const verifyOrCreateAzienda = createAsyncThunk(
@@ -96,15 +112,15 @@ export const fetchAziende = createAsyncThunk(
 
 export const fetchAllAziende = createAsyncThunk(
   'aziende/fetchAllSystem',
-  async (params?: { query?: string; limit?: number; start?: number; append?: boolean }, { rejectWithValue }) => {
+  async (params: { searchText?: string; page?: number; pageSize?: number }, { rejectWithValue }) => {
     try {
-      const query = params?.query;
-      const limit = params?.limit || 50;
-      const start = params?.start || 0;
-      const append = params?.append || false;
+      const query = params?.searchText;
+      const pageSize = params?.pageSize || 50;
+      const page = params?.page || 1;
+      const start = (page - 1) * pageSize;
       
-      const aziende = await getAllAziende(query, limit, start);
-      return { aziende, append };
+      const result = await getAllAziende(query, pageSize, start);
+      return result;
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message ||
@@ -122,6 +138,18 @@ const aziendeSlice = createSlice({
     clearAzienda: (state) => {
       state.currentAzienda = null;
       state.error = null;
+    },
+    nextPage: (state) => {
+      state.pagination.currentPage += 1;
+    },
+    previousPage: (state) => {
+      if (state.pagination.currentPage > 1) {
+        state.pagination.currentPage -= 1;
+      }
+    },
+    setFilters: (state, action) => {
+      state.filters = { ...state.filters, ...action.payload };
+      state.pagination.currentPage = 1; // Reset alla prima pagina quando cambiano i filtri
     },
   },
   extraReducers: (builder) => {
@@ -171,11 +199,8 @@ const aziendeSlice = createSlice({
       })
       .addCase(fetchAllAziende.fulfilled, (state, action) => {
         state.loadingAll = false;
-        if (action.payload.append) {
-          state.allItems = [...state.allItems, ...action.payload.aziende];
-        } else {
-          state.allItems = action.payload.aziende;
-        }
+        state.allItems = action.payload.aziende;
+        state.pagination.total = action.payload.total;
       })
       .addCase(fetchAllAziende.rejected, (state, action) => {
         state.loadingAll = false;
@@ -184,6 +209,6 @@ const aziendeSlice = createSlice({
   },
 });
 
-export const { clearAzienda } = aziendeSlice.actions;
+export const { clearAzienda, nextPage, previousPage, setFilters } = aziendeSlice.actions;
 export const selectAziende = (state: any) => state.aziende;
 export default aziendeSlice.reducer;
