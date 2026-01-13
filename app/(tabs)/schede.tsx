@@ -112,8 +112,8 @@ const SchemataScreen: React.FC = () => {
     { value: 'data_asc', label: 'Data meno recente', icon: 'calendar-today' },
     { value: 'protocollo_asc', label: 'Protocollo A-Z', icon: 'tag' },
     { value: 'protocollo_desc', label: 'Protocollo Z-A', icon: 'tag' },
-    { value: 'stato_asc', label: 'Stato crescente', icon: 'info' },
-    { value: 'stato_desc', label: 'Stato decrescente', icon: 'info' },
+    { value: 'stato_asc', label: 'Stato: Rigettata → Confermata', icon: 'info' },
+    { value: 'stato_desc', label: 'Stato: Confermata → Rigettata', icon: 'info' },
   ];
 
   // Verifica permessi: solo tecnici (tipo >= 2) possono creare schede
