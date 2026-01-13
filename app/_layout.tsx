@@ -55,6 +55,13 @@ function RootLayoutNav() {
         />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen 
+          name="nuova-scheda" 
+          options={{ 
+            headerShown: false,
+            animationEnabled: true 
+          }} 
+        />
+        <Stack.Screen 
           name="schede/[id]" 
           options={{ 
             headerShown: false,

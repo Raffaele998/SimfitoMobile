@@ -1,8 +1,8 @@
 import api from './client';
 
 export interface Sito {
-  id: number;
-  gid?: number;
+  id?: number;          // Alias di gid nella query SQL (potrebbe non esserci sempre)
+  gid?: number;         // ID primario del sito (campo originale DB)
   rag_soc?: string;
   localita?: string;
   denominazione: string;
@@ -37,7 +37,7 @@ export const getSiti = async (piva: string, query?: string): Promise<Sito[]> => 
     params.query = query;
   }
 
-  const response = await api.get<{ data: Sito[] }>('/ajax.php', { params });
+  const response = await api.get<{ data: Sito[] }>('/services/ajax.php', { params });
 
   return response.data.data || [];
 };
@@ -66,7 +66,7 @@ export const createSito = async (params: CreateSitoParams): Promise<{ success: b
   formData.append('superficie', (params.superficie || 0).toString());
   formData.append('quota', (params.quota || 0).toString());
 
-  const response = await api.post('/ajax-save-form.php', formData, {
+  const response = await api.post('/services/ajax-save-form.php', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
 
@@ -82,7 +82,7 @@ export const getAllSiti = async (query?: string): Promise<Sito[]> => {
     params.query = query;
   }
 
-  const response = await api.get<{ data: Sito[] }>('/ajax.php', { params });
+  const response = await api.get<{ data: Sito[] }>('/services/ajax.php', { params });
 
   return response.data.data || [];
 };

@@ -1,16 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Azienda, checkAzienda, CreateAziendaParams, createAzienda as createAziendaAPI } from '../../services/api/aziende';
+import { Azienda, checkAzienda, createAzienda as createAziendaAPI, CreateAziendaParams, getAllAziende, getAziende } from '../../services/api/aziende';
 
 interface AziendeState {
+  items: Azienda[];
+  allItems: Azienda[]; // Tutte le aziende del sistema
   currentAzienda: Azienda | null;
   loading: boolean;
+  loadingAll: boolean;
   error: string | null;
   creating: boolean;
 }
 
 const initialState: AziendeState = {
+  items: [],
+  allItems: [],
   currentAzienda: null,
   loading: false,
+  loadingAll: false,
   error: null,
   creating: false,
 };
@@ -72,6 +78,43 @@ export const fetchAzienda = createAsyncThunk(
   }
 );
 
+export const fetchAziende = createAsyncThunk(
+  'aziende/fetchAll',
+  async (idTecnico: number, { rejectWithValue }) => {
+    try {
+      const aziende = await getAziende(idTecnico);
+      return aziende;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message ||
+        error.message ||
+        'Errore nel caricamento delle aziende'
+      );
+    }
+  }
+);
+
+export const fetchAllAziende = createAsyncThunk(
+  'aziende/fetchAllSystem',
+  async (params?: { query?: string; limit?: number; start?: number; append?: boolean }, { rejectWithValue }) => {
+    try {
+      const query = params?.query;
+      const limit = params?.limit || 50;
+      const start = params?.start || 0;
+      const append = params?.append || false;
+      
+      const aziende = await getAllAziende(query, limit, start);
+      return { aziende, append };
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message ||
+        error.message ||
+        'Errore nel caricamento delle aziende'
+      );
+    }
+  }
+);
+
 const aziendeSlice = createSlice({
   name: 'aziende',
   initialState,
@@ -108,6 +151,34 @@ const aziendeSlice = createSlice({
       })
       .addCase(fetchAzienda.rejected, (state, action) => {
         state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(fetchAziende.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchAziende.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchAziende.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(fetchAllAziende.pending, (state) => {
+        state.loadingAll = true;
+        state.error = null;
+      })
+      .addCase(fetchAllAziende.fulfilled, (state, action) => {
+        state.loadingAll = false;
+        if (action.payload.append) {
+          state.allItems = [...state.allItems, ...action.payload.aziende];
+        } else {
+          state.allItems = action.payload.aziende;
+        }
+      })
+      .addCase(fetchAllAziende.rejected, (state, action) => {
+        state.loadingAll = false;
         state.error = action.payload as string;
       });
   },

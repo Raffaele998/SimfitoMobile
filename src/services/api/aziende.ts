@@ -14,6 +14,11 @@ export interface Azienda {
   email?: string;
   comune?: string;
   provincia?: string;
+  rup?: boolean;
+  vivaio?: boolean;
+  fito?: boolean;
+  tipo?: string; // Concatenazione dei tipi azienda
+  bbox?: string;
 }
 
 export interface CreateAziendaParams {
@@ -35,7 +40,7 @@ export interface CreateAziendaParams {
  * Verifica se esiste un'azienda con la partita IVA specificata
  */
 export const checkAzienda = async (piva: string): Promise<Azienda | null> => {
-  const response = await api.get<{ data: Azienda[] }>('/ajax.php', {
+  const response = await api.get<{ data: Azienda[] }>('/services/ajax.php', {
     params: { mode: 'azienda', piva },
   });
 
@@ -66,7 +71,7 @@ export const createAzienda = async (params: CreateAziendaParams): Promise<{ succ
   if (params.email) formData.append('email', params.email);
   if (params.tipoazienda) formData.append('tipoazienda', params.tipoazienda);
 
-  const response = await api.post('/ajax-save-form.php', formData, {
+  const response = await api.post('/services/ajax-save-form.php', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
 
@@ -77,8 +82,29 @@ export const createAzienda = async (params: CreateAziendaParams): Promise<{ succ
  * Ottiene le aziende associate a un tecnico
  */
 export const getAziende = async (idTecnico: number): Promise<Azienda[]> => {
-  const response = await api.get<{ data: Azienda[] }>('/ajax.php', {
+  const response = await api.get<{ data: Azienda[] }>('/services/ajax.php', {
     params: { mode: 'aziende', idTecnico },
+  });
+
+  return response.data.data || [];
+};
+
+/**
+ * Ottiene TUTTE le aziende del sistema (per il form nuova scheda)
+ */
+export const getAllAziende = async (query?: string, limit: number = 50, start: number = 0): Promise<Azienda[]> => {
+  const params: any = {
+    mode: 'aziendeall2',
+    limit,
+    start,
+  };
+
+  if (query && query.trim() !== '') {
+    params.query = query.trim();
+  }
+
+  const response = await api.get<{ data: Azienda[] }>('/services/ajax.php', {
+    params,
   });
 
   return response.data.data || [];

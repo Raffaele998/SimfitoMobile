@@ -1,8 +1,84 @@
 # Implementazione Creazione Nuova Scheda
 
-## Stato Implementazione: 90% Completato ✅
+## Stato Implementazione: 100% Completato ✅
 
-### Componenti Implementati
+### Ultimo Aggiornamento
+**Data:** 13 gennaio 2026  
+**Modifiche:** Implementato caricamento di tutte le aziende con ricerca in tempo reale
+
+---
+
+## Funzionalità Implementate
+
+### 1. Caricamento Aziende (NUOVO ✨)
+
+#### API Service - `src/services/api/aziende.ts`
+- **`getAllAziende(query?: string)`** - Carica TUTTE le aziende del sistema
+  - Usa l'endpoint `mode=aziendeall2` di ajax.php
+  - Supporta ricerca per ragione sociale o P.IVA
+  - Limit: 1000 aziende
+  
+#### Interfaccia Azienda Estesa
+```typescript
+export interface Azienda {
+  id_azienda: number;
+  partita_iva: string;
+  rag_soc: string;
+  // ... campi base ...
+  rup?: boolean;          // Azienda RUP
+  vivaio?: boolean;       // Ha vivaio
+  fito?: boolean;         // Ha prodotti fitosanitari
+  tipo?: string;          // Tipi azienda concatenati
+  bbox?: string;          // Bounding box dei siti
+}
+```
+
+#### Redux Slice - `src/store/slices/aziendeSlice.ts`
+- **Nuovo state:** `allItems` - Array di tutte le aziende
+- **Nuovo state:** `loadingAll` - Loading per fetch totale
+- **Nuova action:** `fetchAllAziende(query?)` - Async thunk per caricamento
+  - Supporta ricerca opzionale
+  - Carica tutte le aziende disponibili
+
+### 2. Form Nuova Scheda - `app/nuova-scheda.tsx`
+
+#### Step 1: Selezione/Creazione Azienda
+**MODIFICATO** per supportare tutte le aziende:
+
+##### Stato Componente
+```typescript
+const [selectedAzienda, setSelectedAzienda] = useState<number | null>(null);
+const [selectedAziendaLabel, setSelectedAziendaLabel] = useState('');
+const [aziendaSearchQuery, setAziendaSearchQuery] = useState('');
+```
+
+##### Caricamento Iniziale
+```typescript
+useEffect(() => {
+  dispatch(fetchThemes());
+  dispatch(fetchAllAziende()); // Carica TUTTE le aziende
+  // ...
+}, [dispatch]);
+```
+
+##### Modal Selezione Azienda
+- **Barra di ricerca** in tempo reale
+  - Filtra per ragione sociale o P.IVA
+  - Ricerca server-side tramite `fetchAllAziende(query)`
+- **Lista aziende** con:
+  - Ragione sociale
+  - Partita IVA
+  - Comune e provincia
+  - Indicatore visivo per selezione corrente
+
+##### Selector Redux Aggiornato
+```typescript
+const { allItems: aziende, loadingAll: loadingAzienda } = useAppSelector(selectAziende);
+```
+
+---
+
+## Componenti Implementati (Tutti Aggiornati)
 
 #### 1. API Services (100% ✅)
 - **`src/services/api/aziende.ts`**

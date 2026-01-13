@@ -2,23 +2,23 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
-  Alert,
-  FlatList,
-  KeyboardAvoidingView,
-  Modal,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    ActivityIndicator,
+    Alert,
+    FlatList,
+    KeyboardAvoidingView,
+    Modal,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 import { useThemeColor } from '../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../src/store/hooks';
 import { selectAuth } from '../src/store/slices/authSlice';
-import { selectAziende, verifyOrCreateAzienda } from '../src/store/slices/aziendeSlice';
+import { fetchAllAziende, selectAziende } from '../src/store/slices/aziendeSlice';
 import { createScheda, fetchSchede } from '../src/store/slices/schedeSlice';
 import { createSito, fetchSitiByAzienda, selectSiti } from '../src/store/slices/sitiSlice';
 import { fetchThemes, selectThemes } from '../src/store/slices/themesSlice';
@@ -30,17 +30,30 @@ const NuovaSchedaScreen: React.FC = () => {
   const { user } = useAppSelector(selectAuth);
   const { items: themes, loading: loadingThemes } = useAppSelector(selectThemes);
   const { items: tipologie, loading: loadingTipologie } = useAppSelector(selectTipologiaSito);
-  const { currentAzienda, loading: loadingAzienda } = useAppSelector(selectAziende);
+  const { allItems: aziende, currentAzienda, loadingAll: loadingAzienda } = useAppSelector(selectAziende);
   const { items: siti, loading: loadingSiti } = useAppSelector(selectSiti);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
 
+  // Controllo permessi: solo tecnici (tipo >= 2) possono creare schede
+  useEffect(() => {
+    if (user?.type && Number(user.type) < 2) {
+      Alert.alert(
+        'Accesso negato',
+        'Solo i tecnici possono creare nuove schede.',
+        [{ text: 'OK', onPress: () => router.replace('/(tabs)/schede') }]
+      );
+    }
+  }, [user, router]);
+
   const [step, setStep] = useState(1); // 1=azienda, 2=sito, 3=scheda
 
   // Step 1: Azienda
-  const [partitaIva, setPartitaIva] = useState('');
-  const [ragioneSociale, setRagioneSociale] = useState('');
+  const [selectedAzienda, setSelectedAzienda] = useState<number | null>(null);
+  const [selectedAziendaLabel, setSelectedAziendaLabel] = useState('');
+  const [aziendaSearchQuery, setAziendaSearchQuery] = useState('');
+  const [showAziendeModal, setShowAziendeModal] = useState(false);
   
   // Step 2: Sito
   const [sitoMode, setSitoMode] = useState<'select' | 'create'>('select'); // Seleziona esistente o crea nuovo
@@ -62,6 +75,9 @@ const NuovaSchedaScreen: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchThemes());
+    // Carica tutte le aziende in una volta (limite alto)
+    dispatch(fetchAllAziende({ limit: 5000, start: 0, append: false }));
+
     // Imposta la data di oggi come default
     const oggi = new Date();
     const day = oggi.getDate().toString().padStart(2, '0');
@@ -90,6 +106,12 @@ const NuovaSchedaScreen: React.FC = () => {
     setShowTipologieModal(false);
   };
 
+  const handleSearchAziende = (query: string) => {
+    setAziendaSearchQuery(query);
+    // Ricarica con la nuova query
+    dispatch(fetchAllAziende({ query, limit: 5000, start: 0, append: false }));
+  };
+
   const validateDate = (text: string): boolean => {
     const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     if (!regex.test(text)) return false;
@@ -108,32 +130,31 @@ const NuovaSchedaScreen: React.FC = () => {
 
   const handleNextStep = async () => {
     if (step === 1) {
-      if (!partitaIva || !ragioneSociale) {
-        Alert.alert('Errore', 'Inserisci Partita IVA e Ragione Sociale');
-        return;
-      }
-
       if (!user?.id) {
         Alert.alert('Errore', 'Utente non autenticato');
         return;
       }
 
+      if (!selectedAzienda) {
+        Alert.alert('Errore', 'Seleziona un\'azienda');
+        return;
+      }
+
+      const azienda = aziende.find(a => a.id_azienda === selectedAzienda);
+      if (!azienda) {
+        Alert.alert('Errore', 'Azienda non trovata');
+        return;
+      }
+
       try {
-        // Verifica se l'azienda esiste, altrimenti la crea
-        await dispatch(
-          verifyOrCreateAzienda({
-            piva: partitaIva,
-            ragionesociale: ragioneSociale,
-            idTecnico: user.id,
-          })
-        ).unwrap();
-
         // Carica i siti dell'azienda
-        await dispatch(fetchSitiByAzienda({ piva: partitaIva })).unwrap();
-
+        const sitiResult = await dispatch(fetchSitiByAzienda({ piva: azienda.partita_iva })).unwrap();
+        console.log('Siti caricati per P.IVA', azienda.partita_iva, ':', sitiResult);
+        console.log('Numero siti:', sitiResult?.length || 0);
         setStep(2);
       } catch (error: any) {
-        Alert.alert('Errore', error || 'Errore nella gestione dell\'azienda');
+        console.error('Errore caricamento siti:', error);
+        Alert.alert('Errore', error || 'Errore nel caricamento dei siti');
       }
     } else if (step === 2) {
       if (sitoMode === 'select' && !selectedSito) {
@@ -209,7 +230,7 @@ const NuovaSchedaScreen: React.FC = () => {
           text: 'OK',
           onPress: () => {
             dispatch(fetchSchede({ userId: user.id.toString(), page: 1, pageSize: 50 }));
-            router.back();
+            router.replace('/(tabs)/schede');
           },
         },
       ]);
@@ -222,6 +243,16 @@ const NuovaSchedaScreen: React.FC = () => {
 
   const isDark = textColor === '#ECEDEE';
 
+  const handleBack = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
+
+  const handleClose = () => {
+    router.replace('/(tabs)/schede');
+  };
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View
@@ -233,11 +264,23 @@ const NuovaSchedaScreen: React.FC = () => {
           },
         ]}
       >
-        <TouchableOpacity onPress={() => router.back()}>
-          <MaterialIcons name="arrow-back" size={24} color={tintColor} />
-        </TouchableOpacity>
+        {step === 1 ? (
+          <TouchableOpacity onPress={handleClose}>
+            <MaterialIcons name="close" size={24} color={tintColor} />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={handleBack}>
+            <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+          </TouchableOpacity>
+        )}
         <Text style={[styles.headerTitle, { color: textColor }]}>Nuova Scheda</Text>
-        <View style={{ width: 24 }} />
+        {step === 1 ? (
+          <View style={{ width: 24 }} />
+        ) : (
+          <TouchableOpacity onPress={handleClose}>
+            <MaterialIcons name="close" size={24} color={tintColor} />
+          </TouchableOpacity>
+        )}
       </View>
 
       <KeyboardAvoidingView
@@ -275,41 +318,45 @@ const NuovaSchedaScreen: React.FC = () => {
           {step === 1 && (
             <View>
               <View style={styles.field}>
-                <Text style={[styles.label, { color: textColor }]}>Partita IVA *</Text>
-                <TextInput
-                  style={[
-                    styles.input,
-                    {
-                      backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                      borderColor: isDark ? '#444' : '#ddd',
-                      color: textColor,
-                    },
-                  ]}
-                  value={partitaIva}
-                  onChangeText={setPartitaIva}
-                  placeholder="Inserisci Partita IVA"
-                  placeholderTextColor={isDark ? '#666' : '#999'}
-                  keyboardType="numeric"
-                  maxLength={11}
-                />
-              </View>
-              <View style={styles.field}>
-                <Text style={[styles.label, { color: textColor }]}>Ragione Sociale *</Text>
-                <TextInput
-                  style={[
-                    styles.input,
-                    {
-                      backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                      borderColor: isDark ? '#444' : '#ddd',
-                      color: textColor,
-                    },
-                  ]}
-                  value={ragioneSociale}
-                  onChangeText={setRagioneSociale}
-                  placeholder="Inserisci Ragione Sociale"
-                  placeholderTextColor={isDark ? '#666' : '#999'}
-                />
-              </View>
+                <Text style={[styles.label, { color: textColor }]}>Azienda *</Text>
+                <TouchableOpacity
+                    style={[
+                      styles.selectButton,
+                      {
+                        backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                        borderColor: isDark ? '#444' : '#ddd',
+                      },
+                    ]}
+                    onPress={() => setShowAziendeModal(true)}
+                    disabled={loadingAzienda || aziende.length === 0}
+                  >
+                    {loadingAzienda ? (
+                      <ActivityIndicator color={tintColor} />
+                    ) : (
+                      <>
+                        <Text
+                          style={[
+                            styles.selectText,
+                            { color: selectedAzienda ? textColor : (isDark ? '#666' : '#999') },
+                          ]}
+                        >
+                          {selectedAzienda && selectedAziendaLabel
+                            ? selectedAziendaLabel
+                            : aziende.length > 0
+                            ? 'Seleziona azienda...'
+                            : 'Nessuna azienda disponibile'}
+                        </Text>
+                        <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+                      </>
+                    )}
+                  </TouchableOpacity>
+                  {aziende.length === 0 && !loadingAzienda && (
+                    <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
+                      Nessuna azienda trovata.
+                    </Text>
+                  )}
+                </View>
+
               <TouchableOpacity
                 style={[styles.nextButton, { backgroundColor: tintColor }]}
                 onPress={handleNextStep}
@@ -397,7 +444,7 @@ const NuovaSchedaScreen: React.FC = () => {
                 ]}
               >
                 {selectedSito
-                  ? siti.find((s: any) => s.id === selectedSito || s.gid === selectedSito)?.denominazione || 'Sito selezionato'
+                  ? siti.find((s: any) => (s.gid || s.id) === selectedSito)?.denominazione || 'Sito selezionato'
                   : siti.length > 0
                   ? 'Seleziona sito...'
                   : 'Nessun sito disponibile'}
@@ -413,93 +460,92 @@ const NuovaSchedaScreen: React.FC = () => {
         )}
       </View>
     ) : (
-      <>
-        <View style={styles.field}>
-          <Text style={[styles.label, { color: textColor }]}>Nome Sito *</Text>
-          <TextInput
-            style={[
-              styles.input,
-              {
-                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                borderColor: isDark ? '#444' : '#ddd',
-                color: textColor,
-              },
-            ]}
-            value={nomeSito}
-            onChangeText={setNomeSito}
-            placeholder="Inserisci nome sito"
-            placeholderTextColor={isDark ? '#666' : '#999'}
-          />
-        </View>
-
-        <View style={styles.field}>
-          <Text style={[styles.label, { color: textColor }]}>Tema *</Text>
-          <TouchableOpacity
-            style={[
-              styles.selectButton,
-              {
-                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                borderColor: isDark ? '#444' : '#ddd',
-              },
-            ]}
-            onPress={() => setShowThemesModal(true)}
-            disabled={loadingThemes}
-          >
-            {loadingThemes ? (
-              <ActivityIndicator color={tintColor} />
-            ) : (
-              <>
-                <Text
-                  style={[
-                    styles.selectText,
-                    { color: selectedThemeLabel ? textColor : (isDark ? '#666' : '#999') },
-                  ]}
-                >
-                  {selectedThemeLabel || 'Seleziona tema...'}
-                </Text>
-                <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
-              </>
-            )}
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.field}>
-          <Text style={[styles.label, { color: textColor }]}>Tipologia Sito *</Text>
-          <TouchableOpacity
-            style={[
-              styles.selectButton,
-              {
-                backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
-                borderColor: isDark ? '#444' : '#ddd',
-              },
-            ]}
-            onPress={() => setShowTipologieModal(true)}
-            disabled={!selectedTheme || loadingTipologie}
-          >
-            {loadingTipologie ? (
-              <ActivityIndicator color={tintColor} />
-            ) : (
-              <>
-                <Text
-                  style={[
-                    styles.selectText,
-                    { color: selectedTipologiaLabel ? textColor : (isDark ? '#666' : '#999') },
-                  ]}
-                >
-                  {selectedTipologiaLabel || 'Seleziona tipologia...'}
-                </Text>
-                <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
-              </>
-            )}
-          </TouchableOpacity>
-          {!selectedTheme && (
-            <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
-              Seleziona prima un tema
-            </Text>
-          )}
-        </View>
-      </>
+      <View style={styles.field}>
+        <Text style={[styles.label, { color: textColor }]}>Nome Sito *</Text>
+        <TextInput
+          style={[
+            styles.input,
+            {
+              backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+              borderColor: isDark ? '#444' : '#ddd',
+              color: textColor,
+            },
+          ]}
+          value={nomeSito}
+          onChangeText={setNomeSito}
+          placeholder="Inserisci nome sito"
+          placeholderTextColor={isDark ? '#666' : '#999'}
+        />
+      </View>
     )}
+
+    {/* Modifica tipologia sito - Sempre visibile */}
+    <View style={styles.field}>
+      <Text style={[styles.label, { color: textColor }]}>Tema *</Text>
+      <TouchableOpacity
+        style={[
+          styles.selectButton,
+          {
+            backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+            borderColor: isDark ? '#444' : '#ddd',
+          },
+        ]}
+        onPress={() => setShowThemesModal(true)}
+        disabled={loadingThemes}
+      >
+        {loadingThemes ? (
+          <ActivityIndicator color={tintColor} />
+        ) : (
+          <>
+            <Text
+              style={[
+                styles.selectText,
+                { color: selectedThemeLabel ? textColor : (isDark ? '#666' : '#999') },
+              ]}
+            >
+              {selectedThemeLabel || 'Seleziona tema...'}
+            </Text>
+            <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+          </>
+        )}
+      </TouchableOpacity>
+    </View>
+
+    <View style={styles.field}>
+      <Text style={[styles.label, { color: textColor }]}>Tipologia Sito *</Text>
+      <TouchableOpacity
+        style={[
+          styles.selectButton,
+          {
+            backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+            borderColor: isDark ? '#444' : '#ddd',
+          },
+        ]}
+        onPress={() => setShowTipologieModal(true)}
+        disabled={!selectedTheme || loadingTipologie}
+      >
+        {loadingTipologie ? (
+          <ActivityIndicator color={tintColor} />
+        ) : (
+          <>
+            <Text
+              style={[
+                styles.selectText,
+                { color: selectedTipologiaLabel ? textColor : (isDark ? '#666' : '#999') },
+              ]}
+            >
+              {selectedTipologiaLabel || 'Seleziona tipologia...'}
+            </Text>
+            <MaterialIcons name="arrow-drop-down" size={24} color={tintColor} />
+          </>
+        )}
+      </TouchableOpacity>
+      {!selectedTheme && (
+        <Text style={[styles.helpText, { color: isDark ? '#666' : '#999' }]}>
+          Seleziona prima un tema
+        </Text>
+      )}
+    </View>
 
     <View style={styles.buttonRow}>
       <TouchableOpacity
@@ -719,38 +765,41 @@ const NuovaSchedaScreen: React.FC = () => {
             </View>
             <FlatList
               data={tipologie}
-              keyExtractor={(item) => item.tipologiasito_id.toString()}
+              keyExtractor={(item) => ((item.tipologiasito_id || item.id) || '').toString()}
               renderItem={({ item }) => (
                 <TouchableOpacity
                   style={[
                     styles.modalItem,
                     {
                       backgroundColor:
-                        selectedTipologia === item.tipologiasito_id.toString()
+                        selectedTipologia === ((item.tipologiasito_id || item.id) || '').toString()
                           ? (isDark ? '#2a2a2a' : '#f0f0f0')
                           : 'transparent',
                       borderBottomColor: isDark ? '#333' : '#eee',
                     },
                   ]}
-                  onPress={() => handleSelectTipologia(item.tipologiasito_id, item.tipologiasito)}
+                  onPress={() => handleSelectTipologia((item.tipologiasito_id || item.id), item.tipologiasito || item.description)}
                 >
                   <Text style={[styles.modalItemText, { color: textColor }]}>
-                    {item.tipologiasito}
+                    {item.tipologiasito || item.description}
                   </Text>
-                  {selectedTipologia === item.tipologiasito_id.toString() && (
+                  {selectedTipologia === ((item.tipologiasito_id || item.id) || '').toString() && (
                     <MaterialIcons name="check" size={20} color={tintColor} />
                   )}
                 </TouchableOpacity>
               )}
             />
+          </View>
+        </View>
+      </Modal>
 
-            {/* Modal per selezione siti */}
-<Modal
-  visible={showSitiModal}
-  transparent
-  animationType="slide"
-  onRequestClose={() => setShowSitiModal(false)}
->
+      {/* Modal per selezione siti */}
+      <Modal
+        visible={showSitiModal}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setShowSitiModal(false)}
+      >
   <View style={styles.modalOverlay}>
     <View
       style={[
@@ -773,21 +822,43 @@ const NuovaSchedaScreen: React.FC = () => {
       </View>
       <FlatList
         data={siti}
-        keyExtractor={(item: any) => (item.id || item.gid).toString()}
-        renderItem={({ item }: any) => (
+        keyExtractor={(item: any) => {
+          // Usa sempre gid se disponibile, altrimenti id, altrimenti un fallback con indice
+          const key = item.gid || item.id;
+          return key ? key.toString() : `sito-${Math.random()}`;
+        }}
+        ListEmptyComponent={
+          loadingSiti ? (
+            <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+              <ActivityIndicator color={tintColor} size="large" />
+            </View>
+          ) : (
+            <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+              <Text style={{ color: isDark ? '#666' : '#999', marginBottom: 8 }}>
+                Nessun sito trovato per questa azienda
+              </Text>
+              <Text style={{ color: isDark ? '#666' : '#999', fontSize: 12 }}>
+                Chiudi il modal e crea un nuovo sito
+              </Text>
+            </View>
+          )
+        }
+        renderItem={({ item }: any) => {
+          const sitoId = item.gid || item.id;
+          return (
           <TouchableOpacity
             style={[
               styles.modalItem,
               {
                 backgroundColor:
-                  selectedSito === item.id || selectedSito === item.gid
+                  selectedSito === sitoId
                     ? (isDark ? '#2a2a2a' : '#f0f0f0')
                     : 'transparent',
                 borderBottomColor: isDark ? '#333' : '#eee',
               },
             ]}
             onPress={() => {
-              setSelectedSito(item.id || item.gid);
+              setSelectedSito(sitoId);
               setShowSitiModal(false);
             }}
           >
@@ -801,15 +872,126 @@ const NuovaSchedaScreen: React.FC = () => {
                 </Text>
               )}
             </View>
-            {(selectedSito === item.id || selectedSito === item.gid) && (
+            {(selectedSito === sitoId) && (
               <MaterialIcons name="check" size={20} color={tintColor} />
             )}
           </TouchableOpacity>
-        )}
+          );
+        }}
       />
     </View>
   </View>
 </Modal>
+
+      {/* Modal per selezione azienda */}
+      <Modal
+        visible={showAziendeModal}
+        transparent
+        animationType="slide"
+        onRequestClose={() => setShowAziendeModal(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View
+            style={[
+              styles.modalContent,
+              { backgroundColor: isDark ? '#1a1a1a' : '#fff' },
+            ]}
+          >
+            <View
+              style={[
+                styles.modalHeader,
+                { borderBottomColor: isDark ? '#333' : '#eee' },
+              ]}
+            >
+              <Text style={[styles.modalTitle, { color: textColor }]}>
+                Seleziona Azienda
+              </Text>
+              <TouchableOpacity onPress={() => setShowAziendeModal(false)}>
+                <MaterialIcons name="close" size={24} color={textColor} />
+              </TouchableOpacity>
+            </View>
+
+            {/* Barra di ricerca */}
+            <View style={{ paddingHorizontal: 16, paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: isDark ? '#333' : '#eee' }}>
+              <TextInput
+                style={[
+                  styles.input,
+                  {
+                    backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5',
+                    borderColor: isDark ? '#444' : '#ddd',
+                    color: textColor,
+                    marginBottom: 0,
+                  },
+                ]}
+                value={aziendaSearchQuery}
+                onChangeText={handleSearchAziende}
+                placeholder="Cerca per ragione sociale o P.IVA..."
+                placeholderTextColor={isDark ? '#666' : '#999'}
+              />
+            </View>
+
+            {loadingAzienda ? (
+              <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+                <ActivityIndicator color={tintColor} size="large" />
+              </View>
+            ) : (
+              <FlatList
+                data={aziende}
+                keyExtractor={(item, index) => `${item.partita_iva}-${index}`}
+                initialNumToRender={20}
+                maxToRenderPerBatch={20}
+                windowSize={10}
+                ListFooterComponent={
+                  aziende.length > 0 ? (
+                    <View style={{ paddingVertical: 20, alignItems: 'center' }}>
+                      <Text style={{ color: isDark ? '#666' : '#999', fontSize: 12 }}>
+                        {aziende.length} {aziende.length === 1 ? 'azienda' : 'aziende'} totali
+                      </Text>
+                    </View>
+                  ) : null
+                }
+                renderItem={({ item }) => (
+                  <TouchableOpacity
+                    style={[
+                      styles.modalItem,
+                      {
+                        backgroundColor:
+                          selectedAzienda === item.id_azienda
+                            ? (isDark ? '#2a2a2a' : '#f0f0f0')
+                            : 'transparent',
+                        borderBottomColor: isDark ? '#333' : '#eee',
+                      },
+                    ]}
+                    onPress={() => {
+                      setSelectedAzienda(item.id_azienda);
+                      setSelectedAziendaLabel(item.rag_soc);
+                      setShowAziendeModal(false);
+                    }}
+                  >
+                    <View style={{ flex: 1 }}>
+                      <Text style={[styles.modalItemText, { color: textColor }]}>
+                        {item.rag_soc}
+                      </Text>
+                      <Text style={{ fontSize: 12, color: isDark ? '#999' : '#666', marginTop: 4 }}>
+                        P.IVA: {item.partita_iva}
+                        {item.comune && ` • ${item.comune}`}
+                        {item.provincia && ` (${item.provincia})`}
+                      </Text>
+                    </View>
+                    {selectedAzienda === item.id_azienda && (
+                      <MaterialIcons name="check" size={20} color={tintColor} />
+                    )}
+                  </TouchableOpacity>
+                )}
+                ListEmptyComponent={
+                  <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+                    <Text style={{ color: isDark ? '#666' : '#999' }}>
+                      Nessuna azienda trovata
+                    </Text>
+                  </View>
+                }
+              />
+            )}
           </View>
         </View>
       </Modal>

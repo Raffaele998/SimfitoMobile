@@ -26,6 +26,7 @@ interface SchemataState {
   selectedScheda: Scheda | null;
   currentPage: number;
   pageSize: number;
+  sortBy: string;
 }
 
 const initialState: SchemataState = {
@@ -37,23 +38,41 @@ const initialState: SchemataState = {
   selectedScheda: null,
   currentPage: 1,
   pageSize: 50,
+  sortBy: 'data_desc',
 };
 
 export const fetchSchede = createAsyncThunk(
   'schede/fetch',
   async (
-    { userId, page = 1, pageSize = 50 }: { userId: string; page?: number; pageSize?: number },
+    { userId, page = 1, pageSize = 50, sortBy }: { userId: string; page?: number; pageSize?: number; sortBy?: string },
     { rejectWithValue }
   ) => {
     try {
       const start = (page - 1) * pageSize;
+      
+      // Mappa i valori di sortBy in query SQL
+      const sortMapping: { [key: string]: string } = {
+        'data_desc': '[{"property":"data_sopralluogo","direction":"DESC"}]',
+        'data_asc': '[{"property":"data_sopralluogo","direction":"ASC"}]',
+        'protocollo_asc': '[{"property":"protocollo","direction":"ASC"}]',
+        'protocollo_desc': '[{"property":"protocollo","direction":"DESC"}]',
+        'stato_asc': '[{"property":"stato","direction":"ASC"}]',
+        'stato_desc': '[{"property":"stato","direction":"DESC"}]',
+      };
+      
+      const params: any = {
+        mode: 'app_schede',
+        idTecnico: userId,
+        limit: pageSize,
+        start,
+      };
+      
+      if (sortBy && sortMapping[sortBy]) {
+        params.sort = sortMapping[sortBy];
+      }
+      
       const response = await apiClient.get('/services/ajax.php', {
-        params: {
-          mode: 'app_schede',
-          idTecnico: userId,
-          limit: pageSize,
-          start,
-        },
+        params,
       });
 
       // Check response structure
@@ -153,6 +172,10 @@ const schedeSlice = createSlice({
         state.currentPage -= 1;
       }
     },
+    setSortBy: (state, action: PayloadAction<string>) => {
+      state.sortBy = action.payload;
+      state.currentPage = 1; // Reset alla prima pagina quando si cambia ordinamento
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -185,6 +208,6 @@ const schedeSlice = createSlice({
   },
 });
 
-export const { setSelectedScheda, clearSchede, setPage, nextPage, previousPage } = schedeSlice.actions;
+export const { setSelectedScheda, clearSchede, setPage, nextPage, previousPage, setSortBy } = schedeSlice.actions;
 export const selectSchede = (state: any) => state.schede;
 export default schedeSlice.reducer;

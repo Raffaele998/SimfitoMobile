@@ -2,10 +2,12 @@ import apiClient from '@/services/api/client';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export interface TipologiaSito {
-  tipologiasito_id: number;
-  tipologiasito: string;
+  id?: number;
+  tipologiasito_id?: number;
+  tipologiasito?: string;
+  description?: string;
   theme_id: number;
-  theme: string;
+  theme?: string;
   enabled: boolean;
   order: number;
 }

@@ -1,18 +1,19 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     ActivityIndicator,
     FlatList,
+    Modal,
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
 import { useThemeColor } from '../../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../../src/store/hooks';
 import { selectAuth } from '../../src/store/slices/authSlice';
-import { fetchSchede, nextPage, previousPage, selectSchede, setSelectedScheda } from '../../src/store/slices/schedeSlice';
+import { fetchSchede, nextPage, previousPage, selectSchede, setSelectedScheda, setSortBy } from '../../src/store/slices/schedeSlice';
 
 interface SchemataItemProps {
   item: any;
@@ -97,16 +98,42 @@ const SchemataScreen: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector(selectAuth);
-  const { items, loading, error, total, currentPage, pageSize } = useAppSelector(selectSchede);
+  const { items, loading, error, total, currentPage, pageSize, sortBy } = useAppSelector(selectSchede);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
+  const isDark = textColor === '#ECEDEE';
+
+  const [showSortModal, setShowSortModal] = useState(false);
+
+  // Opzioni di ordinamento
+  const sortOptions = [
+    { value: 'data_desc', label: 'Data più recente', icon: 'calendar-today' },
+    { value: 'data_asc', label: 'Data meno recente', icon: 'calendar-today' },
+    { value: 'protocollo_asc', label: 'Protocollo A-Z', icon: 'tag' },
+    { value: 'protocollo_desc', label: 'Protocollo Z-A', icon: 'tag' },
+    { value: 'stato_asc', label: 'Stato crescente', icon: 'info' },
+    { value: 'stato_desc', label: 'Stato decrescente', icon: 'info' },
+  ];
+
+  // Verifica permessi: solo tecnici (tipo >= 2) possono creare schede
+  const canCreateSchede = user?.type && Number(user.type) >= 2;
 
   useEffect(() => {
     if (user?.id) {
-      dispatch(fetchSchede({ userId: user.id.toString(), page: currentPage, pageSize }));
+      dispatch(fetchSchede({ userId: user.id.toString(), page: currentPage, pageSize, sortBy }));
     }
-  }, [user?.id, currentPage, dispatch, pageSize]);
+  }, [user?.id, currentPage, dispatch, pageSize, sortBy]);
+
+  const handleSortChange = (newSortBy: string) => {
+    dispatch(setSortBy(newSortBy));
+    setShowSortModal(false);
+  };
+
+  const getSortLabel = () => {
+    const option = sortOptions.find(opt => opt.value === sortBy);
+    return option?.label || 'Ordina';
+  };
 
   const handleItemPress = (schedeId: string) => {
     dispatch(setSelectedScheda(schedeId));
@@ -142,6 +169,20 @@ const SchemataScreen: React.FC = () => {
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
+      {/* Barra filtri */}
+      <View style={[styles.filterBar, { backgroundColor: isDark ? '#1a1a1a' : '#fff', borderBottomColor: isDark ? '#333' : '#eee' }]}>
+        <TouchableOpacity
+          style={[styles.sortButton, { backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5', borderColor: isDark ? '#444' : '#ddd' }]}
+          onPress={() => setShowSortModal(true)}
+        >
+          <MaterialIcons name="sort" size={20} color={tintColor} />
+          <Text style={[styles.sortButtonText, { color: textColor }]} numberOfLines={1}>
+            {getSortLabel()}
+          </Text>
+          <MaterialIcons name="arrow-drop-down" size={20} color={tintColor} />
+        </TouchableOpacity>
+      </View>
+
       {items.length > 0 ? (
         <>
           <FlatList
@@ -205,13 +246,75 @@ const SchemataScreen: React.FC = () => {
         </View>
       )}
       
-      {/* FAB per creare nuova scheda */}
-      <TouchableOpacity
-        style={[styles.fab, { backgroundColor: tintColor }]}
-        onPress={() => router.push('/nuova-scheda')}
+      {/* FAB per creare nuova scheda - solo per tecnici (tipo >= 2) */}
+      {canCreateSchede && (
+        <TouchableOpacity
+          style={[styles.fab, { backgroundColor: tintColor }]}
+          onPress={() => router.push('/nuova-scheda')}
+        >
+          <MaterialIcons name="add" size={28} color="#fff" />
+        </TouchableOpacity>
+      )}
+
+      {/* Modal per selezione ordinamento */}
+      <Modal
+        visible={showSortModal}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setShowSortModal(false)}
       >
-        <MaterialIcons name="add" size={28} color="#fff" />
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.modalOverlay}
+          activeOpacity={1}
+          onPress={() => setShowSortModal(false)}
+        >
+          <View
+            style={[
+              styles.sortModalContent,
+              { backgroundColor: isDark ? '#1a1a1a' : '#fff' },
+            ]}
+            onStartShouldSetResponder={() => true}
+          >
+            <View style={[styles.modalHeader, { borderBottomColor: isDark ? '#333' : '#eee' }]}>
+              <Text style={[styles.modalTitle, { color: textColor }]}>Ordina per</Text>
+              <TouchableOpacity onPress={() => setShowSortModal(false)}>
+                <MaterialIcons name="close" size={24} color={textColor} />
+              </TouchableOpacity>
+            </View>
+
+            {sortOptions.map((option) => (
+              <TouchableOpacity
+                key={option.value}
+                style={[
+                  styles.sortOption,
+                  {
+                    backgroundColor: sortBy === option.value ? (isDark ? '#2a2a2a' : '#f0f0f0') : 'transparent',
+                    borderBottomColor: isDark ? '#333' : '#eee',
+                  },
+                ]}
+                onPress={() => handleSortChange(option.value)}
+              >
+                <MaterialIcons
+                  name={option.icon as any}
+                  size={20}
+                  color={sortBy === option.value ? tintColor : (isDark ? '#666' : '#999')}
+                />
+                <Text
+                  style={[
+                    styles.sortOptionText,
+                    { color: sortBy === option.value ? tintColor : textColor },
+                  ]}
+                >
+                  {option.label}
+                </Text>
+                {sortBy === option.value && (
+                  <MaterialIcons name="check" size={20} color={tintColor} />
+                )}
+              </TouchableOpacity>
+            ))}
+          </View>
+        </TouchableOpacity>
+      </Modal>
     </View>
   );
 };
@@ -408,6 +511,68 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 8,
+  },
+  filterBar: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    gap: 8,
+  },
+  sortButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    gap: 8,
+  },
+  sortButtonText: {
+    flex: 1,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  sortModalContent: {
+    width: '100%',
+    maxWidth: 400,
+    borderRadius: 12,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderBottomWidth: 1,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  sortOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    gap: 12,
+    borderBottomWidth: 1,
+  },
+  sortOptionText: {
+    flex: 1,
+    fontSize: 15,
   },
 });
 
