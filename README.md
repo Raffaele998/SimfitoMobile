@@ -14,10 +14,8 @@ Applicazione mobile per la ricerca e consultazione di dati EPPO (pest, piante, m
 ## 🧪 Testing Guide
 
 ### Credenziali di Test
-- **Username**: `fortunamiele`
-- **Password**: `fortuna`
-- **User ID**: 259
-- **Type**: Tecnico URCOFI
+- **Username**: `admin`
+- **Password**: `SIMFito@Admin`
 
 ### Test Flow
 1. **Login** → Inserisci credenziali e premi login
@@ -83,14 +81,8 @@ Applicazione mobile per la ricerca e consultazione di dati EPPO (pest, piante, m
 ## 🔑 Credenziali Test
 
 ```
-Username: fortunamiele
-Password: fortuna
-
-Username: francesco.nugnes
-Password: anagrus82
-
-Username: laurafiglioli
-Password: laura
+Username: admin
+Password: SIMFito@Admin
 ```
 
 ## 🔄 Flusso App
