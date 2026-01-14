@@ -7,13 +7,14 @@ import {
     Modal,
     StyleSheet,
     Text,
+    TextInput,
     TouchableOpacity,
     View
 } from 'react-native';
 import { useThemeColor } from '../../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../../src/store/hooks';
 import { selectAuth } from '../../src/store/slices/authSlice';
-import { fetchSchede, nextPage, previousPage, selectSchede, setSelectedScheda, setSortBy } from '../../src/store/slices/schedeSlice';
+import { fetchSchede, nextPage, previousPage, selectSchede, setFilterById, setSelectedScheda, setSortBy } from '../../src/store/slices/schedeSlice';
 
 interface SchemataItemProps {
   item: any;
@@ -98,13 +99,14 @@ const SchemataScreen: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector(selectAuth);
-  const { items, loading, error, total, currentPage, pageSize, sortBy } = useAppSelector(selectSchede);
+  const { items, loading, error, total, currentPage, pageSize, sortBy, filterById } = useAppSelector(selectSchede);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
   const isDark = textColor === '#ECEDEE';
 
   const [showSortModal, setShowSortModal] = useState(false);
+  const [idSearchValue, setIdSearchValue] = useState(filterById);
 
   // Opzioni di ordinamento
   const sortOptions = [
@@ -121,13 +123,22 @@ const SchemataScreen: React.FC = () => {
 
   useEffect(() => {
     if (user?.id) {
-      dispatch(fetchSchede({ userId: user.id.toString(), page: currentPage, pageSize, sortBy }));
+      dispatch(fetchSchede({ userId: user.id.toString(), page: currentPage, pageSize, sortBy, filterById }));
     }
-  }, [user?.id, currentPage, dispatch, pageSize, sortBy]);
+  }, [user?.id, currentPage, dispatch, pageSize, sortBy, filterById]);
 
   const handleSortChange = (newSortBy: string) => {
     dispatch(setSortBy(newSortBy));
     setShowSortModal(false);
+  };
+
+  const handleIdSearch = () => {
+    dispatch(setFilterById(idSearchValue));
+  };
+
+  const handleClearFilter = () => {
+    setIdSearchValue('');
+    dispatch(setFilterById(''));
   };
 
   const getSortLabel = () => {
@@ -171,14 +182,32 @@ const SchemataScreen: React.FC = () => {
     <View style={[styles.container, { backgroundColor }]}>
       {/* Barra filtri */}
       <View style={[styles.filterBar, { backgroundColor: isDark ? '#1a1a1a' : '#fff', borderBottomColor: isDark ? '#333' : '#eee' }]}>
+        <View style={[styles.searchContainer, { backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5', borderColor: isDark ? '#444' : '#ddd' }]}>
+          <MaterialIcons name="search" size={20} color={isDark ? '#888' : '#666'} />
+          <TextInput
+            style={[styles.searchInput, { color: textColor }]}
+            placeholder="Cerca per ID..."
+            placeholderTextColor={isDark ? '#666' : '#999'}
+            value={idSearchValue}
+            onChangeText={setIdSearchValue}
+            onSubmitEditing={handleIdSearch}
+            keyboardType="numeric"
+            returnKeyType="search"
+          />
+          {idSearchValue ? (
+            <TouchableOpacity onPress={handleClearFilter}>
+              <MaterialIcons name="close" size={20} color={isDark ? '#888' : '#666'} />
+            </TouchableOpacity>
+          ) : null}
+          <TouchableOpacity onPress={handleIdSearch} style={styles.searchButton}>
+            <MaterialIcons name="arrow-forward" size={20} color={tintColor} />
+          </TouchableOpacity>
+        </View>
         <TouchableOpacity
           style={[styles.sortButton, { backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5', borderColor: isDark ? '#444' : '#ddd' }]}
           onPress={() => setShowSortModal(true)}
         >
           <MaterialIcons name="sort" size={20} color={tintColor} />
-          <Text style={[styles.sortButtonText, { color: textColor }]} numberOfLines={1}>
-            {getSortLabel()}
-          </Text>
           <MaterialIcons name="arrow-drop-down" size={20} color={tintColor} />
         </TouchableOpacity>
       </View>
@@ -519,15 +548,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
   },
-  sortButton: {
+  searchContainer: {
     flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 8,
+    borderWidth: 1,
+    gap: 8,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    paddingVertical: 2,
+  },
+  searchButton: {
+    padding: 4,
+  },
+  sortButton: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderRadius: 8,
     borderWidth: 1,
-    gap: 8,
+    gap: 4,
   },
   sortButtonText: {
     flex: 1,

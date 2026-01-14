@@ -27,6 +27,7 @@ interface SchemataState {
   currentPage: number;
   pageSize: number;
   sortBy: string;
+  filterById: string;
 }
 
 const initialState: SchemataState = {
@@ -39,17 +40,18 @@ const initialState: SchemataState = {
   currentPage: 1,
   pageSize: 50,
   sortBy: 'data_desc',
+  filterById: '',
 };
 
 export const fetchSchede = createAsyncThunk(
   'schede/fetch',
   async (
-    { userId, page = 1, pageSize = 50, sortBy }: { userId: string; page?: number; pageSize?: number; sortBy?: string },
+    { userId, page = 1, pageSize = 50, sortBy, filterById }: { userId: string; page?: number; pageSize?: number; sortBy?: string; filterById?: string },
     { rejectWithValue }
   ) => {
     try {
       const start = (page - 1) * pageSize;
-      
+
       // Mappa i valori di sortBy in query SQL
       const sortMapping: { [key: string]: string } = {
         'data_desc': '[{"property":"data_sopralluogo","direction":"DESC"}]',
@@ -59,16 +61,20 @@ export const fetchSchede = createAsyncThunk(
         'stato_asc': '[{"property":"stato","direction":"ASC"}]',
         'stato_desc': '[{"property":"stato","direction":"DESC"}]',
       };
-      
+
       const params: any = {
         mode: 'app_schede',
         idTecnico: userId,
         limit: pageSize,
         start,
       };
-      
+
       if (sortBy && sortMapping[sortBy]) {
         params.sort = sortMapping[sortBy];
+      }
+
+      if (filterById && filterById.trim()) {
+        params.filter = JSON.stringify([{ property: 'idscheda', value: filterById.trim(), operator: 'eq' }]);
       }
       
       const response = await apiClient.get('/services/ajax.php', {
@@ -176,6 +182,10 @@ const schedeSlice = createSlice({
       state.sortBy = action.payload;
       state.currentPage = 1; // Reset alla prima pagina quando si cambia ordinamento
     },
+    setFilterById: (state, action: PayloadAction<string>) => {
+      state.filterById = action.payload;
+      state.currentPage = 1; // Reset alla prima pagina quando si cambia filtro
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -208,6 +218,6 @@ const schedeSlice = createSlice({
   },
 });
 
-export const { setSelectedScheda, clearSchede, setPage, nextPage, previousPage, setSortBy } = schedeSlice.actions;
+export const { setSelectedScheda, clearSchede, setPage, nextPage, previousPage, setSortBy, setFilterById } = schedeSlice.actions;
 export const selectSchede = (state: any) => state.schede;
 export default schedeSlice.reducer;

@@ -1,10 +1,10 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios, { AxiosError } from 'axios';
+import { tokenService } from '@/services/tokenService';
 
 // Backend locale (PHP server)
-// Usa 192.168.1.9:8000 per testare da telefono
-const API_BASE_URL = __DEV__ 
-  ? 'http://192.168.1.9:8000'  // Development: PHP server locale
+// Usa l'IP della tua macchina Linux per testare da telefono/emulatore
+const API_BASE_URL = __DEV__
+  ? 'http://192.168.1.20:8000'  // Development: PHP server locale
   : 'http://192.168.1.19';   // Production: Backend server
 
 export const apiClient = axios.create({
@@ -16,20 +16,16 @@ export const apiClient = axios.create({
 });
 
 // Interceptor per aggiungere token
-apiClient.interceptors.request.use(async (config) => {
-  try {
-    // Non aggiungere token alla richiesta di login
-    if (config.url?.includes('/login.php')) {
-      return config;
-    }
+apiClient.interceptors.request.use((config) => {
+  // Non aggiungere token alla richiesta di login
+  if (config.url?.includes('/login.php')) {
+    return config;
+  }
 
-    const token = await AsyncStorage.getItem('authToken');
-    if (token) {
-      config.params = config.params || {};
-      config.params.token = token;
-    }
-  } catch (error) {
-    console.error('Error reading token from storage:', error);
+  const token = tokenService.getToken();
+  if (token) {
+    config.params = config.params || {};
+    config.params.token = token;
   }
   return config;
 });
@@ -39,8 +35,10 @@ apiClient.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     if (error.response?.status === 401) {
-      console.log('Token expired or invalid');
-      AsyncStorage.removeItem('authToken');
+      console.log('[API Client] Errore 401 - Token non valido o scaduto');
+      tokenService.clearToken();
+      // Il token è stato invalidato, l'app dovrebbe reindirizzare al login
+      // tramite il meccanismo di navigation protection in _layout.tsx
     }
     return Promise.reject(error);
   }

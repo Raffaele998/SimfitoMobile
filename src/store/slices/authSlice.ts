@@ -1,5 +1,5 @@
 import apiClient from '@/services/api/client';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { tokenService } from '@/services/tokenService';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface User {
@@ -57,10 +57,9 @@ export const loginUser = createAsyncThunk(
         userType: response.data.tipotecnico,
       };
 
-      // Salva il token in AsyncStorage
+      // Salva il token solo in memoria (non persistente)
       const token = btoa(`${username}:${password}`);
-      await AsyncStorage.setItem('authToken', token);
-      await AsyncStorage.setItem('authUser', JSON.stringify(user));
+      tokenService.setToken(token);
 
       return { user, token };
     } catch (error: any) {
@@ -76,24 +75,14 @@ export const loginUser = createAsyncThunk(
 export const restoreToken = createAsyncThunk(
   'auth/restoreToken',
   async (_, { rejectWithValue }) => {
-    try {
-      const token = await AsyncStorage.getItem('authToken');
-      if (!token) {
-        return rejectWithValue('No token found');
-      }
-      const userStr = await AsyncStorage.getItem('authUser');
-      const user = userStr ? JSON.parse(userStr) : null;
-      return { token, user };
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
+    // Il token non viene più persistito, quindi restoreToken non è più utilizzato
+    return rejectWithValue('Token not persisted');
   }
 );
 export const logoutUser = createAsyncThunk(
   'auth/logout',
   async () => {
-    await AsyncStorage.removeItem('authToken');
-    await AsyncStorage.removeItem('authUser');
+    tokenService.clearToken();
     return null;
   }
 );

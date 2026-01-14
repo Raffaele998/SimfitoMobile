@@ -1,5 +1,5 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
+import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
@@ -7,8 +7,9 @@ import 'react-native-reanimated';
 import { Provider } from 'react-redux';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { tokenService } from '@/services/tokenService';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { restoreToken, selectAuth } from '@/store/slices/authSlice';
+import { selectAuth } from '@/store/slices/authSlice';
 import { restoreTheme, selectSettings } from '@/store/slices/settingsSlice';
 import { store } from '@/store/store';
 
@@ -18,15 +19,45 @@ function RootLayoutNav() {
   const { theme } = useAppSelector(selectSettings);
   const dispatch = useAppDispatch();
   const [isReady, setIsReady] = useState(false);
+  const segments = useSegments();
+  const router = useRouter();
 
   useEffect(() => {
-    Promise.all([
-      dispatch(restoreToken()),
-      dispatch(restoreTheme()),
-    ]).then(() => {
+    // Ripristina solo il tema, il token non viene più persistito
+    dispatch(restoreTheme()).then(() => {
       setIsReady(true);
     });
   }, [dispatch]);
+
+  // Sincronizza il token da Redux a tokenService
+  useEffect(() => {
+    if (token) {
+      // Se Redux ha il token, assicurati che sia anche nel tokenService
+      const currentToken = tokenService.getToken();
+      if (currentToken !== token) {
+        console.log('[_layout] Sincronizzazione token da Redux a tokenService');
+        tokenService.setToken(token);
+      }
+    } else {
+      // Se Redux non ha il token, pulisci anche tokenService
+      tokenService.clearToken();
+    }
+  }, [token]);
+
+  // Gestisce il redirect al login quando non c'è token
+  useEffect(() => {
+    if (!isReady) return;
+
+    const inAuthGroup = segments[0] === 'login';
+
+    if (!token && !inAuthGroup) {
+      // Redirect al login se non c'è token e non si è già nella pagina di login
+      router.replace('/login');
+    } else if (token && inAuthGroup) {
+      // Redirect alle tabs se c'è il token e si è nella pagina di login
+      router.replace('/(tabs)');
+    }
+  }, [token, segments, isReady, router]);
 
   if (!isReady) {
     return (

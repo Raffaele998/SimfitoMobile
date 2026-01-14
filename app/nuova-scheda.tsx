@@ -54,6 +54,7 @@ const NuovaSchedaScreen: React.FC = () => {
   const [selectedAziendaLabel, setSelectedAziendaLabel] = useState('');
   const [aziendaSearchQuery, setAziendaSearchQuery] = useState('');
   const [showAziendeModal, setShowAziendeModal] = useState(false);
+  const [currentAziendaPage, setCurrentAziendaPage] = useState(1);
   
   // Step 2: Sito
   const [sitoMode, setSitoMode] = useState<'select' | 'create'>('select'); // Seleziona esistente o crea nuovo
@@ -75,8 +76,8 @@ const NuovaSchedaScreen: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchThemes());
-    // Carica tutte le aziende in una volta (limite alto)
-    dispatch(fetchAllAziende({ limit: 5000, start: 0, append: false }));
+    // Carica la prima pagina di aziende (50 per pagina)
+    dispatch(fetchAllAziende({ pageSize: 50, page: 1 }));
 
     // Imposta la data di oggi come default
     const oggi = new Date();
@@ -108,8 +109,31 @@ const NuovaSchedaScreen: React.FC = () => {
 
   const handleSearchAziende = (query: string) => {
     setAziendaSearchQuery(query);
+    setCurrentAziendaPage(1); // Reset alla prima pagina
     // Ricarica con la nuova query
-    dispatch(fetchAllAziende({ query, limit: 5000, start: 0, append: false }));
+    dispatch(fetchAllAziende({ searchText: query, pageSize: 50, page: 1 }));
+  };
+
+  const handleNextAziendaPage = () => {
+    const nextPage = currentAziendaPage + 1;
+    setCurrentAziendaPage(nextPage);
+    dispatch(fetchAllAziende({
+      searchText: aziendaSearchQuery,
+      pageSize: 50,
+      page: nextPage
+    }));
+  };
+
+  const handlePrevAziendaPage = () => {
+    if (currentAziendaPage > 1) {
+      const prevPage = currentAziendaPage - 1;
+      setCurrentAziendaPage(prevPage);
+      dispatch(fetchAllAziende({
+        searchText: aziendaSearchQuery,
+        pageSize: 50,
+        page: prevPage
+      }));
+    }
   };
 
   const validateDate = (text: string): boolean => {
@@ -930,67 +954,110 @@ const NuovaSchedaScreen: React.FC = () => {
               />
             </View>
 
-            {loadingAzienda ? (
-              <View style={{ paddingVertical: 40, alignItems: 'center' }}>
-                <ActivityIndicator color={tintColor} size="large" />
-              </View>
-            ) : (
-              <FlatList
-                data={aziende}
-                keyExtractor={(item, index) => `${item.partita_iva}-${index}`}
-                initialNumToRender={20}
-                maxToRenderPerBatch={20}
-                windowSize={10}
-                ListFooterComponent={
-                  aziende.length > 0 ? (
-                    <View style={{ paddingVertical: 20, alignItems: 'center' }}>
-                      <Text style={{ color: isDark ? '#666' : '#999', fontSize: 12 }}>
-                        {aziende.length} {aziende.length === 1 ? 'azienda' : 'aziende'} totali
+            <View style={{ flex: 1 }}>
+              {loadingAzienda ? (
+                <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+                  <ActivityIndicator color={tintColor} size="large" />
+                </View>
+              ) : (
+                <FlatList
+                  data={aziende}
+                  keyExtractor={(item, index) => `${item.partita_iva}-${index}`}
+                  initialNumToRender={20}
+                  maxToRenderPerBatch={20}
+                  windowSize={10}
+                  renderItem={({ item }) => (
+                    <TouchableOpacity
+                      style={[
+                        styles.modalItem,
+                        {
+                          backgroundColor:
+                            selectedAzienda === item.id_azienda
+                              ? (isDark ? '#2a2a2a' : '#f0f0f0')
+                              : 'transparent',
+                          borderBottomColor: isDark ? '#333' : '#eee',
+                        },
+                      ]}
+                      onPress={() => {
+                        setSelectedAzienda(item.id_azienda);
+                        setSelectedAziendaLabel(item.rag_soc);
+                        setShowAziendeModal(false);
+                      }}
+                    >
+                      <View style={{ flex: 1 }}>
+                        <Text style={[styles.modalItemText, { color: textColor }]}>
+                          {item.rag_soc}
+                        </Text>
+                        <Text style={{ fontSize: 12, color: isDark ? '#999' : '#666', marginTop: 4 }}>
+                          P.IVA: {item.partita_iva}
+                          {item.comune && ` • ${item.comune}`}
+                          {item.provincia && ` (${item.provincia})`}
+                        </Text>
+                      </View>
+                      {selectedAzienda === item.id_azienda && (
+                        <MaterialIcons name="check" size={20} color={tintColor} />
+                      )}
+                    </TouchableOpacity>
+                  )}
+                  ListEmptyComponent={
+                    <View style={{ paddingVertical: 40, alignItems: 'center' }}>
+                      <Text style={{ color: isDark ? '#666' : '#999' }}>
+                        Nessuna azienda trovata
                       </Text>
                     </View>
-                  ) : null
-                }
-                renderItem={({ item }) => (
+                  }
+                />
+              )}
+            </View>
+
+            {/* Paginazione */}
+            {!loadingAzienda && aziende.length > 0 && (
+              <View style={[styles.paginationContainer, { borderTopColor: isDark ? '#333' : '#eee' }]}>
+                <View style={styles.paginationInfo}>
+                  <Text style={[styles.paginationText, { color: textColor }]}>
+                    Pagina {currentAziendaPage}
+                  </Text>
+                  <Text style={[styles.paginationText, { color: isDark ? '#666' : '#999', fontSize: 12 }]}>
+                    {aziende.length} risultati
+                  </Text>
+                </View>
+                <View style={styles.paginationButtons}>
                   <TouchableOpacity
                     style={[
-                      styles.modalItem,
+                      styles.paginationButton,
                       {
-                        backgroundColor:
-                          selectedAzienda === item.id_azienda
-                            ? (isDark ? '#2a2a2a' : '#f0f0f0')
-                            : 'transparent',
-                        borderBottomColor: isDark ? '#333' : '#eee',
-                      },
+                        backgroundColor: currentAziendaPage > 1 ? tintColor : (isDark ? '#2a2a2a' : '#f5f5f5'),
+                        opacity: currentAziendaPage > 1 ? 1 : 0.5,
+                      }
                     ]}
-                    onPress={() => {
-                      setSelectedAzienda(item.id_azienda);
-                      setSelectedAziendaLabel(item.rag_soc);
-                      setShowAziendeModal(false);
-                    }}
+                    onPress={handlePrevAziendaPage}
+                    disabled={currentAziendaPage === 1}
                   >
-                    <View style={{ flex: 1 }}>
-                      <Text style={[styles.modalItemText, { color: textColor }]}>
-                        {item.rag_soc}
-                      </Text>
-                      <Text style={{ fontSize: 12, color: isDark ? '#999' : '#666', marginTop: 4 }}>
-                        P.IVA: {item.partita_iva}
-                        {item.comune && ` • ${item.comune}`}
-                        {item.provincia && ` (${item.provincia})`}
-                      </Text>
-                    </View>
-                    {selectedAzienda === item.id_azienda && (
-                      <MaterialIcons name="check" size={20} color={tintColor} />
-                    )}
+                    <MaterialIcons
+                      name="chevron-left"
+                      size={24}
+                      color={currentAziendaPage > 1 ? '#fff' : (isDark ? '#666' : '#999')}
+                    />
                   </TouchableOpacity>
-                )}
-                ListEmptyComponent={
-                  <View style={{ paddingVertical: 40, alignItems: 'center' }}>
-                    <Text style={{ color: isDark ? '#666' : '#999' }}>
-                      Nessuna azienda trovata
-                    </Text>
-                  </View>
-                }
-              />
+                  <TouchableOpacity
+                    style={[
+                      styles.paginationButton,
+                      {
+                        backgroundColor: aziende.length === 50 ? tintColor : (isDark ? '#2a2a2a' : '#f5f5f5'),
+                        opacity: aziende.length === 50 ? 1 : 0.5,
+                      }
+                    ]}
+                    onPress={handleNextAziendaPage}
+                    disabled={aziende.length < 50}
+                  >
+                    <MaterialIcons
+                      name="chevron-right"
+                      size={24}
+                      color={aziende.length === 50 ? '#fff' : (isDark ? '#666' : '#999')}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
             )}
 
             {/* Pulsante Nuova Azienda - solo per admin tipo 0 */}
@@ -1249,6 +1316,32 @@ const styles = StyleSheet.create({
   toggleButtonText: {
     fontSize: 14,
     fontWeight: '600',
+  },
+  paginationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderTopWidth: 1,
+  },
+  paginationInfo: {
+    flex: 1,
+  },
+  paginationText: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  paginationButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  paginationButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

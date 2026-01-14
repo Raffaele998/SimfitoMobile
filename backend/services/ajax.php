@@ -1318,7 +1318,7 @@ else{
 						LEFT JOIN analisi ON osservazioni.idosservazioni=analisi.osservazioni_id
 						LEFT JOIN tipocampione on campioni.tipocampione_id=tipocampione.id
 						LEFT JOIN tipologiacontrollata on osservazioni.tipologiacontrollata_id=tipologiacontrollata.id
-						WHERE idscheda=\$_REQUEST[idscheda] and visiva
+						WHERE idscheda=$_REQUEST[idscheda] and visiva
 						GROUP BY osservazioni.idosservazioni,a.full_name,b.full_name,rilevato,sospetti,campione,campioni.codice/*,risultato*/,campioni.elementicampione, intensity.nome_intensity,grado_attacco.nome_grado, fase_fenologica,varieta,n_osservate,eta,organi,pericolosita,data_impianto,appezzamento,dens_piante, piante_camp_vis,fase_fenologica,coltura_prec,
 						piante_infest,sup_vis,sup_infest,abbattute.somma,completa, osservazioni.the_geom,intensity.id_intensity,grado_attacco.id_grado,analisi.lobaratory_result,
 						laboratory_positive, tempo, campioni.tipocampione_id, tipocampione.description,
@@ -1340,9 +1340,9 @@ else{
 						INNER JOIN t_vista AS a ON (analisys.host=a.b_code)
 						INNER JOIN t_vista AS b ON (analisys.pest=b.b_code)
 						LEFT JOIN simfitolab.analisysresult ON analisys.analisysresult_id=analisysresult.id
-						WHERE campioni.scheda_id=\$_REQUEST[idscheda] AND NOT analisys.fromsimfito
+						WHERE campioni.scheda_id=$_REQUEST[idscheda] AND NOT analisys.fromsimfito
 					ORDER BY idosservazioni";
-				//echo \$sql;
+				//echo $sql;
 			}
 			else {
 				$sql="WITH abbattute AS(

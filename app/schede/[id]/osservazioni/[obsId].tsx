@@ -4,33 +4,67 @@ import React, { useEffect, useMemo } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useThemeColor } from '../../../../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../../../../src/store/hooks';
-import { selectOsservazioni } from '../../../../src/store/slices/osservazioniSlice';
+import { selectAuth } from '../../../../src/store/slices/authSlice';
+import { fetchOsservazioni, selectOsservazioni } from '../../../../src/store/slices/osservazioniSlice';
 import { fetchTrappole, selectTrappole } from '../../../../src/store/slices/trappolSlice';
 
 const ObservazioneDetailScreen: React.FC = () => {
   const { id, obsId } = useLocalSearchParams();
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { items: osservazioni } = useAppSelector(selectOsservazioni);
+  const { user } = useAppSelector(selectAuth);
+  const { items: osservazioni, loading: loadingOsservazioni } = useAppSelector(selectOsservazioni);
   const { items: trappole, loading: loadingTrappole } = useAppSelector(selectTrappole);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
 
+  // Carica osservazioni se non presenti
+  useEffect(() => {
+    if (user?.id && id && osservazioni.length === 0) {
+      dispatch(fetchOsservazioni({
+        userId: user.id.toString(),
+        filters: { scheda_id: id }
+      }) as any);
+    }
+  }, [user?.id, id, osservazioni.length, dispatch]);
+
   const osservazione = useMemo(() => {
-    return osservazioni.find((item) => item.idosservazione === obsId);
+    return osservazioni.find((item) => item.idosservazioni === obsId);
   }, [osservazioni, obsId]);
 
   useEffect(() => {
-    if (osservazione?.gid && osservazione?.idosservazione) {
-      dispatch(fetchTrappole({ gid: osservazione.gid, idosservazione: osservazione.idosservazione }));
+    if (osservazione?.gid && osservazione?.idosservazioni) {
+      dispatch(fetchTrappole({ gid: osservazione.gid, idosservazione: osservazione.idosservazioni }));
     }
-  }, [osservazione?.gid, osservazione?.idosservazione, dispatch]);
+  }, [osservazione?.gid, osservazione?.idosservazioni, dispatch]);
+
+  if (loadingOsservazioni) {
+    return (
+      <View style={[styles.container, { backgroundColor }]}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={tintColor} />
+          <Text style={[styles.loadingText, { color: textColor }]}>Caricamento...</Text>
+        </View>
+      </View>
+    );
+  }
 
   if (!osservazione) {
     return (
       <View style={[styles.container, { backgroundColor }]}>
-        <Text style={[styles.errorText, { color: textColor }]}>Osservazione non trovata</Text>
+        <TouchableOpacity
+          style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
+          onPress={() => router.back()}
+        >
+          <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+          <Text style={[styles.headerTitle, { color: textColor }]}>Dettagli Osservazione</Text>
+          <View style={{ width: 24 }} />
+        </TouchableOpacity>
+        <View style={styles.loadingContainer}>
+          <MaterialIcons name="error-outline" size={48} color="#d32f2f" />
+          <Text style={[styles.errorText, { color: textColor }]}>Osservazione non trovata</Text>
+        </View>
       </View>
     );
   }

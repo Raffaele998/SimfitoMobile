@@ -6,12 +6,21 @@ export interface Osservazione {
   scheda_id?: string;
   protocollo?: string;
   data_osservazione?: string;
+  // Campi dal backend web app
+  ospite?: string;  // alias di a.full_name nel backend
+  parassita?: string;  // alias di b.full_name nel backend
+  presente?: string;  // stato: 'presente', 'non presente', 'da verificare'
+  rilevato?: number;
+  sospetti?: string;  // note/sospetti
+  nome_intensity?: string;
+  nome_grado?: string;
+  completa?: string;
+  // Campi legacy per compatibilità
   pestcode?: string;
   nome_parassita?: string;
   hostcode?: string;
   nome_ospite?: string;
   stato?: string;
-  rilevato?: string;
   catture?: string;
   note?: string;
   localita?: string;

@@ -1,5 +1,5 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect } from 'react';
 import {
     ActivityIndicator,
@@ -14,6 +14,13 @@ import { useAppDispatch, useAppSelector } from '../../../src/store/hooks';
 import { selectAuth } from '../../../src/store/slices/authSlice';
 import { fetchOsservazioni, selectOsservazioni } from '../../../src/store/slices/osservazioniSlice';
 import { selectSchede } from '../../../src/store/slices/schedeSlice';
+
+const getPresenzaColor = (presente?: string, risultatoAnalisi?: string): string => {
+  if (risultatoAnalisi === 'Positivo' || presente === 'presente') return '#F44336';
+  if (risultatoAnalisi === 'Negativo' || presente === 'non presente') return '#4CAF50';
+  if (presente === 'da verificare') return '#FFC107';
+  return '#9E9E9E';
+};
 
 const OsservazioniScreen: React.FC = () => {
   const router = useRouter();
@@ -39,7 +46,30 @@ const OsservazioniScreen: React.FC = () => {
 
   if (!scheda) {
     return (
-      <View style={[styles.container, { backgroundColor }]}>
+      <>
+        <Stack.Screen options={{ headerShown: false }} />
+        <View style={[styles.container, { backgroundColor }]}>
+          <TouchableOpacity
+            style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
+            onPress={() => router.back()}
+          >
+            <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+            <Text style={[styles.headerTitle, { color: textColor }]}>Osservazioni</Text>
+            <View style={{ width: 24 }} />
+          </TouchableOpacity>
+          <View style={styles.center}>
+            <MaterialIcons name="error-outline" size={48} color="#d32f2f" />
+            <Text style={[styles.errorText, { color: textColor }]}>Scheda non trovata</Text>
+          </View>
+        </View>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <ScrollView style={[styles.container, { backgroundColor }]}>
         <TouchableOpacity
           style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
           onPress={() => router.back()}
@@ -47,24 +77,6 @@ const OsservazioniScreen: React.FC = () => {
           <MaterialIcons name="arrow-back" size={24} color={tintColor} />
           <Text style={[styles.headerTitle, { color: textColor }]}>Osservazioni</Text>
           <View style={{ width: 24 }} />
-        </TouchableOpacity>
-        <View style={styles.center}>
-          <MaterialIcons name="error-outline" size={48} color="#d32f2f" />
-          <Text style={[styles.errorText, { color: textColor }]}>Scheda non trovata</Text>
-        </View>
-      </View>
-    );
-  }
-
-  return (
-    <ScrollView style={[styles.container, { backgroundColor }]}>
-      <TouchableOpacity
-        style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
-        onPress={() => router.back()}
-      >
-        <MaterialIcons name="arrow-back" size={24} color={tintColor} />
-        <Text style={[styles.headerTitle, { color: textColor }]}>Osservazioni</Text>
-        <View style={{ width: 24 }} />
       </TouchableOpacity>
 
       <View style={[styles.schemaCard, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a' }]}>
@@ -85,31 +97,16 @@ const OsservazioniScreen: React.FC = () => {
       ) : osservazioni.length > 0 ? (
         <View style={styles.listContainer}>
           {osservazioni.map((obs, index) => (
-            <TouchableOpacity
-              key={obs.idosservazioni || index}
-              style={[styles.obsCard, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderLeftColor: tintColor }]}
-              onPress={() => router.push(`/schede/${id}/osservazioni/${obs.idosservazioni}`)}
+            <View
+              key={`${obs.idosservazioni}-${obs.parassita}-${index}`}
+              style={[styles.obsCard, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderLeftColor: getPresenzaColor(obs.presente, obs.lobaratory_result) }]}
             >
-              <View style={styles.obsHeader}>
-                <Text style={[styles.obsTitle, { color: textColor }]}>
-                  {obs.nome_parassita || obs.pestcode || `Osservazione ${index + 1}`}
-                </Text>
-                <Text style={[styles.obsDate, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
-                  {obs.data_osservazione ? new Date(obs.data_osservazione).toLocaleDateString('it-IT') : ''}
-                </Text>
-              </View>
-
-              {obs.nome_ospite && <ObsRow label="Ospite" value={obs.nome_ospite} textColor={textColor} />}
-              {obs.catture && <ObsRow label="Catture" value={obs.catture} textColor={textColor} />}
-              {obs.stato && <ObsRow label="Stato" value={obs.stato} textColor={textColor} />}
-              {obs.localita && <ObsRow label="Località" value={obs.localita} textColor={textColor} />}
-              {obs.note && <ObsRow label="Note" value={obs.note} textColor={textColor} isNote />}
-
-              <View style={[styles.viewDetailsButton, { borderTopColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-                <Text style={[styles.viewDetailsText, { color: tintColor }]}>Visualizza Dettagli</Text>
-                <MaterialIcons name="chevron-right" size={18} color={tintColor} />
-              </View>
-            </TouchableOpacity>
+              <ObsRow label="Ospite" value={obs.ospite || obs.nome_ospite || '-'} textColor={textColor} />
+              <ObsRow label="Parassita" value={obs.parassita || obs.nome_parassita || '-'} textColor={textColor} />
+              <ObsRow label="Presente" value={obs.presente || '-'} textColor={textColor} valueColor={getPresenzaColor(obs.presente, obs.lobaratory_result)} />
+              <ObsRow label="Risultato Analisi" value={obs.lobaratory_result || '-'} textColor={textColor} valueColor={obs.lobaratory_result === 'Positivo' ? '#F44336' : obs.lobaratory_result === 'Negativo' ? '#4CAF50' : undefined} />
+              <ObsRow label="Serie Campione" value={obs.codice || '-'} textColor={textColor} />
+            </View>
           ))}
         </View>
       ) : (
@@ -119,10 +116,11 @@ const OsservazioniScreen: React.FC = () => {
             Nessuna osservazione registrata per questa scheda
           </Text>
         </View>
-      )}}
+      )}
 
       <View style={{ height: 20 }} />
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 
@@ -130,13 +128,13 @@ interface ObsRowProps {
   label: string;
   value: string;
   textColor: string;
-  isNote?: boolean;
+  valueColor?: string;
 }
 
-const ObsRow: React.FC<ObsRowProps> = ({ label, value, textColor, isNote }) => (
+const ObsRow: React.FC<ObsRowProps> = ({ label, value, textColor, valueColor }) => (
   <View style={styles.obsRow}>
-    <Text style={[styles.obsLabel, { color: textColor === '#11181C' ? '#666' : '#888' }]}>{label}:</Text>
-    <Text style={[styles.obsValue, { color: textColor, maxHeight: isNote ? 100 : undefined }]} numberOfLines={isNote ? undefined : 1}>
+    <Text style={[styles.obsLabel, { color: textColor === '#11181C' ? '#666' : '#888' }]}>{label}</Text>
+    <Text style={[styles.obsValue, { color: valueColor || textColor }]} numberOfLines={1}>
       {value}
     </Text>
   </View>
@@ -201,43 +199,23 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
-  obsHeader: {
-    marginBottom: 12,
-  },
-  obsTitle: {
-    fontSize: 14,
-    fontWeight: '700',
-    marginBottom: 4,
-  },
-  obsDate: {
-    fontSize: 12,
-  },
   obsRow: {
-    marginBottom: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 6,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(128,128,128,0.1)',
   },
   obsLabel: {
-    fontSize: 12,
-    fontWeight: '600',
-    marginBottom: 2,
+    fontSize: 13,
+    fontWeight: '500',
+    flex: 1,
   },
   obsValue: {
-    fontSize: 12,
-  },
-  viewDetailsButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderTopWidth: 1,
-    marginHorizontal: -12,
-    marginBottom: -12,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    borderBottomLeftRadius: 8,
-    borderBottomRightRadius: 8,
-  },
-  viewDetailsText: {
-    fontSize: 12,
-    fontWeight: '600',
+    fontSize: 13,
+    flex: 1.5,
+    textAlign: 'right',
   },
   loadingText: {
     marginTop: 12,
