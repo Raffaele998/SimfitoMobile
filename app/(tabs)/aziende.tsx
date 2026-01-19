@@ -48,7 +48,7 @@ const AziendaItem: React.FC<AziendaItemProps> = ({ item, onPress }) => {
             <View style={styles.detailRow}>
               <MaterialIcons name="location-on" size={14} color={textColor === '#11181C' ? '#666' : '#888'} />
               <Text style={[styles.detailText, { color: textColor === '#11181C' ? '#666' : '#888' }]} numberOfLines={1}>
-                {item.comune} {item.provincia && `(${item.provincia})`}
+                {item.provincia ? `${item.comune} (${item.provincia})` : item.comune}
               </Text>
             </View>
           )}
@@ -103,6 +103,16 @@ const AziendeScreen: React.FC = () => {
   const canGoNext = pagination.currentPage < maxPage;
   const canGoPrev = pagination.currentPage > 1;
 
+  const handleRefresh = () => {
+    if (user?.id) {
+      dispatch(fetchAllAziende({
+        searchText: filters.searchText,
+        page: pagination.currentPage,
+        pageSize: pagination.pageSize,
+      }));
+    }
+  };
+
   if (loading && aziende.length === 0) {
     return (
       <View style={styles.center}>
@@ -144,9 +154,22 @@ const AziendeScreen: React.FC = () => {
             keyExtractor={(item, index) => `${item.id_azienda || item.partita_iva}-${index}`}
             ListHeaderComponent={
               <View style={styles.listHeader}>
-                <Text style={[styles.listHeaderText, { color: textColor === '#11181C' ? '#666' : '#888' }]}>
-                  {pagination.total} {pagination.total === 1 ? 'azienda' : 'aziende'} totali
-                </Text>
+                <View>
+                  <Text style={[styles.listHeaderText, { color: textColor === '#11181C' ? '#666' : '#888' }]}>
+                    {pagination.total} {pagination.total === 1 ? 'azienda' : 'aziende'} totali
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={handleRefresh}
+                  disabled={loading}
+                  style={styles.refreshButton}
+                >
+                  {loading ? (
+                    <ActivityIndicator size="small" color={tintColor} />
+                  ) : (
+                    <MaterialIcons name="refresh" size={24} color={tintColor} />
+                  )}
+                </TouchableOpacity>
               </View>
             }
             contentContainerStyle={styles.listContent}
@@ -245,8 +268,14 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   listHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 12,
+  },
+  refreshButton: {
+    padding: 4,
   },
   listHeaderText: {
     fontSize: 13,
@@ -259,10 +288,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 6,
     borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   itemContent: {
@@ -359,10 +385,7 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.3)',
     elevation: 8,
   },
 });

@@ -35,6 +35,11 @@ const OsservazioniScreen: React.FC = () => {
 
   const scheda = items.find((item) => item.idscheda === id);
 
+  // Condizioni per poter modificare: solo stato = 0 (in attesa)
+  // Tutti i tecnici loggati possono aggiungere osservazioni se la scheda è in attesa
+  const schedaStato = scheda?.stato ? Number(scheda.stato) : null;
+  const canAddOsservazioni = schedaStato === 0 && user?.id !== undefined;
+
   useEffect(() => {
     if (user?.id && id) {
       dispatch(fetchOsservazioni({
@@ -80,8 +85,33 @@ const OsservazioniScreen: React.FC = () => {
       </TouchableOpacity>
 
       <View style={[styles.schemaCard, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a' }]}>
-        <Text style={[styles.schemaTitle, { color: textColor }]}>Scheda: {scheda.protocollo}</Text>
-        <Text style={[styles.schemaSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>ID: {scheda.idscheda}</Text>
+        <View style={styles.schemaHeader}>
+          <View>
+            <Text style={[styles.schemaTitle, { color: textColor }]}>Scheda: {scheda.protocollo}</Text>
+            <Text style={[styles.schemaSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>ID: {scheda.idscheda}</Text>
+            <Text style={[styles.schemaSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
+              Stato: {scheda.statodesc || (schedaStato === 0 ? 'In attesa' : 'Confermata')}
+            </Text>
+          </View>
+          {canAddOsservazioni && (
+            <TouchableOpacity
+              style={[styles.addButton, { backgroundColor: tintColor }]}
+              onPress={() => router.push({ pathname: '/nuova-osservazione', params: { idscheda: id } })}
+            >
+              <MaterialIcons name="add" size={20} color="#fff" />
+              <Text style={styles.addButtonText}>Nuova</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+        
+        {schedaStato !== null && schedaStato !== 0 && (
+          <View style={[styles.warningBanner, { backgroundColor: textColor === '#11181C' ? '#fff3cd' : '#3a2f2a' }]}>
+            <MaterialIcons name="lock" size={18} color={textColor === '#11181C' ? '#856404' : '#ffa726'} />
+            <Text style={[styles.warningText, { color: textColor === '#11181C' ? '#856404' : '#ffa726' }]}>
+              Scheda confermata: le osservazioni sono in sola lettura
+            </Text>
+          </View>
+        )}
       </View>
 
       {loading ? (
@@ -170,11 +200,14 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 16,
     borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
+  },
+  schemaHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 8,
   },
   schemaTitle: {
     fontSize: 16,
@@ -183,6 +216,32 @@ const styles = StyleSheet.create({
   },
   schemaSubtitle: {
     fontSize: 12,
+    marginBottom: 2,
+  },
+  addButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 6,
+    gap: 4,
+  },
+  addButtonText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: '600',
+  },
+  warningBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    gap: 8,
+    marginTop: 12,
+    borderRadius: 6,
+  },
+  warningText: {
+    flex: 1,
+    fontSize: 13,
   },
   listContainer: {
     paddingHorizontal: 12,
@@ -193,10 +252,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     padding: 12,
     borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   obsRow: {

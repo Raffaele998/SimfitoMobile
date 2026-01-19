@@ -113,7 +113,13 @@ function RootLayoutNav() {
             animationEnabled: true 
           }} 
         />
-        <Stack.Screen name="schede/osservazioni" options={{ presentation: 'modal', title: 'Osservazioni' }} />
+        <Stack.Screen 
+          name="user-profile" 
+          options={{ 
+            headerShown: false,
+            animationEnabled: true 
+          }} 
+        />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

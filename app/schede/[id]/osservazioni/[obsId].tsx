@@ -189,10 +189,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 8,
     padding: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   cardRow: {
@@ -217,10 +214,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 8,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   sectionHeader: {

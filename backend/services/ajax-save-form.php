@@ -410,13 +410,15 @@ $db=new CRUD($connection);
 if($_SERVER['REQUEST_METHOD'] == "OPTIONS"){
 	header('Access-Control-Allow-Origin: *');
 	header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
-	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With');
+	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With, Content-Type, Accept');
 	header('Access-Control-Max-Age: 1728000');
 	header("Content-Length: 0");
 	header("Content-Type: text/plain");
+	exit(0);
 }
 else{
 	header("Access-Control-Allow-Origin: *");
+	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With, Content-Type, Accept');
 
 	if(!$db->connect()){
 		errore("errore di connessione");
@@ -426,7 +428,8 @@ else{
 		errore("Sessione Scaduta! Si prega di riloggarsi!");
 	}*/
 
-	$fase=$_REQUEST['fase'];
+	// Supporta sia 'fase' (legacy) che 'mode' (nuovo standard)
+	$fase = isset($_REQUEST['mode']) ? $_REQUEST['mode'] : $_REQUEST['fase'];
 	$my_prj=32633;
 
 	switch($fase){
@@ -651,10 +654,9 @@ else{
 	        //todo add a function to extract sito area! area=getArea($_REQUEST['idscheda']);
 			$sql="INSERT INTO osservazioni (idscheda, hostcode, pestcode, stato, appezzamento)
 				SELECT $_REQUEST[idscheda] ,a.b_code, b.b_code, 0, $areaSito
-				FROM t_baycode AS a, t_baycode AS b
+				FROM eppo.t_baycode AS a, eppo.t_baycode AS b
 				WHERE a.codeid=$_REQUEST[host] AND b.codeid IN $lista";
-			$res=salva_scheda($sql);
-			$result["success"]=true;
+			$result=salva($sql);
 		break;
 		case "pestobscatture":
 			$host=$_REQUEST['hostcode'];

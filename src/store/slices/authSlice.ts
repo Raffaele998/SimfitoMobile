@@ -10,6 +10,21 @@ interface User {
   type?: string;
   province?: string;
   userType?: string;
+  // Campi dal database
+  cognome?: string;
+  nome?: string;
+  codicefiscale?: string;
+  sesso?: string;
+  comune_nascita?: string;
+  data_nascita?: string;
+  residenza_indirizzo?: string;
+  residenza_comune?: string;
+  telefono?: string;
+  mobile?: string;
+  web?: string;
+  ufficio?: string;
+  cap_ufficio?: string;
+  titolo?: string;
 }
 
 interface AuthState {
@@ -49,12 +64,27 @@ export const loginUser = createAsyncThunk(
 
       const user = {
         id: response.data.id,
-        username: username,
-        email: '',
+        username: response.data.username || username,
+        email: response.data.email || '',
         name: response.data.nome,
         type: response.data.tipo,
         province: response.data.provincia,
         userType: response.data.tipotecnico,
+        // Campi dal database
+        cognome: response.data.cognome,
+        nome: response.data.nome,
+        codicefiscale: response.data.codicefiscale,
+        sesso: response.data.sesso,
+        comune_nascita: response.data.comune_nascita,
+        data_nascita: response.data.data_nascita,
+        residenza_indirizzo: response.data.residenza_indirizzo,
+        residenza_comune: response.data.residenza_comune,
+        telefono: response.data.telefono,
+        mobile: response.data.mobile,
+        web: response.data.web,
+        ufficio: response.data.ufficio,
+        cap_ufficio: response.data.cap_ufficio,
+        titolo: response.data.titolo,
       };
 
       // Salva il token solo in memoria (non persistente)

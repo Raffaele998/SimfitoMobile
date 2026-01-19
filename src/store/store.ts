@@ -7,6 +7,7 @@ import schedeReducer from './slices/schedeSlice';
 import searchReducer from './slices/searchSlice';
 import settingsReducer from './slices/settingsSlice';
 import sitiReducer from './slices/sitiSlice';
+import tecniciReducer from './slices/tecniciSlice';
 import themesReducer from './slices/themesSlice';
 import tipologiaSitoReducer from './slices/tipologiaSitoSlice';
 import trappolReducer from './slices/trappolSlice';
@@ -24,6 +25,7 @@ export const store = configureStore({
     trappole: trappolReducer,
     themes: themesReducer,
     tipologiasito: tipologiaSitoReducer,
+    tecnici: tecniciReducer,
   },
 });
 

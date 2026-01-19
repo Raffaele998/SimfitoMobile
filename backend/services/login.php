@@ -192,6 +192,22 @@ else{
 				$result["provincia"]=$users['id_provincia'];
 				$result["nome"]=$users['nome']." ".$users['cognome'];
 				$result["tipotecnico"]=$users['tipotecnico'];
+				// Aggiungi tutti i campi utente con i nomi corretti dal database
+				$result["username"]=$users['username'];
+				$result["cognome"]=$users['cognome'];
+				$result["codicefiscale"]=$users['codicefiscale'];
+				$result["sesso"]=$users['sesso'];
+				$result["comune_nascita"]=$users['comune_nascita'];
+				$result["data_nascita"]=$users['data_nascita'];
+				$result["residenza_indirizzo"]=$users['residenza_indirizzo'];
+				$result["residenza_comune"]=$users['residenza_comune'];
+				$result["telefono"]=$users['telefono'];
+				$result["mobile"]=$users['mobile'];
+				$result["email"]=$users['email'];
+				$result["web"]=$users['web'];
+				$result["ufficio"]=$users['ufficio'];
+				$result["cap_ufficio"]=$users['cap_ufficio'];
+				$result["titolo"]=$users['titolo'];
 				$_SESSION["id"]=$users['id_tecnico'];
 				$_SESSION["tipo"]=$users['idtipo_tecnico'];
 			} else {

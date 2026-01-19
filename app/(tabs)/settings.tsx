@@ -1,3 +1,4 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
@@ -32,29 +33,31 @@ const SettingsScreen: React.FC = () => {
     dispatch(saveTheme(newTheme));
   };
 
+  const handleUserProfilePress = () => {
+    router.push('/user-profile');
+  };
+
   return (
     <View style={[styles.container, { backgroundColor }]}>
-      <View style={[styles.section, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a' }]}>
-        <Text style={[styles.sectionTitle, { color: tintColor }]}>Profilo Utente</Text>
-        <View style={[styles.item, { borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-          <Text style={[styles.label, { color: textColor }]}>Nome:</Text>
-          <Text style={[styles.value, { color: textColor === '#11181C' ? '#999' : '#666' }]}>{user?.name || 'N/A'}</Text>
-        </View>
-        <View style={[styles.item, { borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-          <Text style={[styles.label, { color: textColor }]}>Username:</Text>
-          <Text style={[styles.value, { color: textColor === '#11181C' ? '#999' : '#666' }]}>{user?.username || 'N/A'}</Text>
-        </View>
-        <View style={[styles.item, { borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-          <Text style={[styles.label, { color: textColor }]}>Tipo:</Text>
-          <Text style={[styles.value, { color: textColor === '#11181C' ? '#999' : '#666' }]}>{user?.userType || 'N/A'}</Text>
-        </View>
-        {user?.province && (
-          <View style={[styles.item, { borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-            <Text style={[styles.label, { color: textColor }]}>Provincia:</Text>
-            <Text style={[styles.value, { color: textColor === '#11181C' ? '#999' : '#666' }]}>{user.province}</Text>
+      {/* Dati Utente - Sezione Cliccabile */}
+      <TouchableOpacity
+        style={[styles.section, styles.clickableSection, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a' }]}
+        onPress={handleUserProfilePress}
+        activeOpacity={0.7}
+      >
+        <View style={styles.sectionHeader}>
+          <View style={styles.iconContainer}>
+            <MaterialIcons name="person" size={24} color={tintColor} />
           </View>
-        )}
-      </View>
+          <View style={styles.sectionContent}>
+            <Text style={[styles.sectionTitle, { color: tintColor }]}>Dati Utente</Text>
+            <Text style={[styles.sectionSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
+              {user?.name || user?.username || 'N/A'}
+            </Text>
+          </View>
+          <MaterialIcons name="chevron-right" size={24} color={textColor === '#11181C' ? '#999' : '#555'} />
+        </View>
+      </TouchableOpacity>
 
       <View style={[styles.section, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a' }]}>
         <Text style={[styles.sectionTitle, { color: tintColor }]}>Lingua</Text>
@@ -95,10 +98,33 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     padding: 16,
   },
+  clickableSection: {
+    padding: 0,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+  },
+  iconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(25, 118, 210, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  sectionContent: {
+    flex: 1,
+  },
   sectionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    marginBottom: 12,
+    marginBottom: 4,
+  },
+  sectionSubtitle: {
+    fontSize: 13,
   },
   item: {
     flexDirection: 'row',

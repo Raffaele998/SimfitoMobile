@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit();
 }
 
-require_once("../etc/db_config.php");
-require_once("crud.php");
+require_once(__DIR__ . "/../etc/db_config.php");
+require_once(__DIR__ . "/crud.php");
 
 // titolo e' il nome del file che deve apparire, completo della estensione
 function doheader($titolo) {
@@ -158,93 +158,6 @@ function readJson2($sql)
 	echo $db->ReadTableAsJson2($sql);
 }
 
-function pestsJson($id)
-{
-	global $db;
-	global $db2;
-	$sql="WITH RECURSIVE padre AS(
-			SELECT linkid AS id, t_baylink.codeid, n.full_name AS host_name, codeid_parent
-			FROM t_baylink
-			INNER JOIN t_bayname AS n ON (t_baylink.codeid=n.codeid)
-			INNER JOIN t_bayname AS nparent ON(t_baylink.codeid_parent=nparent.codeid)
-			WHERE t_baylink.codeid = $id AND n.preferred=1 AND nparent.preferred=1
-
-			UNION ALL
-
-			SELECT d.linkid AS id, d.codeid, n.full_name AS host_name, d.codeid_parent
-			FROM t_baylink AS d
-			INNER JOIN padre AS sd ON (d.codeid = sd.codeid_parent)
-			INNER JOIN t_bayname AS n ON (d.codeid=n.codeid)
-			INNER JOIN t_bayname As nparent ON (d.codeid_parent=nparent.codeid)
-			WHERE n.preferred=1 AND nparent.preferred=1
-		)
-		SELECT *
-		FROM padre";
-	$db->Read($sql);
-	$i=0;
-	$db2->connect();
-	while ($row=$db->fetch_assoc()){
-		if ($i==0){
-			$first_host_name=$row['host_name'];
-			$first_host_id=$row['codeid'];
-		}
-
-		$sql2=" SELECT namehost.full_name AS host_name, namepest.full_name AS pest_name, t_baycode.codeid AS pest_id,
-					t_baycode.b_code AS baycode_pest, t_hostclass.labelclass AS class, pest_priority.priority
-				FROM t_bayname AS namepest
-				INNER JOIN r_attack ON(r_attack.codeid = namepest.codeid)
-				INNER JOIN t_baycode ON(namepest.codeid = t_baycode.codeid)
-				INNER JOIN t_bayname namehost ON(namehost.codeid = r_attack.codeidhost)
-				INNER JOIN t_hostclass ON(r_attack.idclass = t_hostclass.idclass)
-				LEFT JOIN simfito.pest_priority ON pest_priority.baycode=t_baycode.b_code
-				WHERE r_attack.codeidhost = $row[codeid] AND namehost.preferred = 1 AND namepest.preferred = 1
-				ORDER BY t_hostclass.idclass ASC, namepest.full_name ASC;";
-		$db2->Read($sql2);
-		//echo $sql2;
-		while ($row2=$db2->fetch_assoc()){
-			$host_name=$row2['host_name'];
-			if($host_name!=""){
-				foreach($row2 as $field=>$value){
-					//echo '<b>'.$field.'</b> '.$value.'<br/>';
-					if(($field=='pest_name')&&($host_name!=$first_host_name))
-						$value.=" (as $host_name)";
-					$data[$i][$field]=$value;
-				}
-				//var_dump($data[$i]);echo'<br/>';
-				$i++;
-			}
-		}
-	}
-	arrayAsJson($data);
-}
-
-function arrayAsJson($array)
-{
-	//var_dump($array);
-	//echo(isset($array)?'true':'false');
-	$json="\"data\":[";
-	$i=0;
-	if(isset($array)){
-		foreach($array as $sub_array){
-			if ($i>0) $json.=",";
-			$json.="{";
-			$j=0;
-			foreach ($sub_array as $field=>$value){
-				if($j>0) $json.=",";
-				$json.="\"$field\":\"$value\"";
-				$j++;
-				//add presente field boolean;
-				$json.=",\"present\":\"false\"";
-			}
-			$json.="}";
-			$i++;
-		}
-	}
-	$totale="{\"results\":\"$i\",";
-	$json.="]}";
-	echo $totale.$json;
-}
-
 function case_boolean($column)
 {
 	return "CASE WHEN $column='t' THEN 1 ELSE 0 END AS $column";
@@ -365,11 +278,111 @@ function errore($error_reason)
 	exit;
 }
 
+function salva($sql)
+{
+	global $connection;
+	$db=new CRUD($connection);
+	if(!$db->connect())
+		errore("errore di connessione");
+	$db->SQL("SET search_path TO public, simfito, eppo");
+	if(!$db->SQL($sql))
+		errore("Errore nella query");
+	$result["success"] = true;
+	echo json_encode($result);
+	return $result;
+}
+
 function find_host($obs)
 {
     global $db;
     $result=$db->FetchRow("SELECT hostcode FROM osservazioni WHERE idosservazioni=$obs");
     return $result['hostcode'];
+}
+
+function arrayAsJson($array)
+{
+	$json="\"data\":[";
+	$i=0;
+	if(isset($array)){
+		foreach($array as $sub_array){
+			if ($i>0) $json.=",";
+			$json.="{";
+			$j=0;
+			foreach ($sub_array as $field=>$value){
+				if($j>0) $json.=",";
+				$json.="\"$field\":\"$value\"";
+				$j++;
+			}
+			$json.="}";
+			$i++;
+		}
+	}
+	$json.="]";
+	$json= "{" . $json . ",\"results\":\"$i\",\"success\":true}";
+	echo $json;
+}
+
+function pestsJson($id)
+{
+	global $db;
+	global $connection;
+	
+	$db2=new CRUD($connection);
+	$db2->connect();
+	$db2->SQL("SET search_path TO public, simfito, eppo");
+	
+	$sql="WITH RECURSIVE padre AS(
+			SELECT linkid AS id, t_baylink.codeid, n.full_name AS host_name, codeid_parent
+			FROM t_baylink
+			INNER JOIN t_bayname AS n ON (t_baylink.codeid=n.codeid)
+			INNER JOIN t_bayname AS nparent ON(t_baylink.codeid_parent=nparent.codeid)
+			WHERE t_baylink.codeid = $id AND n.preferred=1 AND nparent.preferred=1
+
+			UNION ALL
+
+			SELECT d.linkid AS id, d.codeid, n.full_name AS host_name, d.codeid_parent
+			FROM t_baylink AS d
+			INNER JOIN padre AS sd ON (d.codeid = sd.codeid_parent)
+			INNER JOIN t_bayname AS n ON (d.codeid=n.codeid)
+			INNER JOIN t_bayname As nparent ON (d.codeid_parent=nparent.codeid)
+			WHERE n.preferred=1 AND nparent.preferred=1
+		)
+		SELECT *
+		FROM padre";
+	$db->Read($sql);
+	$i=0;
+	$data = [];
+	while ($row=$db->fetch_assoc()){
+		if ($i==0){
+			$first_host_name=$row['host_name'];
+			$first_host_id=$row['codeid'];
+		}
+
+		$sql2=" SELECT namehost.full_name AS host_name, namepest.full_name AS pest_name, t_baycode.codeid AS pest_id,
+					t_baycode.b_code AS baycode_pest, t_hostclass.labelclass AS class, pest_priority.priority
+				FROM t_bayname AS namepest
+				INNER JOIN r_attack ON(r_attack.codeid = namepest.codeid)
+				INNER JOIN t_baycode ON(namepest.codeid = t_baycode.codeid)
+				INNER JOIN t_bayname namehost ON(namehost.codeid = r_attack.codeidhost)
+				INNER JOIN t_hostclass ON(r_attack.idclass = t_hostclass.idclass)
+				LEFT JOIN simfito.pest_priority ON pest_priority.baycode=t_baycode.b_code
+				WHERE r_attack.codeidhost = {$row['codeid']} AND namehost.preferred = 1 AND namepest.preferred = 1
+				ORDER BY t_hostclass.idclass ASC, namepest.full_name ASC";
+		$db2->Read($sql2);
+		while ($row2=$db2->fetch_assoc()){
+			$host_name=$row2['host_name'];
+			if($host_name!=""){
+				foreach($row2 as $field=>$value){
+					if(($field=='pest_name')&&($host_name!=$first_host_name))
+						$value.=" (as $host_name)";
+					$data[$i][$field]=$value;
+				}
+				$i++;
+			}
+		}
+	}
+	arrayAsJson($data);
+	$db2->connection_close();
 }
 
 function chk_fenogruppo($obs)
@@ -556,6 +569,33 @@ else{
 				FROM tecnici
 				WHERE NOT cancellato";
 			readJson($sql);
+		break;
+		case "scheda_tecnici":
+			// Ottiene i tecnici associati a una scheda
+			$idscheda = $_REQUEST['idscheda'];
+			$sql="SELECT st.id, st.idscheda, st.id_tecnico, 
+				t.nome || ' ' || t.cognome AS nome_tecnico,
+				t.nome, t.cognome, tt.tipotecnico
+				FROM schede_tecnici st
+				INNER JOIN tecnici t ON st.id_tecnico = t.id_tecnico
+				LEFT JOIN tipo_tecnico tt ON t.idtipo_tecnico = tt.idtipo_tecnico
+				WHERE st.idscheda = $idscheda AND NOT t.cancellato
+				ORDER BY t.cognome, t.nome";
+			readJson($sql);
+		break;
+		case "associa_tecnico":
+			// Associa un tecnico a una scheda
+			$idscheda = $_REQUEST['idscheda'];
+			$id_tecnico = $_REQUEST['id_tecnico'];
+			$sql="INSERT INTO schede_tecnici (idscheda, id_tecnico) VALUES ($idscheda, $id_tecnico)";
+			$result=salva($sql);
+		break;
+		case "rimuovi_tecnico":
+			// Rimuove un tecnico da una scheda
+			$idscheda = $_REQUEST['idscheda'];
+			$id_tecnico = $_REQUEST['id_tecnico'];
+			$sql="DELETE FROM schede_tecnici WHERE idscheda=$idscheda AND id_tecnico=$id_tecnico";
+			$result=salva($sql);
 		break;
 		/*case "chksession":
 			if(!isset($_SESSION["id"])){
@@ -836,7 +876,7 @@ else{
 				OFFSET $_REQUEST[start]";
 			//echo $sql;
 			if($tecnico["tipotecnico"]<=1){
-				$rsql="SELECT count(*) AS cc
+				$rsql="SELECT count(DISTINCT scheda.idscheda) AS cc
 					FROM scheda
 					INNER JOIN tipo_visita ON scheda.idtipo_visita=tipo_visita.idtipo_visita
 					LEFT JOIN siti ON scheda.gid_sito=siti.gid
@@ -872,7 +912,7 @@ else{
 								INNER JOIN stato_scheda ON (scheda.stato=stato_scheda.id)
 								LEFT JOIN comuni ON (siti.comune_istat=comuni.istat)
 								WHERE schede_tecnici.id_tecnico=$_REQUEST[idTecnico] $where
-					) SELECT count(*) AS cc FROM total";
+					) SELECT count(DISTINCT idscheda) AS cc FROM total";
 			}
 			//echo ($sql);
 			/*echo "<br>=======================================================================<br/>";
@@ -1399,7 +1439,7 @@ else{
 						INNER JOIN t_vista AS b ON (analisys.pest=b.b_code)
 						LEFT JOIN simfitolab.analisysresult ON analisys.analisysresult_id=analisysresult.id
 						WHERE campioni.scheda_id=$_REQUEST[idscheda] AND NOT analisys.fromsimfito
-					ORDER BY idosservazioni";
+					ORDER BY idosservazioni DESC";
 				}
 			readJson($sql);
 		break;
@@ -3184,6 +3224,34 @@ SELECT distinct xtype,descrizione,nome,provincia from yy INNER JOIN comuni ON st
 			$db->SQL($sql);
 			$reply = ['success'=>true];
 			echo json_encode($reply);
+		break;
+		case "pests":
+			// Pest by host codeid (DB EPPO)
+			pestsJson($_REQUEST['codeid']);
+		break;
+		case "ordPests":
+			// Pests from ordinari table (DB Regionale)
+			$sql="SELECT t_bayname.nameid ,t_bayname.codeid as pest_id, full_name AS pest_name, b_code as baycode_pest, dt_code, pest_priority.priority
+				FROM ordinari
+				inner join t_baycode on t_baycode.b_code=pest
+				INNER JOIN t_bayname ON t_bayname.codeid=t_baycode.codeid
+				LEFT JOIN simfito.pest_priority ON pest_priority.baycode=t_baycode.b_code
+				WHERE host='$_REQUEST[bcode]' AND(isolang='la' OR isolang='it') AND validato
+				group by t_bayname.nameid ,t_bayname.codeid, full_name, b_code, dt_code, pest_priority.priority
+				ORDER BY t_bayname.full_name";
+			readJson($sql);
+		break;
+		case "rndPests":
+			// Pests from rendicontati table (DB Rendicontazione)
+			$sql="SELECT t_bayname.nameid ,t_bayname.codeid as pest_id, full_name AS pest_name, b_code as baycode_pest, dt_code, pest_priority.priority
+				FROM rendicontati
+				inner join t_baycode on t_baycode.b_code=pest
+				INNER JOIN t_bayname ON t_bayname.codeid=t_baycode.codeid
+				LEFT JOIN simfito.pest_priority ON pest_priority.baycode=t_baycode.b_code
+				WHERE host='$_REQUEST[bcode]' AND isolang='la' AND preferred=1 AND enabled
+				group by t_bayname.nameid ,t_bayname.codeid, full_name, b_code, dt_code, pest_priority.priority
+				ORDER BY t_bayname.full_name";
+			readJson($sql);
 		break;
 	}
 }	

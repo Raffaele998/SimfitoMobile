@@ -52,7 +52,7 @@ const SitoItem: React.FC<SitoItemProps> = ({ item, onPress }) => {
         <View style={styles.infoRow}>
           <MaterialIcons name="public" size={12} color={theme === 'dark' ? '#888' : '#666'} />
           <Text style={[styles.infoText, { color: theme === 'dark' ? '#888' : '#666' }]} numberOfLines={1}>
-            {item.comune} ({item.provincia})
+            {item.provincia ? `${item.comune} (${item.provincia})` : (item.comune || 'N/D')}
           </Text>
         </View>
 
@@ -110,6 +110,17 @@ const SitiScreen: React.FC = () => {
   const canGoNext = pagination.currentPage < maxPage;
   const canGoPrev = pagination.currentPage > 1;
 
+  const handleRefresh = () => {
+    if (user?.id) {
+      dispatch(fetchSiti({
+        userId: user.id.toString(),
+        searchText: filters.searchText,
+        page: pagination.currentPage,
+        pageSize: pagination.pageSize,
+      }));
+    }
+  };
+
   if (loading && items.length === 0) {
     return (
       <View style={styles.center}>
@@ -156,10 +167,23 @@ const SitiScreen: React.FC = () => {
             keyExtractor={(item) => item.id?.toString() || ''}
             ListHeaderComponent={
               <View style={[styles.header, { backgroundColor: theme === 'dark' ? '#1a1a1a' : '#fff', borderBottomColor: theme === 'dark' ? '#333' : '#eee' }]}>
-                <Text style={[styles.headerTitle, { color: textColor }]}>I Tuoi Siti</Text>
-                <Text style={[styles.headerSubtitle, { color: theme === 'dark' ? '#666' : '#999' }]}>
-                  {pagination.total} sito{pagination.total !== 1 ? 'i' : ''} totali
-                </Text>
+                <View>
+                  <Text style={[styles.headerTitle, { color: textColor }]}>I Tuoi Siti</Text>
+                  <Text style={[styles.headerSubtitle, { color: theme === 'dark' ? '#666' : '#999' }]}>
+                    {pagination.total} {pagination.total === 1 ? 'sito' : 'siti'} totali
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={handleRefresh}
+                  disabled={loading}
+                  style={styles.refreshButton}
+                >
+                  {loading ? (
+                    <ActivityIndicator size="small" color={tintColor} />
+                  ) : (
+                    <MaterialIcons name="refresh" size={24} color={tintColor} />
+                  )}
+                </TouchableOpacity>
               </View>
             }
             contentContainerStyle={styles.listContent}
@@ -238,9 +262,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 16,
     borderBottomWidth: 1,
+  },
+  refreshButton: {
+    padding: 4,
   },
   headerTitle: {
     fontSize: 24,
@@ -287,10 +317,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   itemIcon: {

@@ -148,6 +148,13 @@ const NuovaSchedaScreen: React.FC = () => {
     if (m < 1 || m > 12) return false;
     if (d < 1 || d > 31) return false;
     if (y < 2000 || y > 2100) return false;
+
+    // Verifica che la data non sia nel futuro
+    const inputDate = new Date(y, m - 1, d);
+    const oggi = new Date();
+    oggi.setHours(0, 0, 0, 0); // Reset ore per confrontare solo le date
+    
+    if (inputDate > oggi) return false;
     
     return true;
   };
@@ -221,7 +228,7 @@ const NuovaSchedaScreen: React.FC = () => {
 
   const handleSubmit = async () => {
     if (!dataInput || !validateDate(dataInput)) {
-      Alert.alert('Errore', 'Inserisci una data valida nel formato GG/MM/AAAA');
+      Alert.alert('Errore', 'Inserisci una data valida nel formato GG/MM/AAAA. La data non può essere nel futuro.');
       return;
     }
 
@@ -235,10 +242,17 @@ const NuovaSchedaScreen: React.FC = () => {
       return;
     }
 
+    // Validazione protocollo (opzionale ma se presente deve avere almeno 3 caratteri)
+    if (protocollo && protocollo.trim().length < 3) {
+      Alert.alert('Errore', 'Il protocollo deve contenere almeno 3 caratteri');
+      return;
+    }
+
     setSubmitting(true);
 
     try {
-      await dispatch(
+      console.log('Invio richiesta creazione scheda...');
+      const idscheda = await dispatch(
         createScheda({
           idTecnico: user.id.toString(),
           motivo: '1', // Tipo visita: 1 = Controllo ordinario
@@ -249,19 +263,42 @@ const NuovaSchedaScreen: React.FC = () => {
         })
       ).unwrap();
 
-      Alert.alert('Successo', 'Scheda creata con successo', [
-        {
-          text: 'OK',
-          onPress: () => {
-            dispatch(fetchSchede({ userId: user.id.toString(), page: 1, pageSize: 50 }));
-            router.replace('/(tabs)/schede');
-          },
-        },
-      ]);
-    } catch (error: any) {
-      Alert.alert('Errore', error || 'Errore nella creazione della scheda');
-    } finally {
+      console.log('Scheda creata con successo, ID:', idscheda);
       setSubmitting(false);
+
+      // Ricarica la lista delle schede
+      await dispatch(fetchSchede({ userId: user.id.toString(), page: 1, pageSize: 50 }));
+
+      // Mostra messaggio di successo e naviga
+      if (Platform.OS === 'web') {
+        // Su web, naviga direttamente senza Alert
+        console.log('Navigazione web verso scheda:', idscheda);
+        router.replace(`/schede/${idscheda}`);
+      } else {
+        // Su mobile, mostra l'Alert con opzioni
+        Alert.alert(
+          'Successo', 
+          `Scheda #${idscheda} creata con successo`, 
+          [
+            {
+              text: 'Vai alla scheda',
+              onPress: () => {
+                router.replace(`/schede/${idscheda}`);
+              },
+            },
+            {
+              text: 'Torna alle schede',
+              onPress: () => {
+                router.replace('/(tabs)/schede');
+              },
+            },
+          ]
+        );
+      }
+    } catch (error: any) {
+      console.error('Errore creazione scheda:', error);
+      setSubmitting(false);
+      Alert.alert('Errore', error || 'Errore nella creazione della scheda');
     }
   };
 

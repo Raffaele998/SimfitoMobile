@@ -156,6 +156,18 @@ const SchemataScreen: React.FC = () => {
     router.push(`/schede/${schedeId}/osservazioni`);
   };
 
+  const handleRefresh = () => {
+    if (user?.id) {
+      dispatch(fetchSchede({
+        userId: user.id.toString(),
+        page: currentPage,
+        pageSize,
+        sortBy,
+        filterById,
+      }));
+    }
+  };
+
   const maxPage = Math.ceil(total / pageSize);
   const canGoNext = currentPage < maxPage;
   const canGoPrev = currentPage > 1;
@@ -226,10 +238,23 @@ const SchemataScreen: React.FC = () => {
             keyExtractor={(item) => item.idscheda}
             ListHeaderComponent={
           <View style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}>
-                <Text style={[styles.headerTitle, { color: textColor }]}>Le Tue Schede</Text>
-                <Text style={[styles.headerSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
-                  {total} scheda{total !== 1 ? 'e' : ''} totali
-                </Text>
+                <View>
+                  <Text style={[styles.headerTitle, { color: textColor }]}>Le Tue Schede</Text>
+                  <Text style={[styles.headerSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
+                    {total} scheda{total !== 1 ? 'e' : ''} totali
+                  </Text>
+                </View>
+                <TouchableOpacity
+                  onPress={handleRefresh}
+                  disabled={loading}
+                  style={styles.refreshButton}
+                >
+                  {loading ? (
+                    <ActivityIndicator size="small" color={tintColor} />
+                  ) : (
+                    <MaterialIcons name="refresh" size={24} color={tintColor} />
+                  )}
+                </TouchableOpacity>
               </View>
             }
             contentContainerStyle={styles.listContent}
@@ -368,9 +393,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 16,
     borderBottomWidth: 1,
+  },
+  refreshButton: {
+    padding: 4,
   },
   headerTitle: {
     fontSize: 24,
@@ -392,10 +423,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   itemContent: {
@@ -535,10 +563,7 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.3)',
     elevation: 8,
   },
   filterBar: {
@@ -592,10 +617,7 @@ const styles = StyleSheet.create({
     maxWidth: 400,
     borderRadius: 12,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
     elevation: 5,
   },
   modalHeader: {

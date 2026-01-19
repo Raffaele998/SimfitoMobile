@@ -30,13 +30,15 @@ global $att_path;
 if($_SERVER['REQUEST_METHOD'] == "OPTIONS"){
 	header('Access-Control-Allow-Origin: *');
 	header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
-	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With');
+	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With, Content-Type, Accept');
 	header('Access-Control-Max-Age: 1728000');
 	header("Content-Length: 0");
 	header("Content-Type: text/plain");
+	exit(0);
 }
 else{
 	header("Access-Control-Allow-Origin: *");
+	header('Access-Control-Allow-Headers: X-PINGARUNER, X-Requested-With, Content-Type, Accept');
 
 	$db=new CRUD($connection);
 	$db->connect();

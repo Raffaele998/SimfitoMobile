@@ -1,18 +1,23 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
     ActivityIndicator,
+    Alert,
+    Platform,
     ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity,
     View
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useThemeColor } from '../../hooks/use-theme-color';
 import { useAppDispatch, useAppSelector } from '../../src/store/hooks';
+import { selectAuth } from '../../src/store/slices/authSlice';
 import { fetchAzienda, selectAziende } from '../../src/store/slices/aziendeSlice';
-import { selectSchede, setSelectedScheda } from '../../src/store/slices/schedeSlice';
+import { deleteScheda, fetchSchede, selectSchede, setSelectedScheda } from '../../src/store/slices/schedeSlice';
+import GestioneTecniciModal from '../components/GestioneTecniciModal';
 
 interface InfoSection {
   title: string;
@@ -24,11 +29,14 @@ const SchemataDetailScreen: React.FC = () => {
   const { id } = useLocalSearchParams();
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { items, selectedScheda } = useAppSelector(selectSchede);
+  const { items, selectedScheda, loading } = useAppSelector(selectSchede);
   const { items: aziende, loading: loadingAzienda } = useAppSelector(selectAziende);
+  const { user } = useAppSelector(selectAuth);
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
   const backgroundColor = useThemeColor({}, 'background');
+  const [deleting, setDeleting] = useState(false);
+  const [showTecniciModal, setShowTecniciModal] = useState(false);
 
   const scheda = useMemo(() => {
     return selectedScheda || items.find((item) => item.idscheda === id);
@@ -46,22 +54,87 @@ const SchemataDetailScreen: React.FC = () => {
     }
   }, [scheda?.partita_iva, dispatch]);
 
+  const handleDelete = useCallback(() => {
+    if (!scheda) return;
+
+    console.log('handleDelete chiamato per scheda:', scheda.idscheda);
+
+    const confirmDelete = async () => {
+      console.log('Conferma eliminazione...');
+      setDeleting(true);
+      try {
+        console.log('Invio richiesta eliminazione scheda:', scheda.idscheda);
+        await dispatch(deleteScheda({ id_scheda: scheda.idscheda })).unwrap();
+        console.log('Scheda eliminata con successo');
+        
+        // Ricarica la lista delle schede
+        if (user?.id) {
+          console.log('Ricarico lista schede...');
+          await dispatch(fetchSchede({ userId: user.id.toString(), page: 1, pageSize: 50 }));
+        }
+        
+        // Naviga alla lista schede
+        console.log('Navigazione alla lista schede...');
+        router.replace('/(tabs)/schede');
+        
+        // Su mobile mostra alert di successo
+        if (Platform.OS !== 'web') {
+          Alert.alert('Successo', 'Scheda eliminata con successo');
+        }
+      } catch (error: any) {
+        console.error('Errore eliminazione scheda:', error);
+        Alert.alert('Errore', error || 'Impossibile eliminare la scheda');
+      } finally {
+        setDeleting(false);
+      }
+    };
+
+    // Su web usa window.confirm, su mobile usa Alert.alert
+    if (Platform.OS === 'web') {
+      console.log('Platform web - usando window.confirm');
+      const confirmed = window.confirm(
+        `Sei sicuro di voler eliminare la scheda #${scheda.idscheda}?\n\nQuesta azione è irreversibile e eliminerà anche tutte le osservazioni associate.`
+      );
+      if (confirmed) {
+        confirmDelete();
+      }
+    } else {
+      console.log('Platform mobile - usando Alert.alert');
+      Alert.alert(
+        'Elimina Scheda',
+        `Sei sicuro di voler eliminare la scheda #${scheda.idscheda}?\n\nQuesta azione è irreversibile e eliminerà anche tutte le osservazioni associate.`,
+        [
+          {
+            text: 'Annulla',
+            style: 'cancel',
+          },
+          {
+            text: 'Elimina',
+            style: 'destructive',
+            onPress: confirmDelete,
+          },
+        ]
+      );
+    }
+  }, [scheda, dispatch, router, user]);
+
   if (!scheda) {
     return (
-      <View style={[styles.container, { backgroundColor }]}>
-        <TouchableOpacity
+      <SafeAreaView style={[styles.container, { backgroundColor }]} edges={['top']}>
+        <View
           style={[styles.header, { borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
-          onPress={() => router.back()}
         >
-          <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+          <TouchableOpacity onPress={() => router.back()}>
+            <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+          </TouchableOpacity>
           <Text style={[styles.headerTitle, { color: textColor }]}>Dettagli Scheda</Text>
           <View style={{ width: 24 }} />
-        </TouchableOpacity>
+        </View>
         <View style={styles.center}>
           <MaterialIcons name="error-outline" size={48} color="#d32f2f" />
           <Text style={[styles.errorText, { color: textColor }]}>Scheda non trovata</Text>
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 
@@ -107,15 +180,26 @@ const SchemataDetailScreen: React.FC = () => {
   ];
 
   return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <TouchableOpacity
+    <SafeAreaView style={[styles.container, { backgroundColor }]} edges={['top']}>
+      <View
         style={[styles.header, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderBottomColor: textColor === '#11181C' ? '#eee' : '#333' }]}
-        onPress={() => router.back()}
       >
-        <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+        <TouchableOpacity onPress={() => router.back()}>
+          <MaterialIcons name="arrow-back" size={24} color={tintColor} />
+        </TouchableOpacity>
         <Text style={[styles.headerTitle, { color: textColor }]}>Dettagli Scheda</Text>
-        <View style={{ width: 24 }} />
-      </TouchableOpacity>
+        <TouchableOpacity 
+          onPress={handleDelete}
+          disabled={deleting || loading}
+          style={styles.deleteButton}
+        >
+          {deleting ? (
+            <ActivityIndicator size="small" color="#f44336" />
+          ) : (
+            <MaterialIcons name="delete" size={24} color="#f44336" />
+          )}
+        </TouchableOpacity>
+      </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Status Card */}
@@ -234,9 +318,25 @@ const SchemataDetailScreen: React.FC = () => {
           <Text style={styles.observationsButtonText}>Visualizza Osservazioni</Text>
         </TouchableOpacity>
 
+        {/* Gestione Tecnici Button */}
+        <TouchableOpacity
+          style={[styles.tecniciButton, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderColor: tintColor }]}
+          onPress={() => setShowTecniciModal(true)}
+        >
+          <MaterialIcons name="people" size={20} color={tintColor} />
+          <Text style={[styles.tecniciButtonText, { color: tintColor }]}>Gestisci Tecnici</Text>
+        </TouchableOpacity>
+
         <View style={styles.spacer} />
       </ScrollView>
-    </View>
+
+      {/* Modal Gestione Tecnici */}
+      <GestioneTecniciModal
+        visible={showTecniciModal}
+        onClose={() => setShowTecniciModal(false)}
+        idscheda={Number(id)}
+      />
+    </SafeAreaView>
   );
 };
 
@@ -271,10 +371,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 8,
     padding: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   statusIndicator: {
@@ -302,10 +399,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   cardContent: {
@@ -324,10 +418,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginVertical: 8,
     overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.1)',
     elevation: 2,
   },
   sectionHeader: {
@@ -396,6 +487,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   },
+  tecniciButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 8,
+    marginHorizontal: 8,
+    paddingVertical: 12,
+    borderRadius: 8,
+    borderWidth: 2,
+    gap: 8,
+  },
+  tecniciButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
   loadButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -416,6 +522,9 @@ const styles = StyleSheet.create({
     marginTop: 12,
     color: '#d32f2f',
     fontWeight: '500',
+  },
+  deleteButton: {
+    padding: 4,
   },
   spacer: {
     height: 24,

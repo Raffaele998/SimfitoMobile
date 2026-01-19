@@ -8,7 +8,7 @@ $hostpg = "192.168.1.19";
 $portpg = "5432";
 $userdb = "postgres";
 $passworddb = "ariespac3";
-$namedb = "simfito4";
+$namedb = "DBEPPOreplica";
 
 // Connection string per PHP-PostgreSQL
 $connection = "host=$hostpg port=$portpg user=$userdb password=$passworddb dbname=$namedb";

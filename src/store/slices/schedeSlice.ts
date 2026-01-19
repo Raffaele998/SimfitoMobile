@@ -136,15 +136,46 @@ export const createScheda = createAsyncThunk(
       });
 
       if (response.data.success) {
-        return response.data.returned || response.data.idscheda;
+        const idscheda = response.data.returned || response.data.idscheda;
+        if (!idscheda) {
+          return rejectWithValue('Scheda creata ma ID non ritornato dal server');
+        }
+        return idscheda;
       } else {
-        return rejectWithValue('Errore durante la creazione della scheda');
+        const errorMsg = response.data.errors?.reason || 'Errore durante la creazione della scheda';
+        return rejectWithValue(errorMsg);
       }
     } catch (error: any) {
       return rejectWithValue(
         error.response?.data?.message || 
         error.message || 
         'Errore nella creazione della scheda'
+      );
+    }
+  }
+);
+
+export const deleteScheda = createAsyncThunk(
+  'schede/delete',
+  async ({ id_scheda }: { id_scheda: string }, { rejectWithValue }) => {
+    try {
+      const response = await apiClient.post('/services/ajax-save-form.php', null, {
+        params: {
+          mode: 'cancella-scheda',
+          id_scheda,
+        },
+      });
+
+      if (response.data.success) {
+        return id_scheda;
+      } else {
+        return rejectWithValue('Errore durante l\'eliminazione della scheda');
+      }
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || 
+        error.message || 
+        'Errore nell\'eliminazione della scheda'
       );
     }
   }
@@ -212,6 +243,20 @@ const schedeSlice = createSlice({
         state.loading = false;
       })
       .addCase(createScheda.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(deleteScheda.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteScheda.fulfilled, (state, action) => {
+        state.loading = false;
+        // Rimuovi la scheda eliminata dalla lista
+        state.items = state.items.filter(item => item.idscheda !== action.payload);
+        state.total = Math.max(0, state.total - 1);
+      })
+      .addCase(deleteScheda.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
