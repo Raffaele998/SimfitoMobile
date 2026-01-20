@@ -29,6 +29,7 @@ interface OsservazioneDettaglio {
   sospetti: string;
   campione: number;
   fase_fenologica: string;
+  id_fase_fenologica?: number;
   unit_tot?: number;
   unit_chk?: number;
   peso_tot?: number;
@@ -45,6 +46,9 @@ interface OsservazioneDettaglio {
   n_abbattute?: number;
   completa: string;
   tempo?: number;
+  elementicampione?: number;
+  codice?: string;
+  tipocampione_id?: number;
 }
 
 interface TipologiaControllata {
@@ -58,11 +62,26 @@ interface FaseFenologica {
   info?: string;
 }
 
+interface CampioneCodice {
+  id: number;
+  codice: string;
+  descrizione: string;
+  nuovo: boolean;
+  elementicampione?: number;
+  tipocampione_id?: number;
+}
+
+interface TipoCampione {
+  tipocampione_id: number;
+  tipocampione_description: string;
+}
+
 const OsservazioneDetailScreen: React.FC = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { id, idscheda, statoScheda } = useLocalSearchParams();
   const { theme } = useAppSelector(selectSettings);
+  const userId = useAppSelector((state) => state.auth.user?.id);
   
   const tintColor = useThemeColor({}, 'tint');
   const textColor = useThemeColor({}, 'text');
@@ -79,7 +98,6 @@ const OsservazioneDetailScreen: React.FC = () => {
   const [tipologiaId, setTipologiaId] = useState<number | undefined>();
   const [faseFenologica, setFaseFenologica] = useState<string>('');
   const [supTot, setSupTot] = useState<string>('');
-  const [supChk, setSupChk] = useState<string>('');
   const [unitTot, setUnitTot] = useState<string>('');
   const [unitChk, setUnitChk] = useState<string>('');
   const [pesoTot, setPesoTot] = useState<string>('');
@@ -91,7 +109,9 @@ const OsservazioneDetailScreen: React.FC = () => {
   const [pianteInfest, setPianteInfest] = useState<string>('');
   const [nAbbattute, setNAbbattute] = useState<string>('');
   const [serieCampione, setSerieCampione] = useState<boolean>(false);
+  const [codiceCampione, setCodiceCampione] = useState<string>('');
   const [elementiSerie, setElementiSerie] = useState<string>('');
+  const [tipoCampioneId, setTipoCampioneId] = useState<number | undefined>();
   const [provenienza, setProvenienza] = useState<string>('');
   
   // Dropdowns data
@@ -99,6 +119,8 @@ const OsservazioneDetailScreen: React.FC = () => {
   const [fasiFenologiche, setFasiFenologiche] = useState<FaseFenologica[]>([]);
   const [faseFenologicaId, setFaseFenologicaId] = useState<number | undefined>();
   const [faseFenologicaCustom, setFaseFenologicaCustom] = useState<boolean>(false);
+  const [codiciCampione, setCodiciCampione] = useState<CampioneCodice[]>([]);
+  const [tipiCampione, setTipiCampione] = useState<TipoCampione[]>([]);
   
   // Verifica stato scheda: solo stato=0 permette modifiche
   const statoSchedaNum = statoScheda ? parseInt(statoScheda as string) : 0;
@@ -125,13 +147,19 @@ const OsservazioneDetailScreen: React.FC = () => {
           String(o.idosservazioni) === String(id)
         );
         if (obs) {
+          console.log('=== CARICAMENTO OSSERVAZIONE ===');
+          console.log('obs.fase_fenologica:', obs.fase_fenologica, 'type:', typeof obs.fase_fenologica);
+          console.log('obs.id_fase_fenologica:', obs.id_fase_fenologica, 'type:', typeof obs.id_fase_fenologica);
+          
           setOsservazione(obs);
           setRilevato(obs.rilevato ?? 0);
           setTipologiaId(obs.tipologia_id);
           setFaseFenologica(obs.fase_fenologica ?? '');
-          setFaseFenologicaId(obs.id_fase_fenologica);
+          // Converti esplicitamente in numero
+          const idFase = obs.id_fase_fenologica ? parseInt(String(obs.id_fase_fenologica)) : undefined;
+          setFaseFenologicaId(idFase);
           // Se c'è testo ma non id, è custom
-          setFaseFenologicaCustom(!obs.id_fase_fenologica && !!obs.fase_fenologica);
+          setFaseFenologicaCustom(!idFase && !!obs.fase_fenologica);
           setSupTot(obs.sup_vis !== 'nan' ? obs.sup_vis : '');
           setSupInfest(obs.sup_infest !== 'nan' ? obs.sup_infest : '');
           setUnitTot(obs.unit_tot?.toString() ?? '');
@@ -144,6 +172,11 @@ const OsservazioneDetailScreen: React.FC = () => {
           setPianteInfest(obs.piante_infest !== 'nan' ? obs.piante_infest : '');
           setNAbbattute(obs.n_abbattute?.toString() ?? '');
           setProvenienza(obs.provenienza ?? '');
+          // Serie campione
+          setSerieCampione(obs.campione === 1 || obs.campione === '1' || obs.campione === true);
+          setCodiceCampione(obs.codice ?? '');
+          setElementiSerie(obs.elementicampione?.toString() ?? '');
+          setTipoCampioneId(obs.tipocampione_id);
         } else {
           console.log('Osservazione non trovata. ID cercato:', id);
           console.log('Osservazioni disponibili:', response.data.data.map((o: any) => o.idosservazioni));
@@ -168,10 +201,43 @@ const OsservazioneDetailScreen: React.FC = () => {
     }
   };
 
+  const loadCodiciCampione = async () => {
+    try {
+      if (!userId || !idscheda) return;
+      
+      const response = await apiClient.get(`/services/ajax.php?mode=codici_new&idtecnico=${userId}&idscheda=${idscheda}`);
+      if (response.data?.success && response.data?.data) {
+        setCodiciCampione(response.data.data);
+        // Se nuovo campione, seleziona automaticamente il primo (quello generato)
+        if (response.data.data.length > 0 && !codiceCampione) {
+          setCodiceCampione(response.data.data[0].codice);
+        }
+      }
+    } catch (error) {
+      console.error('Errore caricamento codici campione:', error);
+    }
+  };
+
+  const loadTipiCampione = async () => {
+    try {
+      const response = await apiClient.get('/services/ajax.php?mode=tipocampione');
+      if (response.data?.success && response.data?.data) {
+        setTipiCampione(response.data.data);
+      }
+    } catch (error) {
+      console.error('Errore caricamento tipi campione:', error);
+    }
+  };
+
   const loadFasiFenologiche = async () => {
     try {
       const response = await apiClient.get(`/services/ajax.php?mode=fasifenologiche&idobs=${id}`);
       if (response.data?.success && response.data?.data) {
+        console.log('=== FASI FENOLOGICHE CARICATE ===');
+        console.log('Count:', response.data.data.length);
+        if (response.data.data.length > 0) {
+          console.log('Prima fase:', JSON.stringify(response.data.data[0]));
+        }
         setFasiFenologiche(response.data.data);
       }
     } catch (error) {
@@ -183,7 +249,15 @@ const OsservazioneDetailScreen: React.FC = () => {
     loadOsservazione();
     loadTipologie();
     loadFasiFenologiche();
+    loadTipiCampione();
   }, [id, idscheda]);
+
+  // Carica codici campione quando viene attivato il flag serie campione
+  useEffect(() => {
+    if (serieCampione) {
+      loadCodiciCampione();
+    }
+  }, [serieCampione, idscheda]);
 
   const handleSave = async () => {
     // Validazione campi obbligatori
@@ -194,6 +268,12 @@ const OsservazioneDetailScreen: React.FC = () => {
 
     try {
       setSaving(true);
+
+      // Debug logging
+      console.log('=== DEBUG FASE FENOLOGICA ===');
+      console.log('faseFenologicaCustom:', faseFenologicaCustom);
+      console.log('faseFenologicaId:', faseFenologicaId, 'type:', typeof faseFenologicaId);
+      console.log('faseFenologica:', faseFenologica);
 
       const formData = new FormData();
       formData.append('mode', 'obsupdate_new');
@@ -209,13 +289,16 @@ const OsservazioneDetailScreen: React.FC = () => {
       if (faseFenologicaCustom) {
         formData.append('fase_fenologica', faseFenologica);
         formData.append('id_fase_fenologica', '0');
+        console.log('→ Modalità CUSTOM: fase_fenologica=', faseFenologica, ', id=0');
       } else if (faseFenologicaId) {
         const fase = fasiFenologiche.find(f => f.id_fase_fenologica === faseFenologicaId);
         formData.append('fase_fenologica', fase?.fase_fenologica || '');
         formData.append('id_fase_fenologica', faseFenologicaId.toString());
+        console.log('→ Modalità DROPDOWN: fase_fenologica=', fase?.fase_fenologica, ', id=', faseFenologicaId.toString());
       } else {
         formData.append('fase_fenologica', '');
         formData.append('id_fase_fenologica', '0');
+        console.log('→ Modalità VUOTA: fase_fenologica=\'\', id=0');
       }
       if (unitTot) formData.append('unit_tot', unitTot);
       if (unitChk) formData.append('unit_chk', unitChk);
@@ -240,7 +323,17 @@ const OsservazioneDetailScreen: React.FC = () => {
       formData.append('n_osservate', '');
       formData.append('piante_camp_vis', '');
       formData.append('provenienza', provenienza || '');
-      formData.append('campione', 'off');
+      formData.append('campione', serieCampione ? 'on' : 'off');
+      if (serieCampione) {
+        // Crea sempre un nuovo campione (il backend gestirà l'UPDATE se esiste già)
+        formData.append('nuovocampione', 'true');
+        formData.append('elementicampione', elementiSerie || '0');
+        formData.append('codice', codiceCampione || '');
+        formData.append('tipocampione_id', tipoCampioneId?.toString() || '');
+        formData.append('laboratorio', '');
+      } else {
+        formData.append('elementicampione', '');
+      }
       formData.append('geometry', '');
       formData.append('tempo', osservazione?.tempo?.toString() ?? '');
 
@@ -405,9 +498,19 @@ const OsservazioneDetailScreen: React.FC = () => {
               <Picker
                 selectedValue={faseFenologicaId ?? 0}
                 onValueChange={(value) => {
-                  setFaseFenologicaId(value);
-                  const fase = fasiFenologiche.find(f => f.id_fase_fenologica === value);
-                  if (fase) setFaseFenologica(fase.fase_fenologica);
+                  console.log('Picker onValueChange - value:', value, 'type:', typeof value);
+                  // Converti in numero se necessario
+                  const numValue = Number(value);
+                  if (!isNaN(numValue)) {
+                    setFaseFenologicaId(numValue);
+                    const fase = fasiFenologiche.find(f => Number(f.id_fase_fenologica) === numValue);
+                    if (fase) {
+                      console.log('Fase trovata:', fase.fase_fenologica);
+                      setFaseFenologica(fase.fase_fenologica);
+                    } else {
+                      console.log('Fase NON trovata per id:', numValue);
+                    }
+                  }
                 }}
                 style={[styles.picker, { color: textColor }]}
                 dropdownIconColor={textColor}
@@ -418,7 +521,7 @@ const OsservazioneDetailScreen: React.FC = () => {
                   <Picker.Item 
                     key={fase.id_fase_fenologica} 
                     label={fase.fase_fenologica + (fase.info ? ` - ${fase.info}` : '')} 
-                    value={fase.id_fase_fenologica} 
+                    value={Number(fase.id_fase_fenologica)} 
                   />
                 ))}
               </Picker>
@@ -443,11 +546,11 @@ const OsservazioneDetailScreen: React.FC = () => {
               />
             </View>
             <View style={styles.halfField}>
-              <Text style={[styles.label, { color: textColor }]}>Sup. controllata [m²]</Text>
+              <Text style={[styles.label, { color: textColor }]}>Sup. infestata [m²]</Text>
               <TextInput
                 style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
-                value={supChk}
-                onChangeText={setSupChk}
+                value={supInfest}
+                onChangeText={setSupInfest}
                 keyboardType="numeric"
                 placeholder="0"
                 editable={canEdit}
@@ -455,6 +558,20 @@ const OsservazioneDetailScreen: React.FC = () => {
               />
             </View>
           </View>
+        </View>
+
+        {/* Piante infeste */}
+        <View style={[styles.section, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
+          <Text style={[styles.sectionTitle, { color: textColor }]}>Piante infeste</Text>
+          <TextInput
+            style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
+            value={pianteInfest}
+            onChangeText={setPianteInfest}
+            keyboardType="numeric"
+            placeholder="0"
+            editable={canEdit}
+            placeholderTextColor={isDark ? '#888' : '#999'}
+          />
         </View>
 
         {/* Unità */}
@@ -562,45 +679,17 @@ const OsservazioneDetailScreen: React.FC = () => {
           </View>
         </View>
 
-        {/* Superficie Infestata */}
-        <View style={[styles.section, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
-          <Text style={[styles.sectionTitle, { color: textColor }]}>Superficie Infestata [m²]</Text>
-          <TextInput
-            style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
-            value={supInfest}
-            onChangeText={setSupInfest}
-            keyboardType="numeric"
-            placeholder="0"
-            editable={canEdit}
-                placeholderTextColor={isDark ? '#888' : '#999'}
-          />
-        </View>
-
-        {/* N. Piante Infestate */}
-        <View style={[styles.section, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
-          <Text style={[styles.sectionTitle, { color: textColor }]}>N. Piante Infestate</Text>
-          <TextInput
-            style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
-            value={pianteInfest}
-            onChangeText={setPianteInfest}
-            keyboardType="numeric"
-            placeholder="0"
-            editable={canEdit}
-                placeholderTextColor={isDark ? '#888' : '#999'}
-          />
-        </View>
 
         {/* Numero piante abbattute */}
         <View style={[styles.section, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
-          <Text style={[styles.sectionTitle, { color: textColor }]}>Numero piante abbattute</Text>
+          <Text style={[styles.sectionTitle, { color: textColor }]}>Numero piante abbattute (sola lettura)</Text>
           <TextInput
-            style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
+            style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd', backgroundColor: isDark ? '#2a2a2a' : '#f5f5f5' }]}
             value={nAbbattute}
-            onChangeText={setNAbbattute}
             keyboardType="numeric"
             placeholder="0"
-            editable={canEdit}
-                placeholderTextColor={isDark ? '#888' : '#999'}
+            editable={false}
+            placeholderTextColor={isDark ? '#888' : '#999'}
           />
         </View>
 
@@ -619,28 +708,68 @@ const OsservazioneDetailScreen: React.FC = () => {
           {serieCampione && (
             <>
               <View style={styles.fieldSpacing}>
-                <Text style={[styles.label, { color: textColor }]}>Elementi della serie</Text>
+                <Text style={[styles.label, { color: textColor }]}>Codice campione</Text>
+                <View style={styles.pickerContainer}>
+                  <Picker
+                    selectedValue={codiceCampione}
+                    onValueChange={(value) => {
+                      setCodiceCampione(value);
+                      // Carica automaticamente dati del campione esistente
+                      const campione = codiciCampione.find(c => c.codice === value);
+                      if (campione && !campione.nuovo) {
+                        if (campione.elementicampione) setElementiSerie(campione.elementicampione.toString());
+                        if (campione.tipocampione_id) setTipoCampioneId(campione.tipocampione_id);
+                      }
+                    }}
+                    style={[styles.picker, { color: textColor }]}
+                    dropdownIconColor={textColor}
+                    enabled={canEdit}
+                  >
+                    <Picker.Item label="Seleziona codice..." value="" />
+                    {codiciCampione.map((item) => (
+                      <Picker.Item
+                        key={item.codice}
+                        label={item.descrizione}
+                        value={item.codice}
+                      />
+                    ))}
+                  </Picker>
+                </View>
+              </View>
+
+              <View style={styles.fieldSpacing}>
+                <Text style={[styles.label, { color: textColor }]}>Elementi della serie (numero)</Text>
                 <TextInput
                   style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
                   value={elementiSerie}
                   onChangeText={setElementiSerie}
-                  placeholder="Descrivi gli elementi..."
+                  placeholder="1"
+                  keyboardType="numeric"
                   editable={canEdit}
-                placeholderTextColor={isDark ? '#888' : '#999'}
-                  multiline
-                  numberOfLines={3}
+                  placeholderTextColor={isDark ? '#888' : '#999'}
                 />
               </View>
+
               <View style={styles.fieldSpacing}>
                 <Text style={[styles.label, { color: textColor }]}>Tipo serie campione</Text>
-                <TextInput
-                  style={[styles.input, { color: textColor, borderColor: isDark ? '#444' : '#ddd' }]}
-                  value={provenienza}
-                  onChangeText={setProvenienza}
-                  placeholder="Tipo..."
-                  editable={canEdit}
-                placeholderTextColor={isDark ? '#888' : '#999'}
-                />
+                <View style={styles.pickerContainer}>
+                  <Picker
+                    selectedValue={tipoCampioneId}
+                    onValueChange={(value) => setTipoCampioneId(value)}
+                    style={[styles.picker, { color: textColor }]}
+                    dropdownIconColor={textColor}
+                    enabled={canEdit}
+                  >
+                    <Picker.Item label="Seleziona tipo..." value={undefined} />
+                    {tipiCampione.map((item) => (
+                      <Picker.Item
+                        key={item.tipocampione_id}
+                        label={item.tipocampione_description}
+                        value={item.tipocampione_id}
+                      />
+                    ))}
+                  </Picker>
+                </View>
               </View>
             </>
           )}
@@ -649,9 +778,17 @@ const OsservazioneDetailScreen: React.FC = () => {
         <View style={{ height: 20 }} />
       </ScrollView>
 
-      {/* Pulsante Salva Fisso */}
-      {canEdit && (
-        <View style={[styles.saveButtonContainer, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
+      {/* Pulsanti Azione Fissi */}
+      <View style={[styles.actionButtonsContainer, { backgroundColor: isDark ? '#1f1f1f' : '#fff' }]}>
+        <TouchableOpacity
+          style={[styles.backButton, { borderColor: isDark ? '#444' : '#ddd' }]}
+          onPress={() => router.back()}
+        >
+          <Ionicons name="arrow-back" size={24} color={tintColor} />
+          <Text style={[styles.backButtonText, { color: tintColor }]}>Indietro</Text>
+        </TouchableOpacity>
+        
+        {canEdit && (
           <TouchableOpacity
             style={[styles.saveButtonFixed, { backgroundColor: tintColor }]}
             onPress={handleSave}
@@ -662,12 +799,12 @@ const OsservazioneDetailScreen: React.FC = () => {
             ) : (
               <>
                 <Ionicons name="checkmark-circle" size={24} color="#fff" />
-                <Text style={styles.saveButtonText}>Salva Osservazione</Text>
+                <Text style={styles.saveButtonText}>Salva</Text>
               </>
             )}
           </TouchableOpacity>
-        </View>
-      )}
+        )}
+      </View>
 
       {/* Messaggio di successo */}
       {showSuccessMessage && (
@@ -812,7 +949,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
   },
-  saveButtonContainer: {
+  actionButtonsContainer: {
+    flexDirection: 'row',
+    gap: 12,
     padding: 16,
     borderTopWidth: 1,
     borderTopColor: '#e0e0e0',
@@ -828,11 +967,26 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  saveButtonFixed: {
+  backButton: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 14,
+    padding: 16,
+    borderRadius: 12,
+    gap: 8,
+    borderWidth: 2,
+  },
+  backButtonText: {
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  saveButtonFixed: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
     borderRadius: 12,
     gap: 8,
   },

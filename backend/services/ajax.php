@@ -2555,7 +2555,7 @@ else{
 		break;
 		case "fasifenologiche":
 		   $fenogruppo=chk_fenogruppo($_REQUEST['idobs']);
-		   $sql="SELECT id AS id_fase_fenologicha, descrizione as fase_fenologica, info FROM fasi_fenologiche WHERE gruppo=$fenogruppo ORDER BY id";
+		   $sql="SELECT id::integer AS id_fase_fenologica, descrizione as fase_fenologica, info FROM fasi_fenologiche WHERE gruppo=$fenogruppo ORDER BY id";
 		   readJson($sql);
 		break;
 		case "perparassita":

@@ -791,8 +791,11 @@ else{
 			if($_REQUEST['campione']=='on'){
 				$campione='t';
 				if($_REQUEST['nuovocampione']=='true'){
+					// Gestione NULL per laboratorio_id e tipocampione_id
+					$lab_id = (!empty($_REQUEST['laboratorio']) && $_REQUEST['laboratorio'] != '') ? "$_REQUEST[laboratorio]" : "NULL";
+					$tipo_id = (!empty($_REQUEST['tipocampione_id']) && $_REQUEST['tipocampione_id'] != '') ? "$_REQUEST[tipocampione_id]" : "NULL";
 					$sqlReturning="INSERT INTO campioni (codice,scheda_id,laboratorio_id, elementicampione, tipocampione_id)
-										VALUES ('$_REQUEST[codice]', $_REQUEST[idscheda], $_REQUEST[laboratorio], $_REQUEST[elementicampione], $_REQUEST[tipocampione_id])
+										VALUES ('$_REQUEST[codice]', $_REQUEST[idscheda], $lab_id, $_REQUEST[elementicampione], $tipo_id)
 									RETURNING id";
 					$new_id=salva_scheda_return($sqlReturning);
 					$campioneid="campioni_id=$new_id[returned],";
@@ -847,7 +850,7 @@ else{
 			}
 			$sql="UPDATE osservazioni
 	                SET rilevato=$_REQUEST[rilevato], sospetti='$escaped[sospetti]', campione='$campione', $campioneid
-					attacco_int=$_REQUEST[id_intensity], /*attacco_grado=$_REQUEST[id_grado],*/ fase_fenologica='$escaped[fase_fenologica]', /*n_osservate=$n_osservate,*/
+					attacco_int=$_REQUEST[id_intensity], /*attacco_grado=$_REQUEST[id_grado],*/ fase_fenologica='$escaped[fase_fenologica]', id_fase_fenologica=nullif('$_REQUEST[id_fase_fenologica]','0')::integer, /*n_osservate=$n_osservate,*/
 					/*organi='$escaped[organi]',*/ varieta='$escaped[varieta]',data_impianto=to_date('$_REQUEST[data_impianto]','DD/MM/YYYY'),appezzamento=$_REQUEST[appezzamento],
 					/*piante_camp_vis=$piante_camp_vis,*/ coltura_prec='$_REQUEST[coltura_prec]',piante_infest=$piante_infest,sup_vis=$sup_vis,sup_infest=$sup_infest,
 					/*n_abbattute=$n_abbattute,*/ completa='$_REQUEST[completata]', tempo=$tempo $geoJsonAdd,
@@ -860,7 +863,7 @@ else{
 			$sql2="UPDATE osservazioni
 				SET appezzamento=coalesce(appezzamento,$_REQUEST[appezzamento]), sup_vis= coalesce(sup_vis,$sup_vis), /*n_osservate= coalesce(n_osservate,$n_osservate),*/
 					/*piante_camp_vis=coalesce(piante_camp_vis,$piante_camp_vis),*/ data_impianto=coalesce(data_impianto,to_date('$_REQUEST[data_impianto]','DD/MM/YYYY')),
-					varieta=coalesce(varieta,'$escaped[varieta]'), fase_fenologica=coalesce(fase_fenologica,'$escaped[fase_fenologica]'), coltura_prec=coalesce(coltura_prec,'$_REQUEST[coltura_prec]'),
+					varieta=coalesce(varieta,'$escaped[varieta]'), fase_fenologica=coalesce(fase_fenologica,'$escaped[fase_fenologica]'), id_fase_fenologica=nullif('$_REQUEST[id_fase_fenologica]','0')::integer, coltura_prec=coalesce(coltura_prec,'$_REQUEST[coltura_prec]'),
 					unita='$_REQUEST[unit_tot]', unita_chk='$_REQUEST[unit_chk]', peso='$_REQUEST[peso_tot]', peso_chk='$_REQUEST[peso_chk]',
 					lotti='$_REQUEST[lotti_tot]', lotti_chk='$_REQUEST[lotti_chk]', lotti_camp='$_REQUEST[lotti_camp]', tipologiacontrollata_id=$tipologia_id,
 					provenienza='$_REQUEST[provenienza]'
