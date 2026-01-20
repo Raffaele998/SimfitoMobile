@@ -299,6 +299,17 @@ function find_host($obs)
     return $result['hostcode'];
 }
 
+function chk_fenogruppo($obs)
+{
+    global $db;
+    $host=find_host($obs);
+    $result=$db->FetchRow("SELECT fenogruppo FROM simfito.tipo_fenologico WHERE bayercode='$host'");
+    $fenogruppo=$result['fenogruppo'];
+    if($fenogruppo=="")
+        $fenogruppo="0";
+    return $fenogruppo;
+}
+
 function arrayAsJson($array)
 {
 	$json="\"data\":[";
@@ -383,17 +394,6 @@ function pestsJson($id)
 	}
 	arrayAsJson($data);
 	$db2->connection_close();
-}
-
-function chk_fenogruppo($obs)
-{
-    global $db;
-    $host=find_host($obs);
-    $result=$db->FetchRow("SELECT fenogruppo FROM tipo_fenologico WHERE bayercode='$host'");
-    $fenogruppo=$result['fenogruppo'];
-    if($fenogruppo=="")
-        $fenogruppo="0";
-    return $fenogruppo;
 }
 
 function sorter_parser($sort)
@@ -1346,7 +1346,8 @@ else{
 							intensity.id_intensity,grado_attacco.id_grado,
 							lobaratory_result, laboratory_positive, tempo, campioni.tipocampione_id, tipocampione.description as tipocampione_description,
 							unita as unit_tot, unita_chk as unit_chk, peso as peso_tot, peso_chk, lotti as lotti_tot, lotti_chk, lotti_camp,
-							tipologiacontrollata_id as tipologia_id, tipologiacontrollata.descrizione as tipologiacontrollata_descrizione, provenienza
+							tipologiacontrollata_id as tipologia_id, tipologiacontrollata.descrizione as tipologiacontrollata_descrizione, provenienza,
+							osservazioni.id_fase_fenologica, osservazioni.hostcode, osservazioni.pestcode
 						FROM simfito.osservazioni
 						LEFT JOIN abbattute ON abbattute.osservazioni_id=osservazioni.idosservazioni
 						LEFT JOIN simfito.campioni ON campioni.id=osservazioni.campioni_id
@@ -1362,7 +1363,8 @@ else{
 						GROUP BY osservazioni.idosservazioni,a.full_name,b.full_name,rilevato,sospetti,campione,campioni.codice/*,risultato*/,campioni.elementicampione, intensity.nome_intensity,grado_attacco.nome_grado, fase_fenologica,varieta,n_osservate,eta,organi,pericolosita,data_impianto,appezzamento,dens_piante, piante_camp_vis,fase_fenologica,coltura_prec,
 						piante_infest,sup_vis,sup_infest,abbattute.somma,completa, osservazioni.the_geom,intensity.id_intensity,grado_attacco.id_grado,analisi.lobaratory_result,
 						laboratory_positive, tempo, campioni.tipocampione_id, tipocampione.description,
-						unita, unita_chk, peso, peso_chk, lotti, lotti_chk, lotti_camp, tipologiacontrollata_id, tipologiacontrollata.descrizione,provenienza
+						unita, unita_chk, peso, peso_chk, lotti, lotti_chk, lotti_camp, tipologiacontrollata_id, tipologiacontrollata.descrizione,provenienza,
+						osservazioni.id_fase_fenologica, osservazioni.hostcode, osservazioni.pestcode
 						--ORDER BY osservazioni.idosservazioni
 					UNION
 						SELECT CAST(null AS numeric) AS idosservazioni, a.full_name AS ospite, b.full_name AS parassita,
@@ -1374,7 +1376,8 @@ else{
 							null AS geometry, null AS id_intensity, null AS id_grado,
 							analisysresult.description AS lobaratory_result, analisysresult.positive AS laboratory_positive, null as tempo, null as tipocampione_id, null as tipocampione_description,
 							null as unit_tot, null as unit_chk, null as peso_tot, null as peso_chk, null as lotti_tot, null as lotti_chk, null as lotti_camp,
-							null as tipologia_id, null as tipologiacontrollata_descrizione, null as provenienza
+							null as tipologia_id, null as tipologiacontrollata_descrizione, null as provenienza,
+							null as id_fase_fenologica, null as hostcode, null as pestcode
 						FROM simfitolab.analisys
 						LEFT JOIN simfito.campioni ON campioni.id=analisys.campioni_id
 						INNER JOIN t_vista AS a ON (analisys.host=a.b_code)
@@ -3251,6 +3254,17 @@ SELECT distinct xtype,descrizione,nome,provincia from yy INNER JOIN comuni ON st
 				WHERE host='$_REQUEST[bcode]' AND isolang='la' AND preferred=1 AND enabled
 				group by t_bayname.nameid ,t_bayname.codeid, full_name, b_code, dt_code, pest_priority.priority
 				ORDER BY t_bayname.full_name";
+			readJson($sql);
+		break;
+		case "tipologiacontrollata":
+			// Get all tipologie controllate
+			$sql = "SELECT id, descrizione FROM simfito.tipologiacontrollata ORDER BY descrizione";
+			readJson($sql);
+		break;
+		case "fasifenologiche":
+			// Get fasi fenologiche based on observation's host
+			$fenogruppo=chk_fenogruppo($_REQUEST['idobs']);
+			$sql="SELECT id AS id_fase_fenologica, descrizione as fase_fenologica, info FROM simfito.fasi_fenologiche WHERE gruppo=$fenogruppo ORDER BY id";
 			readJson($sql);
 		break;
 	}

@@ -76,7 +76,11 @@ const OsservazioniList: React.FC<OsservazioniListProps> = ({ idscheda, stato, ca
           // Naviga al dettaglio osservazione
           router.push({
             pathname: `/osservazioni/${item.idosservazioni}`,
-            params: { canEdit: canAddOsservazioni }
+            params: { 
+              idscheda: idscheda.toString(),
+              statoScheda: stato.toString(),
+              canEdit: canAddOsservazioni 
+            }
           });
         }}
       >

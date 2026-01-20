@@ -127,16 +127,25 @@ const OsservazioniScreen: React.FC = () => {
       ) : osservazioni.length > 0 ? (
         <View style={styles.listContainer}>
           {osservazioni.map((obs, index) => (
-            <View
+            <TouchableOpacity
               key={`${obs.idosservazioni}-${obs.parassita}-${index}`}
               style={[styles.obsCard, { backgroundColor: textColor === '#11181C' ? '#fff' : '#1a1a1a', borderLeftColor: getPresenzaColor(obs.presente, obs.lobaratory_result) }]}
+              onPress={() => {
+                router.push({
+                  pathname: `/osservazioni/${obs.idosservazioni}`,
+                  params: {
+                    idscheda: id?.toString() || '',
+                    statoScheda: schedaStato?.toString() || '0'
+                  }
+                });
+              }}
             >
               <ObsRow label="Ospite" value={obs.ospite || obs.nome_ospite || '-'} textColor={textColor} />
               <ObsRow label="Parassita" value={obs.parassita || obs.nome_parassita || '-'} textColor={textColor} />
               <ObsRow label="Presente" value={obs.presente || '-'} textColor={textColor} valueColor={getPresenzaColor(obs.presente, obs.lobaratory_result)} />
               <ObsRow label="Risultato Analisi" value={obs.lobaratory_result || '-'} textColor={textColor} valueColor={obs.lobaratory_result === 'Positivo' ? '#F44336' : obs.lobaratory_result === 'Negativo' ? '#4CAF50' : undefined} />
               <ObsRow label="Serie Campione" value={obs.codice || '-'} textColor={textColor} />
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       ) : (

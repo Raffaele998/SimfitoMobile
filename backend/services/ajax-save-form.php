@@ -823,15 +823,19 @@ else{
 	        if($n_osservate=='') $n_osservate='null';
 			if(($piante_camp_vis=='')||($piante_camp_vis=='-1'))
 				$piante_camp_vis='null';
-			if(($piante_infest=='')||($piante_infest=='-1'))
+			if(($piante_infest=='')||($piante_infest=='-1')||($piante_infest=='NaN'))
 				$piante_infest='null';
-			if(($sup_vis=='')||($sup_vis=='-1'))
+			if(($sup_vis=='')||($sup_vis=='-1')||($sup_vis=='NaN'))
 				$sup_vis='null';
-			if(($sup_infest=='')||($sup_infest=='-1'))
+			if(($sup_infest=='')||($sup_infest=='-1')||($sup_infest=='NaN'))
 				$sup_infest='null';
 			if(($tempo=='')||($tempo=='-1')){
 				$tempo='null';
 			}
+			// Gestione tipologia_id (può essere vuoto o 0)
+			$tipologia_id = isset($_REQUEST['tipologia_id']) && $_REQUEST['tipologia_id'] !== '' && $_REQUEST['tipologia_id'] !== '0' 
+				? $_REQUEST['tipologia_id'] 
+				: 'null';
 			$to_escape=array('sospetti'=>$_REQUEST['sospetti'],'fase_fenologica'=>$_REQUEST['fase_fenologica'],'organi'=>$_REQUEST['organi'],'varieta'=>$_REQUEST['varieta'],'eta'=>$_REQUEST['eta']);//, 'pericolosita'=>$_REQUEST['pericolosita']);
 			$escaped=pg_str_escape($to_escape);
 			if($_REQUEST['geometry']!=''){
@@ -849,7 +853,7 @@ else{
 					/*n_abbattute=$n_abbattute,*/ completa='$_REQUEST[completata]', tempo=$tempo $geoJsonAdd,
 					unita=nullif('$_REQUEST[unit_tot]','')::integer, unita_chk=nullif('$_REQUEST[unit_chk]','')::integer, peso=nullif('$_REQUEST[peso_tot]','')::real,
 					peso_chk=nullif('$_REQUEST[peso_chk]','')::real, lotti=nullif('$_REQUEST[lotti_tot]','')::integer, lotti_chk=nullif('$_REQUEST[lotti_chk]','')::integer,
-					lotti_camp=nullif('$_REQUEST[lotti_camp]','')::integer, tipologiacontrollata_id='$_REQUEST[tipologia_id]',
+					lotti_camp=nullif('$_REQUEST[lotti_camp]','')::integer, tipologiacontrollata_id=$tipologia_id,
 					provenienza='$_REQUEST[provenienza]'
 				WHERE idosservazioni=$_REQUEST[idosservazioni] RETURNING idosservazioni";
 			$result["gid"]=salva_scheda($sql);
@@ -858,7 +862,7 @@ else{
 					/*piante_camp_vis=coalesce(piante_camp_vis,$piante_camp_vis),*/ data_impianto=coalesce(data_impianto,to_date('$_REQUEST[data_impianto]','DD/MM/YYYY')),
 					varieta=coalesce(varieta,'$escaped[varieta]'), fase_fenologica=coalesce(fase_fenologica,'$escaped[fase_fenologica]'), coltura_prec=coalesce(coltura_prec,'$_REQUEST[coltura_prec]'),
 					unita='$_REQUEST[unit_tot]', unita_chk='$_REQUEST[unit_chk]', peso='$_REQUEST[peso_tot]', peso_chk='$_REQUEST[peso_chk]',
-					lotti='$_REQUEST[lotti_tot]', lotti_chk='$_REQUEST[lotti_chk]', lotti_camp='$_REQUEST[lotti_camp]', tipologiacontrollata_id='$_REQUEST[tipologia_id]',
+					lotti='$_REQUEST[lotti_tot]', lotti_chk='$_REQUEST[lotti_chk]', lotti_camp='$_REQUEST[lotti_camp]', tipologiacontrollata_id=$tipologia_id,
 					provenienza='$_REQUEST[provenienza]'
 				WHERE idscheda= '$_REQUEST[idscheda]' AND NOT completa AND hostcode=(SELECT hostcode from simfito.osservazioni where idosservazioni=$_REQUEST[idosservazioni]);";
 			salva($sql2);
