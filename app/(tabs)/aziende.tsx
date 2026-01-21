@@ -229,7 +229,16 @@ const AziendeScreen: React.FC = () => {
       {/* FAB per creare nuova azienda */}
       {canCreateAziende && (
         <TouchableOpacity
-          style={[styles.fab, { backgroundColor: tintColor }]}
+          style={[
+            styles.fab,
+            {
+              backgroundColor: '#1976D2',
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 4 },
+              shadowOpacity: 0.3,
+              shadowRadius: 8,
+            }
+          ]}
           onPress={() => router.push('/nuova-azienda')}
         >
           <MaterialIcons name="add" size={28} color="#fff" />
@@ -385,7 +394,6 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.3)',
     elevation: 8,
   },
 });

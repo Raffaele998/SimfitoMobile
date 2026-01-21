@@ -241,7 +241,7 @@ const SchemataScreen: React.FC = () => {
                 <View>
                   <Text style={[styles.headerTitle, { color: textColor }]}>Le Tue Schede</Text>
                   <Text style={[styles.headerSubtitle, { color: textColor === '#11181C' ? '#999' : '#666' }]}>
-                    {total} scheda{total !== 1 ? 'e' : ''} totali
+                    {total} {total === 1 ? 'scheda' : 'schede'} totali
                   </Text>
                 </View>
                 <TouchableOpacity
@@ -303,7 +303,16 @@ const SchemataScreen: React.FC = () => {
       {/* FAB per creare nuova scheda - solo per tecnici (tipo >= 2) */}
       {canCreateSchede && (
         <TouchableOpacity
-          style={[styles.fab, { backgroundColor: tintColor }]}
+          style={[
+            styles.fab,
+            {
+              backgroundColor: '#1976D2',
+              shadowColor: '#000',
+              shadowOffset: { width: 0, height: 4 },
+              shadowOpacity: 0.3,
+              shadowRadius: 8,
+            }
+          ]}
           onPress={() => router.push('/nuova-scheda')}
         >
           <MaterialIcons name="add" size={28} color="#fff" />
@@ -563,7 +572,6 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.3)',
     elevation: 8,
   },
   filterBar: {
